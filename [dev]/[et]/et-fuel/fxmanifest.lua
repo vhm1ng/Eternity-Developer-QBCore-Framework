@@ -1,0 +1,30 @@
+fx_version 'cerulean'
+game 'gta5'
+
+description 'et-fuel'
+version '1.0'
+author 'github.com/Project-Sloth'
+
+client_scripts {
+    '@PolyZone/client.lua',
+	'client/client.lua',
+	'client/utils.lua'
+}
+
+server_scripts {
+	'server/server.lua'
+}
+
+shared_scripts {
+	'@et-core/shared/locale.lua',
+	'locales/en.lua',
+	-- 'locales/de.lua',
+	'shared/config.lua',
+}
+
+exports {
+	'GetFuel',
+	'SetFuel'
+}
+
+lua54 'yes'
