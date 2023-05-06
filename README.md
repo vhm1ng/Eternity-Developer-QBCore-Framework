@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p align="center">
-  <img width="612" height="240" src="https://i.imgur.com/GHFShCv.png">
+
+<p align="center">
+<img width="550" height="550" src="https://media.discordapp.net/attachments/1095598323404111895/1104444337519075338/Systems_and_technology_programming_company_logo.png?width=550&height=550">
 </p>
 
 ## 👋 About us
@@ -32,5 +24,3 @@ https://docs.qbcore.org/
 <p align="center">
  <a href=https://ko-fi.com/kakarot><img width="420" src=https://github-readme-stats.vercel.app/api?username=GhzGarage&count_private=true&show_icons=true&title_color=dc143c&text_color=ffffff&icon_color=dc143c&hide_border=true&bg_color=282a36&layout=compact&hide_title=false&hide_rank=false><a>
 </p>
-</body>
-</html>
