@@ -3,7 +3,7 @@ local vehoption2 = nil
 local vehoption3 = nil
 local stealid = nil
 local cuffid = nil
-local mdtid = nil
+-- local mdtid = nil
 
 local function givekeys()
     local Player = PlayerPedId()
@@ -105,7 +105,7 @@ local function vehoptions()
 end
 RegisterNetEvent('et-radialmenu:client:onRadialmenuOpen', function()
     givekeys()
-    mdt()
+    -- mdt()
     PlayerCloseMenu()
     vehoptions()
 end)
