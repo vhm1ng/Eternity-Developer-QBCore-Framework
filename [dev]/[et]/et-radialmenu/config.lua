@@ -303,14 +303,15 @@ Config.MenuItems = {
                 type = 'client',
                 event = 'et-radialmenu:client:togglebenny',
                 shouldClose = false
-            }, {
-                id = 'ammunation',
-                title = 'SÚNG',
-                icon = 'crosshairs',
-                type = 'client',
-                event = 'et-radialmenu:client:togglegun',
-                shouldClose = false
-            }
+            }, 
+            -- {
+            --     id = 'ammunation',
+            --     title = 'SÚNG',
+            --     icon = 'crosshairs',
+            --     type = 'client',
+            --     event = 'et-radialmenu:client:togglegun',
+            --     shouldClose = false
+            -- }
         }
     },
     -- [3] = {
@@ -1147,7 +1148,7 @@ Config.JobInteractions = {
                     shouldClose = true
                 }, {
                     id = 'checkstatus',
-                    title = 'KIỂM TRA GSR',
+                    title = 'KIỂM TRA ADN',
                     icon = 'dna',
                     type = 'client',
                     event = 'police:client:CheckStatus',

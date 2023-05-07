@@ -10,7 +10,7 @@ local function givekeys()
     if IsPedInAnyVehicle(Player) then
         vehoption1 = exports['et-radialmenu']:AddOption({
             id = 'give_keys',
-            title = 'Give Keys',
+            title = 'LẤY CHÌA KHOÁ',
             icon = 'key',
             type = 'command',
             event = 'givekeys',
@@ -30,7 +30,7 @@ local function PlayerCloseMenu()
         if not IsPedInAnyVehicle(PlayerPedId()) then
             cuffid = exports['et-radialmenu']:AddOption({
                 id = 'handcuff',
-                title = 'Cuff',
+                title = 'CỔ TAY ÁO',
                 icon = 'user-lock',
                 type = 'client',
                 event = 'police:client:CuffPlayerSoft',
@@ -38,7 +38,7 @@ local function PlayerCloseMenu()
             }, cuffid)
             stealid = exports['et-radialmenu']:AddOption({
                 id = 'stealplayer',
-                title = 'Steal',
+                title = 'LỤC ĐỒ',
                 icon = 'shopping-bag',
                 type = 'client',
                 event = 'police:client:RobPlayer',
@@ -55,23 +55,23 @@ local function PlayerCloseMenu()
     end
 end
 
-local function mdt()
-    if QBCore.Functions.GetPlayerData().job.name == "police" then
-        mdtid = exports['et-radialmenu']:AddOption({
-            id = 'mdt',
-            title = 'Mdt',
-            icon = 'tablet',
-            type = 'command',
-            event = 'mdt',
-            shouldClose = true
-        }, mdtid)
-    else
-        if mdtid ~= nil then
-            exports['et-radialmenu']:RemoveOption(mdtid)
-            mdtid = nil
-        end
-    end
-end
+-- local function mdt()
+--     if QBCore.Functions.GetPlayerData().job.name == "police" then
+--         mdtid = exports['et-radialmenu']:AddOption({
+--             id = 'mdt',
+--             title = 'MÁY TÍNH BẢNG',
+--             icon = 'tablet',
+--             type = 'command',
+--             event = 'mdt',
+--             shouldClose = true
+--         }, mdtid)
+--     else
+--         if mdtid ~= nil then
+--             exports['et-radialmenu']:RemoveOption(mdtid)
+--             mdtid = nil
+--         end
+--     end
+-- end
 
 local function vehoptions()
     local pos = GetEntityCoords(PlayerPedId())
@@ -80,7 +80,7 @@ local function vehoptions()
     if #(pos - vehpos) < 2.5 and not IsPedInAnyVehicle(PlayerPedId()) then
         vehoption2 = exports['et-radialmenu']:AddOption({
             id = 'playeroutvehicle',
-            title = 'Take Out',
+            title = 'ĐƯA RA',
             icon = 'user',
             type = 'client',
             event = 'police:client:SetPlayerOutVehicle',
@@ -88,7 +88,7 @@ local function vehoptions()
         }, vehoption2)
         vehoption3 = exports['et-radialmenu']:AddOption({
             id = 'playerinvehicle',
-            title = 'Put In',
+            title = 'ĐƯA VÀO',
             icon = 'user',
             type = 'client',
             event = 'police:client:PutPlayerInVehicle',
