@@ -1,4 +1,4 @@
-QBCore = exports['dc-core']:GetCoreObject()
+QBCore = exports['et-core']:GetCoreObject()
 local PlayerData = {}
 local CurrentCops = 0
 local isOpen = false
@@ -12,8 +12,8 @@ local tabletOffset = vector3(0.03, 0.002, -0.0)
 local tabletRot = vector3(10.0, 160.0, 0.0)
 
 CreateThread(function()
-    if GetResourceState('dc-dispatch') == 'started' then
-        TriggerServerEvent("dc-mdt:dispatchStatus", true)
+    if GetResourceState('et-dispatch') == 'started' then
+        TriggerServerEvent("et-mdt:dispatchStatus", true)
     end
 end)
 
@@ -25,7 +25,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
-    TriggerServerEvent("dc-mdt:server:OnPlayerUnload")
+    TriggerServerEvent("et-mdt:server:OnPlayerUnload")
     PlayerData = {}
 end)
 
@@ -39,7 +39,7 @@ end)
 
 RegisterNetEvent("QBCore:Client:SetDuty", function(job, state)
     if AllowedJob(job) then
-        TriggerServerEvent("dc-mdt:server:ToggleDuty")
+        TriggerServerEvent("et-mdt:server:ToggleDuty")
     end
 end)
 
@@ -301,7 +301,7 @@ RegisterNUICallback("getProfileData", function(data, cb)
     --[[ local getProfileProperties = function(data)
         if pP then return end
         pP = promise.new()
-        QBCore.Functions.TriggerCallback('dc-phone:server:MeosGetPlayerHouses', function(result)
+        QBCore.Functions.TriggerCallback('et-phone:server:MeosGetPlayerHouses', function(result)
             pP:resolve(result)
         end, data)
         return Citizen.Await(pP)
@@ -721,7 +721,7 @@ RegisterNUICallback("callDetach", function(data, cb)
 end)
 
 RegisterNUICallback("removeCallBlip", function(data, cb)
-    TriggerEvent('dc-dispatch:client:removeCallBlip', data.callid)
+    TriggerEvent('et-dispatch:client:removeCallBlip', data.callid)
     cb(true)
 end)
 

@@ -1,4 +1,4 @@
-local QBCore = exports['dc-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 -- Maybe cache?
 local incidents = {}
 local convictions = {}
@@ -30,7 +30,7 @@ end
 
 
 
-RegisterServerEvent("dc-mdt:dispatchStatus", function(bool)
+RegisterServerEvent("et-mdt:dispatchStatus", function(bool)
 	isDispatchRunning = bool
 end)
 
@@ -45,7 +45,7 @@ if Config.UseWolfknightRadar == true then
 		end
 	end)
 end
-RegisterNetEvent("dc-mdt:server:OnPlayerUnload", function()
+RegisterNetEvent("et-mdt:server:OnPlayerUnload", function()
 	--// Delete player from the MDT on logout
 	local src = source
 	local player = QBCore.Functions.GetPlayer(src)
@@ -74,7 +74,7 @@ AddEventHandler("playerDropped", function(reason)
 	end
 end)
 
-RegisterNetEvent("dc-mdt:server:ToggleDuty", function()
+RegisterNetEvent("et-mdt:server:ToggleDuty", function()
     local src = source
     local player = QBCore.Functions.GetPlayer(src)
     if not player.PlayerData.job.onduty then
@@ -106,7 +106,7 @@ RegisterNetEvent('mdt:server:openMDT', function()
 
 	local JobType = GetJobType(PlayerData.job.name)
 	local bulletin = GetBulletins(JobType)
-	local calls = exports['dc-dispatch']:GetDispatchCalls()	
+	local calls = exports['et-dispatch']:GetDispatchCalls()	
 	--TriggerClientEvent('mdt:client:dashboardbulletin', src, bulletin)
 	TriggerClientEvent('mdt:client:open', src, bulletin, activeUnits, calls, PlayerData.citizenid)
 	--TriggerClientEvent('mdt:client:GetActiveUnits', src, activeUnits)
@@ -851,7 +851,7 @@ RegisterNetEvent('mdt:server:saveVehicleInfo', function(dbid, plate, imageurl, n
 
 								result.currentSelection = impoundInfo.CurrentSelection
 								result.plate = plate
-								TriggerClientEvent('dc-mdt:client:TakeOutImpound', src, result)
+								TriggerClientEvent('et-mdt:client:TakeOutImpound', src, result)
 							end
 
 						end
@@ -1037,7 +1037,7 @@ RegisterNetEvent('mdt:server:setWaypoint', function(callid)
 	if JobType == 'police' or JobType == 'ambulance' then
 		if callid then
 			if isDispatchRunning then
-				local calls = exports['dc-dispatch']:GetDispatchCalls()
+				local calls = exports['et-dispatch']:GetDispatchCalls()
 				TriggerClientEvent('mdt:client:setWaypoint', src, calls[callid])
 			end
 		end
@@ -1090,7 +1090,7 @@ RegisterNetEvent('mdt:server:attachedUnits', function(callid)
 	if JobType == 'police' or JobType == 'ambulance' then
 		if callid then
 			if isDispatchRunning then
-				local calls = exports['dc-dispatch']:GetDispatchCalls()
+				local calls = exports['et-dispatch']:GetDispatchCalls()
 				TriggerClientEvent('mdt:client:attachedUnits', src, calls[callid]['units'], callid)
 			end
 		end
@@ -1125,7 +1125,7 @@ RegisterNetEvent('mdt:server:setDispatchWaypoint', function(callid, cid)
 	if JobType == 'police' or JobType == 'ambulance' then
 		if callid then
 			if isDispatchRunning then
-				local calls = exports['dc-dispatch']:GetDispatchCalls()
+				local calls = exports['et-dispatch']:GetDispatchCalls()
 				TriggerClientEvent('mdt:client:setWaypoint', src, calls[callid])
 			end
 		end
@@ -1203,7 +1203,7 @@ RegisterNetEvent('mdt:server:getCallResponses', function(callid)
 	local Player = QBCore.Functions.GetPlayer(src)
 	if IsPolice(Player.PlayerData.job.name) then
 		if isDispatchRunning then
-			local calls = exports['dc-dispatch']:GetDispatchCalls()
+			local calls = exports['et-dispatch']:GetDispatchCalls()
 			TriggerClientEvent('mdt:client:getCallResponses', src, calls[callid]['responses'], callid)
 		end
 	end

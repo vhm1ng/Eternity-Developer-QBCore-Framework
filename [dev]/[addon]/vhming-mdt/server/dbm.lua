@@ -1,4 +1,4 @@
-local QBCore = exports['dc-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 
 -- Get CitizenIDs from Player License
 function GetCitizenID(license)

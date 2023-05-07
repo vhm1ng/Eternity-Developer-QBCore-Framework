@@ -6,8 +6,8 @@ For all support questions, ask in our Discord support chat. Do not create issues
 
 ## Dependencies
 
-- [QBCore](https://github.com/qbcore-framework/dc-core)
-- [dc-dispatch](https://github.com/Project-Sloth/dc-dispatch) [If you intend to use it, make sure this starts before the mdt!]
+- [QBCore](https://github.com/qbcore-framework/et-core)
+- [et-dispatch](https://github.com/Project-Sloth/et-dispatch) [If you intend to use it, make sure this starts before the mdt!]
 - [Ox MySQL](https://github.com/overextended/oxmysql)
 
 ## FAQ
@@ -25,4 +25,4 @@ This is no longer a fork so we are able to open issues on this repo.
 # DMCA Protection Certificate
 ![image](https://user-images.githubusercontent.com/82112471/183939077-c714b08b-77cc-49c6-a94a-3064856d90b9.png)
 
-[https://www.dmca.com/r/p3j2p4q](https://www.dmca.com/Protection/Status.aspx?ID=0ff6f6e1-2b54-4dda-bcd3-42728908f404&refurl=https://github.com/Project-Sloth/dc-mdt)
+[https://www.dmca.com/r/p3j2p4q](https://www.dmca.com/Protection/Status.aspx?ID=0ff6f6e1-2b54-4dda-bcd3-42728908f404&refurl=https://github.com/Project-Sloth/et-mdt)

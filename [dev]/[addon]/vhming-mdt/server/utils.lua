@@ -1,4 +1,4 @@
-local QBCore = exports['dc-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 
 function GetPlayerData(source)
 	local Player = QBCore.Functions.GetPlayer(source)

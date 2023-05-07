@@ -655,8 +655,8 @@ function GetJobType(job)
 	end
 end
 
--- this is a hack, because the dc-menu in dc-policejob populates an impound location and passed it through to the event.
--- if this impound locations are changed in dc-policejob, they must also be changed here.
+-- this is a hack, because the et-menu in et-policejob populates an impound location and passed it through to the event.
+-- if this impound locations are changed in et-policejob, they must also be changed here.
 Config.ImpoundLocations = { 
     [1] = vector4(436.68, -1007.42, 27.32, 180.0),
     [2] = vector4(-436.14, 5982.63, 31.34, 136.0),
