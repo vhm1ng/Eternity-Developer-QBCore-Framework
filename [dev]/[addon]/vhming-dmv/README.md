@@ -18,7 +18,7 @@ https://forum.cfx.re/t/mlo-driving-school-interior/1466079
 
 # Installation
 
-## dc-Core Script:
+## et-Core Script:
 
 ## Insert Item into QBCore/Shared/Items.lua:
 ```
@@ -30,7 +30,7 @@ Update:(you will have to add permit to the players table in the metadata column 
 
 
 
-## Open dc-core/server/players.lua and find:
+## Open et-core/server/players.lua and find:
 ```
     PlayerData.metadata['licences'] = PlayerData.metadata['licences'] or {
     ['driver'] = true,
@@ -48,19 +48,19 @@ PlayerData.metadata['licences'] = PlayerData.metadata['licences'] or {
 }
 ```
 
-## Open dc-core/shared/main.lua
+## Open et-core/shared/main.lua
 Find ```QBShared.StarterItems``` and remove the driver license line
 
 #### The Above Code is for both NEW and OLD QBCore
 
-## dc-Cityhall Script:
+## et-Cityhall Script:
 Cityhall Script has been updated. So with this being said, Below will be how to install it both ways. If you open the ```config.lua``` and don't see the below code, then you have the old styl qbcore which means you have to go further down this readme to find the part that you need to do.
 
 I will be starting with the new version of the cityhall script followed by the old version. So if you are running the old version, then scroll on till you see OLD QBCORE.
 
 ## NEW QBCORE:
 
-### Open dc-cityhall/config.lua
+### Open et-cityhall/config.lua
 Replace This:
 ```
 Config.Cityhalls = {
@@ -131,10 +131,10 @@ Config.Cityhalls = {
 }
 ```
 
-### Open dc-cityhall/server/main.lua
+### Open et-cityhall/server/main.lua
 Replace This:
 ```
-RegisterNetEvent('dc-cityhall:server:requestId', function(item, hall)
+RegisterNetEvent('et-cityhall:server:requestId', function(item, hall)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
@@ -166,7 +166,7 @@ end)
 ```
 WITH THIS:
 ```
-RegisterNetEvent('dc-cityhall:server:requestId', function(item, hall)
+RegisterNetEvent('et-cityhall:server:requestId', function(item, hall)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
@@ -205,7 +205,7 @@ If you are using new QBCore, You are done with installation. At the bottom of th
 end
 ## OLD QBCORE
 
-### Open dc-cityhall/client/main.lua
+### Open et-cityhall/client/main.lua
 Replace this:
 ```
 local idTypes = {
@@ -314,13 +314,13 @@ end)
 
 # New Details
 
-Added Permit to database defaults false. So now dc-dmv won't look to see if they have the item in their inventory rather the database to see if true or false. So they can't spam taking the test.
+Added Permit to database defaults false. So now et-dmv won't look to see if they have the item in their inventory rather the database to see if true or false. So they can't spam taking the test.
 
 Fixed the Drivers Test activating upon opening the Menu. Now Drivers Test activates upon clicking Start Drivers Test.
 
 Fixed the players from being able to go back to the dmv menu to start a second driver's test while the original is still going.
 
-Added a config for GiveItem. If false then upon completion of the drivers test then they have to go to City Hall to Buy a license. If true then dc-dmv will give them the item.
+Added a config for GiveItem. If false then upon completion of the drivers test then they have to go to City Hall to Buy a license. If true then et-dmv will give them the item.
 
 Added Permit upon completion of Theoretical test
 

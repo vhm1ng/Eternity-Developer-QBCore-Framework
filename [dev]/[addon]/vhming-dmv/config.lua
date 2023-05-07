@@ -7,12 +7,12 @@ Config.DriversTest = true                                    --[[False = Do not 
                                                                 questionairre.) True = Requires you to take Drivers Test to get driver_license]]
 Config.SpeedMultiplier = 2.236936                            --KM/H = 3.6 MPH = 2.236936
 Config.MaxErrors       = 10
-Config.UseTarget       = true                            -- True = Spawns a Ped to use dc-target with. False = Will use exports['dc-core']:DrawText or DrawText3Ds function depending on Config.UseNewQB
-Config.UseNewQB        = true                               -- If Not Using Target then if your QB files aren't updated to use exports['dc-core']:DrawText then make this false. If you'd rather use the exports['dc-core']:DrawText than use Target then make this true and make Config.UseTarget = false
+Config.UseTarget       = true                            -- True = Spawns a Ped to use et-target with. False = Will use exports['et-core']:DrawText or DrawText3Ds function depending on Config.UseNewQB
+Config.UseNewQB        = true                               -- If Not Using Target then if your QB files aren't updated to use exports['et-core']:DrawText then make this false. If you'd rather use the exports['et-core']:DrawText than use Target then make this true and make Config.UseTarget = false
 
 
 Config.TargetOptions = {
-  minusOne = true,                                        -- Gets the Coords you copied from dc-adminmenu and minuses 1 from the z coordinate to put the ped on the floor instead of floating in the air. Best to leave this true
+  minusOne = true,                                        -- Gets the Coords you copied from et-adminmenu and minuses 1 from the z coordinate to put the ped on the floor instead of floating in the air. Best to leave this true
   freeze = true,                                          -- Freezes ped in place so nothing can move him. 
   invincible = true,                                      -- Can't Kill Ped
   blockevents = true,                                     -- Blocks other Events from showing up that isn't in the export for this script

@@ -1,4 +1,4 @@
--- Before installing you must insert the next line into your dc-core/shared.lua unless you plan on letting them get a driver_license upon completion of the theoretical test then ignore the next line
+-- Before installing you must insert the next line into your et-core/shared.lua unless you plan on letting them get a driver_license upon completion of the theoretical test then ignore the next line
 ['permit']						 = {['name'] = 'permit',						['label'] = 'Driving Permit',			['weight'] = 0,			['type'] = 'item',		['image'] = 'id_card.png',				['unique'] = true,		['useable'] = true,		['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Giấy phép Lái ​xe cho thấy bạn có thể lái xe miễn là bạn có hành khách'},
 
---If you do plan on letting them take the drivers text and dont want to have a new item, then just go to dc-dmv/server.lua and change all instances of permit to id_card.
+--If you do plan on letting them take the drivers text and dont want to have a new item, then just go to et-dmv/server.lua and change all instances of permit to id_card.

@@ -1,4 +1,4 @@
-QBCore = exports['dc-core']:GetCoreObject()
+QBCore = exports['et-core']:GetCoreObject()
 
 -------------
 -- Variables --
@@ -38,7 +38,7 @@ end)
             -- EVENTS --
 ---------------------------------------
 
-RegisterNetEvent('dc-dmv:startdriver', function()
+RegisterNetEvent('et-dmv:startdriver', function()
   CurrentTest = 'drive'
   DriveErrors = 0
   LastCheckPoint = -1
@@ -48,20 +48,20 @@ RegisterNetEvent('dc-dmv:startdriver', function()
   local prevCoords = GetEntityCoords(PlayerPedId())
   QBCore.Functions.SpawnVehicle(Config.VehicleModels.driver, function(veh)
       TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-      exports['dc-fuel']:SetFuel(veh, 100.0)
+      exports['et-fuel']:SetFuel(veh, 100.0)
       SetVehicleNumberPlateText(veh, 'DMV')
       SetEntityAsMissionEntity(veh, true, true)
       SetEntityHeading(veh, Config.Location['spawn'].w)
       TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
-      TriggerServerEvent('dc-vehicletuning:server:SaveVehicleProps', QBCore.Functions.GetVehicleProperties(veh))
+      TriggerServerEvent('et-vehicletuning:server:SaveVehicleProps', QBCore.Functions.GetVehicleProperties(veh))
       LastVehicleHealth = GetVehicleBodyHealth(veh)
       CurrentVehicle = veh
-      TriggerEvent('dc-dmv:Notify', 'Bạn đang làm bài kiểm tra lái xe.', 3000, 'success', 'Làm bài kiểm tra lái xe')
+      TriggerEvent('et-dmv:Notify', 'Bạn đang làm bài kiểm tra lái xe.', 3000, 'success', 'Làm bài kiểm tra lái xe')
   end, Config.Location['spawn'], false)
 end)
 
-RegisterNetEvent('dc-dmv:startquiz')
-AddEventHandler('dc-dmv:startquiz', function ()
+RegisterNetEvent('et-dmv:startquiz')
+AddEventHandler('et-dmv:startquiz', function ()
   CurrentTest = 'theory'
   SendNUIMessage({
     Wait(10),
@@ -73,7 +73,7 @@ AddEventHandler('dc-dmv:startquiz', function ()
   end)
 end)
 
-RegisterNetEvent('dc-dmv:Notify', function (msg, time, type, title)
+RegisterNetEvent('et-dmv:Notify', function (msg, time, type, title)
   local notify = Config.NotifyType
   if type == 'info' then
     if notify == 'qbcore' then
@@ -102,26 +102,26 @@ RegisterNetEvent('dc-dmv:Notify', function (msg, time, type, title)
   end
 end)
 
-RegisterNetEvent('dc-dmv:client:dmvoptions', function ()
+RegisterNetEvent('et-dmv:client:dmvoptions', function ()
   --DMVOptions()
   local drive = Config.DriversTest
   if CurrentTest == 'drive' then
-    TriggerEvent('dc-dmv:Notify', 'Bạn đang làm bài kiểm tra lái xe.', 3000, 'error', 'Đã làm bài kiểm tra')
+    TriggerEvent('et-dmv:Notify', 'Bạn đang làm bài kiểm tra lái xe.', 3000, 'error', 'Đã làm bài kiểm tra')
   else
-    QBCore.Functions.TriggerCallback('dc-dmv:server:permitdata', function (permit)
+    QBCore.Functions.TriggerCallback('et-dmv:server:permitdata', function (permit)
       if permit then
         OpenMenu('theoritical')
       else
-        QBCore.Functions.TriggerCallback('dc-dmv:server:licensedata', function (license)
+        QBCore.Functions.TriggerCallback('et-dmv:server:licensedata', function (license)
           if license then
             print('working')
             if drive then
               OpenMenu('driver')
             else
-              TriggerEvent('dc-dmv:Notify', 'Bạn đã làm bài kiểm tra của mình! Đến Tòa thị chính để mua giấy phép của bạn', 3000, 'info', 'Đã làm bài kiểm tra')
+              TriggerEvent('et-dmv:Notify', 'Bạn đã làm bài kiểm tra của mình! Đến Tòa thị chính để mua giấy phép của bạn', 3000, 'info', 'Đã làm bài kiểm tra')
             end
           else
-            TriggerEvent('dc-dmv:Notify', 'Bạn đã làm tất cả các bài kiểm tra của mình! Đến Tòa thị chính để mua giấy phép nếu bạn không có.', 3000, 'info', 'Đã làm bài kiểm tra')
+            TriggerEvent('et-dmv:Notify', 'Bạn đã làm tất cả các bài kiểm tra của mình! Đến Tòa thị chính để mua giấy phép nếu bạn không có.', 3000, 'info', 'Đã làm bài kiểm tra')
           end
         end)
       end
@@ -167,11 +167,11 @@ function StopTheoryTest(success)
   })
   SetNuiFocus(false)
   if success then
-    TriggerEvent('dc-dmv:Notify', 'Bạn đã vượt qua bài kiểm tra của mình!', 3000, 'success', 'Thành công')
-    TriggerServerEvent('dc-dmv:theorypaymentpassed')
+    TriggerEvent('et-dmv:Notify', 'Bạn đã vượt qua bài kiểm tra của mình!', 3000, 'success', 'Thành công')
+    TriggerServerEvent('et-dmv:theorypaymentpassed')
   else
-    TriggerEvent('dc-dmv:Notify', 'Bạn đã thất bại trong bài kiểm tra!', 3000, 'error', 'Không thành công')
-    TriggerServerEvent('dc-dmv:theorypaymentfailed')
+    TriggerEvent('et-dmv:Notify', 'Bạn đã thất bại trong bài kiểm tra!', 3000, 'error', 'Không thành công')
+    TriggerServerEvent('et-dmv:theorypaymentfailed')
   end
 end
 
@@ -179,13 +179,13 @@ function StopDriveTest(success)
   local playerPed = PlayerPedId()
   local veh = GetVehiclePedIsIn(playerPed)
   if success then
-    TriggerEvent('dc-dmv:Notify', 'Bạn đã vượt qua bài kiểm tra lái xe!', 3000, 'success', 'Thành công')
-    TriggerServerEvent('dc-dmv:driverpaymentpassed')
+    TriggerEvent('et-dmv:Notify', 'Bạn đã vượt qua bài kiểm tra lái xe!', 3000, 'success', 'Thành công')
+    TriggerServerEvent('et-dmv:driverpaymentpassed')
     QBCore.Functions.DeleteVehicle(veh)
     CurrentTest = nil
   elseif success == false then
-    TriggerServerEvent('dc-dmv:driverpaymentfailed')
-    TriggerEvent('dc-dmv:Notify', 'Bạn đã thất bại trong bài kiểm tra lái xe, hãy thử lại.', 3000, 'success', 'Không thành công')
+    TriggerServerEvent('et-dmv:driverpaymentfailed')
+    TriggerEvent('et-dmv:Notify', 'Bạn đã thất bại trong bài kiểm tra lái xe, hãy thử lại.', 3000, 'success', 'Không thành công')
     CurrentTest = nil
     RemoveBlip(CurrentBlip)
     QBCore.Functions.DeleteVehicle(veh)
@@ -200,7 +200,7 @@ end
 
 function OpenMenu(menu)
   if menu == 'theoritical' then
-    exports['dc-menu']:openMenu({
+    exports['et-menu']:openMenu({
       {
         header = "DMV School",
         isMenuHeader = true,
@@ -209,7 +209,7 @@ function OpenMenu(menu)
         header = "Bắt đầu kiểm tra lý thuyết",
         txt = "$"..Config.Amount['theoretical'].."",
         params = {
-          event = 'dc-dmv:startquiz',
+          event = 'et-dmv:startquiz',
           args = {
             CurrentTest = 'theory'
           }
@@ -217,7 +217,7 @@ function OpenMenu(menu)
       }
     })
   elseif menu == 'driver' then
-    exports['dc-menu']:openMenu({
+    exports['et-menu']:openMenu({
       {
         header = "DMV School",
         isMenuHeader = true,
@@ -226,7 +226,7 @@ function OpenMenu(menu)
         header = "Bắt đầu Kiểm tra Lái xe",
         txt = "$"..Config.Amount['driving'].."",
         params = {
-          event = 'dc-dmv:startdriver',
+          event = 'et-dmv:startdriver',
           args = {
             CurrentTest = 'drive'
           }
@@ -236,7 +236,7 @@ function OpenMenu(menu)
         header = "Bắt đầu Kiểm tra Lái xe CDL",
         txt = "$"..Config.Amount['cdl'].."",
         params = {
-          event = 'dc-dmv:startcdl'
+          event = 'et-dmv:startcdl'
         }
       }
     })
@@ -246,18 +246,18 @@ end
 --[[function DMVOptions()
   local drive = Config.DriversTest
   if CurrentTest == 'drive' then
-    TriggerEvent('dc-dmv:Notify', 'You\'re already taking the driving test.', 3000, 'error', 'Already Taking Test')
+    TriggerEvent('et-dmv:Notify', 'You\'re already taking the driving test.', 3000, 'error', 'Already Taking Test')
   else
-    QBCore.Functions.TriggerCallback('dc-dmv:server:permitdata', function (permit)
+    QBCore.Functions.TriggerCallback('et-dmv:server:permitdata', function (permit)
       if permit then
         OpenMenu('theoritical')
       else
-        QBCore.Functions.TriggerCallback('dc-dmv:server:licensedata', function (license)
+        QBCore.Functions.TriggerCallback('et-dmv:server:licensedata', function (license)
           if license then
             if drive then
               OpenMenu('driver')
             else
-              TriggerEvent('dc-dmv:Notify', 'You already took your tests! Go to the City Hall to buy your license', 3000, 'info', 'Already took the test')
+              TriggerEvent('et-dmv:Notify', 'You already took your tests! Go to the City Hall to buy your license', 3000, 'info', 'Already took the test')
             end
           end
         end)
@@ -303,10 +303,10 @@ CreateThread( function ()
       dmvzone:onPlayerInOut( function (isPointInside)
         if isPointInside then
           inDMV = true
-          exports['dc-core']:DrawText('[E] Mở DMV')
+          exports['et-core']:DrawText('[E] Mở DMV')
         else
           inDMV = false
-          exports['dc-core']:HideText()
+          exports['et-core']:HideText()
         end
       end)
     else
@@ -325,16 +325,16 @@ CreateThread( function ()
           if dist <= 1.5 then
             if CurrentTest ~= 'drive' then
               if IsControlJustReleased(0, 46) then
-                QBCore.Functions.TriggerCallback('dc-dmv:server:permitdata', function (permit)
+                QBCore.Functions.TriggerCallback('et-dmv:server:permitdata', function (permit)
                     if permit == false then
-                        QBCore.Functions.TriggerCallback('dc-dmv:server:licensedata', function (license)
+                        QBCore.Functions.TriggerCallback('et-dmv:server:licensedata', function (license)
                             if license then
                                 if drive then
                                     Wait(10)
                                     OpenMenu('driver')
                                 end
                             else
-                              TriggerEvent('dc-dmv:Notify', 'Bạn đã làm bài kiểm tra của mình! Đến Tòa thị chính để mua giấy phép của bạn.', 3000, 'info', 'Đã làm bài kiểm tra')
+                              TriggerEvent('et-dmv:Notify', 'Bạn đã làm bài kiểm tra của mình! Đến Tòa thị chính để mua giấy phép của bạn.', 3000, 'info', 'Đã làm bài kiểm tra')
                             end
                         end)
                     else
@@ -344,7 +344,7 @@ CreateThread( function ()
                 end)
               end
             elseif CurrentTest == 'drive' and IsControlJustReleased(0, 46) then
-              TriggerEvent('dc-dmv:Notify', 'Bạn đang làm bài kiểm tra lái xe.', 3000, 'error', 'Đã làm bài kiểm tra')
+              TriggerEvent('et-dmv:Notify', 'Bạn đang làm bài kiểm tra lái xe.', 3000, 'error', 'Đã làm bài kiểm tra')
             end
           end
         end
@@ -352,7 +352,7 @@ CreateThread( function ()
       end
     end
   else
-    exports['dc-target']:SpawnPed({
+    exports['et-target']:SpawnPed({
       model = Config.Location['ped']['model'],
       coords = Config.Location['coords'],
       minusOne = Config.TargetOptions.minusOne,
@@ -365,7 +365,7 @@ CreateThread( function ()
               type = 'client',
               icon = Config.TargetOptions.options.icon,
               label = Config.TargetOptions.options.label,
-              event = 'dc-dmv:client:dmvoptions'
+              event = 'et-dmv:client:dmvoptions'
             },
           },
           distance = Config.Location['radius'],
@@ -378,8 +378,8 @@ CreateThread( function ()
       sleep = 0
       if IsControlJustPressed(0, 38) then
         sleep = 1000
-        exports['dc-core']:KeyPressed()
-        TriggerEvent('dc-dmv:client:dmvoptions')
+        exports['et-core']:KeyPressed()
+        TriggerEvent('et-dmv:client:dmvoptions')
       end
     end
     Wait(sleep)
@@ -440,8 +440,8 @@ CreateThread(function()
                       if not IsAboveSpeedLimit then
                           DriveErrors       = DriveErrors + 1
                           IsAboveSpeedLimit = true
-                          TriggerEvent('dc-dmv:Notify', 'Bạn đang lái xe quá nhanh. Chậm lại', 3000, 'warning', 'Xem tốc độ của bạn!')
-                          TriggerEvent('dc-dmv:Notify', 'Errors: '..tostring(DriveErrors)..' / '..Config.MaxErrors, 3000, 'warning', 'Error')
+                          TriggerEvent('et-dmv:Notify', 'Bạn đang lái xe quá nhanh. Chậm lại', 3000, 'warning', 'Xem tốc độ của bạn!')
+                          TriggerEvent('et-dmv:Notify', 'Errors: '..tostring(DriveErrors)..' / '..Config.MaxErrors, 3000, 'warning', 'Error')
                       end
                   end
               end
@@ -451,8 +451,8 @@ CreateThread(function()
               local health = GetVehicleBodyHealth(vehicle)
               if health < LastVehicleHealth then
                   DriveErrors = DriveErrors + 1
-                  TriggerEvent('dc-dmv:Notify', 'Bạn đã làm hỏng chiếc xe', 3000, 'warning', 'Làm hỏng phương tiện')
-                  TriggerEvent('dc-dmv:Notify', 'Errors: '..tostring(DriveErrors)..' / '..Config.MaxErrors, 3000, 'warning', 'Error!')
+                  TriggerEvent('et-dmv:Notify', 'Bạn đã làm hỏng chiếc xe', 3000, 'warning', 'Làm hỏng phương tiện')
+                  TriggerEvent('et-dmv:Notify', 'Errors: '..tostring(DriveErrors)..' / '..Config.MaxErrors, 3000, 'warning', 'Error!')
                   LastVehicleHealth = health
               end
               if DriveErrors >= Config.MaxErrors then

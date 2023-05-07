@@ -1,18 +1,18 @@
-QBCore = exports['dc-core']:GetCoreObject()
+QBCore = exports['et-core']:GetCoreObject()
 
 --Event to Remove Money from player upon failed attempt at theoritical test
-RegisterNetEvent('dc-dmv:theorypaymentfailed', function()
+RegisterNetEvent('et-dmv:theorypaymentfailed', function()
     local amount = Config.Amount['theoretical']/2
 	local _source = source
 	local Player = QBCore.Functions.GetPlayer(_source)
     Player.Functions.RemoveMoney(Config.PaymentType, amount)
-    TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã trả $'..amount, 3000, 'error', 'Paid')
-    TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã thất bại trong bài kiểm tra. Vui lòng thử lại!', 3000, 'error', 'Failed')
+    TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã trả $'..amount, 3000, 'error', 'Paid')
+    TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã thất bại trong bài kiểm tra. Vui lòng thử lại!', 3000, 'error', 'Failed')
 
 end)
 
 --Event to Remove Money and Add Item upon successful attempt at theoritical test
-RegisterNetEvent('dc-dmv:theorypaymentpassed', function()
+RegisterNetEvent('et-dmv:theorypaymentpassed', function()
 	local _source = source
 	local Player = QBCore.Functions.GetPlayer(_source)
     local license = true
@@ -28,12 +28,12 @@ RegisterNetEvent('dc-dmv:theorypaymentpassed', function()
         Player.Functions.RemoveMoney(Config.PaymentType, Config.Amount['theoretical'])
         if Config.GiveItem then
             Player.Functions.AddItem('permit', 1, nil, info)
-            TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã vượt qua và nhận được giấy phép của bạn. Xin chúc mừng!', 3000, 'success', 'Passed')
+            TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã vượt qua và nhận được giấy phép của bạn. Xin chúc mừng!', 3000, 'success', 'Passed')
             TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['permit'], 'add')
         else
-            TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã vượt qua bài kiểm tra. Đến tòa thị chính để nhận giấy phép của bạn. Xin chúc mừng!', 3000, 'success', 'Passed')
+            TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã vượt qua bài kiểm tra. Đến tòa thị chính để nhận giấy phép của bạn. Xin chúc mừng!', 3000, 'success', 'Passed')
         end
-        TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã trả $'..Config.Amount['theoretical'], 3000, 'success', 'Paid')
+        TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã trả $'..Config.Amount['theoretical'], 3000, 'success', 'Paid')
     elseif Config.DriversTest == false then
         info.firstname = Player.PlayerData.charinfo.firstname
         info.lastname = Player.PlayerData.charinfo.lastname
@@ -45,16 +45,16 @@ RegisterNetEvent('dc-dmv:theorypaymentpassed', function()
         Player.Functions.RemoveMoney(Config.PaymentType, Config.Amount['driving'])
         if Config.GiveItem then
             Player.Functions.AddItem('driver_license', 1, nil, info)
-            TriggerClientEvent('dc-dmv:Notify',source, 'Bạn đã vượt qua và có bằng lái xe của bạn. Xin chúc mừng!', 3000, 'success', 'Passed')
+            TriggerClientEvent('et-dmv:Notify',source, 'Bạn đã vượt qua và có bằng lái xe của bạn. Xin chúc mừng!', 3000, 'success', 'Passed')
             TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['driver_license'], 'add')
         else
-            TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã đậu! Phải đến tòa thị chính và lấy bằng lái xe của bạn.', 3000, 'success', 'Passed')
+            TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã đậu! Phải đến tòa thị chính và lấy bằng lái xe của bạn.', 3000, 'success', 'Passed')
         end
-        TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã trả $ '..Config.Amount['driving'], 3000, 'info', 'Paid')
+        TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã trả $ '..Config.Amount['driving'], 3000, 'info', 'Paid')
     end
 end)
 
-RegisterNetEvent('dc-dmv:driverpaymentpassed', function ()
+RegisterNetEvent('et-dmv:driverpaymentpassed', function ()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local info = {}
@@ -74,24 +74,24 @@ RegisterNetEvent('dc-dmv:driverpaymentpassed', function ()
         Player.Functions.RemoveMoney(Config.PaymentType, Config.Amount['driving'])
         if Config.GiveItem == true then
             Player.Functions.AddItem('driver_license', 1, nil, info)
-            TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã vượt qua bài kiểm tra trình điều khiển và nhận được giấy phép lái xe của mình. Xin chúc mừng!', 3000, 'success', 'Passed')
+            TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã vượt qua bài kiểm tra trình điều khiển và nhận được giấy phép lái xe của mình. Xin chúc mừng!', 3000, 'success', 'Passed')
             TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['driver_license'], 'add')
         else
-            TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã vượt qua Bài kiểm tra trình điều khiển. Đến Tòa thị chính để lấy giấy phép.', 3000, 'success', 'Passed')
+            TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã vượt qua Bài kiểm tra trình điều khiển. Đến Tòa thị chính để lấy giấy phép.', 3000, 'success', 'Passed')
         end
-        TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã trả $'..Config.Amount['driving'], 3000, 'success', 'Paid')
+        TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã trả $'..Config.Amount['driving'], 3000, 'success', 'Paid')
     end
 end)
 
-RegisterNetEvent('dc-dmv:driverpaymentfailed', function ()
+RegisterNetEvent('et-dmv:driverpaymentfailed', function ()
     local amount = Config.Amount['driving']/2
     local _source = source
     local Player = QBCore.Functions.GetPlayer(_source)
     Player.Functions.RemoveMoney(Config.PaymentType, amount)
-    TriggerClientEvent('dc-dmv:Notify', source, 'Bạn đã trả $'..amount, 3000, 'error', 'Paid')
+    TriggerClientEvent('et-dmv:Notify', source, 'Bạn đã trả $'..amount, 3000, 'error', 'Paid')
 end)
 
-QBCore.Functions.CreateCallback('dc-dmv:server:permitdata', function(source, cb)
+QBCore.Functions.CreateCallback('et-dmv:server:permitdata', function(source, cb)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local licenseTable = Player.PlayerData.metadata['licences']
@@ -102,7 +102,7 @@ QBCore.Functions.CreateCallback('dc-dmv:server:permitdata', function(source, cb)
     end
 end)
 
-QBCore.Functions.CreateCallback('dc-dmv:server:licensedata', function(source, cb)
+QBCore.Functions.CreateCallback('et-dmv:server:licensedata', function(source, cb)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local licenseTable = Player.PlayerData.metadata['licences']
@@ -115,7 +115,7 @@ end)
 
 
 -------- THIS IS A TEST FOR ADDING PERMIT AND LICENSE TO DATABASE FOR EXISTING PLAYERS
-RegisterNetEvent('dc-dmv:server:updatemetadata', function ()
+RegisterNetEvent('et-dmv:server:updatemetadata', function ()
     local src = source
     local PlayerData = QBCore.Players[source].PlayerData
     MySQL.Async.insert('INSERT INTO players (metadata) VALUES (:metadata) ON DUPLICATE KEY UPDATE metadata = :metadata', {
@@ -126,7 +126,7 @@ end)
 
 
 
-RegisterNetEvent('dc-cityhall:server:banPlayer', function()
+RegisterNetEvent('et-cityhall:server:banPlayer', function()
     local src = source
     TriggerClientEvent('chatMessage', -1, "QB Anti-Cheat", "error", GetPlayerName(src).." has been banned for sending POST Request's ")
     MySQL.Async.insert('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (?, ?, ?, ?, ?, ?, ?)', {
