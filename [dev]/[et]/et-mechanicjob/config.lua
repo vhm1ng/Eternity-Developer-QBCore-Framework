@@ -77,22 +77,62 @@ Config.Businesses = {
 
 Config.Plates = {
     [1] = {
-        coords = vector4(-340.95, -128.24, 39, 160.0),
+        coords = vector4(-327.04, -144.38, 39.02, 66.68),
         boxData = {
-            heading = 340,
-            length = 5,
-            width = 2.5,
-            debugPoly = false
+            heading = 250,
+            length = 7,
+            width = 4,
+            debugPoly = true
         },
         AttachedVehicle = nil,
     },
     [2] = {
-        coords = vector4(-327.91, -144.34, 38.86, 70.34),
+        coords = vector4(-324.94, -139.06, 39.02, 65.53),
         boxData = {
-            heading = 249,
-            length = 6.5,
-            width = 5,
-            debugPoly = false
+            heading = 250,
+            length = 7,
+            width = 4,
+            debugPoly = true
+        },
+        AttachedVehicle = nil,
+    },
+    [3] = {
+        coords = vector4(-322.99, -133.98, 39.02, 78.09),
+        boxData = {
+            heading = 250,
+            length = 7,
+            width = 4,
+            debugPoly = true
+        },
+        AttachedVehicle = nil,
+    },
+    [4] = {
+        coords = vector4(-321.34, -128.72, 39.02, 70.36),
+        boxData = {
+            heading = 250,
+            length = 7,
+            width = 4,
+            debugPoly = true
+        },
+        AttachedVehicle = nil,
+    },
+    [5] = {
+        coords = vector4(-319.49, -123.48, 39.02, 77.7),
+        boxData = {
+            heading = 250,
+            length = 7,
+            width = 4,
+            debugPoly = true
+        },
+        AttachedVehicle = nil,
+    },
+    [6] = {
+        coords = vector4(-317.55, -118.43, 39.02, 77.08),
+        boxData = {
+            heading = 250,
+            length = 7,
+            width = 4,
+            debugPoly = true
         },
         AttachedVehicle = nil,
     },
@@ -100,8 +140,8 @@ Config.Plates = {
 
 Config.Locations = {
     ["exit"] = vector3(-339.04, -135.53, 39),
-    ["duty"] = vector3(-323.39, -129.6, 39.01),
-    ["stash"] = vector3(-319.49, -131.9, 38.98),
+    ["duty"] = vector3(-347.16, -114.21, 39.02),
+    ["stash"] = vector3(-317.07, -129.48, 39.02),
     ["vehicle"] = vector4(-370.51, -107.88, 38.35, 72.56),
 }
 
