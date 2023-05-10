@@ -4,27 +4,27 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use et-target in
 
 Config.Cityhalls = {
     { -- Cityhall 1
-        coords = vec3(-265.0, -963.6, 31.2),
+        coords = vector3(-534.51, -222.43, 37.65),
         showBlip = true,
         blipData = {
             sprite = 487,
             display = 4,
             scale = 0.65,
             colour = 0,
-            title = "City Services"
+            title = "Toà Thị Chính"
         },
         licenses = {
             ["id_card"] = {
-                label = "ID Card",
+                label = "Căn Cước Công Dân",
                 cost = 50,
             },
             ["driver_license"] = {
-                label = "Driver License",
+                label = "Giấy Phép Lái Xe",
                 cost = 50,
                 metadata = "driver"
             },
             ["weaponlicense"] = {
-                label = "Weapon License",
+                label = "Giấy Phép Vũ Khí",
                 cost = 50,
                 metadata = "weapon"
             },
@@ -41,7 +41,7 @@ Config.DrivingSchools = {
             display = 4,
             scale = 0.65,
             colour = 3,
-            title = "Driving School"
+            title = "Trung Tâm Sát Hạch"
         },
         instructors = {
             "DJD56142",
@@ -54,8 +54,8 @@ Config.DrivingSchools = {
 Config.Peds = {
     -- Cityhall Ped
     {
-        model = 'a_m_m_hasjew_01',
-        coords = vec4(-262.79, -964.18, 30.22, 181.71),
+        model = 'a_m_y_smartcaspat_01',
+        coords = vec4(-550.87, -191.97, 38.22, 174.86),
         scenario = 'WORLD_HUMAN_STAND_MOBILE',
         cityhall = true,
         zoneOptions = { -- Used for when UseTarget is false
