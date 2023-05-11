@@ -95,12 +95,12 @@ RegisterNetEvent("et-radialmenu:client:toggleyoutool", function()
 	QBCore.Functions.Notify('Closest location marked', 'primary', 2500)
 end)
 
-RegisterNetEvent("et-radialmenu:client:togglebenny", function()
+RegisterNetEvent("et-radialmenu:client:toggleToathichinh", function()
 	local coords = GetEntityCoords(PlayerPedId())
 	local closest = 1500
 	local closestLocation
 
-	for _, v in pairs(Config.Benny) do
+	for _, v in pairs(Config.Toathichinh) do
 		local dist = GetDistanceBetweenCoords(coords, v)
 		if dist < closest then
 			closest = dist

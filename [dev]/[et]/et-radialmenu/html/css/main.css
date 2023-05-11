@@ -83,12 +83,12 @@ svg.menu > g.sector > use {
 }
 
 svg.menu > g.sector:hover > path {
-    fill: #03f0b53b;
+    fill: #c100003b;
 
 }
 
 svg.menu > g.center:hover > circle {
-    fill:#03f0b53b;
+    fill:#c100003b;
 }
 
 svg.menu > g.center > circle {

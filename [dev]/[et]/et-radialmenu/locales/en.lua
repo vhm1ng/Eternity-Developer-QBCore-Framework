@@ -1,6 +1,6 @@
 local Translations = {
     error = {
-        no_people_nearby = "Không có người chơi gần đó",
+        no_people_nearby = "Không có ai ở gần",
         no_vehicle_found = "Không tìm thấy xe",
         extra_deactivated = "Thêm %{extra} đã bị hủy kích hoạt",
         extra_not_present = "Thêm %{extra} không có trên xe này",

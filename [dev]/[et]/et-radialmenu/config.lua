@@ -5,7 +5,7 @@ Config.EnableExtraMenu = true
 Config.MenuItems = {
     [1] = {
         id = 'general',
-        title = 'CHUNG',
+        title = 'Chung',
         icon = 'globe-americas',
         items = {
             -- {
@@ -74,133 +74,133 @@ Config.MenuItems = {
             --         }
             --     }
             -- }, 
-            {
-                id = 'clothesmenu',
-                title = 'QUẦN ÁO',
-                icon = 'tshirt',
-                items = {
-                    {
-                        id = 'Hair',
-                        title = 'TÓC',
-                        icon = 'user',
-                        type = 'client',
-                        event = 'et-radialmenu:ToggleClothing',
-                        shouldClose = true
-                    }, {
-                        id = 'Ear',
-                        title = 'TAI',
-                        icon = 'deaf',
-                        type = 'client',
-                        event = 'et-radialmenu:ToggleProps',
-                        shouldClose = true
-                    }, {
-                        id = 'Neck',
-                        title = 'CỔ',
-                        icon = 'user-tie',
-                        type = 'client',
-                        event = 'et-radialmenu:ToggleClothing',
-                        shouldClose = true
-                    }, {
-                        id = 'Top',
-                        title = 'ĐẦU',
-                        icon = 'tshirt',
-                        type = 'client',
-                        event = 'et-radialmenu:ToggleClothing',
-                        shouldClose = true
-                    }, {
-                        id = 'Shirt',
-                        title = 'SƠ MI',
-                        icon = 'tshirt',
-                        type = 'client',
-                        event = 'et-radialmenu:ToggleClothing',
-                        shouldClose = true
-                    }, {
-                        id = 'Pants',
-                        title = 'QUẦN',
-                        icon = 'user',
-                        type = 'client',
-                        event = 'et-radialmenu:ToggleClothing',
-                        shouldClose = true
-                    }, {
-                        id = 'Shoes',
-                        title = 'GIÀY',
-                        icon = 'shoe-prints',
-                        type = 'client',
-                        event = 'et-radialmenu:ToggleClothing',
-                        shouldClose = true
-                    }, {
-                        id = 'meer',
-                        title = 'THÊM',
-                        icon = 'plus',
-                        items = {
-                            {
-                                id = 'Hat',
-                                title = 'NÓN',
-                                icon = 'hat-cowboy-side',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleProps',
-                                shouldClose = true
-                            }, {
-                                id = 'Glasses',
-                                title = 'MẮT KÍNH',
-                                icon = 'glasses',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleProps',
-                                shouldClose = true
-                            }, {
-                                id = 'Visor',
-                                title = 'ĐẢO NÓN',
-                                icon = 'hat-cowboy-side',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleProps',
-                                shouldClose = true
-                            }, {
-                                id = 'Mask',
-                                title = 'MẶT NẠ',
-                                icon = 'theater-masks',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleClothing',
-                                shouldClose = true
-                            }, {
-                                id = 'Vest',
-                                title = 'ÁO PHÔNG',
-                                icon = 'vest',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleClothing',
-                                shouldClose = true
-                            }, {
-                                id = 'Bag',
-                                title = 'BALO',
-                                icon = 'shopping-bag',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleClothing',
-                                shouldClose = true
-                            }, {
-                                id = 'Bracelet',
-                                title = 'VÒNG TAY',
-                                icon = 'user',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleProps',
-                                shouldClose = true
-                            }, {
-                                id = 'Watch',
-                                title = 'ĐỒNG HỒ',
-                                icon = 'stopwatch',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleProps',
-                                shouldClose = true
-                            }, {
-                                id = 'Gloves',
-                                title = 'GĂNG TAY',
-                                icon = 'mitten',
-                                type = 'client',
-                                event = 'et-radialmenu:ToggleClothing',
-                                shouldClose = true
-                            }
-                        }
-                    }
-                }
-            }, 
+            -- {
+            --     id = 'clothesmenu',
+            --     title = 'Quần áo',
+            --     icon = 'tshirt',
+            --     items = {
+            --         {
+            --             id = 'Hair',
+            --             title = 'TÓC',
+            --             icon = 'user',
+            --             type = 'client',
+            --             event = 'et-radialmenu:ToggleClothing',
+            --             shouldClose = true
+            --         }, {
+            --             id = 'Ear',
+            --             title = 'TAI',
+            --             icon = 'deaf',
+            --             type = 'client',
+            --             event = 'et-radialmenu:ToggleProps',
+            --             shouldClose = true
+            --         }, {
+            --             id = 'Neck',
+            --             title = 'CỔ',
+            --             icon = 'user-tie',
+            --             type = 'client',
+            --             event = 'et-radialmenu:ToggleClothing',
+            --             shouldClose = true
+            --         }, {
+            --             id = 'Top',
+            --             title = 'ĐẦU',
+            --             icon = 'tshirt',
+            --             type = 'client',
+            --             event = 'et-radialmenu:ToggleClothing',
+            --             shouldClose = true
+            --         }, {
+            --             id = 'Shirt',
+            --             title = 'SƠ MI',
+            --             icon = 'tshirt',
+            --             type = 'client',
+            --             event = 'et-radialmenu:ToggleClothing',
+            --             shouldClose = true
+            --         }, {
+            --             id = 'Pants',
+            --             title = 'QUẦN',
+            --             icon = 'user',
+            --             type = 'client',
+            --             event = 'et-radialmenu:ToggleClothing',
+            --             shouldClose = true
+            --         }, {
+            --             id = 'Shoes',
+            --             title = 'GIÀY',
+            --             icon = 'shoe-prints',
+            --             type = 'client',
+            --             event = 'et-radialmenu:ToggleClothing',
+            --             shouldClose = true
+            --         }, {
+            --             id = 'meer',
+            --             title = 'THÊM',
+            --             icon = 'plus',
+            --             items = {
+            --                 {
+            --                     id = 'Hat',
+            --                     title = 'NÓN',
+            --                     icon = 'hat-cowboy-side',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleProps',
+            --                     shouldClose = true
+            --                 }, {
+            --                     id = 'Glasses',
+            --                     title = 'MẮT KÍNH',
+            --                     icon = 'glasses',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleProps',
+            --                     shouldClose = true
+            --                 }, {
+            --                     id = 'Visor',
+            --                     title = 'ĐẢO NÓN',
+            --                     icon = 'hat-cowboy-side',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleProps',
+            --                     shouldClose = true
+            --                 }, {
+            --                     id = 'Mask',
+            --                     title = 'MẶT NẠ',
+            --                     icon = 'theater-masks',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleClothing',
+            --                     shouldClose = true
+            --                 }, {
+            --                     id = 'Vest',
+            --                     title = 'ÁO PHÔNG',
+            --                     icon = 'vest',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleClothing',
+            --                     shouldClose = true
+            --                 }, {
+            --                     id = 'Bag',
+            --                     title = 'BALO',
+            --                     icon = 'shopping-bag',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleClothing',
+            --                     shouldClose = true
+            --                 }, {
+            --                     id = 'Bracelet',
+            --                     title = 'VÒNG TAY',
+            --                     icon = 'user',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleProps',
+            --                     shouldClose = true
+            --                 }, {
+            --                     id = 'Watch',
+            --                     title = 'ĐỒNG HỒ',
+            --                     icon = 'stopwatch',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleProps',
+            --                     shouldClose = true
+            --                 }, {
+            --                     id = 'Gloves',
+            --                     title = 'GĂNG TAY',
+            --                     icon = 'mitten',
+            --                     type = 'client',
+            --                     event = 'et-radialmenu:ToggleClothing',
+            --                     shouldClose = true
+            --                 }
+            --             }
+            --         }
+            --     }
+            -- }, 
             -- {
             --     id = 'cornerselling',
             --     title = 'Bán sà cân',
@@ -211,7 +211,7 @@ Config.MenuItems = {
             -- }, 
             {
                 id = 'givenum',
-                title = 'ĐƯA LIÊN HỆ',
+                title = 'Chia sẻ liên hệ',
                 icon = 'address-book',
                 type = 'client',
                 event = 'et-phone:client:GiveContactDetails',
@@ -227,37 +227,37 @@ Config.MenuItems = {
             -- }, 
             {
                 id = 'getintrunk',
-                title = 'CHUI VÀO CỐP',
+                title = 'Chui vào cốp',
                 icon = 'car',
                 type = 'client',
                 event = 'et-trunk:client:GetIn',
                 shouldClose = true
             }, {
                 id = 'interactions',
-                title = 'TƯƠNG TÁC',
+                title = 'Tương tác',
                 icon = 'exclamation-triangle',
                 items = {
                     {
                         id = 'escort',
-                        title = 'BẮT CÓC',
+                        title = 'Bắt cóc',
                         icon = 'user-friends',
                         type = 'client',
                         event = 'police:client:KidnapPlayer',
                         shouldClose = true
                     }, {
                         id = 'escort2',
-                        title = 'HỘ TỐNG',
+                        title = 'Hộ tống',
                         icon = 'user-friends',
                         type = 'client',
                         event = 'police:client:EscortPlayer',
                         shouldClose = true
                     }, {
                         id = 'escort554',
-                        title = 'CON TIN',
+                        title = 'Con tin',
                         icon = 'child',
                         type = 'client',
                         event = 'A5:Client:TakeHostage',
-                        shouldClose = true
+                        shouldClose = false
                     }
                 }
             }
@@ -265,44 +265,44 @@ Config.MenuItems = {
     },
     [2] = {
         id = 'blips',
-        title = 'ĐỊNH VỊ',
+        title = 'Định vị',
         icon = 'map-marked-alt',
         items = {
             {
                 id = 'gasstation',
-                title = 'CÂY XĂNG',
+                title = 'Trạm xăng gần nhất',
                 icon = 'gas-pump',
                 type = 'client',
                 event = 'et-radialmenu:client:togglegas',
                 shouldClose = true
             }, {
                 id = 'barbershop',
-                title = 'CẮT TÓC',
+                title = 'Tiệm cắt tóc',
                 icon = 'cut',
                 type = 'client',
                 event = 'et-radialmenu:client:togglebarber',
                 shouldClose = true
             }, {
                 id = 'clothing',
-                title = 'QUẦN ÁO',
+                title = 'Cửa hàng quần áo',
                 icon = 'tshirt',
                 type = 'client',
                 event = 'et-radialmenu:client:toggleclothing',
                 shouldClose = true
             }, {
                 id = 'store',
-                title = 'CỬA HÀNG TIỆN LỢI',
+                title = 'Cửa hàng 247',
                 icon = 'store',
                 type = 'client',
                 event = 'et-radialmenu:client:togglestores',
                 shouldClose = true
-            }, {
-                id = 'benny',
-                title = 'ĐỘ XE',
-                icon = 'paint-roller',
+            },{
+                id = 'Toathichinh',
+                title = 'Toà Thị Chính',
+                icon = 'cityhall',
                 type = 'client',
-                event = 'et-radialmenu:client:togglebenny',
-                shouldClose = false
+                event = 'et-radialmenu:client:toggleToathichinh',
+                shouldClose = true
             }, 
             -- {
             --     id = 'ammunation',
@@ -844,52 +844,52 @@ Config.MenuItems = {
 
 Config.VehicleDoors = {
     id = 'vehicledoors',
-    title = 'CỬA XE',
+    title = 'Cửa xe',
     icon = 'car-side',
     items = {
-        {
-            id = 'door0',
-            title = 'CỬA LÁI',
-            icon = 'car-side',
-            type = 'client',
-            event = 'et-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door4',
-            title = 'MUI',
-            icon = 'car',
-            type = 'client',
-            event = 'et-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door1',
-            title = 'CỬA PHỤ',
-            icon = 'car-side',
-            type = 'client',
-            event = 'et-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door3',
-            title = 'CỬA PHẢI',
-            icon = 'car-side',
-            type = 'client',
-            event = 'et-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door5',
-            title = 'CỐP',
-            icon = 'car',
-            type = 'client',
-            event = 'et-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door2',
-            title = 'CỬA TRÁI',
-            icon = 'car-side',
-            type = 'client',
-            event = 'et-radialmenu:client:openDoor',
-            shouldClose = false
-        }
+        -- {
+        --     id = 'door0',
+        --     title = 'CỬA LÁI',
+        --     icon = 'car-side',
+        --     type = 'client',
+        --     event = 'et-radialmenu:client:openDoor',
+        --     shouldClose = false
+        -- }, {
+        --     id = 'door4',
+        --     title = 'MUI',
+        --     icon = 'car',
+        --     type = 'client',
+        --     event = 'et-radialmenu:client:openDoor',
+        --     shouldClose = false
+        -- }, {
+        --     id = 'door1',
+        --     title = 'CỬA PHỤ',
+        --     icon = 'car-side',
+        --     type = 'client',
+        --     event = 'et-radialmenu:client:openDoor',
+        --     shouldClose = false
+        -- }, {
+        --     id = 'door3',
+        --     title = 'CỬA PHẢI',
+        --     icon = 'car-side',
+        --     type = 'client',
+        --     event = 'et-radialmenu:client:openDoor',
+        --     shouldClose = false
+        -- }, {
+        --     id = 'door5',
+        --     title = 'CỐP',
+        --     icon = 'car',
+        --     type = 'client',
+        --     event = 'et-radialmenu:client:openDoor',
+        --     shouldClose = false
+        -- }, {
+        --     id = 'door2',
+        --     title = 'CỬA TRÁI',
+        --     icon = 'car-side',
+        --     type = 'client',
+        --     event = 'et-radialmenu:client:openDoor',
+        --     shouldClose = false
+        -- }
     }
 }
 
@@ -995,7 +995,7 @@ Config.VehicleDoors = {
 
 Config.VehicleSeats = {
     id = 'vehicleseats',
-    title = 'GHẾ NGỒI',
+    title = 'Ghế',
     icon = 'chair',
     items = {}
 }
@@ -1004,35 +1004,35 @@ Config.JobInteractions = {
     ["ambulance"] = {
         {
             id = 'statuscheck',
-            title = 'KIỂM TRA',
+            title = 'Kiểm tra',
             icon = 'heartbeat',
             type = 'client',
             event = 'hospital:client:CheckStatus',
             shouldClose = true
         },{
             id = 'revivep',
-            title = 'CỨU',
+            title = 'Cứu',
             icon = 'user-md',
             type = 'client',
             event = 'hospital:client:RevivePlayer',
             shouldClose = true
         },{
             id = 'treatwounds',
-            title = 'CHỮA',
+            title = 'Chữa',
             icon = 'band-aid',
             type = 'client',
             event = 'hospital:client:TreatWounds',
             shouldClose = true
         }, {
             id = 'emergencybutton2',
-            title = 'KHẨN CẤP',
+            title = 'Nút khẩn cấp',
             icon = 'bell',
             type = 'client',
             event = 'police:client:SendPoliceEmergencyAlert',
             shouldClose = true
         }, {
             id = 'escort',
-            title = 'VÁC',
+            title = 'Vác',
             icon = 'user-friends',
             type = 'client',
             event = 'police:client:EscortPlayer',
@@ -1064,21 +1064,21 @@ Config.JobInteractions = {
     ["taxi"] = {
         {
             id = 'togglemeter',
-            title = 'BẬT - TẮT KM',
+            title = 'Bật/tắt đồng hồ',
             icon = 'eye-slash',
             type = 'client',
             event = 'et-taxi:client:toggleMeter',
             shouldClose = false
         }, {
             id = 'togglemouse',
-            title = 'BẮT ĐẦU - DỪNG KM',
+            title = 'Bắt đầu/dừng đồng hồ',
             icon = 'hourglass-start',
             type = 'client',
             event = 'et-taxi:client:enableMeter',
             shouldClose = true
         }, {
             id = 'npc_mission',
-            title = 'RƯỚC NPC',
+            title = 'Đón NPC',
             icon = 'taxi',
             type = 'client',
             event = 'et-taxi:client:DoTaxiNpc',
@@ -1088,14 +1088,14 @@ Config.JobInteractions = {
     ["tow"] = {
         {
             id = 'togglenpc',
-            title = 'ĐỔI NPC',
+            title = 'Thay NPC',
             icon = 'toggle-on',
             type = 'client',
             event = 'jobs:client:ToggleNpc',
             shouldClose = true
         }, {
             id = 'towvehicle',
-            title = 'XE KÉO',
+            title = 'Xe kéo',
             icon = 'truck-pickup',
             type = 'client',
             event = 'et-tow:client:TowVehicle',
@@ -1105,7 +1105,7 @@ Config.JobInteractions = {
     ["mechanic"] = {
         {
             id = 'towvehicle',
-            title = 'XE KÉO',
+            title = 'Xe kéo',
             icon = 'truck-pickup',
             type = 'client',
             event = 'et-tow:client:TowVehicle',
@@ -1115,61 +1115,61 @@ Config.JobInteractions = {
     ["police"] = {
         {
             id = 'checkvehstatus',
-            title = 'KIỂM TRA XE',
+            title = 'Kiểm tra phương tiện',
             icon = 'car',
             type = 'client',
             event = 'et-tunerchip:client:TuneStatus',
             shouldClose = true
         }, {
             id = 'resethouse',
-            title = 'RESET KHOÁ NHÀ',
+            title = 'Reset khoá nhà',
             icon = 'key',
             type = 'client',
             event = 'et-houses:client:ResetHouse',
             shouldClose = true
         }, {
             id = 'takedriverlicense',
-            title = 'TƯỚC BẰNG LÁI',
+            title = 'Tước bằng lái',
             icon = 'id-card',
             type = 'client',
             event = 'police:client:SeizeDriverLicense',
             shouldClose = true
         }, {
             id = 'policeinteraction',
-            title = 'HÀNH ĐỘNG',
+            title = 'Hành động',
             icon = 'bars',
             items = {
                 {
                     id = 'statuscheck',
-                    title = 'K.T SỨC KHOẺ',
+                    title = 'Kiểm tra sức khoẻ',
                     icon = 'heartbeat',
                     type = 'client',
                     event = 'hospital:client:CheckStatus',
                     shouldClose = true
                 }, {
                     id = 'checkstatus',
-                    title = 'KIỂM TRA ADN',
+                    title = 'Kiểm tra ADN',
                     icon = 'dna',
                     type = 'client',
                     event = 'police:client:CheckStatus',
                     shouldClose = true
                 }, {
                     id = 'escort',
-                    title = 'HỘ TỐNG',
+                    title = 'Hộ tống',
                     icon = 'user-friends',
                     type = 'client',
                     event = 'police:client:EscortPlayer',
                     shouldClose = true
                 }, {
                     id = 'searchplayer',
-                    title = 'TÌM KIẾM',
+                    title = 'Tìm kiếm',
                     icon = 'search',
                     type = 'client',
                     event = 'police:client:SearchPlayer',
                     shouldClose = true
                 }, {
                     id = 'jailplayer',
-                    title = 'TÙ',
+                    title = 'Đưa vào tù',
                     icon = 'user-lock',
                     type = 'client',
                     event = 'police:client:JailPlayer',
@@ -1178,54 +1178,54 @@ Config.JobInteractions = {
             }
         }, {
             id = 'policeobjects',
-            title = 'VẬT DỤNG',
+            title = 'Vật dụng',
             icon = 'road',
             items = {
                 {
                     id = 'spawnpion',
-                    title = 'CHÓP',
+                    title = 'Chóp cảnh báo',
                     icon = 'exclamation-triangle',
                     type = 'client',
                     event = 'police:client:spawnCone',
                     shouldClose = false
                 }, {
                     id = 'spawnhek',
-                    title = 'RÀO',
+                    title = 'Rào cản',
                     icon = 'torii-gate',
                     type = 'client',
                     event = 'police:client:spawnBarrier',
                     shouldClose = false
                 }, {
                     id = 'spawnschotten',
-                    title = 'BIỂN BÁO',
+                    title = 'Biển báo',
                     icon = 'sign',
                     type = 'client',
                     event = 'police:client:spawnRoadSign',
                     shouldClose = false
                 }, {
                     id = 'spawntent',
-                    title = 'LỀU',
+                    title = 'Lều trại',
                     icon = 'campground',
                     type = 'client',
                     event = 'police:client:spawnTent',
                     shouldClose = false
                 }, {
                     id = 'spawnverlichting',
-                    title = 'ĐÈN',
+                    title = 'Đèn',
                     icon = 'lightbulb',
                     type = 'client',
                     event = 'police:client:spawnLight',
                     shouldClose = false
                 }, {
                     id = 'spikestrip',
-                    title = 'RẢI ĐINH',
+                    title = 'Rải đinh',
                     icon = 'caret-up',
                     type = 'client',
                     event = 'police:client:SpawnSpikeStrip',
                     shouldClose = false
                 }, {
                     id = 'deleteobject',
-                    title = 'THU VẬT DỤNG',
+                    title = 'Thu vật dụng',
                     icon = 'trash',
                     type = 'client',
                     event = 'police:client:deleteObject',
@@ -1534,11 +1534,6 @@ Config.Gun = {
     vector4(-3173.31, 1088.85, 20.84, 244.18),
 }
 
-Config.Benny = {
-    vector3(-205.6992, -1312.7377, 31.1588),
-    vector3(-41.8942, -1044.1943, 28.6297),
-    vector3(725.8828, -1088.7747, 22.1693),
-    vector3(-1420.1882, -441.8745, 35.9097),
-    vector3(108.3242, 6624.0996, 31.7873),
-    vector3(140.6093, -3030.3933, 7.0409),
+Config.Toathichinh = {
+    vector3(-533.78, -223.77, 37.65),
 }

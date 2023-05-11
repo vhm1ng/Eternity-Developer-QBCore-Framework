@@ -57,7 +57,7 @@ end
 local function SetupJobMenu()
     local JobMenu = {
         id = 'jobinteractions',
-        title = 'CÔNG VIỆC',
+        title = 'Công việc',
         icon = 'briefcase',
         items = {}
     }
@@ -78,7 +78,7 @@ end
 local function SetupVehicleMenu()
     local VehicleMenu = {
         id = 'vehicle',
-        title = 'PHƯƠNG TIỆN',
+        title = 'Phương tiện',
         icon = 'car',
         items = {}
     }
