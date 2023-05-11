@@ -10,7 +10,7 @@ local function givekeys()
     if IsPedInAnyVehicle(Player) then
         vehoption1 = exports['et-radialmenu']:AddOption({
             id = 'give_keys',
-            title = 'LẤY CHÌA KHOÁ',
+            title = 'Đưa chìa khoá',
             icon = 'key',
             type = 'command',
             event = 'givekeys',

@@ -217,7 +217,7 @@ Config.MenuItems = {
                 event = 'et-phone:client:GiveContactDetails',
                 shouldClose = true
             }, 
-            -- {
+            --{
             --     id = 'togglehotdogsell',
             --     title = 'Bán Hotdog',
             --     icon = 'hotdog',
@@ -299,7 +299,7 @@ Config.MenuItems = {
             },{
                 id = 'Toathichinh',
                 title = 'Toà Thị Chính',
-                icon = 'cityhall',
+                icon = 'home',
                 type = 'client',
                 event = 'et-radialmenu:client:toggleToathichinh',
                 shouldClose = true
