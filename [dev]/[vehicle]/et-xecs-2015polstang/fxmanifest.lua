@@ -3,7 +3,7 @@ game 'gta5'
  
 -- fxmanifest.lua by NapoLe Thanh
 
-description 'Xe cảnh sát Mustang 2015'
+description 'Xe Police Mustang 2015'
 version '1.0.0'
 author 'NapoLe Thanh'
 
