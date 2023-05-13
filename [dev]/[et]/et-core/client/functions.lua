@@ -85,28 +85,17 @@ RegisterNUICallback('getNotifyConfig', function(_, cb)
     cb(QBCore.Config.Notify)
 end)
 
-function QBCore.Functions.Notify(text, texttype, length)
+function QBCore.Functions.Notify(text, textype, length)
     if type(text) == "table" then
         local ttext = text.text or 'Placeholder'
         local caption = text.caption or 'Placeholder'
-        texttype = texttype or 'primary'
-        length = length or 5000
-        SendNUIMessage({
-            action = 'notify',
-            type = texttype,
-            length = length,
-            text = ttext,
-            caption = caption
-        })
+        local ttype = textype or 'info'
+        local length = length or 8500
+        exports['okokNotify']:Alert(ttext, caption, length, ttype)
     else
-        texttype = texttype or 'primary'
-        length = length or 5000
-        SendNUIMessage({
-            action = 'notify',
-            type = texttype,
-            length = length,
-            text = text
-        })
+        local ttype = textype or 'info'
+        local length = length or 8500
+        exports['okokNotify']:Alert(text, "", length, ttype)
     end
 end
 
