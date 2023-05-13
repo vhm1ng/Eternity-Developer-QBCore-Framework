@@ -31,6 +31,10 @@ QBConfig.Server.Permissions = { 'god', 'admin', 'mod' } -- Add as many groups as
 
 QBConfig.Notify = {}
 
+-- OkokNotify
+QBConfig.OkOkNotify = true
+QBConfig.QBNotify = false
+
 QBConfig.Notify.NotificationStyling = {
     group = false, -- Allow notifications to stack with a badge instead of repeating
     position = "right", -- top-left | top-right | bottom-left | bottom-right | top | bottom | left | right | center
