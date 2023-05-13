@@ -1,243 +1,150 @@
-local chatInputActive = false
-local chatInputActivating = false
-local chatHidden = true
-local chatLoaded = false
+local players = {}
 
-RegisterNetEvent('chatMessage')
-RegisterNetEvent('chat:addTemplate')
-RegisterNetEvent('chat:addMessage')
-RegisterNetEvent('chat:addSuggestion')
-RegisterNetEvent('chat:addSuggestions')
-RegisterNetEvent('chat:removeSuggestion')
-RegisterNetEvent('chat:client:ClearChat')
+exports('Message', function(background, color, icon, title, playername, message, target, image)
+	TriggerServerEvent('okokChat:ServerMessage', background, color, icon, title, playername, message, target, image)
+end)
 
-RegisterNetEvent('__cfx_internal:serverPrint')
+AddEventHandler('playerSpawned', function()
+    TriggerServerEvent('okokChat:onPlayerSpawn')
+end)
 
-RegisterNetEvent('_chat:messageEntered')
+RegisterNetEvent("okokChat:getAllPlayers")
+AddEventHandler("okokChat:getAllPlayers", function()
+	local coords = GetEntityCoords(PlayerPedId())
+	local closePlayers = {}
+	local allPlayers = GetActivePlayers()
+	local playerCount = 1
+	local pedID = PlayerPedId()
 
-AddEventHandler('chatMessage', function(author, color, text)
-	local args = { text }
-	if author ~= "" then
-		table.insert(args, 1, author)
+	for i = 1, #allPlayers do
+		local playerId = allPlayers[i]
+		local playerPed = GetPlayerPed(playerId)
+		local playerCoords = GetEntityCoords(playerPed)
+
+		table.insert(closePlayers, GetPlayerServerId(playerId))
+		playerCount += 1
 	end
-	SendNUIMessage({
-		type = 'ON_MESSAGE',
-		message = {
-			color = color,
-			args = args
-		}
-	})
+
+	TriggerServerEvent("okokChat:SetClosePlayers", closePlayers)
 end)
 
-AddEventHandler('__cfx_internal:serverPrint', function(msg)
-	SendNUIMessage({
-		type = 'ON_MESSAGE',
-		message = {
-			templateId = 'print',
-			args = { msg }
-		}
-	})
+RegisterNetEvent("okokChat:checkDeathStatus")
+AddEventHandler("okokChat:checkDeathStatus", function()
+	local ped = GetPlayerPed(-1)
+	TriggerServerEvent('okokChat:deathStatus', IsEntityDead(ped))
 end)
 
-AddEventHandler('chat:addMessage', function(message)
-	SendNUIMessage({
-		type = 'ON_MESSAGE',
-		message = message
-	})
+RegisterNetEvent("okokChat:Notification")
+AddEventHandler("okokChat:Notification", function(info, text)
+	exports['okokNotify']:Alert(info.title, text, info.time, info.type)
 end)
 
-AddEventHandler('chat:addSuggestion', function(name, help, params)
-	SendNUIMessage({
-		type = 'ON_SUGGESTION_ADD',
-		suggestion = {
-			name = name,
-			help = help,
-			params = params or nil
-		}
-	})
-end)
+Citizen.CreateThread(function()
 
-AddEventHandler('chat:addSuggestions', function(suggestions)
-	for _, suggestion in ipairs(suggestions) do
-		SendNUIMessage({
-			type = 'ON_SUGGESTION_ADD',
-			suggestion = suggestion
+	if Config.JobChat then
+		TriggerEvent('chat:addSuggestion', '/'..Config.JobCommand, 'JOB message', {
+			{ name="message", help="message to send" },
 		})
 	end
-end)
 
-AddEventHandler('chat:removeSuggestion', function(name)
-	SendNUIMessage({
-		type = 'ON_SUGGESTION_REMOVE',
-		name = name
-	})
-end)
-
-RegisterNetEvent('chat:resetSuggestions')
-AddEventHandler('chat:resetSuggestions', function()
-	SendNUIMessage({
-		type = 'ON_COMMANDS_RESET'
-	})
-end)
-
-AddEventHandler('chat:addTemplate', function(id, html)
-	SendNUIMessage({
-		type = 'ON_TEMPLATE_ADD',
-		template = {
-			id = id,
-			html = html
-		}
-	})
-end)
-
-AddEventHandler('chat:client:ClearChat', function(name)
-	SendNUIMessage({
-		type = 'ON_CLEAR'
-	})
-end)
-
-RegisterNUICallback('chatResult', function(data, cb)
-	chatInputActive = false
-	SetNuiFocus(false)
-
-	if not data.canceled then
-		local id = PlayerId()
-
-		local r, g, b = 0, 0x99, 255
-
-		if data.message:sub(1, 1) == '/' then
-			ExecuteCommand(data.message:sub(2))
-		else
-			TriggerServerEvent('_chat:messageEntered', GetPlayerName(id), {r, g, b}, data.message)
-		end
+	if Config.EnableOOC then
+		TriggerEvent('chat:addSuggestion', '/'..Config.OOCCommand, 'OOC message', {
+			{ name="message", help="message to send" },
+		})
 	end
 
-	cb('ok')
-end)
-
-local function refreshCommands()
-	if GetRegisteredCommands then
-		local registeredCommands = GetRegisteredCommands()
-
-		local suggestions = {}
-
-		for _, command in ipairs(registeredCommands) do
-			if IsAceAllowed(('command.%s'):format(command.name)) then
-				table.insert(suggestions, {
-					name = '/' .. command.name,
-					help = ''
-				})
-			end
-		end
-
-		TriggerEvent('chat:addSuggestions', suggestions)
-	end
-end
-
-local function refreshThemes()
-	local themes = {}
-
-	for resIdx = 0, GetNumResources() - 1 do
-		local resource = GetResourceByFindIndex(resIdx)
-
-		if GetResourceState(resource) == 'started' then
-			local numThemes = GetNumResourceMetadata(resource, 'chat_theme')
-
-			if numThemes > 0 then
-				local themeName = GetResourceMetadata(resource, 'chat_theme')
-				local themeData = json.decode(GetResourceMetadata(resource, 'chat_theme_extra') or 'null')
-
-				if themeName and themeData then
-					themeData.baseUrl = 'nui://' .. resource .. '/'
-					themes[themeName] = themeData
-				end
-			end
-		end
+	if Config.AllowPlayersToClearTheirChat then
+		TriggerEvent('chat:addSuggestion', '/'..Config.ClearChatCommand, 'Clear chat', {})
 	end
 
-	SendNUIMessage({
-		type = 'ON_UPDATE_THEMES',
-		themes = themes
-	})
-end
-
-AddEventHandler('onClientResourceStart', function(resName)
-	Wait(500)
-
-	refreshCommands()
-	refreshThemes()
-end)
-
-AddEventHandler('onClientResourceStop', function(resName)
-	Wait(500)
-
-	refreshCommands()
-	refreshThemes()
-end)
-
-RegisterNUICallback('loaded', function(data, cb)
-	TriggerServerEvent('chat:init');
-
-	refreshCommands()
-	refreshThemes()
-
-	chatLoaded = true
-
-	cb('ok')
-end)
-
-Citizen.CreateThread(function()
-	SetTextChatEnabled(false)
-	SetNuiFocus(false)
-
-	while true do
-		Wait(0)
-
-		if not chatInputActive then
-			if IsControlPressed(0, 245) then
-				chatInputActive = true
-				chatInputActivating = true
-
-				SendNUIMessage({
-					type = 'ON_OPEN'
-				})
-			end
-		end
-
-		if chatInputActivating then
-			if not IsControlPressed(0, 245) then
-				SetNuiFocus(true)
-
-				chatInputActivating = false
-			end
-		end
-
-		if chatLoaded then
-			local shouldBeHidden = false
-
-			if IsScreenFadedOut() or IsPauseMenuActive() then
-				shouldBeHidden = true
-			end
-
-			if (shouldBeHidden and not chatHidden) or (not shouldBeHidden and chatHidden) then
-				chatHidden = shouldBeHidden
-
-				SendNUIMessage({
-					type = 'ON_SCREEN_STATE_CHANGE',
-					shouldHide = shouldBeHidden
-				})
-			end
-		end
+	if Config.EnableHideChat then
+		TriggerEvent('chat:addSuggestion', '/'..Config.HideChatCommand, 'Hide chat', {})
 	end
-end)
 
-Citizen.CreateThread(function()
-	TriggerEvent('chat:addSuggestion', '/'..Config.ClearChatCommand, 'Clear the chat (just for you)',{})
-	TriggerEvent('chat:addSuggestion', '/'..Config.ClearEveryonesChatCommand, 'Clear the chat (for everyone)',{})
-	TriggerEvent('chat:addSuggestion', '/'..Config.AdvertisementCommand, 'Advert something for '..Config.AdvertisementPrice..'€',{})
-	TriggerEvent('chat:addSuggestion', '/'..Config.TwitchCommand, 'Send a Twitch message',{})
-	TriggerEvent('chat:addSuggestion', '/'..Config.YoutubeCommand, 'Send a Youtube message',{})
-	TriggerEvent('chat:addSuggestion', '/'..Config.TwitterCommand, 'Send a Twitter message',{})
-	TriggerEvent('chat:addSuggestion', '/'..Config.PoliceCommand, 'Make a Police announcement',{})
-	TriggerEvent('chat:addSuggestion', '/'..Config.AmbulanceCommand, 'Make a Ambulance announcement',{})
+	if Config.EnableStaffCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.StaffCommand, 'Send a message as staff', {
+			{ name="message", help="message to send" },
+		})
+	end
+
+	if Config.AllowStaffsToClearEveryonesChat then
+		TriggerEvent('chat:addSuggestion', '/'..Config.ClearEveryonesChatCommand, "Clear everyone's chat", {})
+	end
+
+	if Config.EnableStaffOnlyCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.StaffOnlyCommand, 'Staff only chat', {
+			{ name="message", help="message to send" },
+		})
+	end
+
+	if Config.EnableAdvertisementCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.AdvertisementCommand, 'Make an advertisement', {
+			{ name="ad", help="advertisement message" },
+		})
+	end
+
+	if Config.EnableAnonymousCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.AnonymousCommand, 'Send an anonymous message', {
+			{ name="message", help="message to send" },
+		})
+	end
+
+	if Config.EnableTwitchCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.TwitchCommand, 'Twitch message', {
+			{ name="message", help="message to send" },
+		})
+	end
+
+	if Config.EnableYoutubeCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.YoutubeCommand, 'YouTube message', {
+			{ name="message", help="message to send" },
+		})
+	end
+
+	if Config.EnableTwitterCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.TwitterCommand, 'Twitter message', {
+			{ name="message", help="message to send" },
+		})
+	end
+
+	if Config.EnablePoliceCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.PoliceCommand, 'Police message', {
+			{ name="message", help="message to send" },
+		})
+	end
+
+	if Config.EnableAmbulanceCommand then
+		TriggerEvent('chat:addSuggestion', '/'..Config.AmbulanceCommand, 'Ambulance message', {
+			{ name="message", help="message to send" },
+		})
+	end
+
+	if Config.TimeOutPlayers then
+		TriggerEvent('chat:addSuggestion', '/'..Config.TimeOutCommand, 'Mute player', {
+			{ name="id", help="id of the player to mute" },
+			{ name="time", help="time in minutes" }
+		})
+
+		TriggerEvent('chat:addSuggestion', '/'..Config.RemoveTimeOutCommand, 'Unmute player', {
+			{ name="id", help="id of the player to unmute" }
+		})
+	end
+
+	if Config.EnableMe then
+		TriggerEvent('chat:addSuggestion', '/'..Config.MeCommand, 'Send a me message', {
+			{ name="action", help="me action" }
+		})
+	end
+
+	if Config.EnableTry then
+		TriggerEvent('chat:addSuggestion', '/'..Config.TryCommand, 'Send a try message', {
+			{ name="action", help="try action" }
+		})
+	end
+
+	if Config.EnableDo then
+		TriggerEvent('chat:addSuggestion', '/'..Config.DoCommand, 'Send a do message', {
+			{ name="action", help="do action" }
+		})
+	end
 end)
