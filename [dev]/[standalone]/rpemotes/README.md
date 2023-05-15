@@ -60,6 +60,8 @@ RpEmotes is a community driven FiveM emote menu allowing players to express them
 
 * Hungarian 🇭🇺
 
+* Indonesian 🇮🇩
+
 * Italian 🇮🇹
 
 * Norwegian 🇳🇴
@@ -147,6 +149,8 @@ exports["rpemotes"]:IsPlayerProne()
 exports["rpemotes"]:IsPlayerCrawling()
 exports["rpemotes"]:IsPlayerPointing()
 exports["rpemotes"]:IsPlayerInAnim()
+exports["rpemotes"]:toggleWalkstyle(bool, message)
+-- bool to allow or not / message to show the user (optional, default is :"You are unable to change your walking style right now.")
 ```
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -181,6 +185,14 @@ If you do not want to use the SQL features keep the `oxmysql` region in fxmanife
 Alternatively, you can use the keybind command that comes with FiveM without having to use SQL, by entering the following into F8:
 
 `bind keyboard "Yourbutton" "e youremote"`. To remove the keybind, type `"unbind keyboard "Yourbutton"`.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Increments 
+
+Pressing 'LEFT ALT' on the keyboard allows players to scroll through the menu one by one, or by 10.
+
+Alternatively, players can use the `SHARE` button on an Xbox controller or `OPTIONS` button on a Playstation controller.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -232,6 +244,19 @@ To see a list of walkstyles type /walks
 To see a list of moods type /moods
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# No Idle Cam 📷
+
+No Idle Cam allows players to disable the idle camera animation on foot and in vehicle, making RP scenarios, streaming on Twitch, or just general gameplay just a little more enjoyable.
+
+|COMMAND: | ACTION:|
+|---|---|
+| /Idlecamon | deactivates the native|
+| /idlecamoff | enables the native|
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 # Favorite Emote
 
@@ -297,10 +322,10 @@ Alternatively, you can also hide animal emotes.
 
 - Config option which supports the QB Framework in their fork of the original dpemotes.
 
-If you’re using rxe-core, you can now set
+If you’re using qb-core, you can now set
 
 ```lua
-Framework = "rxe-core",
+Framework = "qb-core",
 ```
 
 in the config file, otherwise leave it as
@@ -378,7 +403,7 @@ You can put this before your gamebuild enforcement, aka `+set sv_enforceGameBuil
 
 * Set the desired language and settings in the config.lua under `MenuLanguage = 'en',`
 
-* Qb-Core server owners, set `Framework = 'rxe-core'` in the config file, otherwise leave it as false.
+* Qb-Core server owners, set `Framework = 'qb-core'` in the config file, otherwise leave it as false.
 
 * To use the SQL features, install the [oxmysql](https://github.com/overextended/oxmysql) resource then open `keybinds.lua` in RPEmotes. If you do not want to use the SQL features, comment out the `oxmysql` region in fxmanifest.lua.
 
@@ -585,6 +610,8 @@ A huge thank you to the following people for their amazing contributions made to
 - Thank you [KayKayMods](https://discord.gg/5bYQVWVaxG) for the custom props
 
 - Thank you to [MonkeyWhisper](https://github.com/MonkeyWhisper) and [Project Sloth](https://github.com/Project-Sloth) for the custom props
+
+- Thank you to [Brummieee](https://forum.cfx.re/u/brummieee_maps/summary) for the custom props
 
 - Thank you [Dark Animations](https://www.gta5-mods.com/users/Darks%20Animations) for the partnership and custom animations. You the goat
 

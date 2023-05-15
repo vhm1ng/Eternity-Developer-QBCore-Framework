@@ -1,5 +1,6 @@
 --- Maintained by TayMcKenzieNZ for the community ---
 --- Leakers and resellers are the absolute scum of the earth ---
+--- RPEMOTES IS AND ALWAYS WILL BE FREE. STOP PAYING FOR LEAKS!!! ---
 
 Config = {
     -- Change the language of the menu here!.
@@ -51,8 +52,10 @@ Config = {
     SharedEmotesEnabled = true,
     -- If you have the SQL imported enable this to turn on keybinding.
     SqlKeybinding = false,
-    -- Used for few framework dependent things. Accepted values: "rxe-core", false
-    Framework = 'rxe-core',
+    -- If you don't like gta notifications, you can disable them here to have messages in the chat.
+    NotificationsAsChatMessage = false,
+    -- Used for few framework dependent things. Accepted values: "qb-core", false
+    Framework = false,
     -- You can disable the Adult Emotes here.
     AdultEmotesDisabled = false,
     -- You can disable the Animal Emotes here.
@@ -60,14 +63,15 @@ Config = {
     -- Used to enable or disable the search feature in the menu.
     Search = true,
     -- You can disable the handsup here / change the keybind. It is currently set to Y
-    HandsupKeybindEnabled = false,
     HandsupKeybind = 'Y', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    HandsupKeybindEnabled = false,
+    HandsupKeybindInCarEnabled = false,
     -- You can disable the fingrer pointing here / change the keybind. It is currently set to B
     PointingEnabled = false,
     PointingKeybindEnabled = true,
     PointingKeybind = 'B', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- If crouching should be enabled.
-    CrouchEnabled = false,
+    CrouchEnabled = true,
     CrouchKeybindEnabled = true, -- If true, crouching will use keybinds.
     CrouchKeybind = 'lcontrol', -- The default crouch keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     CrouchOverride = false, -- If true, you won't enter stealth mode even if the crouch key and the "duck" key are the same.
@@ -75,8 +79,12 @@ Config = {
     CrawlEnabled = true,
     CrawlKeybindEnabled = true, -- If true, crawling will use keybinds.
     CrawlKeybind = 'rcontrol', -- The default crawl keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    -- If turned on, playing an emote will cancel the previous one.
+    CancelPreviousEmote = false,
+    -- If turned off, opening the menu and playing an emote will not be possible while swimming
+    AllowInWater = true,
     -- Check for updates
-	CheckForUpdates = true,
+	CheckForUpdates = false,
 }
 
 Config.KeybindKeys = {
