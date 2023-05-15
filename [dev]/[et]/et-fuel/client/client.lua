@@ -78,7 +78,7 @@ if Config.LeaveEngineRunning then
 				if DoesEntityExist(ped) and not IsPedInAnyVehicle(ped, false) and not IsEntityDead(ped) and not IsPauseMenuActive() then
 					local veh = GetVehiclePedIsIn(ped, true)
 					if engineWasRunning then
-						SetVehicleEngineOn(veh, true, false, true)
+						SetVehicleEngineOn(veh, true, true, true)
 					end
 				end
 			end
