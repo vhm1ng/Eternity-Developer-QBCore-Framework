@@ -1,9 +1,9 @@
 Config = {}
 
 -- NPC Vehicle Lock States
-Config.LockNPCDrivingCars = false -- Lock state for NPC cars being driven by NPCs [true = locked, false = unlocked]
-Config.LockNPCParkedCars = false -- Lock state for NPC parked cars [true = locked, false = unlocked]
-Config.UseKeyfob = true -- you can set this true if you dont need ui
+Config.LockNPCDrivingCars = true -- Lock state for NPC cars being driven by NPCs [true = locked, false = unlocked]
+Config.LockNPCParkedCars = true -- Lock state for NPC parked cars [true = locked, false = unlocked]
+Config.UseKeyfob = false -- you can set this true if you dont need ui
 -- Lockpick Settings
 Config.RemoveLockpickNormal = 0.5 -- Chance to remove lockpick on fail
 Config.RemoveLockpickAdvanced = 0.2 -- Chance to remove advanced lockpick on fail
@@ -12,8 +12,8 @@ Config.LockPickDoorEvent = function() -- This function is called when a player a
 end
 
 -- Carjack Settings
-Config.CarJackEnable = false -- True allows for the ability to car jack peds.
-Config.CarjackingTime = 1000 -- How long it takes to carjack
+Config.CarJackEnable = true -- True allows for the ability to car jack peds.
+Config.CarjackingTime = 7500 -- How long it takes to carjack
 Config.DelayBetweenCarjackings = 10000 -- Time before you can carjack again
 Config.CarjackChance = {
     ['2685387236'] = 0.0, -- melee
@@ -35,7 +35,7 @@ Config.minHotwireTime = 20000 -- Minimum hotwire time in ms
 Config.maxHotwireTime = 40000 --  Maximum hotwire time in ms
 
 -- Police Alert Settings
-Config.AlertCooldown = 2500 -- 2.5 seconds
+Config.AlertCooldown = 10000 -- 10 seconds
 Config.PoliceAlertChance = 0.75 -- Chance of alerting police during the day
 Config.PoliceNightAlertChance = 0.50 -- Chance of alerting police at night (times:01-06)
 
