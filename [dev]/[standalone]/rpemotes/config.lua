@@ -84,7 +84,7 @@ Config = {
     -- If turned off, opening the menu and playing an emote will not be possible while swimming
     AllowInWater = true,
     -- Check for updates
-	CheckForUpdates = true,
+	CheckForUpdates = false,
 }
 
 Config.KeybindKeys = {
