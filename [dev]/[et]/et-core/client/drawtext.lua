@@ -1,60 +1,50 @@
 local function hideText()
-    SendNUIMessage({
-        action = 'HIDE_TEXT',
-    })
+    exports['okokTextUI']:Close()
 end
 
-local function drawText(text, position)
-    if type(position) ~= "string" then position = "left" end
-
-    SendNUIMessage({
-        action = 'DRAW_TEXT',
-        data = {
-            text = text,
-            position = position
-        }
-    })
+local function drawText(text, _)
+    exports['okokTextUI']:Open(text, 'lightred', 'right') -- you can configure the design here with these options https://docs.okokscripts.io/scripts/okoktextui
 end
 
-local function changeText(text, position)
-    if type(position) ~= "string" then position = "left" end
+-- local function changeText(text, position) -- Can't use
+--     if type(position) ~= "string" then position = "left" end
 
-    SendNUIMessage({
-        action = 'CHANGE_TEXT',
-        data = {
-            text = text,
-            position = position
-        }
-    })
-end
+--     SendNUIMessage({
+--         action = 'CHANGE_TEXT',
+--         data = {
+--             text = text,
+--             position = position
+--         }
+--     })
+-- end
 
 local function keyPressed()
-    CreateThread(function() -- Not sure if a thread is needed but why not eh?
-        SendNUIMessage({
+    CreateThread(function() -- Can't use
+        --[[ SendNUIMessage({
             action = 'KEY_PRESSED',
-        })
-        Wait(500)
+        }) ]]
+        --Wait(500)
         hideText()
     end)
 end
 
-RegisterNetEvent('et-core:client:DrawText', function(text, position)
+RegisterNetEvent('qb-core:client:DrawText', function(text, position)
     drawText(text, position)
 end)
 
-RegisterNetEvent('et-core:client:ChangeText', function(text, position)
-    changeText(text, position)
-end)
+-- RegisterNetEvent('qb-core:client:ChangeText', function(text, position) -- Can't use
+--     changeText(text, position)
+-- end)
 
-RegisterNetEvent('et-core:client:HideText', function()
+RegisterNetEvent('qb-core:client:HideText', function()
     hideText()
 end)
 
-RegisterNetEvent('et-core:client:KeyPressed', function()
-    keyPressed()
-end)
+-- RegisterNetEvent('qb-core:client:KeyPressed', function() -- Can't use
+--     keyPressed()
+-- end)
 
 exports('DrawText', drawText)
-exports('ChangeText', changeText)
+--exports('ChangeText', changeText) -- Can't use
 exports('HideText', hideText)
-exports('KeyPressed', keyPressed)
+exports('KeyPressed', keyPressed) -- Can't use
