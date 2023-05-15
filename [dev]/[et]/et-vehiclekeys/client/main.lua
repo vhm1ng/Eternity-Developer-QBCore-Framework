@@ -100,8 +100,6 @@ local function robKeyLoop()
                 --     end
                 -- end
 
-                -- Cái ở trên là tắt khi vào xe nhấn E để phá khoá mà không cần Lockpick
-
                 if Config.CarJackEnable and canCarjack then
                     local playerid = PlayerId()
                     local aiming, target = GetEntityPlayerIsFreeAimingAt(playerid)
