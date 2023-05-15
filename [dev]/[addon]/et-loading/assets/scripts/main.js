@@ -41,13 +41,6 @@ function setup() {
     let day = currentDate.getDate() < 10 ? "0" + currentDate.getDate() : currentDate.getDate();
     $("#date").html(year + "-" + month + "-" + day)
 
-    // Online player count
-    fetch("http://" + Config.ServerIP + "/info.json").then(res => res.json()).then(info => {
-        fetch("http://" + Config.ServerIP + "/players.json").then(res => res.json()).then(players => {
-            $("#clients").html(players.length + "/" + info.vars.sv_maxClients)
-        })
-    })
-
     // Music
     song = new Audio("assets/media/" + Config.Song);
     song.play()
