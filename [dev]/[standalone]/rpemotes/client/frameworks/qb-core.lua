@@ -1,6 +1,6 @@
-if Config.Framework ~= 'rxe-core' then return end
+if Config.Framework ~= 'qb-core' then return end
 
-local framework = 'rxe-core'
+local framework = 'qb-core'
 local state = GetResourceState(framework)
 
 if state == 'missing' or state == "unknown" then
