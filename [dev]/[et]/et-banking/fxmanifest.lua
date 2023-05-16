@@ -35,7 +35,7 @@ files {
     'nui/scripting/jquery-ui.js',
     'nui/style.css',
     'nui/index.html',
-    'nui/et-banking.js',
+    -- 'nui/et-banking.js',
 }
 
 lua54 'yes'
