@@ -17,7 +17,7 @@ ui_page 'nui/index.html'
 
 files {
     'nui/images/logo1.png',
-    'nui/images/logo.png',
+    -- 'nui/images/logo.png',
     'nui/images/visa.png',
     'nui/images/mastercard.png',
     'nui/scripting/jquery-ui.css',
@@ -25,7 +25,7 @@ files {
     'nui/scripting/jquery-ui.js',
     'nui/style.css',
     'nui/index.html',
-    'nui/et-atms.js'
+    -- 'nui/et-atms.js'
 }
 
 lua54 'yes'
