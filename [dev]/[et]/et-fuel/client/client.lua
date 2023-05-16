@@ -384,24 +384,24 @@ end)
 
 -- Target Export
 
-exports['et-target']:AddTargetModel(props, {
-	options = {
-		{
-			type = "client",
-			event = "et-fuel:client:buyCanMenu",
-			icon = "fas fa-burn",
-			label = "Buy Jerry Can",
+-- exports['et-target']:AddTargetModel(props, {
+-- 	options = {
+-- 		{
+-- 			type = "client",
+-- 			event = "et-fuel:client:buyCanMenu",
+-- 			icon = "fas fa-burn",
+-- 			label = "Buy Jerry Can",
 			
-		},
-		{
-			type = "client",
-			event = "et-fuel:client:refuelCanMenu",
-			icon = "fas fa-gas-pump",
-			label = "Refuel Jerry Can",
-			canInteract = function(entity)
-				return isHoldingWeapon(GetHashKey("weapon_petrolcan"))
-			end,
-		},
-	},
-	distance = 2.0
-})
+-- 		},
+-- 		{
+-- 			type = "client",
+-- 			event = "et-fuel:client:refuelCanMenu",
+-- 			icon = "fas fa-gas-pump",
+-- 			label = "Refuel Jerry Can",
+-- 			canInteract = function(entity)
+-- 				return isHoldingWeapon(GetHashKey("weapon_petrolcan"))
+-- 			end,
+-- 		},
+-- 	},
+-- 	distance = 2.0
+-- })
