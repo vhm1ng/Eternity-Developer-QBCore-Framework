@@ -5,7 +5,7 @@ local waitingDelivery = nil
 local activeDelivery = nil
 local deliveryTimeout = 0
 local waitingKeyPress = false
-local dealerCombo
+local dealerCombo = nil
 local drugDeliveryZone
 
 -- Handlers
@@ -240,6 +240,8 @@ function AwaitingInput()
 end
 
 function InitZones()
+    if #Config.Dealers == 0 then return end
+
     if Config.UseTarget then
         for k,v in pairs(Config.Dealers) do
             exports["et-target"]:AddBoxZone("dealer_"..k, vector3(v.coords.x, v.coords.y, v.coords.z), 1.5, 1.5, {
@@ -318,8 +320,9 @@ function InitZones()
                 minZ = v.coords.z - 1,
                 maxZ = v.coords.z + 1,
             })
-            dealerCombo = ComboZone:Create(dealerPoly, {name = "dealerPoly"})
         end
+        dealerCombo = ComboZone:Create(dealerPoly, {name = "dealerPoly"})
+        if not dealerCombo then return end
         dealerCombo:onPlayerInOut(function(isPointInside)
             if isPointInside then
                 if not dealerIsHome then

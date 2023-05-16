@@ -1,5 +1,5 @@
 # et-drugs
-Drugs Script For et-core
+Drugs Script For et-Core
 
 # License
 
