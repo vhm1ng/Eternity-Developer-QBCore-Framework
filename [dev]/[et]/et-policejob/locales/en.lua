@@ -173,6 +173,7 @@ local Translations = {
         message_sent = 'Tin nhắn sẽ được gửi đi',
         civilian_call = 'Cuộc gọi dân sự',
         emergency_call = 'Cuộc gọi 911 mới',
+        fine = 'Tốt Một Người'
     },
     progressbar = {
         blood_clear = 'Làm sạch máu ...',
