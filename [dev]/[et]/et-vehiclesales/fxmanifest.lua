@@ -27,7 +27,7 @@ server_scripts {
 }
 
 files {
-    'html/reset.css',
+    -- 'html/reset.css',
     'html/logo.svg',
     'html/ui.css',
     'html/ui.html',
