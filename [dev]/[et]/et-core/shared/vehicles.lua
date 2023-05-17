@@ -5398,6 +5398,24 @@ QBShared.Vehicles = {
         ['hash'] = `tiptruck2`,
         ['shop'] = 'truck',
     },
+    ['vinfastluxa'] = { -- Vehicle model/spawn name (string)
+        ['name'] = 'VinFast Lux A 2.0', -- Desired name/label for the vehicle (string)
+        ['brand'] = 'VINFAST', -- The brand of vehicle (string)
+        ['model'] = 'vinfast', -- Vehicle model/spawn name (string)
+        ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
+        ['category'] = 'super', -- The category the vehicle will display in at the dealership (string)
+        ['hash'] = `vinfast`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
+        ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
+    },
+    ['i815'] = { -- Vehicle model/spawn name (string)
+        ['name'] = 'BMW I8', -- Desired name/label for the vehicle (string)
+        ['brand'] = 'BMW', -- The brand of vehicle (string)
+        ['model'] = 'i815', -- Vehicle model/spawn name (string)
+        ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
+        ['category'] = 'sports', -- The category the vehicle will display in at the dealership (string)
+        ['hash'] = `i815`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
+        ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
+    },
 }
 
 for _, v in pairs(QBShared.Vehicles) do
