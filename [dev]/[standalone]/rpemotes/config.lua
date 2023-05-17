@@ -51,7 +51,7 @@ Config = {
     -- You can disable the Shared Emotes here.
     SharedEmotesEnabled = true,
     -- If you have the SQL imported enable this to turn on keybinding.
-    SqlKeybinding = false,
+    SqlKeybinding = true,
     -- If you don't like gta notifications, you can disable them here to have messages in the chat.
     NotificationsAsChatMessage = false,
     -- Used for few framework dependent things. Accepted values: "qb-core", false
