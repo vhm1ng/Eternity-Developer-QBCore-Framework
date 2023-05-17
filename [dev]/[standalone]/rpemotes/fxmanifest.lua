@@ -16,12 +16,12 @@ dependencies {
 
 -- Remove the following lines if you would like to use the SQL keybinds. Requires oxmysql.
 
---#region oxmysql
+-- #region oxmysql
 
--- dependency 'oxmysql'
--- server_script '@oxmysql/lib/MySQL.lua'
+dependency 'oxmysql'
+server_script '@oxmysql/lib/MySQL.lua'
 
---#endregion oxmysql
+-- #endregion oxmysql
 
 shared_scripts {
     'config.lua',
