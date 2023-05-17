@@ -1,27 +1,27 @@
 local Translations = {
     error = {
-        to_far_from_door = 'You are to far away from the Doorbell',
-        nobody_home = 'There is nobody home..',
-        nobody_at_door = 'There is nobody at the door...'
+        to_far_from_door = 'Bạn đang ở xa chuông cửa',
+        nobody_home = 'Không có ai ở nhà...',
+        nobody_at_door = 'Không có ai ở cửa ...'
     },
     success = {
-        receive_apart = 'You got a apartment',
-        changed_apart = 'You moved apartments',
+        receive_apart = 'Bạn có một căn hộ rồi',
+        changed_apart = 'Bạn đã di chuyển căn hộ',
     },
     info = {
-        at_the_door = 'Someone is at the door!',
+        at_the_door = 'Ai đó đang ở ngoài cửa!',
     },
     text = {
-        options = '[E] Apartment Options',
-        enter = 'Enter Apartment',
-        ring_doorbell = 'Ring Doorbell',
-        logout = 'Logout Character',
-        change_outfit = 'Change Outfit',
-        open_stash = 'Open Stash',
-        move_here = 'Move Here',
-        open_door = 'Open Door',
-        leave = 'Leave Apartment',
-        close_menu = '⬅ Close Menu',
+        options = '[E] Tùy chọn căn hộ',
+        enter = 'Vào căn hộ',
+        ring_doorbell = 'Nhấn chuông cửa',
+        logout = 'Logout nhân vật',
+        change_outfit = 'Thay đổi Outfits',
+        open_stash = 'Mở Kho',
+        move_here = 'Chuyển căn hộ đến đây',
+        open_door = 'Mở cửa',
+        leave = 'Rời căn hộ',
+        close_menu = '⬅ Đóng',
         tennants = 'Tennants',
     },
 }
