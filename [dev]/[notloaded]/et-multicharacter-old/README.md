@@ -26,19 +26,15 @@ Added support for setting default number of characters per player per Rockstar l
 - [et-core](https://github.com/qbcore-framework/et-core)
 - [et-spawn](https://github.com/qbcore-framework/et-spawn) - Spawn selector
 - [et-apartments](https://github.com/qbcore-framework/et-apartments) - For giving the player a apartment after creating a character.
-- [et-clothing](https://github.com/qbcore-framework/et-clothing) - For the character creation and saving outfits. 
+- [et-clothing](https://github.com/qbcore-framework/et-clothing) - For the character creation and saving outfits.
 - [et-weathersync](https://github.com/qbcore-framework/et-weathersync) - For adjusting the weather while player is creating a character.
 
-Can also be used with my other reskins
-- [et-clothing](https://github.com/ST4LTH/et-clothing)
-
 ## Screenshots
-![Character Selection](https://i.imgur.com/jPxFucu.jpeg)
-![Character Registration](https://i.imgur.com/s2PWtHL.jpeg)
-![Character Deletion](https://i.imgur.com/YBiLgs2.jpeg)
+![Character Selection](https://cdn.discordapp.com/attachments/934470871333105674/1014215694394589294/unknown.png)
+![Character Registration](https://cdn.discordapp.com/attachments/934470871333105674/1014215687700488304/unknown.png)
 
 ## Features
-- Ability to create up to 4 characters and delete any character.
+- Ability to create up to 5 characters and delete any character.
 - Ability to see character information during selection.
 
 ## Installation
@@ -53,5 +49,3 @@ ensure et-apartments
 ensure et-clothing
 ensure et-weathersync
 ```
-"# et-multicharacter" 
-"# et-multicharacter" 
