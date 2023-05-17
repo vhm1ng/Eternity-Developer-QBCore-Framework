@@ -1,0 +1,127 @@
+{
+  "modal": {
+    "save": {
+      "title": "Yeni Kıyafetlerini Satın Al",
+      "description": "Kıyafetlerini Giy"
+    },
+    "exit": {
+      "title": "Kıyafetçiden Çık",
+      "description": "Yaptıkların İptal Olucak"
+    },
+    "accept": "Evet",
+    "decline": "Hayır"
+  },
+  "ped": {
+    "title": "Ped",
+    "model": "Model"
+  },
+  "headBlend": {
+    "title": "Yüz",
+    "shape": {
+      "title": "Surat",
+      "firstOption": "Baba",
+      "secondOption": "Anne",
+      "mix": "Benzerlik"
+    },
+    "skin": {
+      "title": "Cilt Rengi",
+      "firstOption": "Baba",
+      "secondOption": "Anne",
+      "mix": "Benzerlik"
+    }
+  },
+  "faceFeatures": {
+    "title": "Yüz Ayarları",
+    "nose": {
+      "title": "Burun",
+      "width": "Genişlik",
+      "height": "Yüksekik",
+      "size": "Boyut",
+      "boneHeight": "Kemik Yüksekliği",
+      "boneTwist": "Kemik Bükümü",
+      "peakHeight": "Tepe Yüksekliği"
+    },
+    "eyebrows": {
+      "title": "Kaş",
+      "height": "Yükseklik",
+      "depth": "Derinlik"
+    },
+    "cheeks": {
+      "title": "Yanaklar",
+      "boneHeight": "Kemik Yüksekliği",
+      "boneWidth": "Kemik Genişliği",
+      "width": "Genişlik"
+    },
+    "eyesAndMouth": {
+      "title": "Gözler ve Ağız",
+      "eyesOpening": "Göz Açıklığı",
+      "lipsThickness": "Dudak Büyüklüğü"
+    },
+    "jaw": {
+      "title": "Çene",
+      "width": "Genişlik",
+      "size": "Boyut"
+    },
+    "chin": {
+      "title": "Çene",
+      "lowering": "İndirme",
+      "length": "Uzunluk",
+      "size": "Boyut",
+      "hole": "Boşluk"
+    },
+    "neck": {
+      "title": "Boyun",
+      "thickness": "Kalınlık"
+    }
+  },
+  "headOverlays": {
+    "title": "Görünüm",
+    "hair": {
+      "title": "Saç",
+      "style": "Seçenek",
+      "color": "Renk",
+      "highlight": "Üst Renk"
+    },
+    "opacity": "Opaklık",
+    "style": "Seçenek",
+    "color": "Renk",
+    "blemishes": "Kusurlu",
+    "beard": "Sakal",
+    "eyebrows": "Kaş",
+    "ageing": "Yaşlanma",
+    "makeUp": "Makyaj",
+    "blush": "Kızarıklık",
+    "complexion": "Ten",
+    "sunDamage": "Yanık Lekesi",
+    "lipstick": "Ruj",
+    "moleAndFreckles": "Göçük ve Çiller",
+    "chestHair": "Göğüs kılları",
+    "bodyBlemishes": "Vücut Kusurlaru",
+    "eyeColor": "Göz Rengi"
+  },
+  "components": {
+    "title": "Kıyafet",
+    "drawable": "Seçenek",
+    "texture": "Renk",
+    "mask": "Maske",
+    "upperBody": "Kollar",
+    "lowerBody": "Pantolon",
+    "bags": "Çanta ve Paraşütler",
+    "shoes": "Ayakkabı",
+    "scarfAndChains": "Kolye/Kravar",
+    "shirt": "T-shirt",
+    "bodyArmor": "Zırh",
+    "decals": "Çıkartma",
+    "jackets": "Gövde"
+  },
+  "props": {
+    "title": "Aksesuar",
+    "drawable": "Seçenek",
+    "texture": "Renk",
+    "hats": "Şapka/Kask",
+    "glasses": "Gözlük",
+    "ear": "Kulak",
+    "watches": "Saat",
+    "bracelets": "Kolye"
+  }
+}
