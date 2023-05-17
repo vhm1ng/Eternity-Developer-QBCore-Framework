@@ -25,7 +25,7 @@ client_scripts {
 
 server_script 'server/*.lua'
 files{'html/*'}
-file 'stream/gen_w_am_metaldetector.ytyp'
+-- file 'stream/gen_w_am_metaldetector.ytyp'
 ui_page('html/index.html')
 -- data_file 'DLC_ITYP_REQUEST' 'stream/carrot_y.ytyp'
 -- data_file 'DLC_ITYP_REQUEST' 'stream/carrot_y.ytyp'
