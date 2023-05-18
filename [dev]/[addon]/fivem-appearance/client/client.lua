@@ -404,28 +404,28 @@ end)
 
 -- Theads
 
--- CreateThread(function()
--- 	while true do
+--CreateThread(function()
+--    while true do
 
--- 		Wait(0)
+--        Wait(0)
 
--- 		if CurrentAction ~= nil then
+--        if CurrentAction ~= nil then
 
--- 			if IsControlPressed(1, 38) then
--- 				Wait(500)
+        --    if IsControlPressed(1, 38) then
+    --            Wait(500)
 
--- 				if CurrentAction == 'clothingMenu' then
--- 				TriggerEvent("fivem-appearance:clothingShop")
--- 				end
-				
--- 				if CurrentAction == 'barberMenu' then
--- 					TriggerEvent("fivem-appearance:barberMenu")
--- 				end
-
--- 			end
--- 		end
--- 	end
--- end)
+            --    if CurrentAction == 'clothingMenu' then
+    --                TriggerEvent("fivem-appearance:clothingShop")
+        --        end
+           
+    --            if CurrentAction == 'barberMenu' then
+    --                TriggerEvent("fivem-appearance:barberMenu")
+    --            end
+--
+    --        end
+--        end
+--    end
+--end)
 
 CreateThread(function()
 	for k,v in ipairs(Config.BarberShops) do
