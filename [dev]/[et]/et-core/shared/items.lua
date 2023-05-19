@@ -1,6 +1,11 @@
 QBShared = QBShared or {}
 QBShared.Items = {
 	
+	-- Bien So Xe
+	['empty_license_plate'] 		 = {['name'] = 'empty_license_plate', 			['label'] = 'Empty License Plate', 		['weight'] = 150, 		['type'] = 'item', 		['image'] = 'licenseplate.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'An empty license plate.'},
+	['fake_license_plate'] 		 	 = {['name'] = 'fake_license_plate', 			['label'] = 'Fake License Plate', 		['weight'] = 150, 		['type'] = 'item', 		['image'] = 'licenseplate.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A fake license plate.'},
+	['registered_license_plate'] 	 = {['name'] = 'w, 		['label'] = 'Registered License Plate', ['weight'] = 150, 		['type'] = 'item', 		['image'] = 'licenseplate.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A registered license plate ready to use'},
+	
 	-- Steal Sign
 	["stopsign"] = {["name"] = "stopsign", ["label"] = "Stop Sign", ["weight"] = 1, ["type"] = "item", ["image"] = "stopsign.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Stop Sign"},
 	["walkingmansign"] = {["name"] = "walkingmansign", ["label"] = "Pedestrian Sign", ["weight"] = 1, ["type"] = "item", ["image"] = "walkingmansign.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = true, ["combinable"] = nil, ["description"] = "Pedestrian Sign"},
