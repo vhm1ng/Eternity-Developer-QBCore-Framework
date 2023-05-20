@@ -14,13 +14,13 @@ Config.DatabaseTable = 'okokbilling'
 
 Config.OpenMenuKey = 168 -- Default 168 (F7)
 
-Config.OpenMenuCommand = 'invoices' -- Command to open the menu
+Config.OpenMenuCommand = 'hoadon' -- Command to open the menu
 
 Config.UseOKOKNotify = true -- If set to true it will use okokNotify, if set to false it will use the QB notify
 
 Config.InvoiceDistance = 15
 
-Config.AllowPlayersInvoice = true -- if players can create Player to Player invoices
+Config.AllowPlayersInvoice = falase -- if players can create Player to Player invoices
 
 Config.okokRequests = false -- Player to Player invoices only, to avoid abuse
 
@@ -28,7 +28,7 @@ Config.AuthorReceivesAPercentage = true -- When sending a society invoice
 
 Config.AuthorPercentage = 10 -- Percentage that the invoice author receives
 
-Config.VATPercentage = 23
+Config.VATPercentage = 20
 
 Config.SocietyReceivesLessWithVAT = false
 
@@ -44,7 +44,7 @@ Config.DeletePaidInvoicesEvery = 30 -- How often it should delete the paid invoi
 
 Config.UseAutoPay = true
 
-Config.DefaultLimitDate = 7 -- Days for limit pay date
+Config.DefaultLimitDate = 2 -- Days for limit pay date
 
 Config.CheckForUnpaidInvoicesEvery = 30 -- minutes
 
