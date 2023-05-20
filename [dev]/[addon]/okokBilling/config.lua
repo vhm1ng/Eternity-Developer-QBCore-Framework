@@ -32,7 +32,7 @@ Config.VATPercentage = 23
 
 Config.SocietyReceivesLessWithVAT = false
 
-Config.QBManagement = true -- If set to true it will use the qb-management resource, if set to false it will use the okokBanking database tables
+Config.QBManagement = true -- If set to true it will use the et-management resource, if set to false it will use the okokBanking database tables
 
 Config.SocietyHasSocietyPrefix = false -- *Do not touch this if the resource is working correctly* If set to true it'll search for `society_police` (example) when paying a society invoice
 

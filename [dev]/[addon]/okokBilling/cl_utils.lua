@@ -1,4 +1,4 @@
-QBCore = exports["qb-core"]:GetCoreObject()
+QBCore = exports["et-core"]:GetCoreObject()
 
 Citizen.CreateThread(function() 
 	while true do 

@@ -1,4 +1,4 @@
-QBCore = exports["qb-core"]:GetCoreObject()
+QBCore = exports["et-core"]:GetCoreObject()
 
 Webhook = ''
 
@@ -594,7 +594,7 @@ function societyPayInvoice(invoice, cb)
 
 					if(bank >= 0) then
 						local societyMoney = Config.QBManagement and society_bank.amount or society_bank.value
-						exports['qb-management']:AddMoney(Config.SocietyHasSocietyPrefix and 'society_'..string.gsub(invoice.society, "society_", "") or string.gsub(invoice.society, "society_", ""), invoice_value)
+						exports['et-management']:AddMoney(Config.SocietyHasSocietyPrefix and 'society_'..string.gsub(invoice.society, "society_", "") or string.gsub(invoice.society, "society_", ""), invoice_value)
 						
 						MySQLexecute(playerAccountSetQuery()..' = @playerAccount WHERE citizenid = @target', {
 							['@playerAccount'] = receiverAccount,
@@ -648,7 +648,7 @@ function societyPayInvoice(invoice, cb)
 					end
 					
 				end
-				exports['qb-management']:AddMoney(Config.SocietyHasSocietyPrefix and 'society_'..string.gsub(invoice.society, "society_", "") or string.gsub(invoice.society, "society_", ""), value)
+				exports['et-management']:AddMoney(Config.SocietyHasSocietyPrefix and 'society_'..string.gsub(invoice.society, "society_", "") or string.gsub(invoice.society, "society_", ""), value)
 
 				MySQLexecute('UPDATE '..Config.DatabaseTable..' SET status = "paid", paid_date = CURRENT_TIMESTAMP() WHERE ref_id = @ref_id', {
 					['@ref_id'] = ref_id
