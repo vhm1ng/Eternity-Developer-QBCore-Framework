@@ -8,4 +8,4 @@ DisableSeatShuffle = true
 LeaveRunning = true
 
 -- Key to open menu (default: HOME) https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
-DefaultOpen = 'HOME'
+-- DefaultOpen = 'HOME'
