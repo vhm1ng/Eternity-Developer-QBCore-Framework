@@ -264,6 +264,15 @@ Config.MenuItems = {
         }
     },
     [2] = {
+        id = 'openmenu',
+        title = 'Open Control Menu',
+        icon = 'car',
+        type = 'client',
+        event = 'vehcontrol:openExternal',
+        shouldClose = true
+    },
+
+    [3] = {
         id = 'blips',
         title = 'Định vị',
         icon = 'map-marked-alt',
