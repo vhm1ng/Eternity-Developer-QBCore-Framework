@@ -13,7 +13,7 @@ files {
     'carvariations.meta',
     'carcols.meta',
     'handling.meta',
-    'vehiclelayouts.meta',
+    -- 'vehiclelayouts.meta',
 }
 
 data_file 'HANDLING_FILE' 'handling.meta'

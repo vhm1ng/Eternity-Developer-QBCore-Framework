@@ -1,6 +1,5 @@
 local cam = nil
 local charPed = nil
-local loadScreenCheckState = false
 local QBCore = exports['et-core']:GetCoreObject()
 
 -- Main Thread
@@ -35,29 +34,16 @@ local function skyCam(bool)
         FreezeEntityPosition(PlayerPedId(), false)
     end
 end
-
 local function openCharMenu(bool)
     QBCore.Functions.TriggerCallback("et-multicharacter:server:GetNumberOfCharacters", function(result)
-        local translations = {}
-        for k in pairs(Lang.fallback and Lang.fallback.phrases or Lang.phrases) do
-            if k:sub(0, ('ui.'):len()) then
-                translations[k:sub(('ui.'):len() + 1)] = Lang:t(k)
-            end
-        end
         SetNuiFocus(bool, bool)
         SendNUIMessage({
             action = "ui",
-            customNationality = Config.customNationality,
             toggle = bool,
             nChar = result,
             enableDeleteButton = Config.EnableDeleteButton,
-            translations = translations
         })
         skyCam(bool)
-        if not loadScreenCheckState then
-            ShutdownLoadingScreenNui()
-            loadScreenCheckState = true
-        end
     end)
 end
 
@@ -128,18 +114,18 @@ RegisterNUICallback('selectCharacter', function(data, cb)
     cb("ok")
 end)
 
-RegisterNUICallback('cDataPed', function(nData, cb)
-    local cData = nData.cData
+RegisterNUICallback('cDataPed', function(data)
+    local cData = data.cData
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        QBCore.Functions.TriggerCallback('et-multicharacter:server:getSkin', function(model, data)
-            model = model ~= nil and tonumber(model) or false
+        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(data, gender)
+            model = gender
             if model ~= nil then
-                CreateThread(function()
+                Citizen.CreateThread(function()
                     RequestModel(model)
                     while not HasModelLoaded(model) do
-                        Wait(0)
+                        Citizen.Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -148,18 +134,18 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                     PlaceObjectOnGroundProperly(charPed)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
                     data = json.decode(data)
-                    TriggerEvent('et-clothing:client:loadPlayerClothing', data, charPed)
+                    exports['fivem-appearance']:setPedAppearance(charPed, data)
                 end)
             else
-                CreateThread(function()
+                Citizen.CreateThread(function()
                     local randommodels = {
                         "mp_m_freemode_01",
                         "mp_f_freemode_01",
                     }
-                    model = joaat(randommodels[math.random(1, #randommodels)])
+                    local model = GetHashKey(randommodels[math.random(1, #randommodels)])
                     RequestModel(model)
                     while not HasModelLoaded(model) do
-                        Wait(0)
+                        Citizen.Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -169,18 +155,17 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
                 end)
             end
-            cb("ok")
         end, cData.citizenid)
     else
-        CreateThread(function()
+        Citizen.CreateThread(function()
             local randommodels = {
                 "mp_m_freemode_01",
                 "mp_f_freemode_01",
             }
-            local model = joaat(randommodels[math.random(1, #randommodels)])
+            local model = GetHashKey(randommodels[math.random(1, #randommodels)])
             RequestModel(model)
             while not HasModelLoaded(model) do
-                Wait(0)
+                Citizen.Wait(0)
             end
             charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
             SetPedComponentVariation(charPed, 0, 0, 0, 2)
@@ -189,7 +174,6 @@ RegisterNUICallback('cDataPed', function(nData, cb)
             PlaceObjectOnGroundProperly(charPed)
             SetBlockingOfNonTemporaryEvents(charPed, true)
         end)
-        cb("ok")
     end
 end)
 
@@ -211,9 +195,9 @@ end)
 RegisterNUICallback('createNewCharacter', function(data, cb)
     local cData = data
     DoScreenFadeOut(150)
-    if cData.gender == Lang:t("ui.male") then
+    if cData.gender == "Male" then
         cData.gender = 0
-    elseif cData.gender == Lang:t("ui.female") then
+    elseif cData.gender == "Female" then
         cData.gender = 1
     end
     TriggerServerEvent('et-multicharacter:server:createCharacter', cData)
@@ -223,7 +207,6 @@ end)
 
 RegisterNUICallback('removeCharacter', function(data, cb)
     TriggerServerEvent('et-multicharacter:server:deleteCharacter', data.citizenid)
-    DeletePed(charPed)
     TriggerEvent('et-multicharacter:client:chooseChar')
     cb("ok")
 end)

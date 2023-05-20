@@ -15,18 +15,21 @@ client_scripts {
 	'@PolyZone/ComboZone.lua',
 	'init.lua',
 	'client.lua',
+	'events/*.lua'
 }
 
 files {
 	'data/*.lua',
 	'html/*.html',
 	'html/css/*.css',
-	'html/js/*.js'
+	'html/js/*.js',
+	'events/*.lua',
 }
-shared_scripts{
+shared_scripts {
+	'events/*.lua',
 }
 
-server_scripts{
+server_scripts {
 }
 
 lua54 'yes'
