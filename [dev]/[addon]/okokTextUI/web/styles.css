@@ -117,7 +117,7 @@ html, body{
 }
 
 .lightblue {
-	background-color: rgba(240, 240, 240, 0.85);
+	background-color: rgba(20, 20, 20, 0.85);
 	color: #234799;
 	padding: 5px 5px 5px 5px;
 	margin-bottom: 5px;
@@ -137,7 +137,7 @@ html, body{
 }
 
 .lightgreen {
-	background-color: rgba(240, 240, 240, 0.85);
+	background-color: rgba(20, 20, 20, 0.85);
 	color: #20ab4d;
 	padding: 5px 5px 5px 5px;
 	margin-bottom: 5px;
@@ -157,7 +157,7 @@ html, body{
 }
 
 .lightred {
-	background-color: rgba(240, 240, 240, 0.85);
+	background-color: rgba(20, 20, 20, 0.85);
 	color: #dc3545;
 	padding: 5px 5px 5px 5px;
 	margin-bottom: 5px;
@@ -177,7 +177,7 @@ html, body{
 }
 
 .lightgrey {
-	background-color: rgba(240, 240, 240, 0.85);
+	background-color: rgba(20, 20, 20, 0.85);
 	color: #646464;
 	padding: 5px 5px 5px 5px;
 	margin-bottom: 5px;
