@@ -1,5 +1,7 @@
-# et-spawn
+# MB-Spawn
 Spawn Selector for et-Core Framework :eagle:
+
+# I Just Edited The Css, Js | I Am Not The Script Owner !
 
 # License
 
@@ -20,42 +22,19 @@ Spawn Selector for et-Core Framework :eagle:
     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 
-## Dependencies
+# Dependencies
 - [et-core](https://github.com/qbcore-framework/et-core)
 - [et-houses](https://github.com/qbcore-framework/et-houses) - Lets player select the house
 - [et-apartment](https://github.com/qbcore-framework/et-apartment) - Lets player select the apartment
 - [et-garages](https://github.com/qbcore-framework/et-garages) - For house garages
 
-## Screenshots
-![Spawn selector](https://i.imgur.com/nz0mPGe.png)
+# YouTube Previews
+! Spawn selector - https://youtu.be/1PKY5Hb2uyM
 
-## Features
-- Ability to select spawn after selecting the character
+# Features
+- Clean Style !
+- Easy To Config !
+- Drag & Drop !
 
-## Installation
-### Manual
-- Download the script and put it in the `[qb]` directory.
-- Add the following code to your server.cfg/resouces.cfg
-```
-ensure et-core
-ensure et-spawn
-ensure et-apartments
-ensure et-garages
-```
-
-## Configuration
-An example to add spawn option
-```
-QB.Spawns = {
-    ["spawn1"] = { -- Needs to be unique
-        coords = vector4(1.1, -1.1, 1.1, 180.0), -- Coords player will be spawned
-        location = "spawn1", -- Needs to be unique
-        label = "Spawn 1 Name", -- This is the label which will show up in selection menu.
-    },
-    ["spawn2"] = { -- Needs to be unique
-        coords = vector4(1.1, -1.1, 1.1, 180.0), -- Coords player will be spawned
-        location = "spawn2", -- Needs to be unique
-        label = "Spawn 2 Name", -- This is the label which will show up in selection menu.
-    },
-}
-```
+# If You Like This Join My Discord !
+https://discord.gg/gCQx499JYY
