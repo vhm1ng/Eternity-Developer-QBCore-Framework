@@ -350,14 +350,24 @@ Config.Products = {
             type = "item",
             slot = 4,
         },
-        -- [4] = {
-        --     name = "smoketrailred",
-        --     price = 250,
-        --     amount = 50,
-        --     info = {},
-        --     type = "item",
-        --     slot = 4,
-        -- },
+    },
+    ["fishing"] = {
+        [1] = {
+            name = 'fishingrod',
+            price = 100,
+            amount = 100,
+            info = {},
+            type = 'item',
+            slot = 1,
+        },
+        [2] = {
+            name = 'fishingbait',
+            price = 1,
+            amount = 5000,
+            info = {},
+            type = 'item',
+            slot = 2,
+        }
     },
     ["weapons"] = {
         [1] = {
@@ -1050,5 +1060,20 @@ Config.Locations = {
         ["blipscale"] = 0.8,
         ["blipcolor"] = 0,
         ["delivery"] = vector4(-1507.64, 1505.52, 115.29, 262.2)
+    },
+    -- My Fishing Shop
+    ["fishing"] = {
+        ["label"] = "The Lion Fish",
+        ["coords"] = vector4(-1597.9, 5201.15, 4.39, 69.79),
+        ["ped"] = 's_m_m_migrant_01',
+        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE_CLUBHOUSE",
+        ["radius"] = 1.5,
+        ["targetIcon"] = "fas fa-fish-fins",
+        ["targetLabel"] = "Open Fishing Store",
+        ["products"] = Config.Products["fishing"],
+        ["showblip"] = true,
+        ["blipsprite"] = 68,
+        ["blipscale"] = 0.8,
+        ["blipcolor"] = 38
     },
 }
