@@ -541,7 +541,7 @@ end)
 RegisterNetEvent("SignRobbery:CloseMenu", function() exports['et-menu']:closeMenu() end)
 
 --Export For Scrapping The Sign
-exports['et-target']:AddBoxZone("SignRobberyScrap", vector3(2332.43, 3026.89, 48.15), 1.5, 1, {
+exports['et-target']:AddBoxZone2("SignRobberyScrap", vector3(2332.43, 3026.89, 48.15), 1.5, 1, {
 	name = "SignRobberyScrap",
 	heading = 270,
 	debugPoly = false,

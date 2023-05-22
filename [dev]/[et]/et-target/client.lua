@@ -400,7 +400,15 @@ end
 
 exports("AddCircleZone", AddCircleZone)
 
-local function AddBoxZone(name, center, length, width, options, targetoptions)
+function AddBoxZone(name, center, length, width, options, targetoptions)
+	center = type(center) == 'table' and vec3(center.x, center.y, center.z) or center
+	Zones[name] = BoxZone:Create(center, length, width, options)
+	targetoptions.distance = targetoptions.distance or Config.MaxDistance
+	Zones[name].targetoptions = targetoptions
+	return Zones[name]
+end
+
+function AddBoxZone2(name, center, length, width, options, targetoptions)
 	center = type(center) == 'table' and vec3(center.x, center.y, center.z) or center
 	Zones[name] = BoxZone:Create(center, length, width, options)
 	targetoptions.distance = targetoptions.distance or Config.MaxDistance

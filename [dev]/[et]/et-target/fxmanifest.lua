@@ -36,3 +36,5 @@ lua54 'yes'
 use_fxv2_oal 'yes'
 
 dependency 'PolyZone'
+
+export 'AddBoxZone2'
