@@ -15,7 +15,7 @@ client_scripts {
 	'@PolyZone/ComboZone.lua',
 	'init.lua',
 	'client.lua',
-	'events/*.lua'
+	-- 'events/*.lua'
 }
 
 files {
@@ -23,10 +23,10 @@ files {
 	'html/*.html',
 	'html/css/*.css',
 	'html/js/*.js',
-	'events/*.lua',
+	-- 'events/*.lua',
 }
 shared_scripts {
-	'events/*.lua',
+	-- 'events/*.lua',
 }
 
 server_scripts {
