@@ -79,7 +79,7 @@ Config.TimeOutMessages = {
 --------------------------------
 -- [Job]
 
-Config.JobChat = true
+Config.JobChat = false
 
 Config.JobCommand = 'jobc'
 
@@ -88,7 +88,7 @@ Config.JobIcon = 'fas fa-briefcase'
 --------------------------------
 -- [Private Message]
 
-Config.EnablePM = true
+Config.EnablePM = false
 
 Config.PMCommand = 'pm'
 
@@ -99,12 +99,12 @@ Config.PMMessageTitle = "PM"
 --------------------------------
 -- [OOC/Me/Do/Try]
 
-Config.Distance = 20.0
+Config.Distance = 2.0
 
 --------------------------------
 -- [OOC]
 
-Config.EnableOOC = true
+Config.EnableOOC = false
 
 Config.OOCCommand = 'ooc'
 
@@ -117,7 +117,7 @@ Config.OOCMessageWithoutCommand = true -- true: sends OOC message without comman
 --------------------------------
 -- [Me]
 
-Config.EnableMeCommand = true
+Config.EnableMeCommand = false
 
 Config.MeCommand = 'me'
 
@@ -128,7 +128,7 @@ Config.MeMessageTitle = 'ME'
 --------------------------------
 -- [Do]
 
-Config.EnableDoCommand = true
+Config.EnableDoCommand = false
 
 Config.DoCommand = 'do'
 
@@ -139,7 +139,7 @@ Config.DoMessageTitle = 'DO'
 --------------------------------
 -- [Try]
 
-Config.EnableTryCommand = true
+Config.EnableTryCommand = false
 
 Config.TryCommand = 'try'
 
@@ -150,7 +150,7 @@ Config.TryMessageTitle = 'TRY'
 --------------------------------
 -- [Staff]
 
-Config.EnableStaffCommand = true
+Config.EnableStaffCommand = false
 
 Config.StaffCommand = 'staff'
 
@@ -166,7 +166,7 @@ Config.StaffSteamName = false
 
 -- [Staff Only]
 
-Config.EnableStaffOnlyCommand = true
+Config.EnableStaffOnlyCommand = false
 
 Config.StaffOnlyCommand = 'staffo'
 
@@ -178,7 +178,7 @@ Config.StaffOnlySteamName = false
 
 -- [Server Announcement]
 
-Config.EnableServerAnnouncement = true
+Config.EnableServerAnnouncement = false
 
 Config.ServerAnnouncementCommand = 'sa'
 
@@ -189,7 +189,7 @@ Config.AnnouncementMessageTitle = 'SERVER'
 --------------------------------
 -- [Advertisements]
 
-Config.EnableAdvertisementCommand = true
+Config.EnableAdvertisementCommand = false
 
 Config.AdvertisementCommand = 'ad'
 
@@ -202,7 +202,7 @@ Config.AdvertisementIcon = 'fas fa-ad'
 --------------------------------
 -- [Anonymous/Dark]
 
-Config.EnableAnonymousCommand = true
+Config.EnableAnonymousCommand = false
 
 Config.AnonymousCommand = 'anon'
 
@@ -220,7 +220,7 @@ Config.AnonymousIcon = 'fas fa-mask'
 --------------------------------
 -- [Twitch]
 
-Config.EnableTwitchCommand = true
+Config.EnableTwitchCommand = false
 
 Config.TwitchCommand = 'twitch'
 
@@ -234,7 +234,7 @@ Config.TwitchIcon = 'fab fa-twitch'
 --------------------------------
 -- [Youtube]
 
-Config.EnableYoutubeCommand = true
+Config.EnableYoutubeCommand = false
 
 Config.YoutubeCommand = 'youtube'
 
@@ -248,7 +248,7 @@ Config.YoutubeIcon = 'fab fa-youtube'
 --------------------------------
 -- [Twitter]
 
-Config.EnableTwitterCommand = true
+Config.EnableTwitterCommand = false
 
 Config.TwitterCommand = 'twitter'
 
@@ -257,7 +257,7 @@ Config.TwitterIcon = 'fab fa-twitter'
 --------------------------------
 -- [Police]
 
-Config.EnablePoliceCommand = true
+Config.EnablePoliceCommand = false
 
 Config.PoliceCommand = 'police'
 
@@ -268,7 +268,7 @@ Config.PoliceIcon = 'fas fa-bullhorn'
 --------------------------------
 -- [Ambulance]
 
-Config.EnableAmbulanceCommand = true
+Config.EnableAmbulanceCommand = false
 
 Config.AmbulanceCommand = 'ambulance'
 
@@ -279,7 +279,7 @@ Config.AmbulanceIcon = 'fas fa-ambulance'
 --------------------------------
 -- [Auto Message]
 
-Config.EnableAutoMessage = true
+Config.EnableAutoMessage = false
 
 Config.AutoMessageTime = 60 -- (in minutes) will send messages every x minutes 
 
