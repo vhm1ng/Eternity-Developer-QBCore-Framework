@@ -25514,7 +25514,7 @@
 		</Item>
 		<Item type="CHandlingData">
 			<handlingName>POLICE2</handlingName>
-			<fMass value="1600.000000" />
+			<fMass value="1800.000000" />
 			<fInitialDragCoeff value="8.500000" />
 			<fPercentSubmerged value="85.000000" />
 			<vecCentreOfMassOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -25575,7 +25575,7 @@
 		</Item>
 		<Item type="CHandlingData">
 			<handlingName>POLICE3</handlingName>
-			<fMass value="1800.000000" />
+			<fMass value="2200.000000" />
 			<fInitialDragCoeff value="8.500000" />
 			<fPercentSubmerged value="85.000000" />
 			<vecCentreOfMassOffset x="0.000000" y="0.000000" z="-0.050000" />
