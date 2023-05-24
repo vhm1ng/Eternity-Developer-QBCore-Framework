@@ -981,3 +981,13 @@ function QBCore.Functions.GetGroundZCoord(coords)
         return coords
     end
 end
+
+Citizen.CreateThread(function()
+    RegisterFontFile('Oswald')
+    
+    QBCore.FontId = RegisterFontId('Oswald')
+    
+    AddTextEntry('STRING', "<FONT FACE='Oswald'>~a~</FONT>")
+    AddTextEntry('CUSTOM_STRING', "<FONT FACE='Oswald'>~a~</FONT>")
+    
+end)
