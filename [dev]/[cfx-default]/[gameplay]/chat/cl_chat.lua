@@ -229,24 +229,12 @@ local chatHideState = kvpEntry and tonumber(kvpEntry) or CHAT_HIDE_STATES.SHOW_W
 local isFirstHide = true
 
 if not isRDR then
-  if RegisterKeyMapping then
-    RegisterKeyMapping('toggleChat', 'Toggle chat', 'keyboard', 'l')
-  end
+  chatHideState = CHAT_HIDE_STATES.SHOW_WHEN_ACTIVE
 
-  RegisterCommand('toggleChat', function()
-    if chatHideState == CHAT_HIDE_STATES.SHOW_WHEN_ACTIVE then
-      chatHideState = CHAT_HIDE_STATES.ALWAYS_SHOW
-    elseif chatHideState == CHAT_HIDE_STATES.ALWAYS_SHOW then
-      chatHideState = CHAT_HIDE_STATES.ALWAYS_HIDE
-    elseif chatHideState == CHAT_HIDE_STATES.ALWAYS_HIDE then
-      chatHideState = CHAT_HIDE_STATES.SHOW_WHEN_ACTIVE
-    end
+  isFirstHide = false
 
-    isFirstHide = false
-
-    SetResourceKvp('hideState', tostring(chatHideState))
-  end, false)
-end
+  SetResourceKvp('hideState', tostring(chatHideState))
+end 
 
 Citizen.CreateThread(function()
   SetTextChatEnabled(false)
