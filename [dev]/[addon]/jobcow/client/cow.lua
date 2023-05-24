@@ -84,31 +84,31 @@ RegisterNetEvent('lotus-milky:client:Apanhar', function()
                         QBCore.Functions.Notify('Bạn bóp nặng tay quá, nhẹ nhẹ thôiii!', 'error')
                     end
                 end, 1, 10)
-                exports.rprogress:MiniGame({
-                    Difficulty = "Easy",
-                    onComplete = function(success)
-                        if success then  
-                            TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, false)
-                            QBCore.Functions.Progressbar('Apanhar', 'Đang bóp zú...', math.random(10000, 10000), false, true, {
-                                disableMovement = true, --
-                                disableCarMovement = true,
-                                disableMouse = false,
-                                disableCombat = true,
-                            }, {
-                            }, {}, {}, function() 
-                                TriggerServerEvent('lotus-milky:server:Apanhar')
-                                SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
-                                ClearPedTasks(playerPed)
-                                Wait(1000)  
-                            end, function() -- Cancel
-                                ClearPedTasks(playerPed) 
-                                QBCore.Functions.Notify('Đã hủy.') 
-                            end)
-                        else
-                            QBCore.Functions.Notify('Bạn bóp nặng tay quá, nhẹ nhẹ thôiii!', 'error')
-                        end    
-                    end
-                })
+                -- exports.rprogress:MiniGame({
+                --     Difficulty = "Easy",
+                --     onComplete = function(success)
+                --         if success then  
+                --             TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, false)
+                --             QBCore.Functions.Progressbar('Apanhar', 'Đang bóp zú...', math.random(10000, 10000), false, true, {
+                --                 disableMovement = true, --
+                --                 disableCarMovement = true,
+                --                 disableMouse = false,
+                --                 disableCombat = true,
+                --             }, {
+                --             }, {}, {}, function() 
+                --                 TriggerServerEvent('lotus-milky:server:Apanhar')
+                --                 SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+                --                 ClearPedTasks(playerPed)
+                --                 Wait(1000)  
+                --             end, function() -- Cancel
+                --                 ClearPedTasks(playerPed) 
+                --                 QBCore.Functions.Notify('Đã hủy.') 
+                --             end)
+                --         else
+                --             QBCore.Functions.Notify('Bạn bóp nặng tay quá, nhẹ nhẹ thôiii!', 'error')
+                --         end    
+                --     end
+                -- })
             else
                 QBCore.Functions.Notify('Quá xa con bò...', 'error', 3500)
             end
