@@ -60,19 +60,19 @@ end)
 RegisterNetEvent('fivem-appearance:clothingShop', function()
 	exports['et-menu']:openMenu({
         {
-            header = "👚 | Kıyafetçi Mağzası",
+            header = "👚 | Cửa hàng quần áo",
             isMenuHeader = true, -- Set to true to make a nonclickable title
         },
         {
-            header = "Kıyafet Satın Al - $"..Config.Money,
-			txt = "Çok Seçenekli Bir Mağzadan Kıyafet Satın Al",
+            header = "Mua quần áo - $"..Config.Money,
+			txt = "Mua quần áo từ cửa hàng đa lựa chọn",
             params = {
                 event = "fivem-appearance:clothingMenu",
             }
         },
 		{
-            header = "Kıyafet Değiştir",
-			txt = "Gardrobundaki Herhangi Bir Kıyafeti Giy",
+            header = "Thay quần áo",
+			txt = "Mặc bất kỳ trang phục nào trong tủ quần áo của bạn",
             params = {
                 event = "fivem-appearance:pickNewOutfit",
                 args = {
@@ -82,15 +82,15 @@ RegisterNetEvent('fivem-appearance:clothingShop', function()
             }
         },
 		{
-            header = "Kıyafetini Kaydet",
-			txt = "Giydiğin Kıyafeti Gardrobuna Ekle",
+            header = "Lưu trang phục ",
+			txt = "Lưu quần áo bạn đang mặc vào tủ quần áo của bạn",
             params = {
                 event = "fivem-appearance:saveOutfit",
             }
         },
 		{
-            header = "Kıyafet Sil",
-			txt = "Evet... Sevmediğin Birşey Var İse Haklısın",
+            header = "Xóa quần áo",
+			txt = "Vâng... Nếu có điều gì bạn không thích, bạn là nhất",
             params = {
                 event = "fivem-appearance:deleteOutfitMenu",
                 args = {
@@ -109,7 +109,7 @@ RegisterNetEvent('fivem-appearance:pickNewOutfit', function(data)
 	Wait(150)
 	local outfitMenu = {
         {
-            header = '< Geri Dön',
+            header = '< Quay lại',
             params = {
                 event = 'fivem-appearance:clothingShop'
             }
@@ -169,11 +169,11 @@ end)
 
 RegisterNetEvent('fivem-appearance:saveOutfit', function()
 	local keyboard = exports['et-input']:ShowInput({
-        header = "Name your outfit",
-        submitText = "Create Outfit",
+        header = "Tên Outfit của bạn",
+        submitText = "Tạo Outfit",
         inputs = {
             {
-                text = "Outfit Name",
+                text = "Tên Outfit",
                 name = "input",
                 type = "text",
                 isRequired = true
@@ -188,7 +188,7 @@ RegisterNetEvent('fivem-appearance:saveOutfit', function()
 		local pedProps = exports['fivem-appearance']:getPedProps(playerPed)
 		Wait(500)
 		TriggerServerEvent('fivem-appearance:saveOutfit', keyboard.input, pedModel, pedComponents, pedProps)
-		QBCore.Functions.Notify('Outfit '..keyboard.input.. ' has been saved', 'success')
+		QBCore.Functions.Notify('Outfit '..keyboard.input.. ' này đã được lưu', 'success')
 	end
 end)
 
@@ -199,7 +199,7 @@ RegisterNetEvent('fivem-appearance:deleteOutfitMenu', function(data)
 	Wait(150)
 	local DeleteMenu = {
         {
-            header = '< Go Back',
+            header = '< Quay lại',
             params = {
                 event = 'fivem-appearance:clothingShop'
             }
@@ -208,7 +208,7 @@ RegisterNetEvent('fivem-appearance:deleteOutfitMenu', function(data)
     for i=1, #allMyOutfits, 1 do
         DeleteMenu[#DeleteMenu + 1] = {
             header = 'Delete "'..allMyOutfits[i].name..'"',
-			txt = 'You will never be able to get this back!',
+			txt = 'Bạn sẽ không bao giờ có thể lấy lại được!',
             params = {
 				event = 'fivem-appearance:deleteOutfit',
 				args = allMyOutfits[i].id
@@ -221,7 +221,7 @@ end)
 RegisterNetEvent('fivem-appearance:deleteOutfit', function(id)
 	TriggerServerEvent('fivem-appearance:deleteOutfit', id)
 	-- TriggerEvent('fivem-appearance:clothingShop')
-	QBCore.Functions.Notify('Outfit Deleted', 'error')
+	QBCore.Functions.Notify('Outfit đã xóa', 'error')
 end)
 
 RegisterNetEvent("fivem-appearance:purchase", function(bool)
@@ -244,11 +244,11 @@ RegisterNetEvent('fivem-appearance:clothingMenu', function()
 		exports['fivem-appearance']:startPlayerCustomization(function(appearance)
 			if appearance then
 				TriggerServerEvent('fivem-appearance:save', appearance)
-				print('Player Clothing Saved')
+				print('Quần áo đã lưu')
 				Wait(1000) -- Wait is needed to clothing menu dosent overwrite the tattoos
 				TriggerServerEvent('Select:Tattoos')
 			else
-				print('Canceled')
+				print('Đã hủy')
 				Wait(1000) -- Wait is needed to clothing menu dosent overwrite the tattoos
 				TriggerServerEvent('Select:Tattoos')
 			end
@@ -269,11 +269,11 @@ RegisterNetEvent('fivem-appearance:barberMenu', function()
 	exports['fivem-appearance']:startPlayerCustomization(function (appearance)
 		if appearance then
 			TriggerServerEvent('fivem-appearance:save', appearance)
-			print('Player Clothing Saved')
+			print('Quần áo đã lưu')
 			Wait(1000) -- Wait is needed to clothing menu dosent overwrite the tattoos
 			TriggerServerEvent('Select:Tattoos')
 		else
-			print('Canceled')
+			print('Đã hủy')
 			Wait(1000) -- Wait is needed to clothing menu dosent overwrite the tattoos
 			TriggerServerEvent('Select:Tattoos')
 		end
@@ -296,11 +296,11 @@ RegisterNetEvent('et-clothing:client:openMenu', function()  -- Admin Menu clothi
 	exports['fivem-appearance']:startPlayerCustomization(function(appearance)
 		if appearance then
 			TriggerServerEvent('fivem-appearance:save', appearance)
-			print('Player Clothing Saved')
+			print('Quần áo đã lưu')
 			Wait(1000) -- Wait is needed to clothing menu dosent overwrite the tattoos
 			TriggerServerEvent('Select:Tattoos')
 		else
-			print('Canceled')
+			print('Đã hủy')
 			Wait(1000) -- Wait is needed to clothing menu dosent overwrite the tattoos
 			TriggerServerEvent('Select:Tattoos')
 		end
@@ -310,12 +310,12 @@ end)
 RegisterNetEvent('et-clothing:client:openOutfitMenu', function()  -- Name is so that you dont have to replace the event, Used in Appartments, Bossmenu, etc...
 	exports['et-menu']:openMenu({
         {
-            header = "👔 | Outfit Options",
+            header = "👔 | Tùy chọn trang phục",
             isMenuHeader = true, -- Set to true to make a nonclickable title
         },
 		{
-            header = "Change Outfit",
-			txt = "Pick from any of your currently saved outfits",
+            header = "Thay đổi trang phục",
+			txt = "Chọn bất kỳ trang phục nào đã lưu của bạn",
             params = {
                 event = "fivem-appearance:pickNewOutfitApp",
                 args = {
@@ -325,15 +325,15 @@ RegisterNetEvent('et-clothing:client:openOutfitMenu', function()  -- Name is so 
             }
         },
 		{
-            header = "Save New Outfit",
-			txt = "Save a new outfit you can use later on",
+            header = "Lưu Outfit mới",
+			txt = "Lưu một bộ trang phục mới mà bạn có thể sử dụng sau này",
             params = {
                 event = "fivem-appearance:saveOutfit",
             }
         },
 		{
-            header = "Delete Outfit",
-			txt = "Yeah... We didnt like that one either",
+            header = "Xóa trang phục",
+			txt = "Yeah... Chúng tôi cũng không thích cái đó",
             params = {
                 event = "fivem-appearance:deleteOutfitMenu",
                 args = {
@@ -353,7 +353,7 @@ RegisterNetEvent('fivem-appearance:pickNewOutfitApp', function(data)
 	Wait(150)
 	local outfitMenu = {
         {
-            header = '< Go Back',
+            header = '< Quay lại',
             params = {
                 event = 'et-clothing:client:openOutfitMenu'
             }
@@ -383,7 +383,7 @@ RegisterNetEvent('fivem-appearance:deleteOutfitMenuApp', function(data)
 	Wait(150)
 	local DeleteMenu = {
         {
-            header = '< Go Back',
+            header = '< Quay lại',
             params = {
                 event = 'fivem-appearance:clothingShop'
             }
@@ -437,7 +437,7 @@ CreateThread(function()
 		SetBlipAsShortRange(blip, true)
 
 		BeginTextCommandSetBlipName('STRING')
-		AddTextComponentSubstringPlayerName('Barber Shop')
+		AddTextComponentSubstringPlayerName('Quán cắt tóc')
 		EndTextCommandSetBlipName(blip)
 	end
 	for k,v in ipairs(Config.ClothingShops) do
@@ -451,7 +451,7 @@ CreateThread(function()
 			SetBlipAsShortRange(blip, true)
 
 			BeginTextCommandSetBlipName('STRING')
-			AddTextComponentSubstringPlayerName('Clothing Store')
+			AddTextComponentSubstringPlayerName('Cửa hàng quần áo')
 			EndTextCommandSetBlipName(blip)
 		end
 	end

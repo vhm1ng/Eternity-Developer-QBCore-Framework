@@ -8,7 +8,7 @@ exports['et-target']:AddBoxZone2("Clothing", vector3(77.03, -1391.58, 29.38), 5,
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -26,7 +26,7 @@ exports['et-target']:AddBoxZone2("Clothing2", vector3(1692.57, 4821.45, 42.06), 
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -44,7 +44,7 @@ exports['et-target']:AddBoxZone2("Clothing3", vector3(-712.16, -155.33, 37.42), 
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -63,7 +63,7 @@ exports['et-target']:AddBoxZone2("Clothing4", vector3(-1192.72, -772.46, 17.33),
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -82,7 +82,7 @@ exports['et-target']:AddBoxZone2("Clothing5", vector3(425.36, -806.54, 29.49), 7
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -102,7 +102,7 @@ exports['et-target']:AddBoxZone2("Clothing6", vector3(-161.61, -302.69, 39.73), 
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -121,7 +121,7 @@ exports['et-target']:AddBoxZone2("Clothing7", vector3(-820.32, -1074.19, 11.33),
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -140,7 +140,7 @@ exports['et-target']:AddBoxZone2("Clothing8", vector3(-1450.82, -236.75, 49.81),
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -159,7 +159,7 @@ exports['et-target']:AddBoxZone2("Clothing9 ", vector3(4.25, 6512.81, 31.88), 7,
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -177,7 +177,7 @@ exports['et-target']:AddBoxZone2("Clothing10 ", vector3(615.18, 2762.91, 42.09),
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -195,7 +195,7 @@ exports['et-target']:AddBoxZone2("Clothing11 ", vector3(1196.72, 2709.56, 38.22)
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -213,7 +213,7 @@ exports['et-target']:AddBoxZone2("Clothing12", vector3(-3171.52, 1043.93, 20.86)
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -231,7 +231,7 @@ exports['et-target']:AddBoxZone2("Clothing13", vector3(-1100.86, 2710.17, 19.11)
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -249,7 +249,7 @@ exports['et-target']:AddBoxZone2("Clothing13", vector3(-1100.86, 2710.17, 19.11)
 --         {
 --             event = "fivem-appearance:clothingShop",
 --             icon = "bi bi-bag-check-fill",
---             label = "Kıyafet Mağazası",
+--             label = "Cửa hàng quần áo",
 --             job = "all"
 --         },
    
@@ -268,7 +268,7 @@ exports['et-target']:AddBoxZone2("Clothing15", vector3(121.89, -224.35, 54.56), 
         {
             event = "fivem-appearance:clothingShop",
             icon = "bi bi-bag-check-fill",
-            label = "Kıyafet Mağazası",
+            label = "Cửa hàng quần áo",
             job = "all"
         },
    
@@ -276,7 +276,7 @@ exports['et-target']:AddBoxZone2("Clothing15", vector3(121.89, -224.35, 54.56), 
     distance = 2.5,
 })
 
---berber-1-
+--Quán cắt tóc-1-
 
 exports['et-target']:AddBoxZone2("barber1", vector3(-33.19, -152.52, 57.08), 6, 6, {
     name = "Barber1",
@@ -286,7 +286,7 @@ exports['et-target']:AddBoxZone2("barber1", vector3(-33.19, -152.52, 57.08), 6, 
         {
             event = "fivem-appearance:barberMenu",
             icon = "bi bi-scissors",
-            label = "Berber",
+            label = "Quán cắt tóc",
             job = "all"
         },
    
@@ -294,7 +294,7 @@ exports['et-target']:AddBoxZone2("barber1", vector3(-33.19, -152.52, 57.08), 6, 
     distance = 2.5,
 })
 
---berber-2-
+--Quán cắt tóc-2-
 
 exports['et-target']:AddBoxZone2("barber2", vector3(-278.27, 6228.74, 31.7), 6, 6, {
     name = "Barber2",
@@ -304,7 +304,7 @@ exports['et-target']:AddBoxZone2("barber2", vector3(-278.27, 6228.74, 31.7), 6, 
         {
             event = "fivem-appearance:barberMenu",
             icon = "bi bi-scissors",
-            label = "Berber",
+            label = "Quán cắt tóc",
             job = "all"
         },
    
@@ -312,7 +312,7 @@ exports['et-target']:AddBoxZone2("barber2", vector3(-278.27, 6228.74, 31.7), 6, 
     distance = 2.5,
 })
 
---berber-3-
+--Quán cắt tóc-3-
 
 exports['et-target']:AddBoxZone2("barber3", vector3(-814.3, -183.79, 37.56), 6, 6, {
     name = "Barber3",
@@ -322,7 +322,7 @@ exports['et-target']:AddBoxZone2("barber3", vector3(-814.3, -183.79, 37.56), 6, 
         {
             event = "fivem-appearance:barberMenu",
             icon = "bi bi-scissors",
-            label = "Berber",
+            label = "Quán cắt tóc",
             job = "all"
         },
    
@@ -330,7 +330,7 @@ exports['et-target']:AddBoxZone2("barber3", vector3(-814.3, -183.79, 37.56), 6, 
     distance = 2.5,
 })
 
---berber-4-
+--Quán cắt tóc-4-
 
 exports['et-target']:AddBoxZone2("barber4", vector3(136.74, -1708.38, 29.29), 6, 6, {
     name = "Barber4",
@@ -340,7 +340,7 @@ exports['et-target']:AddBoxZone2("barber4", vector3(136.74, -1708.38, 29.29), 6,
         {
             event = "fivem-appearance:barberMenu",
             icon = "bi bi-scissors",
-            label = "Berber",
+            label = "Quán cắt tóc",
             job = "all"
         },
    
@@ -348,7 +348,7 @@ exports['et-target']:AddBoxZone2("barber4", vector3(136.74, -1708.38, 29.29), 6,
     distance = 2.5,
 })
 
---berber-5-
+--Quán cắt tóc-5-
 
 exports['et-target']:AddBoxZone2("barber5", vector3(136.74, -1708.38, 29.29), 6, 6, {
     name = "Barber5",
@@ -358,7 +358,7 @@ exports['et-target']:AddBoxZone2("barber5", vector3(136.74, -1708.38, 29.29), 6,
         {
             event = "fivem-appearance:barberMenu",
             icon = "bi bi-scissors",
-            label = "Berber",
+            label = "Quán cắt tóc",
             job = "all"
         },
    
@@ -366,7 +366,7 @@ exports['et-target']:AddBoxZone2("barber5", vector3(136.74, -1708.38, 29.29), 6,
     distance = 2.5,
 })
 
---berber-6-
+--Quán cắt tóc-6-
 
 exports['et-target']:AddBoxZone2("barber6", vector3(-1282.89, -1117.61, 6.99), 6, 6, {
     name = "Barber6",
@@ -376,7 +376,7 @@ exports['et-target']:AddBoxZone2("barber6", vector3(-1282.89, -1117.61, 6.99), 6
         {
             event = "fivem-appearance:barberMenu",
             icon = "bi bi-scissors",
-            label = "Berber",
+            label = "Quán cắt tóc",
             job = "all"
         },
    
@@ -384,7 +384,7 @@ exports['et-target']:AddBoxZone2("barber6", vector3(-1282.89, -1117.61, 6.99), 6
     distance = 2.5,
 })
 
---berber-7-
+--Quán cắt tóc-7-
 
 exports['et-target']:AddBoxZone2("barber7", vector3(1931.5, 3729.7, 32.85), 6, 6, {
     name = "Barber7",
@@ -394,7 +394,7 @@ exports['et-target']:AddBoxZone2("barber7", vector3(1931.5, 3729.7, 32.85), 6, 6
         {
             event = "fivem-appearance:barberMenu",
             icon = "bi bi-scissors",
-            label = "Berber",
+            label = "Quán cắt tóc",
             job = "all"
         },
    
@@ -402,7 +402,7 @@ exports['et-target']:AddBoxZone2("barber7", vector3(1931.5, 3729.7, 32.85), 6, 6
     distance = 2.5,
 })
 
---berber-8-
+--Quán cắt tóc-8-
 
 exports['et-target']:AddBoxZone2("barber8", vector3(1212.81, -472.9, 66.2), 6, 6, {
     name = "Barber8",
@@ -412,7 +412,7 @@ exports['et-target']:AddBoxZone2("barber8", vector3(1212.81, -472.9, 66.2), 6, 6
         {
             event = "fivem-appearance:barberMenu",
             icon = "bi bi-scissors",
-            label = "Berber",
+            label = "Quán cắt tóc",
             job = "all"
         },
    
