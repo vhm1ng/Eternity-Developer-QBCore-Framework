@@ -5418,6 +5418,16 @@ QBShared.Vehicles = {
         ['hash'] = `i815`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
         ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     },
+    ['police'] = { -- Vehicle model/spawn name (string)
+        ['name'] = 'Police 1', -- Desired name/label for the vehicle (string)
+        ['brand'] = 'police', -- The brand of vehicle (string)
+        ['model'] = 'police', -- Vehicle model/spawn name (string)
+        ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
+        ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
+        ['categoryLabel'] = 'XENHANUOC',
+        ['hash'] = `police`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
+        ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
+    },
     ['police2'] = { -- Vehicle model/spawn name (string)
         ['name'] = 'Police 2', -- Desired name/label for the vehicle (string)
         ['brand'] = 'police', -- The brand of vehicle (string)
@@ -5426,6 +5436,16 @@ QBShared.Vehicles = {
         ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
         ['categoryLabel'] = 'XENHANUOC',
         ['hash'] = `police2`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
+        ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
+    },
+    ['police3'] = { -- Vehicle model/spawn name (string)
+        ['name'] = 'Police 3', -- Desired name/label for the vehicle (string)
+        ['brand'] = 'police', -- The brand of vehicle (string)
+        ['model'] = 'police3', -- Vehicle model/spawn name (string)
+        ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
+        ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
+        ['categoryLabel'] = 'XENHANUOC',
+        ['hash'] = `police3`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
         ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     },
 }
