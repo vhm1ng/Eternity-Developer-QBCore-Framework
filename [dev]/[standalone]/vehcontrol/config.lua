@@ -5,7 +5,4 @@ UseCommands = true
 DisableSeatShuffle = true
 
 -- Keep vehicle running when exit driver with long F key [ ture/false ]
-LeaveRunning = true
-
--- Key to open menu (default: HOME) https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
--- DefaultOpen = 'HOME'
+LeaveRunning = false

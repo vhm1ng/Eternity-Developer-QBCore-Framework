@@ -38,8 +38,6 @@ RegisterCommand("vehcontrol", function(source, args, rawCommand)
 	end
 end, false)
 
-RegisterKeyMapping('vehcontrol', 'Open Vehicle Menu', 'keyboard', DefaultOpen)
-
 function openExternal()
 	if IsPedInAnyVehicle(PlayerPedId(), false) then
 		openVehControl()
