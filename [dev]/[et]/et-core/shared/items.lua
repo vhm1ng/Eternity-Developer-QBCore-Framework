@@ -1,7 +1,14 @@
 QBShared = QBShared or {}
 QBShared.Items = {
 	
--- Thue Xe
+-- HIHI
+["khong1"]				 = {["name"] = "khong1", 					["label"] = "KHÔNG", 			["weight"] = 10000, 		["type"] = "item", 		["image"] = "vhming1.png", 		["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false, 	["combinable"] = nil, 	["description"] = "KHONG CO GI DAU LEW LEWW"},
+["khong2"]				 = {["name"] = "khong2", 					["label"] = "CÓ", 			["weight"] = 10000, 		["type"] = "item", 		["image"] = "vhming2.png", 		["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false, 	["combinable"] = nil, 	["description"] = "KHONG CO GI DAU LEW LEWW"},
+["khong3"]				 = {["name"] = "khong3", 					["label"] = "GÌ", 			["weight"] = 10000, 		["type"] = "item", 		["image"] = "vhming3.png", 		["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false, 	["combinable"] = nil, 	["description"] = "KHONG CO GI DAU LEW LEWW"},
+["khong4"]				 = {["name"] = "khong4", 					["label"] = "DOU", 			["weight"] = 10000, 		["type"] = "item", 		["image"] = "vhming4.png", 		["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false, 	["combinable"] = nil, 	["description"] = "KHONG CO GI DAU LEW LEWW"},
+["khong5"]				 = {["name"] = "khong5", 					["label"] = "LEWLEW", 			["weight"] = 10000, 		["type"] = "item", 		["image"] = "vhming5.png", 		["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false, 	["combinable"] = nil, 	["description"] = "KHONG CO GI DAU LEW LEWW"},
+
+	-- Thue Xe
 ["rentalpapers"]				 = {["name"] = "rentalpapers", 					["label"] = "Rental Papers", 			["weight"] = 50, 		["type"] = "item", 		["image"] = "rentalpapers.png", 		["unique"] = true, 		["useable"] = false, 	["shouldClose"] = false, 	["combinable"] = nil, 	["description"] = "This car was taken out through car rental."},
 
 	-- jim-mining stuff
