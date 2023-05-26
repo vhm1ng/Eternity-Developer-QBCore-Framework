@@ -79,6 +79,7 @@ QBShared.StarterItems = {
     ['phone'] = { amount = 1, item = 'phone' },
     ['id_card'] = { amount = 1, item = 'id_card' },
     ['lockpick'] = { amount = 5 item = 'lockpick' },
+    ['sandwich'] = { amount = 10 item = 'sandwich' },
     
 
 }
