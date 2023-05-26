@@ -1,8 +1,8 @@
 local QBCore = exports['et-core']:GetCoreObject()
 
 local Webhooks = {
-    ['default'] = '',
-    ['testwebhook'] = '',
+    ['default'] = 'https://discord.com/api/webhooks/1111651068871454730/Km1Cn33-gzyihOqfTExBKyziDJs21oGgUW79AQkd_cLMh_nn40LeypOpxR51WOtkUq31',
+    ['testwebhook'] = 'https://discord.com/api/webhooks/1111651068871454730/Km1Cn33-gzyihOqfTExBKyziDJs21oGgUW79AQkd_cLMh_nn40LeypOpxR51WOtkUq31',
     ['playermoney'] = '',
     ['playerinventory'] = '',
     ['robbing'] = '',
@@ -19,8 +19,8 @@ local Webhooks = {
     ['storerobbery'] = '',
     ['bankrobbery'] = '',
     ['powerplants'] = '',
-    ['death'] = '',
-    ['joinleave'] = '',
+    ['death'] = 'https://discord.com/api/webhooks/1111651366125961226/4jgauMnUthqXWJ3u1dBnWwtP4GDyUNNq3jUB1RXWtF2QOEz5xn5miLK90dxLvnZ0LE9W',
+    ['joinleave'] = 'https://discord.com/api/webhooks/1111651893433864283/yqKXJMtaAHK5h8N9-NlEsj3JLb2gfifRWvIiFITV5cY8xLjJjFM-hMc6amhMkCfTC8pn',
     ['ooc'] = '',
     ['report'] = '',
     ['me'] = '',
