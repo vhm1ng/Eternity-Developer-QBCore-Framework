@@ -213,7 +213,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 10,
-        }
+        },
         [11] = {
             name = "fishingbait",
             price = 50,
@@ -221,7 +221,7 @@ Config.Products = {
             info = {},
             type = "item",
             slot = 10,
-        }
+        },
     },
     ["weedshop"] = {
         [1] = {
