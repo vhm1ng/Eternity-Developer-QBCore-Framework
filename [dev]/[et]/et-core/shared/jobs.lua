@@ -11,64 +11,64 @@ QBShared.Jobs = {
 		grades = {
             ['0'] = {
                 name = 'Freelancer',
-                payment = 10
+                payment = 0
             },
         },
 	},
 	['police'] = {
-		label = 'Law Enforcement',
+		label = 'Cảnh Sát ETERNITY',
         type = "leo",
-		defaultDuty = true,
+		defaultDuty = false,
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'Học viên',
+                payment = 1300
             },
 			['1'] = {
-                name = 'Officer',
-                payment = 75
+                name = 'Cảnh sát',
+                payment = 1500
             },
 			['2'] = {
-                name = 'Sergeant',
-                payment = 100
+                name = 'Quản lý',
+                payment = 1700
             },
 			['3'] = {
-                name = 'Lieutenant',
-                payment = 125
+                name = 'Thanh tra',
+                payment = 1900
             },
 			['4'] = {
-                name = 'Chief',
+                name = 'Giám đốc',
 				isboss = true,
-                payment = 150
+                payment = 2100
             },
         },
 	},
 	['ambulance'] = {
-		label = 'EMS',
-		defaultDuty = true,
+		label = 'BỆNH VIỆN ETERNITY',
+		defaultDuty = false,
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'Thực tập',
+                payment = 1300
             },
 			['1'] = {
-                name = 'Paramedic',
-                payment = 75
+                name = 'Bác sĩ',
+                payment = 1500
             },
 			['2'] = {
-                name = 'Doctor',
-                payment = 100
+                name = 'Quản lý',
+                payment = 1700
             },
 			['3'] = {
-                name = 'Surgeon',
-                payment = 125
+                name = 'Trưởng khoa',
+                payment = 1900
             },
 			['4'] = {
-                name = 'Chief',
+                name = 'Viện trưởng',
 				isboss = true,
-                payment = 150
+                payment = 2100
             },
         },
 	},
