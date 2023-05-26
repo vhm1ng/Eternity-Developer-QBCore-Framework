@@ -119,7 +119,7 @@ CreateThread(function()
     SetBlipAsShortRange(blip, true)
     SetBlipColour(blip, 3)
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentSubstringPlayerName("Fish Sale")
+    AddTextComponentSubstringPlayerName("Chợ bán cá")
     EndTextCommandSetBlipName(blip)
 
     -- Load ped model
