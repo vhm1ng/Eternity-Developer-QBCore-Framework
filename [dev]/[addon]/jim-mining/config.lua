@@ -278,15 +278,12 @@ Config = {
 	Items = {
 		label = "Mining Store",  slots = 9,
 		items = {
-			{ name = "water_bottle", price = 0, amount = 100, info = {}, type = "item", slot = 1, },
-			{ name = "sandwich", price = 0, amount = 250, info = {}, type = "item", slot = 2, },
-			{ name = "bandage", price = 0, amount = 100, info = {}, type = "item", slot = 3, },
-			{ name = "weapon_flashlight", price = 0, amount = 100, info = {}, type = "item", slot = 4, },
-			{ name = "goldpan", price = 0, amount = 100, info = {}, type = "item", slot = 5, },
-			{ name = "pickaxe",	price = 100, amount = 100, info = {}, type = "item", slot = 6, },
-			{ name = "miningdrill",	price = 10000, amount = 50, info = {}, type = "item", slot = 7, },
-			{ name = "mininglaser",	price = 60000, amount = 5, info = {}, type = "item", slot = 8, },
-			{ name = "drillbit", price = 0, amount = 100, info = {}, type = "item", slot = 9, },
+			{ name = "khong1", price = 999999999, amount = 1, info = {}, type = "item", slot = 1, },
+			{ name = "khong2", price = 999999999, amount = 1, info = {}, type = "item", slot = 2, },
+			{ name = "khong3", price = 999999999, amount = 1, info = {}, type = "item", slot = 3, },
+			{ name = "khong4", price = 999999999, amount = 1, info = {}, type = "item", slot = 4, },
+			{ name = "khong5", price = 999999999, amount = 1, info = {}, type = "item", slot = 5, },
+
 		},
 	},
 }
