@@ -1,127 +1,127 @@
 {
   "modal": {
     "save": {
-      "title": "Yeni Kıyafetlerini Satın Al",
-      "description": "Kıyafetlerini Giy"
+      "title": "Mua quần áo mới của bạn",
+      "description": "mặc quần áo của bạn vào"
     },
     "exit": {
-      "title": "Kıyafetçiden Çık",
-      "description": "Yaptıkların İptal Olucak"
+      "title": "Thoát khỏi Cửa hàng quần áo",
+      "description": "Những gì bạn làm sẽ bị hủy bỏ"
     },
-    "accept": "Evet",
-    "decline": "Hayır"
+    "accept": "Lưu Lại",
+    "decline": "Hủy Bỏ"
   },
   "ped": {
-    "title": "Ped",
+    "title": "Nhân vật",
     "model": "Model"
   },
   "headBlend": {
-    "title": "Yüz",
+    "title": "Huyết Thống",
     "shape": {
-      "title": "Surat",
-      "firstOption": "Baba",
-      "secondOption": "Anne",
-      "mix": "Benzerlik"
+      "title": "Gia Đình",
+      "firstOption": "Bố",
+      "secondOption": "mẹ",
+      "mix": "Di Truyền"
     },
     "skin": {
-      "title": "Cilt Rengi",
-      "firstOption": "Baba",
-      "secondOption": "Anne",
-      "mix": "Benzerlik"
+      "title": "Màu Da",
+      "firstOption": "Bố",
+      "secondOption": "Mẹ",
+      "mix": "Di Truyền"
     }
   },
   "faceFeatures": {
-    "title": "Yüz Ayarları",
+    "title": "Khuôn Mật",
     "nose": {
-      "title": "Burun",
-      "width": "Genişlik",
-      "height": "Yüksekik",
-      "size": "Boyut",
-      "boneHeight": "Kemik Yüksekliği",
-      "boneTwist": "Kemik Bükümü",
-      "peakHeight": "Tepe Yüksekliği"
+      "title": "Mũi",
+      "width": "Chiều rộng",
+      "height": "Chiều cao",
+      "size": "Kích thước",
+      "boneHeight": "Chiều cao xương",
+      "boneTwist": "Xoắn xương",
+      "peakHeight": "Chiều cao đỉnh"
     },
     "eyebrows": {
-      "title": "Kaş",
-      "height": "Yükseklik",
-      "depth": "Derinlik"
+      "title": "Lông mày",
+      "height": "Chiều cao",
+      "depth": "Chiều sâu"
     },
     "cheeks": {
-      "title": "Yanaklar",
-      "boneHeight": "Kemik Yüksekliği",
-      "boneWidth": "Kemik Genişliği",
-      "width": "Genişlik"
+      "title": "Má",
+      "boneHeight": "Chiều cao xương",
+      "boneWidth": "Chiều rộng xương",
+      "width": "Chiều rộng"
     },
     "eyesAndMouth": {
-      "title": "Gözler ve Ağız",
-      "eyesOpening": "Göz Açıklığı",
-      "lipsThickness": "Dudak Büyüklüğü"
+      "title": "Mắt và Miệng",
+      "eyesOpening": "Kích Thước mắt",
+      "lipsThickness": "Kích thước môi"
     },
     "jaw": {
-      "title": "Çene",
-      "width": "Genişlik",
-      "size": "Boyut"
+      "title": "Cái cằm",
+      "width": "Chiều rộng",
+      "size": "Kích thước"
     },
     "chin": {
-      "title": "Çene",
-      "lowering": "İndirme",
-      "length": "Uzunluk",
-      "size": "Boyut",
-      "hole": "Boşluk"
+      "title": "Cái Cầm",
+      "lowering": "Chiều cao",
+      "length": "Chiều dài",
+      "size": "Kích thước",
+      "hole": "Cầm chẻ"
     },
     "neck": {
-      "title": "Boyun",
-      "thickness": "Kalınlık"
+      "title": "Cổ",
+      "thickness": "Độ Dày"
     }
   },
   "headOverlays": {
-    "title": "Görünüm",
+    "title": "Vẻ bề ngoài",
     "hair": {
-      "title": "Saç",
-      "style": "Seçenek",
-      "color": "Renk",
-      "highlight": "Üst Renk"
+      "title": "Tóc",
+      "style": "Kiểu",
+      "color": "Màu",
+      "highlight": "Mix Màu"
     },
-    "opacity": "Opaklık",
-    "style": "Seçenek",
-    "color": "Renk",
-    "blemishes": "Kusurlu",
-    "beard": "Sakal",
-    "eyebrows": "Kaş",
-    "ageing": "Yaşlanma",
-    "makeUp": "Makyaj",
-    "blush": "Kızarıklık",
-    "complexion": "Ten",
-    "sunDamage": "Yanık Lekesi",
-    "lipstick": "Ruj",
-    "moleAndFreckles": "Göçük ve Çiller",
-    "chestHair": "Göğüs kılları",
-    "bodyBlemishes": "Vücut Kusurlaru",
-    "eyeColor": "Göz Rengi"
+    "opacity": "Độ mờ",
+    "style": "Kiểu",
+    "color": "Màu",
+    "blemishes": "Nhược điểm",
+    "beard": "Râu",
+    "eyebrows": "Lông mày",
+    "ageing": "Sự lão hóa",
+    "makeUp": "Trang Điểm",
+    "blush": "Má Hồng",
+    "complexion": "Da",
+    "sunDamage": "Khuyết Điểm",
+    "lipstick": "Son môi",
+    "moleAndFreckles": "Nốt ruồi và tàn nhang",
+    "chestHair": "Lông ngực",
+    "bodyBlemishes": "Khiếm khuyết cơ thể",
+    "eyeColor": "Màu mắt"
   },
   "components": {
-    "title": "Kıyafet",
-    "drawable": "Seçenek",
-    "texture": "Renk",
-    "mask": "Maske",
-    "upperBody": "Kollar",
-    "lowerBody": "Pantolon",
-    "bags": "Çanta ve Paraşütler",
-    "shoes": "Ayakkabı",
-    "scarfAndChains": "Kolye/Kravar",
-    "shirt": "T-shirt",
-    "bodyArmor": "Zırh",
-    "decals": "Çıkartma",
-    "jackets": "Gövde"
+    "title": "Quần áo",
+    "drawable": "Kiểu",
+    "texture": "Màu sắc",
+    "mask": "Mặt nạ",
+    "upperBody": "Cánh tay",
+    "lowerBody": "Quần",
+    "bags": "Túi và Dù",
+    "shoes": "Giày",
+    "scarfAndChains": "Phụ Kiện",
+    "shirt": "Áo phông",
+    "bodyArmor": "Áo giáp",
+    "decals": "nhãn dán",
+    "jackets": "Áo Khoác"
   },
   "props": {
-    "title": "Aksesuar",
-    "drawable": "Seçenek",
-    "texture": "Renk",
-    "hats": "Şapka/Kask",
-    "glasses": "Gözlük",
-    "ear": "Kulak",
-    "watches": "Saat",
-    "bracelets": "Kolye"
+    "title": "Phụ kiện",
+    "drawable": "Kiểu",
+    "texture": "Màu sắc",
+    "hats": "Mũ/Mũ bảo hiểm",
+    "glasses": "Kính",
+    "ear": "Khuyên Tai",
+    "watches": "Đồng Hồ",
+    "bracelets": "Vòng Tay"
   }
 }
