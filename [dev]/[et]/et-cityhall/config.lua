@@ -18,16 +18,6 @@ Config.Cityhalls = {
                 label = "Căn Cước Công Dân",
                 cost = 50,
             },
-            ["driver_license"] = {
-                label = "Giấy Phép Lái Xe",
-                cost = 50,
-                metadata = "driver"
-            },
-            ["weaponlicense"] = {
-                label = "Giấy Phép Vũ Khí",
-                cost = 50,
-                metadata = "weapon"
-            },
         }
     },
 }
