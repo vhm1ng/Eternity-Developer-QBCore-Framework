@@ -77,41 +77,6 @@ Config.ClothingShops = {
 		coords = vector3(-1108.4, 2708.9, 18.1),
 		MarkerSize   = {x = 7.0, y = 7.0, z = 1.0}
 	},
-	[15] = {
-		blip = true,
-		coords = vector3(300.60162353516, -597.76068115234, 42.18409576416),
-		MarkerSize   = {x = 3.0, y = 5.0, z = 0.0}
-	},
-	[16] = {
-		blip = true,
-		coords = vector3(-1622.6466064453, -1034.0192871094, 13.145475387573),
-		MarkerSize   = {x = 2.5, y = 2.0, z = 0.0}
-	},
-	[17] = {
-		blip = true,
-		coords = vector3(1861.1047363281, 3689.2331542969, 34.276859283447),
-		MarkerSize   = {x = 2.0, y = 2.0, z = 0.0}
-	},
-	[18] = {
-		blip = true,
-		coords = vector3(1834.5977783203, 3690.5405273438, 34.270645141602),
-		MarkerSize   = {x = 2.0, y = 2.0, z = 0.0}
-	},
-	[19] = {
-		blip = true,
-		coords = vector3(1742.1407470703, 2481.5856933594, 45.740657806396),
-		MarkerSize   = {x = 4.0, y = 2.0, z = 0.0}
-	},
-	[20] = {
-		blip = true,
-		coords = vector3(516.8916015625, 4823.5693359375, -66.18879699707),
-		MarkerSize   = {x = 2.0, y = 2.0, z = 0.0}
-	},
-	[21] = {
-		blip = true,
-		coords = vector3(105.7079, -1302.983, 28.793018),
-		MarkerSize   = {x = 2.0, y = 2.0, z = 0.0}
-	},	
 }
 
 Config.BarberShops = {
