@@ -5403,8 +5403,8 @@ QBShared.Vehicles = {
         ['brand'] = 'VINFAST', -- The brand of vehicle (string)
         ['model'] = 'vinfastluxa', -- Vehicle model/spawn name (string)
         ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
-        ['category'] = 'xemoding', -- The category the vehicle will display in at the dealership (string)
-        ['categoryLabel'] = 'XEMOD',
+        ['category'] = 'xemodinging', -- The category the vehicle will display in at the dealership (string)
+        ['categoryLabel'] = 'xemoding',
         ['hash'] = `vinfastluxa`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
         ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     },
@@ -5413,39 +5413,49 @@ QBShared.Vehicles = {
         ['brand'] = 'BMW', -- The brand of vehicle (string)
         ['model'] = 'i815', -- Vehicle model/spawn name (string)
         ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
-        ['category'] = 'xemoding', -- The category the vehicle will display in at the dealership (string)
-        ['categoryLabel'] = 'XEMOD',
+        ['category'] = 'xemodinging', -- The category the vehicle will display in at the dealership (string)
+        ['categoryLabel'] = 'xemoding',
         ['hash'] = `i815`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
         ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     },
     ['police'] = { -- Vehicle model/spawn name (string)
         ['name'] = 'Police 1', -- Desired name/label for the vehicle (string)
-        ['brand'] = 'police', -- The brand of vehicle (string)
+        ['brand'] = 'Police ETERNITY', -- The brand of vehicle (string)
         ['model'] = 'police', -- Vehicle model/spawn name (string)
         ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
         ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
-        ['categoryLabel'] = 'XENHANUOC',
+        ['categoryLabel'] = 'xenhanuoc',
         ['hash'] = `police`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
         ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     },
     ['police2'] = { -- Vehicle model/spawn name (string)
         ['name'] = 'Police 2', -- Desired name/label for the vehicle (string)
-        ['brand'] = 'police', -- The brand of vehicle (string)
+        ['brand'] = 'Police ETERNITY', -- The brand of vehicle (string)
         ['model'] = 'police2', -- Vehicle model/spawn name (string)
         ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
         ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
-        ['categoryLabel'] = 'XENHANUOC',
+        ['categoryLabel'] = 'xenhanuoc',
         ['hash'] = `police2`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
         ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     },
     ['police3'] = { -- Vehicle model/spawn name (string)
         ['name'] = 'Police 3', -- Desired name/label for the vehicle (string)
-        ['brand'] = 'police', -- The brand of vehicle (string)
+        ['brand'] = 'Police ETERNITY', -- The brand of vehicle (string)
         ['model'] = 'police3', -- Vehicle model/spawn name (string)
         ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
         ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
-        ['categoryLabel'] = 'XENHANUOC',
+        ['categoryLabel'] = 'xenhanuoc',
         ['hash'] = `police3`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
+        ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
+    },
+    ['ghispo3'] = { -- Vehicle model/spawn name (string)
+        ['name'] = 'ghispo3', -- Desired name/label for the vehicle (string)
+        ['brand'] = 'AMBULANCE ETERNITY', -- The brand of vehicle (string)
+        ['model'] = 'ghispo3', -- Vehicle model/spawn name (string)
+        ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
+        ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
+        ['categoryLabel'] = 'xenhanuoc',
+        ['hash'] = `ghispo3`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
         ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     },
 }
