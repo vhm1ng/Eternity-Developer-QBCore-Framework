@@ -31,9 +31,9 @@ Config.Locales = {
 }
 
 Config.LicencePlateLocations = {
-    ["buy_empty_place_spot"] = { coords = vector3(-33.83, -1112.33, 26.42), label = Config.Locales.BuyPlateLabel, price = 175, eventToTrigger = 'clp:server:buyItem', showOnMap = true, blipName = "Empty car plates" },
-    ["convert_to_register_plate"] = { coords = vector3(440.26, -981.13, 30.69), label = Config.Locales.RegisterPlateLabel, price = 500, eventToTrigger = 'clp:server:registerPlate', showOnMap = true, blipName = "Register car plates"},
-    ["convert_to_fake_plate"] = { coords = vector3(1.72, -1024.38, 28.96), label = Config.Locales.GetFakePlate, price = 100, eventToTrigger = 'clp:server:convertToFakePlate', showOnMap = false},
+    -- ["buy_empty_place_spot"] = { coords = vector3(-33.83, -1112.33, 26.42), label = Config.Locales.BuyPlateLabel, price = 175, eventToTrigger = 'clp:server:buyItem', showOnMap = true, blipName = "Empty car plates" },
+    -- ["convert_to_register_plate"] = { coords = vector3(440.26, -981.13, 30.69), label = Config.Locales.RegisterPlateLabel, price = 500, eventToTrigger = 'clp:server:registerPlate', showOnMap = true, blipName = "Register car plates"},
+    -- ["convert_to_fake_plate"] = { coords = vector3(1.72, -1024.38, 28.96), label = Config.Locales.GetFakePlate, price = 100, eventToTrigger = 'clp:server:convertToFakePlate', showOnMap = false},
 }
 
 Config.JsKey = "Insert"

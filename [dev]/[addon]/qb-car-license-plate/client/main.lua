@@ -22,22 +22,22 @@ local function DrawText3Ds(coords, text)
     ClearDrawOrigin()
 end
 
-local function CreateBlips()
-    for k, location in pairs(Config.LicencePlateLocations) do
-        if location.showOnMap then
-            blips[k] = AddBlipForCoord(tonumber(location.coords.x), tonumber(location.coords.y), tonumber(location.coords.z))
-            SetBlipSprite(blips[k], Config.Blip.blipType)
-            SetBlipDisplay(blips[k], 4)
-            SetBlipScale  (blips[k], Config.Blip.blipScale)
-            SetBlipColour (blips[k], Config.Blip.blipColor)
-            SetBlipAsShortRange(blips[k], true)
-            BeginTextCommandSetBlipName("STRING")
-            AddTextComponentString(tostring(location.blipName))
-            EndTextCommandSetBlipName(blips[k])
-        end
+-- local function CreateBlips()
+--     for k, location in pairs(Config.LicencePlateLocations) do
+--         if location.showOnMap then
+--             blips[k] = AddBlipForCoord(tonumber(location.coords.x), tonumber(location.coords.y), tonumber(location.coords.z))
+--             SetBlipSprite(blips[k], Config.Blip.blipType)
+--             SetBlipDisplay(blips[k], 4)
+--             SetBlipScale  (blips[k], Config.Blip.blipScale)
+--             SetBlipColour (blips[k], Config.Blip.blipColor)
+--             SetBlipAsShortRange(blips[k], true)
+--             BeginTextCommandSetBlipName("STRING")
+--             AddTextComponentString(tostring(location.blipName))
+--             EndTextCommandSetBlipName(blips[k])
+--         end
 
-    end
-end
+--     end
+-- end
 
 local function IsBehindVehicle(vehicle) 
     local ped = PlayerPedId()
@@ -51,12 +51,12 @@ local function IsBehindVehicle(vehicle)
     end
 end
 
-local function RemoveBlips()
-    for k, v in pairs(Config.LicencePlateLocations) do
-        RemoveBlip(blips[k])
-    end
-    blips = {}
-end
+-- local function RemoveBlips()
+--     for k, v in pairs(Config.LicencePlateLocations) do
+--         RemoveBlip(blips[k])
+--     end
+--     blips = {}
+-- end
 
 -- Events
 
@@ -174,35 +174,35 @@ end)
 
 -- Threads
 
-CreateThread(function()
-    if not blipsLoaded then
-        CreateBlips()
-    end
+-- CreateThread(function()
+--     if not blipsLoaded then
+--         CreateBlips()
+--     end
 
-    while true do
-        local ped = PlayerPedId()
-        local pos = GetEntityCoords(ped)
-        inRange = false
+--     while true do
+--         local ped = PlayerPedId()
+--         local pos = GetEntityCoords(ped)
+--         inRange = false
         
-        for k, location in pairs(Config.LicencePlateLocations) do
-            local dist = #(pos - location.coords)
-            if dist < 20 then
-                inRange = true
-                DrawMarker(2, location.coords.x, location.coords.y, location.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.2, 155, 152, 234, 155, false, false, false, true, false, false, false)
-                if #(pos - vector3(location.coords.x, location.coords.y, location.coords.z)) < 1.5 then
+--         for k, location in pairs(Config.LicencePlateLocations) do
+--             local dist = #(pos - location.coords)
+--             if dist < 20 then
+--                 inRange = true
+--                 DrawMarker(2, location.coords.x, location.coords.y, location.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.2, 155, 152, 234, 155, false, false, false, true, false, false, false)
+--                 if #(pos - vector3(location.coords.x, location.coords.y, location.coords.z)) < 1.5 then
 
-                    DrawText3Ds(location.coords, '~g~E~w~ - ' .. location.label  .. ' $' .. location.price)
-                    if IsControlJustPressed(0, 38) then
-                        TriggerServerEvent(location.eventToTrigger, location)
-                    end
-                end
-            end
-        end
+--                     DrawText3Ds(location.coords, '~g~E~w~ - ' .. location.label  .. ' $' .. location.price)
+--                     if IsControlJustPressed(0, 38) then
+--                         TriggerServerEvent(location.eventToTrigger, location)
+--                     end
+--                 end
+--             end
+--         end
 
-        if not inRange then
-            Wait(1500)
-        end
+--         if not inRange then
+--             Wait(1500)
+--         end
 
-        Wait(4)
-    end
-end)
+--         Wait(4)
+--     end
+-- end)
