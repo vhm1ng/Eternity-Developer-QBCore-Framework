@@ -170,10 +170,32 @@ Config.JobVehicles = {
                 ["policet"] = "Police Car 6",
                 ["sheriff"] = "Sheriff Car 1",
                 ["sheriff2"] = "Sheriff Car 2",
-            }
-        }
-    }
-}
+            },
+        },
+    };
+    ['am1'] = { -- jobGarageIdentifier
+        label = "Xe Bệnh Viện",
+        job = 'ambulance',
+        -- Grade 0
+        vehicles = {
+            [0] = {
+                ["ghispo3"] = "ghispo3",
+            },
+            [1] = {
+                ["ghispo3"] = "ghispo3",
+            },
+            [2] = {
+                ["ghispo3"] = "ghispo3",
+            },
+            [3] = {
+                ["ghispo3"] = "ghispo3",
+            },
+            [4] = {
+                ["ghispo3"] = "ghispo3",
+            },
+        },
+    };
+};
 
 -- '/restorelostcars <destination_garage>' allows you to restore cars that have been parked in garages which no longer exist in the config (garage renamed or removed). The restored cars get sent to the destination garage or if left empty to a random garage in the list.
 -- NOTE: This may also send helis and boats to said garaga so choose wisely
@@ -259,7 +281,7 @@ Config.Garages = {
         type = 'public',
         vehicleCategories = {'car', 'motorcycle', 'other'},
         drawText = 'Parking',
-        debug = false,
+        debug = true,
         ['ParkingSpots'] = {
             vector4(48.46, -600.58, 31.05, 339.83),
             vector4(45.27, -598.81, 31.05, 337.94),
@@ -308,35 +330,26 @@ Config.Garages = {
     ['pillboxlowergarage'] = {
         ['Zone'] = {
             ['Shape'] = {
-                vector2(352.34439086914, -620.59851074219),
-                vector2(344.32354736328, -636.03747558594),
-                vector2(325.94189453125, -628.93359375),
-                vector2(331.88412475586, -613.10968017578)
+                vector2(302.69, -602.20 ),
+                vector2(298.35, -614.12),
+                vector2(288.00, -610.30),
+                vector2(292.56, -598.52)
             },
-            ['minZ'] = 28.2,  -- min height of the parking zone
-            ['maxZ'] = 31.30,  -- max height of the parking zone
+            ['minZ'] = 42.0,  -- min height of the parking zone
+            ['maxZ'] = 44.30,  -- max height of the parking zone
         },
-        label = 'Pillbox Lower Parking',
-        showBlip = true,
-        blipcoords = vector3(341.7, -623.33, 29.29),
-        blipName = 'Public Parking',
-        blipNumber = 357,
-        type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        label = 'Garage Bệnh Viện ETERNITY',
+        type = 'job',
+        job = "ambulance",
+        jobGarageIdentifier = 'am1',  
+        vehicleCategories = {'xenhanuoc'},
         drawText = 'Parking',
         debug = false,
         ['ParkingSpots'] = {
-            vector4(342.07, -632.51, 28.87, 340.17),
-            vector4(338.89, -631.43, 28.87, 341.89),
-            vector4(335.77, -630.04, 28.87, 340.85),
-            vector4(332.61, -628.68, 28.87, 342.74),
-            vector4(329.16, -627.36, 28.87, 341.84),
-            vector4(346.44, -620.82, 28.87, 157.15),
-            vector4(343.13, -619.38, 28.87, 157.56),
-            vector4(339.76, -619.01, 28.87, 157.43),
-            vector4(336.5, -617.88, 28.87, 162.09),
-            vector4(333.34, -616.15, 28.87, 160.22),
-            vector4(269.97, -322.62, 44.5, 248.07),
+            vector4(298.32, -605.26, 42.50, 68.76),
+            vector4(299.45, -602.49, 42.50, 69.75),
+            vector4(297.2, -608.03, 42.50, 67.17),
+            vector4(296.06, -610.96, 42.50, 68.61),
         }
     },
     ['mirrorpark'] = {
@@ -1359,7 +1372,7 @@ Config.Garages = {
         vehicleCategories = {'emergency'},
         drawText = 'Parking',              --car, air, sea
         job = "police",
-        debug = false,
+        debug = true,
         ['ParkingSpots'] = {
             vector4(449.57, -1024.85, 28.06, 5.95),
             vector4(446.04, -1025.62, 28.14, 5.18),
