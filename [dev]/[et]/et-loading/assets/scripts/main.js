@@ -42,11 +42,11 @@ function setup() {
     $("#date").html(year + "-" + month + "-" + day)
 
     // Online player count
-    fetch("http://" + Config.ServerIP + "/info.json").then(res => res.json()).then(info => {
-        fetch("http://" + Config.ServerIP + "/players.json").then(res => res.json()).then(players => {
-            $("#clients").html(players.length + "/" + info.vars.sv_maxClients)
-        })
-    })
+    // fetch("http://" + Config.ServerIP + "/info.json").then(res => res.json()).then(info => {
+    //     fetch("http://" + Config.ServerIP + "/players.json").then(res => res.json()).then(players => {
+    //         $("#clients").html(players.length + "/" + info.vars.sv_maxClients)
+    //     })
+    // })
 
     // Music
     song = new Audio("assets/media/" + Config.Song);
