@@ -104,9 +104,9 @@ RegisterNetEvent('clp:client:ResetVehicleOwner', function(plate)
     TriggerServerEvent('vehiclekeys:server:SetVehicleOwner', plate)
 end)
 
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    CreateBlips()
-end)
+-- RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
+--     CreateBlips()
+-- end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
     RemoveBlips()
