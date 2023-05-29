@@ -446,7 +446,7 @@ CreateThread(function()
 			local blip = AddBlipForCoord(data.coords)
 
 			SetBlipSprite (blip, 73)
-			-- SetBlipColour (blip, 47)
+			SetBlipColour (blip, 47)
 			SetBlipScale (blip, 0.7)
 			SetBlipAsShortRange(blip, true)
 
