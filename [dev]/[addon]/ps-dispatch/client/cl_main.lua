@@ -24,22 +24,22 @@ RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
 	PlayerData = QBCore.Functions.GetPlayerData()
 	PlayerJob = QBCore.Functions.GetPlayerData().job
 	
-	-- Create Hunting Zone Blips --
-	if not Config.Locations['hunting'][1] then return end
-	for _, hunting in pairs(Config.Locations["hunting"]) do
-		local blip = AddBlipForCoord(hunting.coords.x, hunting.coords.y, hunting.coords.z)
-		local huntingradius = AddBlipForRadius(hunting.coords.x, hunting.coords.y, hunting.coords.z, hunting.radius)
-		SetBlipSprite(blip, 442)
-		SetBlipAsShortRange(blip, true)
-		SetBlipScale(blip, 0.8)
-		SetBlipColour(blip, 0)
-		SetBlipColour(huntingradius, 0)
-		SetBlipAlpha(huntingradius, 40)
-		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString(hunting.label)
-		EndTextCommandSetBlipName(blip)
-	end
-end)
+-- 	-- Create Hunting Zone Blips --
+-- 	if not Config.Locations['hunting'][1] then return end
+-- 	for _, hunting in pairs(Config.Locations["hunting"]) do
+-- 		local blip = AddBlipForCoord(hunting.coords.x, hunting.coords.y, hunting.coords.z)
+-- 		local huntingradius = AddBlipForRadius(hunting.coords.x, hunting.coords.y, hunting.coords.z, hunting.radius)
+-- 		SetBlipSprite(blip, 442)
+-- 		SetBlipAsShortRange(blip, true)
+-- 		SetBlipScale(blip, 0.8)
+-- 		SetBlipColour(blip, 0)
+-- 		SetBlipColour(huntingradius, 0)
+-- 		SetBlipAlpha(huntingradius, 40)
+-- 		BeginTextCommandSetBlipName("STRING")
+-- 		AddTextComponentString(hunting.label)
+-- 		EndTextCommandSetBlipName(blip)
+-- 	end
+-- end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 	PlayerData = {}
@@ -56,19 +56,19 @@ end)
 
 -- Create Hunting Zone, Code Executes as a Chunk when Scipt is Loaded and Doesn't need to be an Asynchronous Thread --
 
-if Config.Locations['hunting'][1] then
-	for _, hunting in pairs(Config.Locations["hunting"]) do
-		local huntingzone = CircleZone:Create(vector3(hunting.coords.x, hunting.coords.y, hunting.coords.z), hunting.radius, {
-			name = Config.Locations["hunting"].label,
-			useZ = true,
-			debugPoly = false
-		})
+-- if Config.Locations['hunting'][1] then
+-- 	for _, hunting in pairs(Config.Locations["hunting"]) do
+-- 		local huntingzone = CircleZone:Create(vector3(hunting.coords.x, hunting.coords.y, hunting.coords.z), hunting.radius, {
+-- 			name = Config.Locations["hunting"].label,
+-- 			useZ = true,
+-- 			debugPoly = false
+-- 		})
 
-		huntingzone:onPlayerInOut(function(isPointInside)
-			inHuntingZone = isPointInside
-		end)
-	end
-end
+-- 		huntingzone:onPlayerInOut(function(isPointInside)
+-- 			inHuntingZone = isPointInside
+-- 		end)
+-- 	end
+-- end
 
 -- Create No Dispatch Zone --
 
