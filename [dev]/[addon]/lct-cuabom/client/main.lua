@@ -8,19 +8,6 @@ local isUsingBomb = false
 local BombOwner = nil
 local BombObject = nil
 local isBombStop = false
--- Functions
-
-function CreateBlips()
-    local CurrentBlip = AddBlipForCoord(Config.NPCPosition.x, Config.NPCPosition.y, Config.NPCPosition.z)
-    SetBlipSprite(CurrentBlip, 280)
-    SetBlipDisplay(CurrentBlip, 4)
-    SetBlipScale(CurrentBlip, 0.5)
-    SetBlipColour(CurrentBlip, 0)
-    SetBlipAsShortRange(CurrentBlip, true)
-    BeginTextCommandSetBlipName('STRING')
-    AddTextComponentSubstringPlayerName('<font face="BarlowCR">'..'Ông trùm đồng nát')
-    EndTextCommandSetBlipName(CurrentBlip)
-end
 
 local function BeginOldBombSawing()
     CreateThread(function()
@@ -243,5 +230,5 @@ CreateThread(function()
         end
     end)
 
-    CreateBlips()
+    -- CreateBlips()
 end)

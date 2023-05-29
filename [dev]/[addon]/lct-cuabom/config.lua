@@ -1,7 +1,7 @@
 Config = {}
 
-Config.NPCHash = 'a_m_m_hillbilly_01'
-Config.NPCPosition = vector4(1531.81, 1728.08, 109.92, 98.97)
+-- Config.NPCHash = 'A_F_M_Downtown_01'
+-- Config.NPCPosition = vector4(1531.81, 1728.08, 109.92, 98.97)
 
 Config.ProspectorPrice = 500
 
