@@ -58,10 +58,11 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [1] = vector4(338.5, -583.85, 74.16, 245.5),
     },
     ["main"] = {
-        [1] = vector3(298.74, -599.33, 43.29),
+        [1] = vector3(332.16, -595.74, 43.28),
+
     },
     ["stash"] = {
-        [1] = vector3(309.78, -596.6, 43.29),
+        [1] = vector3(312.02, -597.6, 43.28),
     },
     ["beds"] = {
         [1] = {coords = vector4(353.1, -584.6, 43.11, 152.08), taken = false, model = 1631638868},
