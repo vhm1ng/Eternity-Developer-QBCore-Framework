@@ -20,7 +20,7 @@ local Translations = {
         received_cash = "Successfully received $%{cash} from ID %{id}"
     },
     info = {
-        bank_blip = "Bank",
+        bank_blip = "Ngân hàng nhà nước",
         access_bank_target = "Access Bank",
         access_bank_key = "[E] - Access Bank",
         current_to_savings = "Transfer Current Account to Savings",
