@@ -39,7 +39,7 @@ RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
 -- 		AddTextComponentString(hunting.label)
 -- 		EndTextCommandSetBlipName(blip)
 -- 	end
--- end)
+end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 	PlayerData = {}
