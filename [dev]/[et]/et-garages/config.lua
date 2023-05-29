@@ -1829,49 +1829,49 @@ Config.Garages = {
             vector3(-800.21, -1513.05, 1.6),
         },
     },
-    ['intairport'] = {
-        ['Zone'] = {
-            ['Shape'] = { --polygon that surrounds the parking area
-                vector2(-992.59680175781, -2949.84375),
-                vector2(-1030.8975830078, -3016.2927246094),
-                vector2(-1030.3382568359, -3016.5925292969),
-                vector2(-1029.6291503906, -3017.0434570312),
-                vector2(-1028.7434082031, -3018.0705566406),
-                vector2(-1022.2585449219, -3021.5798339844),
-                vector2(-1021.3436279297, -3020.5522460938),
-                vector2(-1016.1632080078, -3023.6635742188),
-                vector2(-1016.3262329102, -3024.7385253906),
-                vector2(-966.09301757812, -3052.3435058594),
-                vector2(-965.42352294922, -3051.1135253906),
-                vector2(-961.01477050781, -3052.7600097656),
-                vector2(-923.76300048828, -2978.2124023438)
-            },
-            ['minZ'] = 12.00,  -- min height of the parking zone
-            ['maxZ'] = 20.0,  -- max height of the parking zone
-        },
-        label = 'Airport Hangar',
-        type = 'public',
-        vehicleCategories = {'helicopter', 'plane'},
-        drawText = 'Airport Hangar',
-        showBlip = true,
-        blipName = 'Hangar',
-        blipNumber = 359,
-        blipColor = 50,
-        blipcoords = vector3(-930.23, -2995.38, 19.85),
-        ParkingDistance = 100.0,
-        SpawnDistance = 100.0,
-        debug = false,
-        ['ParkingSpots'] = {
-            vector4(-985.04, -2965.05, 14.55, 128.92),
-            vector4(-964.84, -2974.78, 14.55, 125.92),
-            vector4(-945.49, -2985.63, 14.55, 117.77),
-            vector4(-967.17, -3034.71, 14.55, 14.16),
-            vector4(-990.13, -3022.86, 14.55, 15.42),
-            vector4(-1010.91, -3012.56, 14.55, 2.31),
-            vector4(-968.09, -3004.59, 14.55, 62.25)
-        },
+    -- ['intairport'] = {
+    --     ['Zone'] = {
+    --         ['Shape'] = { --polygon that surrounds the parking area
+    --             vector2(-992.59680175781, -2949.84375),
+    --             vector2(-1030.8975830078, -3016.2927246094),
+    --             vector2(-1030.3382568359, -3016.5925292969),
+    --             vector2(-1029.6291503906, -3017.0434570312),
+    --             vector2(-1028.7434082031, -3018.0705566406),
+    --             vector2(-1022.2585449219, -3021.5798339844),
+    --             vector2(-1021.3436279297, -3020.5522460938),
+    --             vector2(-1016.1632080078, -3023.6635742188),
+    --             vector2(-1016.3262329102, -3024.7385253906),
+    --             vector2(-966.09301757812, -3052.3435058594),
+    --             vector2(-965.42352294922, -3051.1135253906),
+    --             vector2(-961.01477050781, -3052.7600097656),
+    --             vector2(-923.76300048828, -2978.2124023438)
+    --         },
+    --         ['minZ'] = 12.00,  -- min height of the parking zone
+    --         ['maxZ'] = 20.0,  -- max height of the parking zone
+    --     },
+    --     label = 'Airport Hangar',
+    --     type = 'public',
+    --     vehicleCategories = {'helicopter', 'plane'},
+    --     drawText = 'Airport Hangar',
+    --     showBlip = true,
+    --     blipName = 'Hangar',
+    --     blipNumber = 359,
+    --     blipColor = 50,
+    --     blipcoords = vector3(-930.23, -2995.38, 19.85),
+    --     ParkingDistance = 100.0,
+    --     SpawnDistance = 100.0,
+    --     debug = false,
+    --     ['ParkingSpots'] = {
+    --         vector4(-985.04, -2965.05, 14.55, 128.92),
+    --         vector4(-964.84, -2974.78, 14.55, 125.92),
+    --         vector4(-945.49, -2985.63, 14.55, 117.77),
+    --         vector4(-967.17, -3034.71, 14.55, 14.16),
+    --         vector4(-990.13, -3022.86, 14.55, 15.42),
+    --         vector4(-1010.91, -3012.56, 14.55, 2.31),
+    --         vector4(-968.09, -3004.59, 14.55, 62.25)
+    --     },
 
-    },
+    -- },
 }
 
 Config.HouseGarages = {} -- DO NOT TOUCH!
