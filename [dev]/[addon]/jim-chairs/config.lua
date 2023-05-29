@@ -20,7 +20,7 @@ Config = {
 							-- Standing/sitting on vehicles isn't classed as the ground so you may want to raise this to between 5-6
 							-- The higher the number, the more chance people have of exploiting no fall damage
 
-	MakeStores = true,  	-- Enable if you want built in stores and locations
+	MakeStores = false,  	-- Enable if you want built in stores and locations
 	Stores = {
 		{	label = "Dining Chair Store",
 			slots = 25,
