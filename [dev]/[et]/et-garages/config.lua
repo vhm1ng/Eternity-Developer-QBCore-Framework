@@ -327,7 +327,7 @@ Config.Garages = {
             vector4(45.67, -662.47, 31.05, 66.96),
         }
     },
-    ['pillboxlowergarage'] = {
+    ['pillboxhighgarage'] = {
         ['Zone'] = {
             ['Shape'] = {
                 vector2(302.69, -602.20 ),
@@ -350,6 +350,45 @@ Config.Garages = {
             vector4(299.45, -602.49, 42.50, 69.75),
             vector4(297.2, -608.03, 42.50, 67.17),
             vector4(296.06, -610.96, 42.50, 68.61),
+        }
+    },
+    ['pillboxlowergarage'] = {
+        ['Zone'] = {
+            ['Shape'] = {
+                vector2(310.58, -580.0),
+                vector2(317.20, -561.77),
+                vector2(322.2, -559.75),
+                vector2(326.11, -561.15),
+                vector2(326.71, -560.98),
+                vector2(344.20, -567.33),
+                vector2(340.19, -578.27),
+                vector2(342.03, -578.91),
+                vector2(337.83, -590.47),
+                vector2(335.56, -589.76),
+                vector2(333.85, -594.35),
+                vector2(316.69, -587.98),
+                vector2(318.48, -582.58),
+            },
+            ['minZ'] = 27.0,  -- min height of the parking zone
+            ['maxZ'] = 29.30,  -- max height of the parking zone
+        },
+        label = 'Garage Bệnh Viện ETERNITY',
+        type = 'job',
+        job = "ambulance",
+        jobGarageIdentifier = 'am1',  
+        vehicleCategories = {'xenhanuoc'},
+        drawText = 'Parking',
+        debug = true,
+        ['ParkingSpots'] = {
+            vector4(316.4, -578.24, 28.41, 249.78),
+            vector4(319.28, -569.63, 28.41, 250.45),
+            vector4(329.69, -589.05, 28.41, 340.26),
+            vector4(320.65, -565.28, 28.41, 250.14),
+            vector4(318.0, -573.66, 28.41, 248.47),
+            vector4(326.44, -587.97, 28.41, 340.44),
+            vector4(333.08, -590.15, 28.41, 338.45),
+            vector4(319.7, -585.51, 28.41, 341.08),
+            vector4(323.17, -586.62, 28.41, 339.67),
         }
     },
     ['mirrorpark'] = {
@@ -1351,34 +1390,66 @@ Config.Garages = {
     ['police'] = {
         ['Zone'] = {
             ['Shape'] = { --polygon that surrounds the parking area
-                vector2(427.85052490234, -1017.9293212891),
-                vector2(428.14498901367, -1030.7161865234),
-                vector2(459.05325317383, -1026.896484375),
-                vector2(459.12948608398, -1012.3634033203),
-                vector2(449.7737121582, -1012.4426879883),
-                vector2(449.38006591797, -1011.4791870117),
-                vector2(434.09115600586, -1011.4317016602),
-                vector2(434.05737304688, -1013.9020996094),
-                vector2(427.95745849609, -1013.9678344727)
+                vector2(594.82, -35.89),
+                vector2(601.98, 5.41),
+                vector2(556.43, 13.56),
+                vector2(536.42, 6.3),
+                vector2(548.86, -27.33),
             },
-            ['minZ'] = 28.10,  -- min height of the parking zone
-            ['maxZ'] = 30.97,  -- max height of the parking zone
+            ['minZ'] = 69.00,  -- min height of the parking zone
+            ['maxZ'] = 72.00,  -- max height of the parking zone
         },
         label = "Police",
         showBlip = false,
         blipName = "Police",
         blipNumber = 357,
-        type = 'job',                --public, job, gang, depot
+        type = 'public',                --public, job, gang, depot
         vehicleCategories = {'emergency'},
-        drawText = 'Parking',              --car, air, sea
+        drawText = 'Gara Cảnh Sát ETERNITY',              --car, air, sea
         job = "police",
-        debug = true,
+        debug = false,
         ['ParkingSpots'] = {
-            vector4(449.57, -1024.85, 28.06, 5.95),
-            vector4(446.04, -1025.62, 28.14, 5.18),
-            vector4(442.53, -1025.66, 28.2, 6.39),
-            vector4(438.8, -1025.99, 28.27, 7.28),
-            vector4(435.41, -1026.74, 28.35, 3.84),
+            vector4(590.58, 3.89, 70.24, 168.92),
+            vector4(594.59, 3.12, 70.24, 170.19),
+            vector4(578.17, 5.93, 70.24, 169.23),
+            vector4(586.65, 4.25, 70.24, 168.77),
+            vector4(574.13, 7.14, 70.24, 168.8),
+            vector4(570.24, 7.58, 70.24, 170.02),
+            vector4(592.07, -11.36, 70.24, 349.79),
+            vector4(582.18, 5.23, 70.24, 168.36),
+            vector4(565.97, 8.33, 70.24, 167.57),
+            vector4(587.97, -10.6, 70.24, 349.69),
+            vector4(583.98, -9.71, 70.24, 349.58),
+            vector4(579.86, -8.83, 70.24, 349.27),
+            vector4(575.88, -8.01, 70.24, 348.97),
+            vector4(562.35, 8.76, 70.24, 171.59),
+            vector4(571.78, -7.24, 70.24, 348.87),
+            vector4(552.39, 7.58, 70.24, 198.22),
+            vector4(549.07, 6.15, 70.24, 198.43),
+            vector4(567.71, -6.42, 70.24, 349.37),
+            vector4(563.74, -5.75, 70.24, 349.9),
+            vector4(544.94, 5.58, 70.24, 200.98),
+            vector4(559.89, -4.99, 70.24, 349.55),
+            vector4(540.77, 3.64, 70.24, 198.64),
+            vector4(556.47, -25.99, 70.24, 348.63),
+            vector4(562.33, -13.67, 70.24, 169.67),
+            vector4(566.02, -14.79, 70.24, 168.36),
+            vector4(570.32, -15.34, 70.24, 171.07),
+            vector4(560.52, -26.59, 70.24, 348.59),
+            vector4(564.44, -27.34, 70.24, 349.72),
+            vector4(574.54, -16.36, 70.24, 171.78),
+            vector4(578.48, -17.01, 70.24, 169.53),
+            vector4(568.56, -27.9, 70.24, 349.52),
+            vector4(572.77, -28.67, 70.24, 349.17),
+            vector4(576.68, -29.42, 70.24, 349.16),
+            vector4(580.95, -30.13, 70.24, 350.41),
+            vector4(585.01, -30.9, 70.24, 350.45),
+            vector4(589.05, -31.59, 70.24, 349.82),
+            vector4(593.09, -32.33, 70.24, 351.24),
+            vector4(582.93, -17.02, 70.24, 168.34),
+            vector4(586.67, -17.7, 70.24, 169.17),
+            vector4(590.65, -18.56, 70.24, 169.39),
+            
         }
     },
     ['policevinewood'] = {
@@ -1721,51 +1792,6 @@ Config.Garages = {
         },
         ParkingDistance = 100.0,
         debug = false
-    },
-    ['airdepot'] = {
-        ['Zone'] = {
-            ['Shape'] = { --polygon that surrounds the parking area
-                vector2(-1235.3253173828, -3378.4008789062),
-                vector2(-1284.2642822266, -3350.1474609375),
-                vector2(-1284.5589599609, -3350.7241210938),
-                vector2(-1289.5042724609, -3348.0512695312),
-                vector2(-1308.7587890625, -3382.4091796875),
-                vector2(-1307.0877685547, -3383.8776855469),
-                vector2(-1307.6185302734, -3385.4577636719),
-                vector2(-1306.0087890625, -3386.4213867188),
-                vector2(-1308.2755126953, -3391.1662597656),
-                vector2(-1306.2180175781, -3392.1394042969),
-                vector2(-1264.1188964844, -3420.0451660156),
-                vector2(-1258.6077880859, -3412.1069335938),
-                vector2(-1258.1317138672, -3412.4846191406),
-                vector2(-1237.5152587891, -3387.8581542969),
-                vector2(-1236.4268798828, -3387.1162109375),
-                vector2(-1233.0942382812, -3380.8115234375),
-                vector2(-1233.4357910156, -3380.13671875),
-                vector2(-1235.1755371094, -3379.1962890625)
-            },
-            ['minZ'] = 12.00,  -- min height of the parking zone
-            ['maxZ'] = 20.0,  -- max height of the parking zone
-        },
-        label = 'Air Depot',
-        type = 'depot',
-        vehicleCategories = {'helicopter', 'plane'},
-        drawText = 'AIR DEPOT',
-        showBlip = true,
-        blipName = 'Air Depot',
-        blipNumber = 569,
-        blipColor = 33,
-        blipcoords = vector3(-1274.34, -3385.97, 13.94),
-        ParkingDistance = 200.0,
-        debug = false,
-        ['ParkingSpots'] = {
-            vector4(-1286.09, -3363.24, 14.54, 275.59),
-            vector4(-1292.65, -3383.11, 14.54, 280.17),
-            vector4(-1252.97, -3385.7, 14.54, 11.75),
-            vector4(-1268.63, -3402.56, 14.54, 14.72),
-            vector4(-1280.83, -3395.7, 14.54, 330.47),
-
-        },
     },
     ['boathouse1'] = {
         ['Zone'] = {
