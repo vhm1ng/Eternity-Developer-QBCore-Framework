@@ -945,21 +945,21 @@ Config.Locations = {
     -- },
 
     -- Casino Locations
-    ["casino"] = {
-        ["label"] = "Diamond Casino",
-        ["coords"] = vector4(978.46, 39.07, 74.88, 64.0),
-        ["ped"] = 'csb_tomcasino',
-        ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
-        ["radius"] = 1.5,
-        ["targetIcon"] = "fas fa-coins",
-        ["targetLabel"] = "Buy Chips",
-        ["products"] = Config.Products["casino"],
-        ["showblip"] = true,
-        ["blipsprite"] = 617,
-        ["blipscale"] = 0.8,
-        ["blipcolor"] = 0,
-        ["delivery"] = vector4(972.6, 9.22, 81.04, 233.38)
-    },
+    -- ["casino"] = {
+    --     ["label"] = "Diamond Casino",
+    --     ["coords"] = vector4(978.46, 39.07, 74.88, 64.0),
+    --     ["ped"] = 'csb_tomcasino',
+    --     ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
+    --     ["radius"] = 1.5,
+    --     ["targetIcon"] = "fas fa-coins",
+    --     ["targetLabel"] = "Buy Chips",
+    --     ["products"] = Config.Products["casino"],
+    --     ["showblip"] = true,
+    --     ["blipsprite"] = 617,
+    --     ["blipscale"] = 0.8,
+    --     ["blipcolor"] = 0,
+    --     ["delivery"] = vector4(972.6, 9.22, 81.04, 233.38)
+    -- },
 
     ["casinobar"] = {
         ["label"] = "Casino Bar",
