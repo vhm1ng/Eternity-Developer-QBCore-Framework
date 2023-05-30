@@ -694,7 +694,7 @@ Config.Garages = {
             ['minZ'] = 29.0,
             ['maxZ'] = 31.10
         },
-        label = 'Legion Square Parking',
+        label = 'Garage Trung Tâm',
         showBlip = true,
         blipcoords = vector3(52.41, -874.53, 30.42),
         blipName = 'Public Parking',
