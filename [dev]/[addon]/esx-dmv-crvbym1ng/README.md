@@ -13,10 +13,10 @@ https://forum.cfx.re/t/mlo-driving-school-interior/1466079
 # Installation:
 <br />
 
-## QB-CORE
+## et-CORE
 <br />
 
-> ## QB-Core/Shared/Items.lua:
+> ## et-Core/Shared/Items.lua:
 ```
 ['permit']						 = {['name'] = 'permit',						['label'] = 'Driving Permit',			['weight'] = 0,			['type'] = 'item',		['image'] = 'id_card.png',				['unique'] = true,['useable'] = true,		['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'A Driving permit to show you can drive a vehicle as long as you have a passenger'},
 ['cdl_license']					 = {['name'] = 'cdl_license',					['label'] = 'CDL License',				['weight'] = 0,			['type'] = 'item',		['image'] = 'driver_license.png',		['unique'] = true,		['useable'] = true,		['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Permit to show you can drive a Commercial Vehicle.'},
@@ -25,7 +25,7 @@ https://forum.cfx.re/t/mlo-driving-school-interior/1466079
 
 <br />
 
-> ## QB-Core/Server/Players.lua
+> ## et-Core/Server/Players.lua
 **FIND:**
 ```
 PlayerData.metadata['licences'] = PlayerData.metadata['licences'] or {
@@ -47,13 +47,13 @@ PlayerData.metadata['licences'] = PlayerData.metadata['licences'] or {
 ```
 <br />
 
-## QB-CITYHALL
+## et-CITYHALL
 <br />
 
-> ## QB-Cityhall/server/main.lua
+> ## et-Cityhall/server/main.lua
 **FIND:**
 ```
-RegisterNetEvent('qb-cityhall:server:requestId', function(item, hall)
+RegisterNetEvent('et-cityhall:server:requestId', function(item, hall)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
@@ -85,7 +85,7 @@ end)
 ```
 **AND REPLACE WITH:**
 ```
-RegisterNetEvent('qb-cityhall:server:requestId', function(item, hall)
+RegisterNetEvent('et-cityhall:server:requestId', function(item, hall)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
@@ -135,7 +135,7 @@ RegisterNetEvent('qb-cityhall:server:requestId', function(item, hall)
 end)
 ```
 
-> ## QB-Cityhall/config.lua
+> ## et-Cityhall/config.lua
 **FIND:**
 ```
 Config.Cityhalls = {
@@ -219,7 +219,7 @@ Config.Cityhalls = {
 <br />
 
 ## Inventory
-If you use `qb-inventory` or `lj-inventory` go to your-inventory/html/js/app.js and find **`FormatItemInfo`** and add the following:
+If you use `et-inventory` or `lj-inventory` go to your-inventory/html/js/app.js and find **`FormatItemInfo`** and add the following:
 ```
 else if (itemData.name == "cdl_license") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
@@ -279,7 +279,7 @@ else if (itemData.name == "driver_license") {
         }
 ```
 
-> ## Qb-Cityhall/server/main.lua
+> ## et-Cityhall/server/main.lua
 Find the GiveItem Command and add:
 ```
 elseif itemData["name"] == "permit" then

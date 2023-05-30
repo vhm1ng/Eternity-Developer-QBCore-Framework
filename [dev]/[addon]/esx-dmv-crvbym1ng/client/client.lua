@@ -1,4 +1,4 @@
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['et-core']:GetCoreObject()
 
 -------------
 -- Variables --
@@ -54,7 +54,7 @@ local function createPeds()
     SetBlockingOfNonTemporaryEvents(ped[k], true)
 
     if Config.UseTarget then
-      exports['qb-target']:AddTargetEntity(ped[k], {
+      exports['et-target']:AddTargetEntity(ped[k], {
         options = {
           {
             label = 'Open DMV',
@@ -102,7 +102,7 @@ function OpenMenu()
       icon = 'fa-solid fa-clipboard-question',
       txt = '$'..Config.Amount['theoritical'],
       params = {
-        event = 'qb-dmv:client:StartQuiz',
+        event = 'et-dmv:client:StartQuiz',
         args = {
           CurrentTest = 'theoritical'
         }
@@ -118,7 +118,7 @@ function OpenMenu()
         icon = 'fa-solid fa-car-side',
         txt = '$'..Config.Amount['driver'],
         params = {
-          event = 'qb-dmv:client:StartDrivingTest',
+          event = 'et-dmv:client:StartDrivingTest',
           args = {
             CurrentTest = 'driver',
           },
@@ -134,7 +134,7 @@ function OpenMenu()
         icon = 'fa-solid fa-motorcycle',
         txt = '$'..Config.Amount['bike'],
         params = {
-          event = 'qb-dmv:client:StartDrivingTest',
+          event = 'et-dmv:client:StartDrivingTest',
           args = {
             CurrentTest = 'bike',
           },
@@ -150,7 +150,7 @@ function OpenMenu()
         icon = 'fa-solid fa-truck-fast',
         txt = '$'..Config.Amount['cdl'],
         params = {
-          event = 'qb-dmv:client:StartDrivingTest',
+          event = 'et-dmv:client:StartDrivingTest',
           args = {
             CurrentTest = 'cdl',
           },
@@ -160,7 +160,7 @@ function OpenMenu()
     end
   end
 
-  exports['qb-menu']:openMenu(DMV)
+  exports['et-menu']:openMenu(DMV)
 end
 
 function DrawMissionText(msg, time)
@@ -180,7 +180,7 @@ function StopTheoryTest(success)
     openQuestion = false
   })
   SetNuiFocus(false)
-  TriggerServerEvent('qb-dmv:server:TheoryTestResult', success)
+  TriggerServerEvent('et-dmv:server:TheoryTestResult', success)
 end
 
 function StopDriveTest(success, testType)
@@ -199,7 +199,7 @@ function StopDriveTest(success, testType)
     SetEntityHeading(playerPed, Config.PlayerCoordsAfterTest.w)
   end
 
-  TriggerServerEvent('qb-dmv:server:DrivingTestResult', success, testType)
+  TriggerServerEvent('et-dmv:server:DrivingTestResult', success, testType)
   CurrentTest     = nil
 end
 
@@ -319,7 +319,7 @@ end)
             -- EVENTS --
 ---------------------------------------
 
-RegisterNetEvent('qb-dmv:client:StartDrivingTest', function(data)
+RegisterNetEvent('et-dmv:client:StartDrivingTest', function(data)
   CurrentTest = data.CurrentTest
   DriveErrors = 0
   LastCheckPoint = -1
@@ -335,7 +335,7 @@ RegisterNetEvent('qb-dmv:client:StartDrivingTest', function(data)
     SetEntityAsMissionEntity(veh, true, true)
     SetEntityHeading(veh,StartingPoint.w)
     TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
-    TriggerServerEvent('qb-vehicletuning:server:SaveVehicleProps', QBCore.Functions.GetVehicleProperties(veh))
+    TriggerServerEvent('et-vehicletuning:server:SaveVehicleProps', QBCore.Functions.GetVehicleProperties(veh))
     LastVehicleHealth = GetVehicleBodyHealth(veh)
     CurrentVehicle = veh
   end, vector3(StartingPoint.x, StartingPoint.y, StartingPoint.z), false)
@@ -344,7 +344,7 @@ RegisterNetEvent('qb-dmv:client:StartDrivingTest', function(data)
   DrivingTest(data.CurrentTest)
 end)
 
-RegisterNetEvent('qb-dmv:client:StartQuiz', function ()
+RegisterNetEvent('et-dmv:client:StartQuiz', function ()
   
   if PlayerData.money[Config.PaymentType] < Config.Amount['theoritical'] then
     QBCore.Functions.Notify('Not Enough Money in '..Config.PaymentType)

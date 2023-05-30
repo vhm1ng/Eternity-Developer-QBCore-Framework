@@ -1,7 +1,7 @@
-QBCore = exports['qb-core']:GetCoreObject()
+QBCore = exports['et-core']:GetCoreObject()
 local info = {}
 
-RegisterNetEvent('qb-dmv:server:TheoryTestResult', function (success)
+RegisterNetEvent('et-dmv:server:TheoryTestResult', function (success)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     info.firstname = Player.PlayerData.charinfo.firstname
@@ -47,7 +47,7 @@ RegisterNetEvent('qb-dmv:server:TheoryTestResult', function (success)
     end
 end)
 
-RegisterNetEvent('qb-dmv:server:DrivingTestResult', function (success, testType)
+RegisterNetEvent('et-dmv:server:DrivingTestResult', function (success, testType)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     info.firstname = Player.PlayerData.charinfo.firstname
