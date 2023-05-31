@@ -15,6 +15,7 @@ local function GiveStarterItems(source)
             info.birthdate = Player.PlayerData.charinfo.birthdate
             info.gender = Player.PlayerData.charinfo.gender
             info.nationality = Player.PlayerData.charinfo.nationality
+            info.fingerprint = Player.PlayerData.metadata["fingerprint"]
         elseif v.item == "driver_license" then
             info.firstname = Player.PlayerData.charinfo.firstname
             info.lastname = Player.PlayerData.charinfo.lastname
