@@ -1,6 +1,9 @@
 QBShared = QBShared or {}
 QBShared.Items = {
-	
+
+-- esx-dmv
+['permit']						 = {['name'] = 'permit',						['label'] = 'Driving Permit',			['weight'] = 0,			['type'] = 'item',		['image'] = 'id_card.png',				['unique'] = true,		['useable'] = true,		['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'A Driving permit to show you can drive a vehicle as long as you have a passenger'},
+
 -- Jim-chair
 ["chair1"] 						= {["name"] = "chair1",  	    			["label"] = "Black Couch",				["weight"] = 100, 		["type"] = "item", 		["image"] = "chair1.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "" },
 ["chair2"] 						= {["name"] = "chair2",  	    			["label"] = "Wood Lounger",				["weight"] = 100, 		["type"] = "item", 		["image"] = "chair2.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "" },
