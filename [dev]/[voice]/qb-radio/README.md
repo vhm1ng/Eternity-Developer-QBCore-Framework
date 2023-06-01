@@ -1,27 +1,27 @@
-# qb-radio
-qb-radio Nopixel Inspired Radio (v2) for qb-core
+# et-radio
+et-radio Nopixel Inspired Radio (v2) for et-core
 
 ## Install Video
 - [Youtube](https://youtu.be/bNrmQMvVYno)
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
+- [et-core](https://github.com/qbcore-framework/et-core)
 - [pma-voice](https://githubmate.com/repo/AvarianKnight/pma-voice)
-- [qb-radialmenu](https://github.com/qbcore-framework/qb-radialmenu) - Optional (Access to change channels 1 - 6)
+- [et-radialmenu](https://github.com/qbcore-framework/et-radialmenu) - Optional (Access to change channels 1 - 6)
 
 ## Features
 - Latest Nopixel Inspired Radio
 - Radialmenu join channel option 1 - 6
-- Inventory Image [qb-radio/imgforinvenotry]
+- Inventory Image [et-radio/imgforinvenotry]
 
 ## RadialMenu Events
-Add the trigger to your qb-radialmenu > config.lua (Anywhere you want someone to have access to it) for example:
+Add the trigger to your et-radialmenu > config.lua (Anywhere you want someone to have access to it) for example:
 ```
             id = 'joinradio1',
             title = 'Channel 1',
             icon = 'radio',
             type = 'client',
-            event = 'qb-radio:client:JoinRadioChannel1',
+            event = 'et-radio:client:JoinRadioChannel1',
             shouldClose = true
 ```
 
@@ -35,8 +35,8 @@ Add the trigger to your qb-radialmenu > config.lua (Anywhere you want someone to
 - [Google search link to radio](https://www.aircraftspruce.com/catalog/avpages/yaesuVertexFTA750L.php)
 
 ## Installation
-- Replace current qb-radio with this version if you want to use it
-- Rename qb-radio-v2 to ----> qb-radio    (Make sure you rename the file or it will not work)
+- Replace current et-radio with this version if you want to use it
+- Rename et-radio-v2 to ----> et-radio    (Make sure you rename the file or it will not work)
 
 - For a radio effect add this to your server.cfg  `setr voice_enableSubmix 1`
 
@@ -52,5 +52,5 @@ New Inventory Image
 ## Support
 - [Ko-fi Link](https://ko-fi.com/trclassic)
 
-## Original qb-radio
-- [qb-radio](https://github.com/qbcore-framework/qb-radio)
+## Original et-radio
+- [et-radio](https://github.com/qbcore-framework/et-radio)

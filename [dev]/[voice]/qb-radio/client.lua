@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 local PlayerData = QBCore.Functions.GetPlayerData() -- Just for resource restart (same as event handler)
 local radioMenu = false
 local onRadio = false
@@ -140,11 +140,11 @@ AddEventHandler('onResourceStart', function(resource)
     end
 end)
 
-RegisterNetEvent('qb-radio:use', function()
+RegisterNetEvent('et-radio:use', function()
     toggleRadio(not radioMenu)
 end)
 
-RegisterNetEvent('qb-radio:onRadioDrop', function()
+RegisterNetEvent('et-radio:onRadioDrop', function()
     if RadioChannel ~= 0 then
         leaveradio()
     end
@@ -153,7 +153,7 @@ end)
 CreateThread(function()
     local OpenRadioBind = Config.keyBind.useRadio
     if IsControlPressed(1, keybindControls[OpenRadioBind]) then
-        TriggerClientEvent('qb-radio:use')
+        TriggerClientEvent('et-radio:use')
     end
 end)
 
@@ -234,7 +234,7 @@ RegisterNUICallback("decreaseradiochannel", function(_, cb)
 end)
 RegisterCommand('openradio', function()
     if hasRadio then
-        TriggerEvent('qb-radio:use')
+        TriggerEvent('et-radio:use')
     elseif not hasRadio then
         -- print('no radio')
     end
@@ -322,8 +322,8 @@ CreateThread(function()
     end
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel1', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel1', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 1
             exports["pma-voice"]:setRadioChannel(channel)
@@ -338,8 +338,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel1', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel2', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel2', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 2
             exports["pma-voice"]:setRadioChannel(channel)
@@ -355,8 +355,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel2', function(channel)
 end)
 
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel3', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel3', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 3
             exports["pma-voice"]:setRadioChannel(channel)
@@ -371,8 +371,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel3', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel4', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel4', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 4
             exports["pma-voice"]:setRadioChannel(channel)
@@ -387,8 +387,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel4', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel5', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel5', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 5
             exports["pma-voice"]:setRadioChannel(channel)
@@ -403,8 +403,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel5', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel6', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel6', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 6
             exports["pma-voice"]:setRadioChannel(channel)
@@ -419,8 +419,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel6', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel7', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel7', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 7
             exports["pma-voice"]:setRadioChannel(channel)
@@ -435,8 +435,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel7', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel8', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel8', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 8
             exports["pma-voice"]:setRadioChannel(channel)
@@ -451,8 +451,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel8', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel9', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel9', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 9
             exports["pma-voice"]:setRadioChannel(channel)
@@ -467,8 +467,8 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel9', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel10', function(channel)
-    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+RegisterNetEvent('et-radio:client:JoinRadioChannel10', function(channel)
+    QBCore.Functions.TriggerCallback('et-radio:radiocheck', function(radio)
         if radio then
             local channel = 10
             exports["pma-voice"]:setRadioChannel(channel)
@@ -483,6 +483,6 @@ RegisterNetEvent('qb-radio:client:JoinRadioChannel10', function(channel)
     end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannelToggle', function()
+RegisterNetEvent('et-radio:client:JoinRadioChannelToggle', function()
     leaveradio()
 end)
