@@ -1,11 +1,11 @@
 fx_version 'bodacious'
 game 'gta5'
  
--- fxmanifest.lua by NapoLe Thanh
+-- fxmanifest.lua by VHMing
 
 description 'Xe Police Mustang 2015'
 version '1.0.0'
-author 'NapoLe Thanh'
+author 'VHMing'
 
 
 files {
