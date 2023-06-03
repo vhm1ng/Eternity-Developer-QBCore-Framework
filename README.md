@@ -23,7 +23,7 @@ https://docs.vhming.net/
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://www.youtube.com/)
 [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/=)
 
-## 👨‍💻 Meet the team
+## 👨‍💻 Meet the teams
 <p align="center">
  <a href=https://github.com/dev-vhming/Eternity-Developer-QBCore-Framework><img width="420" src=https://media.discordapp.net/attachments/1104448623632187432/1104454875431055370/github.png><a>
 </p>
