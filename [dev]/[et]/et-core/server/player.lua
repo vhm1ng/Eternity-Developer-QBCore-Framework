@@ -250,6 +250,10 @@ function QBCore.Player.CreatePlayer(PlayerData, Offline)
     end
 
     function self.Functions.SetJobDuty(onDuty)
+        self.Functions.ChangeIban = function(iban)
+        self.PlayerData.charinfo.account = iban
+    end
+        self.Functions.UpdatePlayerData()
         self.PlayerData.job.onduty = not not onDuty -- Make sure the value is a boolean if nil is sent
         self.Functions.UpdatePlayerData()
     end
