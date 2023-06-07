@@ -1,6 +1,9 @@
 QBShared = QBShared or {}
 QBShared.Items = {
 
+-- okok-bank
+['creditcard']						 = {['name'] = 'creditcard',						['label'] = 'Thẻ ngân hàng',			['weight'] = 0,			['type'] = 'item',		['image'] = 'thenganhang.png',				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Một thẻ chứa tất cả thông tin của bạn để nhận dạng chính bạn'},
+
 -- esx-dmv
 ['permit']						 = {['name'] = 'permit',						['label'] = 'Driving Permit',			['weight'] = 0,			['type'] = 'item',		['image'] = 'id_card.png',				['unique'] = true,		['useable'] = true,		['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'A Driving permit to show you can drive a vehicle as long as you have a passenger'},
 
