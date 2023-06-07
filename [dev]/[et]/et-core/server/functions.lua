@@ -204,8 +204,7 @@ function PaycheckInterval()
     if next(QBCore.Players) then
         for _, Player in pairs(QBCore.Players) do
             if Player then
-                local payment = QBShared.Jobs[Player.PlayerData.job.name]['grades'][tostring(Player.PlayerData.job.grade.level)].payment
-                if not payment then payment = Player.PlayerData.job.payment end
+                local payment = Player.PlayerData.job.payment
                 if Player.PlayerData.job and payment > 0 and (QBShared.Jobs[Player.PlayerData.job.name].offDutyPay or Player.PlayerData.job.onduty) then
                     if QBCore.Config.Money.PayCheckSociety then
                         local account = exports['et-management']:GetAccount(Player.PlayerData.job.name)
@@ -216,14 +215,17 @@ function PaycheckInterval()
                                 Player.Functions.AddMoney('bank', payment)
                                 exports['et-management']:RemoveMoney(Player.PlayerData.job.name, payment)
                                 TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
+                                TriggerEvent('okokBanking:AddTransferTransactionFromSocietyToP', payment, "salary", "Salary", Player.PlayerData.citizenid, Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname)
                             end
                         else
                             Player.Functions.AddMoney('bank', payment)
                             TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
+                            TriggerEvent('okokBanking:AddTransferTransactionFromSocietyToP', payment, "salary", "Salary", Player.PlayerData.citizenid, Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname)
                         end
                     else
                         Player.Functions.AddMoney('bank', payment)
                         TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
+                        TriggerEvent('okokBanking:AddTransferTransactionFromSocietyToP', payment, "salary", "Salary", Player.PlayerData.citizenid, Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname)
                     end
                 end
             end
