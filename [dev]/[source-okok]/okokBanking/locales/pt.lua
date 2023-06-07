@@ -18,7 +18,7 @@ Locales['pt'] = {
 
     ['pin_no_money'] = {
         title = 'BANCO',
-        text = 'Necessitas de ${s1}€ para alterar o teu código PIN',
+        text = 'Necessitas de ${s1}$ para alterar o teu código PIN',
         time = 5000,
         type = 'error'
     },
@@ -70,7 +70,7 @@ Locales['pt'] = {
 
     ['iban_no_money'] = {
         title = 'BANCO',
-        text = 'Necessitas de ${s1}€ para alterar o teu IBAN',
+        text = 'Necessitas de ${s1}$ para alterar o teu IBAN',
         time = 5000,
         type = 'error'
     },
@@ -80,35 +80,35 @@ Locales['pt'] = {
 
     ['deposited'] = {
         title = 'BANCO',
-        text = 'Depositaste ${s1}€',
+        text = 'Depositaste ${s1}$',
         time = 5000,
         type = 'success'
     },
 
     ['withdrawn'] = {
         title = 'BANCO',
-        text = 'Levantaste ${s1}€',
+        text = 'Levantaste ${s1}$',
         time = 5000,
         type = 'success'
     },
 
     ['received_from'] = {
         title = 'BANCO',
-        text = 'Recebeste ${s1}€ de ${s2}',
+        text = 'Recebeste ${s1}$ de ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['transferred_to'] = {
         title = 'BANCO',
-        text = 'Transferiste ${s1}€ para ${s2}',
+        text = 'Transferiste ${s1}$ para ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['deposited_to'] = {
         title = 'BANCO',
-        text = 'Depositaste ${s1}€ para ${s2}',
+        text = 'Depositaste ${s1}$ para ${s2}',
         time = 5000,
         type = 'success'
     },
@@ -122,7 +122,7 @@ Locales['pt'] = {
 
     ['you_have_withdrawn'] = {
         title = 'BANCO',
-        text = 'Levantaste ${s1}€ de ${s2}',
+        text = 'Levantaste ${s1}$ de ${s2}',
         time = 5000,
         type = 'success'
     },
@@ -188,7 +188,7 @@ Locales['pt'] = {
 
     ['bought_cc'] = {
         title = 'BANCO',
-        text = 'Compraste um cartão de crédito por ${s1}€',
+        text = 'Compraste um cartão de crédito por ${s1}$',
         time = 5000,
         type = 'success'
     },

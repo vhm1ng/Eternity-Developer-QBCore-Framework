@@ -1,6 +1,6 @@
 local QBCore = exports["et-core"]:GetCoreObject()
 
-local Webhook = ''
+local Webhook = 'https://discord.com/api/webhooks/1115914422376992798/bCQzHcEJY0LEX3NvCz6J0Ai09Bp8Kr2bs6_e1VIlo_F_3pwtjseWsNh5DaWGIgAACNtL'
 
 local sellingVehicles = {}
 

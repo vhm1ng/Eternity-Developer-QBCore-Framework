@@ -1,6 +1,6 @@
-local QBCore = exports["qb-core"]:GetCoreObject()
+local QBCore = exports["et-core"]:GetCoreObject()
 
-local Webhook = ''
+local Webhook = 'https://discord.com/api/webhooks/1115914074635644969/eD8I8s9-fZqPT2e5UI_WL7I-UqbxtoNtSRGgSVFidx7OoNA7UGt3l1xmN0CcBtrLuWbL'
 
 function interp(s, tab)
 	return (s:gsub('($%b{})', function(w) return tab[w:sub(3, -2)] or w end))
@@ -392,7 +392,7 @@ AddEventHandler("okokBanking:DepositMoneyToSociety", function(amount, society, s
 
 	if amount <= playerMoney or amount <= playerMoneyCash then
 		if Config.UseQBManagement then
-			exports['qb-management']:AddMoneyOkokBanking(society, amount)
+			exports['et-management']:AddMoneyOkokBanking(society, amount)
 		else
 			MySQL.query('UPDATE okokbanking_societies SET value = value + @value WHERE society = @society AND society_name = @society_name', {
 				['@value'] = amount,
@@ -480,7 +480,7 @@ AddEventHandler("okokBanking:WithdrawMoneyToSociety", function(amount, society, 
 			end
 		else
 			if Config.UseQBManagement then
-				exports['qb-management']:RemoveMoneyOkokBanking(society, amount)
+				exports['et-management']:RemoveMoneyOkokBanking(society, amount)
 			else
 				MySQL.query('UPDATE okokbanking_societies SET value = value - @value WHERE society = @society AND society_name = @society_name', {
 					['@value'] = amount,
@@ -540,7 +540,7 @@ AddEventHandler("okokBanking:TransferMoneyToSociety", function(amount, ibanNumbe
 
 	if amount <= playerMoney then
 		if Config.UseQBManagement then
-			exports['qb-management']:TransferMoneyOkokBanking(society, amount, ibanNumber)
+			exports['et-management']:TransferMoneyOkokBanking(society, amount, ibanNumber)
 		else
 			MySQL.query('UPDATE okokbanking_societies SET value = value + @value WHERE iban = @iban', {
 				['@value'] = amount,
@@ -649,8 +649,8 @@ AddEventHandler("okokBanking:TransferMoneyToSocietyFromSociety", function(amount
 
 	if amount <= societyInfo.value then
 		if Config.UseQBManagement then
-			exports['qb-management']:AddMoneyOkokBanking(societyTarget, amount)
-			exports['qb-management']:RemoveMoneyOkokBanking(society, amount)
+			exports['et-management']:AddMoneyOkokBanking(societyTarget, amount)
+			exports['et-management']:RemoveMoneyOkokBanking(society, amount)
 		else
 			MySQL.query('UPDATE okokbanking_societies SET value = value - @value WHERE society = @society AND society_name = @society_name', {
 				['@value'] = amount,
@@ -706,7 +706,7 @@ AddEventHandler("okokBanking:TransferMoneyToPlayerFromSociety", function(amount,
 
 	if amount <= societyMoney then
 		if Config.UseQBManagement then
-			exports['qb-management']:RemoveMoneyOkokBanking(society, amount)
+			exports['et-management']:RemoveMoneyOkokBanking(society, amount)
 		else
 			MySQL.query('UPDATE okokbanking_societies SET value = value - @value WHERE society = @society AND society_name = @society_name', {
 				['@value'] = amount,
@@ -1422,7 +1422,7 @@ function TransferMoneyWebhook(data)
 				["name"] = Config.ServerName..' - Banking Logs',
 			},
 			["title"] = 'New Transaction',
-			["description"] = '**Sender:** '..data.sender_name..'\n**Receiver:** '..data.receiver_name..'\n**Amount:** '..data.value..'€',
+			["description"] = '**Sender:** '..data.sender_name..'\n**Receiver:** '..data.receiver_name..'\n**Amount:** '..data.value..'$',
 
 			["footer"] = {
 				["text"] = os.date(Config.DateFormat),
@@ -1441,7 +1441,7 @@ function WithdrawMoneyWebhook(data)
 				["name"] = Config.ServerName..' - Banking Logs',
 			},
 			["title"] = 'New Withdrawal',
-			["description"] = '**Receiver:** '..data.receiver_name..'\n**Amount:** '..data.value..'€',
+			["description"] = '**Receiver:** '..data.receiver_name..'\n**Amount:** '..data.value..'$',
 
 			["footer"] = {
 				["text"] = os.date(Config.DateFormat),
@@ -1460,7 +1460,7 @@ function DepositMoneyWebhook(data)
 				["name"] = Config.ServerName..' - Banking Logs',
 			},
 			["title"] = 'New Deposit',
-			["description"] = '**Sender:** '..data.sender_name..'\n**Amount:** '..data.value..'€',
+			["description"] = '**Sender:** '..data.sender_name..'\n**Amount:** '..data.value..'$',
 
 			["footer"] = {
 				["text"] = os.date(Config.DateFormat),

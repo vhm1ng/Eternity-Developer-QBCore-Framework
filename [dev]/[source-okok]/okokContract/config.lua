@@ -20,11 +20,11 @@ Config.UseOkokBankingTransactions = false -- If true a transaction will be regis
 
 -- To set your Discord Webhook URL go to server.lua, line 5
 
-Config.BotName = 'ServerName' -- Write the desired bot name
+Config.BotName = 'ETERNITY CONTRACT' -- Write the desired bot name
 
-Config.ServerName = 'ServerName' -- Write your server's name
+Config.ServerName = 'REPUBLIC OF ETERNITY' -- Write your server's name
 
-Config.IconURL = '' -- Insert your desired image link
+Config.IconURL = 'https://media.discordapp.net/attachments/1002061639723515965/1115909469931589702/myLogo.png' -- Insert your desired image link
 
 Config.WebhookDateFormat = '%d/%m/%Y [%X]' -- To change the date format check this website - https://www.lua.org/pil/22.1.html
 

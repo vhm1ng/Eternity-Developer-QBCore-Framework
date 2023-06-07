@@ -6,7 +6,7 @@ Config.okokNotify = true -- true = okokNotify | false = QBCore Notify
 
 Config.okokTextUI = true -- true = okokTextUI | false = QBCore DrawText
 
-Config.UseOkOkBankingSounds = false -- true = Uses Sounds | false = No sounds
+Config.UseOkOkBankingSounds = true -- true = Uses Sounds | false = No sounds
 
 Config.UseTargetOnAtm = false -- Using qb-target and not TextUI to access to the atms
 
@@ -18,27 +18,27 @@ Config.DebugTargetZones = false -- Set to true only if you need to check the pos
 
 Config.UseCashAsItem = false -- Set to true if you have cash as item on qb-core
 
-Config.IBANPrefix = "OK" -- IBAN prefix
+Config.IBANPrefix = "ETBANK" -- IBAN prefix
 
-Config.IBANNumbers = 6 -- How many characters the IBAN has by default
+Config.IBANNumbers = 4 -- How many characters the IBAN has by default
 
 Config.CustomIBANMaxChars = 10 -- How many characters the IBAN can have when changing it to a custom one (on Settings tab)
 
 Config.CustomIBANAllowLetters = true -- If the custom IBAN can have letters or only numbers (on Settings tab)
 
-Config.IBANChangeCost = 5000 -- How much it costs to change the IBAN to a custom one (on Settings tab)
+Config.IBANChangeCost = 50000 -- How much it costs to change the IBAN to a custom one (on Settings tab)
 
-Config.PINChangeCost = 1000 -- How much it costs to change the PIN (on Settings tab)
+Config.PINChangeCost = 20000 -- How much it costs to change the PIN (on Settings tab)
 
 Config.AnimTime = 2 -- Seconds (ATM animation)
 
 Config.UseQBManagement = false -- If true it will use the management_funds table | If false the okokbanking_societies table
 
-Config.RequireCreditCardForATM = false -- Set to true if you would like players to access the ATM with a card item | If false there is no item requirement
+Config.RequireCreditCardForATM = true -- Set to true if you would like players to access the ATM with a card item | If false there is no item requirement
 
 Config.CreditCardItem = "creditcard" -- Required item to access the ATM
 
-Config.CreditCardPrice = 100 -- How much it costs to purchase a credit card
+Config.CreditCardPrice = 10000 -- How much it costs to purchase a credit card
 
 Config.Societies = { -- Which societies have bank accounts
 	"police",
@@ -71,11 +71,11 @@ Config.ATM = { -- ATM models, do not remove any
 
 -- To set your Discord Webhook URL go to server.lua, line 2
 
-Config.BotName = 'ServerName' -- Write the desired bot name
+Config.BotName = 'ETERNITY BANKING' -- Write the desired bot name
 
-Config.ServerName = 'ServerName' -- Write your server's name
+Config.ServerName = 'REPUBLIC OF ETERNITY' -- Write your server's name
 
-Config.IconURL = '' -- Insert your desired image link
+Config.IconURL = 'https://media.discordapp.net/attachments/1002061639723515965/1115909469931589702/myLogo.png' -- Insert your desired image link
 
 Config.DateFormat = '%d/%m/%Y [%X]' -- To change the date format check this website - https://www.lua.org/pil/22.1.html
 

@@ -1,4 +1,4 @@
-local QBCore = exports["qb-core"]:GetCoreObject()
+local QBCore = exports["et-core"]:GetCoreObject()
 local PlayerData = {}
 local trans = {}
 local societyTrans = {}
@@ -54,7 +54,7 @@ if Config.UseTargetOnBank then
 		local boxName = targetOptionsNames.bank .. k
 
 		if v.boxZone then
-			local zoneId = exports['qb-target']:AddBoxZone(boxName, v.boxZone.pos, v.boxZone.size.x, v.boxZone.size.y, {
+			local zoneId = exports['et-target']:AddBoxZone(boxName, v.boxZone.pos, v.boxZone.size.x, v.boxZone.size.y, {
 				name = boxName,
             	heading =  v.boxZone.rotation,
             	debugPoly = Config.DebugTargetZones,
@@ -138,14 +138,14 @@ else
 				if Config.okokTextUI then
 					exports['okokTextUI']:Open(_L('open_banking').text, _L('open_banking').color, _L('open_banking').side)
 				else
-					exports['qb-core']:DrawText(_L('open_banking').text, _L('open_banking').side)
+					exports['et-core']:DrawText(_L('open_banking').text, _L('open_banking').side)
 				end
 			elseif not inRange and shown then
 				shown = false
 				if Config.okokTextUI then
 					exports['okokTextUI']:Close()
 				else
-					exports['qb-core']:HideText()
+					exports['et-core']:HideText()
 				end
 			end
 			notified = false
@@ -207,8 +207,8 @@ if Config.UseTargetOnAtm then
 	if Config.RequireCreditCardForATM then options[1].item = Config.CreditCardItem end
 
 	-- Create target model
-	-- You can call this exports when you used qb-target because it's supported
-	exports['qb-target']:AddTargetModel(AtmModels, {
+	-- You can call this exports when you used et-target because it's supported
+	exports['et-target']:AddTargetModel(AtmModels, {
 		options = options,
 		distance = Config.ATMDistance
 	})
@@ -342,14 +342,14 @@ else
 				if Config.okokTextUI then
 					exports['okokTextUI']:Open(_L('open_atm').text, _L('open_atm').color, _L('open_atm').side)
 				else
-					exports['qb-core']:DrawText(_L('open_atm').text, _L('open_atm').side)
+					exports['et-core']:DrawText(_L('open_atm').text, _L('open_atm').side)
 				end
 			elseif not inRange and shown then
 				shown = false
 				if Config.okokTextUI then
 					exports['okokTextUI']:Close()
 				else
-					exports['qb-core']:HideText()
+					exports['et-core']:HideText()
 				end
 			end
 			notified = false

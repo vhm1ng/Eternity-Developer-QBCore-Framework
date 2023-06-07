@@ -18,7 +18,7 @@ Locales['gr'] = {
 
     ['pin_no_money'] = {
         title = 'BANKING',
-        text = 'Πρέπει να έχετε ${s1}€ για να αλλάξετε το PIN σας',
+        text = 'Πρέπει να έχετε ${s1}$ για να αλλάξετε το PIN σας',
         time = 5000,
         type = 'error'
     },
@@ -70,7 +70,7 @@ Locales['gr'] = {
 
     ['iban_no_money'] = {
         title = 'BANKING',
-        text = 'Πρέπει να έχετε ${s1}€ για να αλλάξετε τον IBAN σας',
+        text = 'Πρέπει να έχετε ${s1}$ για να αλλάξετε τον IBAN σας',
         time = 5000,
         type = 'error'
     },
@@ -80,35 +80,35 @@ Locales['gr'] = {
 
     ['deposited'] = {
         title = 'BANKING',
-        text = 'Έχετε καταθέσει ${s1}€',
+        text = 'Έχετε καταθέσει ${s1}$',
         time = 5000,
         type = 'success'
     },
 
     ['withdrawn'] = {
         title = 'BANKING',
-        text = 'Έχετε αποσυρθεί ${s1}€',
+        text = 'Έχετε αποσυρθεί ${s1}$',
         time = 5000,
         type = 'success'
     },
 
     ['received_from'] = {
         title = 'BANKING',
-        text = 'Έχετε λάβει ${s1}€ από ${s2}',
+        text = 'Έχετε λάβει ${s1}$ από ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['transferred_to'] = {
         title = 'BANKING',
-        text = 'Έχετε μεταφέρει ${s1}€ στο ${s2}',
+        text = 'Έχετε μεταφέρει ${s1}$ στο ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['deposited_to'] = {
         title = 'BANKING',
-        text = 'Έχετε καταθέσει ${s1}€ στο ${s2}',
+        text = 'Έχετε καταθέσει ${s1}$ στο ${s2}',
         time = 5000,
         type = 'success'
     },
@@ -122,7 +122,7 @@ Locales['gr'] = {
 
     ['you_have_withdrawn'] = {
         title = 'BANKING',
-        text = 'Έχετε κάνει ανάληψη ${s1}€ από ${s2}',
+        text = 'Έχετε κάνει ανάληψη ${s1}$ από ${s2}',
         time = 5000,
         type = 'success'
     },
@@ -188,7 +188,7 @@ Locales['gr'] = {
 
     ['bought_cc'] = {
         title = 'BANKING',
-        text = 'Αγοράσατε μια πιστωτική κάρτα για ${s1}€',
+        text = 'Αγοράσατε μια πιστωτική κάρτα για ${s1}$',
         time = 5000,
         type = 'success'
     },

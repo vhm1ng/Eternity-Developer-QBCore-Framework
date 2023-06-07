@@ -18,7 +18,7 @@ Locales['de'] = {
 
     ['pin_no_money'] = {
         title = 'BANKING',
-        text = 'Sie benötigen ${s1}€, um Ihre PIN zu ändern',
+        text = 'Sie benötigen ${s1}$, um Ihre PIN zu ändern',
         time = 5000,
         type = 'error'
     },
@@ -70,7 +70,7 @@ Locales['de'] = {
 
     ['iban_no_money'] = {
         title = 'BANKING',
-        text = 'Sie benötigen ${s1}€, um Ihre IBAN zu ändern',
+        text = 'Sie benötigen ${s1}$, um Ihre IBAN zu ändern',
         time = 5000,
         type = 'error'
     },
@@ -80,35 +80,35 @@ Locales['de'] = {
 
     ['deposited'] = {
         title = 'BANKING',
-        text = 'Sie haben eingezahlt ${s1}€',
+        text = 'Sie haben eingezahlt ${s1}$',
         time = 5000,
         type = 'success'
     },
 
     ['withdrawn'] = {
         title = 'BANKING',
-        text = 'Sie haben sich zurückgezogen ${s1}€',
+        text = 'Sie haben sich zurückgezogen ${s1}$',
         time = 5000,
         type = 'success'
     },
 
     ['received_from'] = {
         title = 'BANKING',
-        text = 'Sie erhielten ${s1}€ aus ${s2}',
+        text = 'Sie erhielten ${s1}$ aus ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['transferred_to'] = {
         title = 'BANKING',
-        text = 'Sie haben überwiesen ${s1}€ an ${s2}',
+        text = 'Sie haben überwiesen ${s1}$ an ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['deposited_to'] = {
         title = 'BANKING',
-        text = 'Sie haben eingezahlt ${s1}€ an ${s2}',
+        text = 'Sie haben eingezahlt ${s1}$ an ${s2}',
         time = 5000,
         type = 'success'
     },
@@ -122,7 +122,7 @@ Locales['de'] = {
 
     ['you_have_withdrawn'] = {
         title = 'BANKING',
-        text = 'Sie haben sich zurückgezogen ${s1}€ aus ${s2}',
+        text = 'Sie haben sich zurückgezogen ${s1}$ aus ${s2}',
         time = 5000,
         type = 'success'
     },
@@ -188,7 +188,7 @@ Locales['de'] = {
 
     ['bought_cc'] = {
         title = 'BANKING',
-        text = 'Sie haben eine Kreditkarte für ${s1}€ gekauft',
+        text = 'Sie haben eine Kreditkarte für ${s1}$ gekauft',
         time = 5000,
         type = 'success'
     },

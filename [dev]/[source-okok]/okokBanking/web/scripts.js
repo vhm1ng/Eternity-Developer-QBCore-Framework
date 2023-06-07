@@ -56,7 +56,7 @@ window.addEventListener('message', function(event) {
 										<span id="playerName"></span> <span id="avatar">${avatar}</span>
 									</span>
 									<div class="wallet-div">
-										<span>Wallet: <span id="wallet_money"></span> EUR</span>
+										<span>Wallet: <span id="wallet_money"></span> ETR</span>
 									</div>
 								</div>
 							</div>
@@ -124,7 +124,7 @@ window.addEventListener('message', function(event) {
 								From <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Received</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} EUR</td>`;
+					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} ETR</td>`;
 				// Sent
 				} else if (db.type == 'transfer' && db.sender_identifier == event.data.identifier) {
 					var name = db.receiver_name;
@@ -136,7 +136,7 @@ window.addEventListener('message', function(event) {
 								To <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Sent</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} EUR</td>`;
+					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} ETR</td>`;
 				// Deposited
 				} else if (db.type == 'deposit') {
 					var name = db.receiver_name;
@@ -148,7 +148,7 @@ window.addEventListener('message', function(event) {
 								Into <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Deposited</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} EUR</td>`;
+					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} ETR</td>`;
 				// Withdrawn
 				} else if (db.type == 'withdraw') {
 					var name = db.sender_name;
@@ -160,7 +160,7 @@ window.addEventListener('message', function(event) {
 								From <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Withdrawn</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} EUR</td>`;
+					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} ETR</td>`;
 				}
 
 				row += `
@@ -189,7 +189,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">INCOME</h6>
-								<p class="card-text fw125" id="totalIncome">${event.data.graph_values[7].toLocaleString()}€</p>
+								<p class="card-text fw125" id="totalIncome">${event.data.graph_values[7].toLocaleString()}$</p>
 							</div>
 						</div>
 					</div>
@@ -197,7 +197,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">OUTCOME</h6>
-								<p class="card-text fw125" id="unpaidInvoices">${event.data.graph_values[8].toLocaleString()}€</p>
+								<p class="card-text fw125" id="unpaidInvoices">${event.data.graph_values[8].toLocaleString()}$</p>
 							</div>
 						</div>
 					</div>
@@ -205,7 +205,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">EARNINGS</h6>
-								<p class="card-text fw125" id="awaitedIncome">${event.data.graph_values[9].toLocaleString()}€</p>
+								<p class="card-text fw125" id="awaitedIncome">${event.data.graph_values[9].toLocaleString()}$</p>
 							</div>
 						</div>
 					</div>
@@ -267,7 +267,7 @@ window.addEventListener('message', function(event) {
 								From <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Received</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} EUR</td>`;
+					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} ETR</td>`;
 				// Sent
 				} else if (db.type == 'transfer' && db.sender_identifier == event.data.identifier) {
 					var name = db.receiver_name;
@@ -279,7 +279,7 @@ window.addEventListener('message', function(event) {
 								To <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Sent</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} EUR</td>`;
+					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} ETR</td>`;
 				// Deposited
 				} else if (db.type == 'deposit') {
 					var name = db.receiver_name;
@@ -291,7 +291,7 @@ window.addEventListener('message', function(event) {
 								Into <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Deposited</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} EUR</td>`;
+					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} ETR</td>`;
 				// Withdrawn
 				} else if (db.type == 'withdraw') {
 					var name = db.sender_name;
@@ -303,7 +303,7 @@ window.addEventListener('message', function(event) {
 								From <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Withdrawn</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} EUR</td>`;
+					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} ETR</td>`;
 				}
 
 				row += `
@@ -332,7 +332,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">INCOME</h6>
-								<p class="card-text fw125" id="totalIncome">${event.data.graph_values[7].toLocaleString()}€</p>
+								<p class="card-text fw125" id="totalIncome">${event.data.graph_values[7].toLocaleString()}$</p>
 							</div>
 						</div>
 					</div>
@@ -340,7 +340,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">OUTCOME</h6>
-								<p class="card-text fw125" id="unpaidInvoices">${event.data.graph_values[8].toLocaleString()}€</p>
+								<p class="card-text fw125" id="unpaidInvoices">${event.data.graph_values[8].toLocaleString()}$</p>
 							</div>
 						</div>
 					</div>
@@ -348,7 +348,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">EARNINGS</h6>
-								<p class="card-text fw125" id="awaitedIncome">${event.data.graph_values[9].toLocaleString()}€</p>
+								<p class="card-text fw125" id="awaitedIncome">${event.data.graph_values[9].toLocaleString()}$</p>
 							</div>
 						</div>
 					</div>
@@ -705,7 +705,7 @@ function overview_page_function(event) {
 								</div>
 							</div>
 							<hr>
-							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;"><span class="fff">Balance:</span> <span id="playerBankMoney"></span> EUR</p>
+							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;"><span class="fff">Balance:</span> <span id="playerBankMoney"></span> ETR</p>
 							<p class="card-text text-center ccard-fs"><span class="fff">IBAN:</span> <span id="playerIBAN"></span></p>
 						</div>
 					</div>
@@ -756,7 +756,7 @@ function overview_page_function(event) {
 							From <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Received</div>
 						</td>`;
-				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} EUR</span></td>`;
+				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} ETR</span></td>`;
 			// Sent
 			} else if (db.type == 'transfer' && db.sender_identifier == event.data.identifier) {
 				var name = db.receiver_name;
@@ -768,7 +768,7 @@ function overview_page_function(event) {
 							To <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Sent</div>
 						</td>`;
-				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} EUR</span></td>`;
+				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} ETR</span></td>`;
 			// Deposited
 			} else if (db.type == 'deposit') {
 				var name = db.receiver_name;
@@ -780,7 +780,7 @@ function overview_page_function(event) {
 							Into <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Deposited</div>
 						</td>`;
-				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} EUR</span></td>`;
+				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} ETR</span></td>`;
 			// Withdrawn
 			} else if (db.type == 'withdraw') {
 				var name = db.sender_name;
@@ -792,7 +792,7 @@ function overview_page_function(event) {
 							From <span class="transactions-name">${name}</span>
 							<div class="mtm3125">Withdrawn</div>
 						</td>`;
-				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} EUR</span></td>`;
+				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} ETR</span></td>`;
 			}
 
 			row += `
@@ -969,7 +969,7 @@ function society_page_function(event) {
 								</div>
 							</div>
 							<hr>
-							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;""><span class="fff">Balance:</span> <span id="playerBankMoney"></span> EUR</p>
+							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;""><span class="fff">Balance:</span> <span id="playerBankMoney"></span> ETR</p>
 							<p class="card-text text-center ccard-fs"><span class="fff">IBAN:</span> <span id="playerIBAN"></span></p>
 						</div>
 					</div>
@@ -1019,7 +1019,7 @@ function society_page_function(event) {
 							From <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Received</div>
 						</td>`;
-				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} EUR</span></td>`;
+				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} ETR</span></td>`;
 			// Sent
 			} else if (db.type == 'transfer' && db.sender_identifier == event.data.identifier) {
 				var name = db.receiver_name;
@@ -1031,7 +1031,7 @@ function society_page_function(event) {
 							To <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Sent</div>
 						</td>`;
-				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} EUR</span></td>`;
+				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} ETR</span></td>`;
 			// Deposited
 			} else if (db.type == 'deposit') {
 				var name = db.receiver_name;
@@ -1043,7 +1043,7 @@ function society_page_function(event) {
 							Into <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Deposited</div>
 						</td>`;
-				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} EUR</span></td>`;
+				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} ETR</span></td>`;
 			// Withdrawn
 			} else if (db.type == 'withdraw') {
 				var name = db.sender_name;
@@ -1055,7 +1055,7 @@ function society_page_function(event) {
 							From <span class="transactions-name">${name}</span>
 							<div class="mtm3125">Withdrawn</div>
 						</td>`;
-				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} EUR</span></td>`;
+				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} ETR</span></td>`;
 			}
 
 			row += `
@@ -1201,7 +1201,7 @@ function settings_page_function(event) {
 							<div class="col col-md-6 d-flex align-items-center">
 								<div class="card w-100 h-100 d-flex justify-content-center settings_info-card">
 									<div class="card-body text-center fs1125">
-										<span>The IBAN has a change cost of ${event.data.ibanCost}€</span>
+										<span>The IBAN has a change cost of ${event.data.ibanCost}$</span>
 										<hr class="fff">
 										<span>The IBAN always have the prefix "${event.data.ibanPrefix}"</span>
 										<hr class="fff">
@@ -1234,7 +1234,7 @@ function settings_page_function(event) {
 							<div class="col col-md-6 d-flex align-items-center">
 								<div class="card w-100 h-100 d-flex justify-content-center settings_info-card">
 									<div class="card-body text-center fs1125">
-										<span>The PIN has a change cost of ${event.data.pinCost}€</span>
+										<span>The PIN has a change cost of ${event.data.pinCost}$</span>
 										<hr class="fff">
 										<span>The maximum number of characters is ${event.data.pinCharNum}</span>
 										<hr class="fff">
