@@ -15,7 +15,7 @@ window.addEventListener('message', function(event) {
 					<div class="d-flex justify-content-center flex-column align-items-center">
 						<span class="load"></span>
 						<br>
-						<div class="ldata-txt">Loading Data...</div>
+						<div class="ldata-txt">Kiểm tra...</div>
 					</div>
 				`);
 				$("#menu").fadeIn();
