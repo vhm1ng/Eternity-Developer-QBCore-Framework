@@ -85,15 +85,6 @@ function TransferMoneyOkokBanking(account, amount, iban)
 	MySQL.Async.execute('UPDATE management_funds SET amount = ? WHERE iban = ?', { Accounts[account], iban })
 end
 
-MySQL.ready(function ()
-	local bossmenu = MySQL.query.await('SELECT job_name,amount FROM management_funds WHERE type = "boss"', {})
-	if not bossmenu then return end
-
-	for _,v in ipairs(bossmenu) do
-		Accounts[v.job_name] = v.amount
-	end
-end)
-
 RegisterNetEvent("et-bossmenu:server:withdrawMoney", function(amount)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
