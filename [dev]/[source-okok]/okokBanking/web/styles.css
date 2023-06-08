@@ -142,7 +142,7 @@ td:last-child {
 }
 
 .sidebar-item:hover {
-	background-color: #25873d;
+	background-color: #bc113d;
 	cursor: pointer;
 	transition: 0.25s;
 	color: #fff;
@@ -156,7 +156,7 @@ td:last-child {
 
 .selected {
 	color: #fff;
-	background-color: #25873d;
+	background-color: #bc113d;
 	font-weight: 600;
 }
 
@@ -203,7 +203,7 @@ td:last-child {
 }
 
 .btn-blue {
-	background-color: #25873d;
+	background-color: #bc113d;
 	color: #e6e6e6;
 }
 
@@ -236,7 +236,7 @@ td:last-child {
 	box-shadow: none;
 	border: none;
 	background-color: #161616;
-	box-shadow: 0rem 0rem 0.3125rem 0.0625rem #25873d !important;
+	box-shadow: 0rem 0rem 0.3125rem 0.0625rem #bc113d !important;
 	color: #fff;
 }
 
@@ -247,7 +247,7 @@ input::-webkit-inner-spin-button {
 }
 
 .viewall-badge {
-	background-color: #25873d !important;
+	background-color: #bc113d !important;
 	transition: 0.25s;
 }
 
@@ -285,7 +285,7 @@ input::-webkit-inner-spin-button {
 .dataTable-pagination .active a,
 .dataTable-pagination .active a:focus,
 .dataTable-pagination .active a:hover {
-	background-color: #25873d;
+	background-color: #bc113d;
 	cursor: pointer;
 	transition: .25s;
 }
@@ -418,11 +418,11 @@ input::-webkit-inner-spin-button {
 	user-select: none;
 	transition: all 0.5s ease;
 	border-radius: 0.625rem;
-	border: 0.125rem solid #25873d;
+	border: 0.125rem solid #bc113d;
 }
 
 .number:hover {
-	background-color: #25873d;
+	background-color: #bc113d;
 	color: #fff;
 	border-radius: 0.625rem;
 	cursor: pointer;
@@ -501,7 +501,7 @@ input::-webkit-inner-spin-button {
 
 @keyframes clear {
 	20% {
-		background: #25873d;
+		background: #bc113d;
 		transform: scale3d(0.85, 0.85, 0.85);
 		left: 0;
 	}
@@ -513,8 +513,8 @@ input::-webkit-inner-spin-button {
 	height: 9.375rem;
 	border-radius: 50%;
 	border: 0.625rem solid transparent;
-	border-top: 0.625rem solid #25873d;
-	border-bottom: 0.625rem solid #25873d;
+	border-top: 0.625rem solid #bc113d;
+	border-bottom: 0.625rem solid #bc113d;
 	animation: rotateAntiCW 1.8s linear infinite;
 }
 
@@ -797,7 +797,7 @@ input[type=password]:not(:placeholder-shown) {
 
 .lastT-name,
 .transactions-name {
-	color: #25873d;
+	color: #bc113d;
 	text-transform: capitalize;
 	font-weight: 600;
 }
@@ -852,7 +852,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .settings_info-card {
-	background-color: #25873d;
+	background-color: #bc113d;
 	border-radius: 0.625rem;
 	color: #fff;
 }
@@ -879,7 +879,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .stats-title {
-	background-color: #25873d;
+	background-color: #bc113d;
 	border-radius: 0.625rem;
 	color: #fff;
 }
