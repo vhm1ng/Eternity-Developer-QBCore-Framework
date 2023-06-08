@@ -252,7 +252,7 @@ input::-webkit-inner-spin-button {
 }
 
 .viewall-badge:hover {
-	background-color: #219037 !important;
+	background-color: #bc113d !important;
 	transition: 0.25s;
 	cursor: pointer;
 }
