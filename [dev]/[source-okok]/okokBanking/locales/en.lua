@@ -3,36 +3,36 @@ Locales['en'] = {
     -- PIN RELATED LOCALES
 
     ['no_pin'] = {
-        title = 'BANKING',
-        text = 'Head up to a bank first to set a PIN code',
+        title = 'NGÂN HÀNG',
+        text = 'Trước tiên, hãy đến ngân hàng để đặt mã PIN',
         time = 5000,
         type = 'error'
     },
 
     ['pin_changed'] = {
-        title = 'BANKING',
-        text = 'PIN successfully changed to ${s1}',
+        title = 'NGÂN HÀNG',
+        text = 'Mã PIN đã thay đổi thành công ${s1}',
         time = 5000,
         type = 'success'
     },
 
     ['pin_no_money'] = {
-        title = 'BANKING',
-        text = 'You need to have ${s1}$ in order to change your PIN',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn cần phải có ${s1}€ để thay đổi mã PIN của bạn',
         time = 5000,
         type = 'error'
     },
 
     ['pin_digits'] = {
-        title = 'BANKING',
-        text = 'Your PIN needs to be 4 digits long',
+        title = 'NGÂN HÀNG',
+        text = 'Mã PIN của bạn cần dài 4 chữ số',
         time = 5000,
         type = 'error'
     },
 
     ['pin_only_numbers'] = {
-        title = 'BANKING',
-        text = 'You can only use numbers',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn chỉ có thể sử dụng số',
         time = 5000,
         type = 'error'
     },
@@ -41,36 +41,36 @@ Locales['en'] = {
     -- IBAN RELATED LOCALES
 
     ['iban_not_exist'] = {
-        title = 'BANKING',
-        text = 'This IBAN does not exist',
+        title = 'NGÂN HÀNG',
+        text = 'IBAN này không tồn tại',
         time = 5000,
         type = 'error'
     },
 
     ['iban_in_use'] = {
-        title = 'BANKING',
-        text = 'This IBAN is already in use',
+        title = 'NGÂN HÀNG',
+        text = 'IBAN này đã được sử dụng',
         time = 5000,
         type = 'error'
     },
 
     ['iban_only_numbers'] = {
-        title = 'BANKING',
-        text = 'You can only use numbers in your IBAN',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn chỉ có thể sử dụng số trong IBAN của mình',
         time = 5000,
         type = 'error'
     },
 
     ['iban_changed'] = {
-        title = 'BANKING',
-        text = 'IBAN successfully changed to ${s1}',
+        title = 'NGÂN HÀNG',
+        text = 'IBAN đổi thành công ${s1}',
         time = 5000,
         type = 'success'
     },
 
     ['iban_no_money'] = {
-        title = 'BANKING',
-        text = 'You need to have ${s1}$ in order to change your IBAN',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn cần phải có ${s1}€ để thay đổi IBAN của bạn',
         time = 5000,
         type = 'error'
     },
@@ -79,50 +79,50 @@ Locales['en'] = {
     -- WITHDRAWN / DEPOSITED / TRANSFERRED / RECEIVED
 
     ['deposited'] = {
-        title = 'BANKING',
-        text = 'You have deposited ${s1}$',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn đã nạp ${s1}€',
         time = 5000,
         type = 'success'
     },
 
     ['withdrawn'] = {
-        title = 'BANKING',
-        text = 'You have withdrawn ${s1}$',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn đã rút ${s1}€',
         time = 5000,
         type = 'success'
     },
 
     ['received_from'] = {
-        title = 'BANKING',
-        text = 'You have received ${s1}$ from ${s2}',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn đã nhận được ${s1}€ từ ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['transferred_to'] = {
-        title = 'BANKING',
-        text = 'You have transferred ${s1}$ to ${s2}',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn đã chuyển ${s1}€ đến ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['deposited_to'] = {
-        title = 'BANKING',
-        text = 'You have deposited ${s1}$ to ${s2}',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn đã gửi tiền ${s1}€ đến ${s2}',
         time = 5000,
         type = 'success'
     },
 
     ['someone_withdrawing'] = {
-        title = 'BANKING',
-        text = 'Someone is already withdrawing',
+        title = 'NGÂN HÀNG',
+        text = 'T Ai đó đã Lấy tiền',
         time = 5000,
         type = 'error'
     },
 
     ['you_have_withdrawn'] = {
-        title = 'BANKING',
-        text = 'You have withdrawn ${s1}$ from ${s2}',
+        title = 'NGÂN HÀNG',
+        text = 'T Bạn đã lấy ${s1}€ từ ${s2}',
         time = 5000,
         type = 'success'
     },
@@ -131,64 +131,64 @@ Locales['en'] = {
     -- GENERAL LOCALES
 
     ['no_creditcard'] = {
-        title = 'BANKING',
-        text = 'You can not access the ATM without a credit card',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn không thể truy cập ATM mà không có thẻ tín dụng',
         time = 5000,
         type = 'error'
     },
 
     ['invalid_amount'] = {
-        title = 'BANKING',
-        text = 'Invalid amount',
+        title = 'NGÂN HÀNG',
+        text = 'Số tiền không hợp lệ',
         time = 5000,
         type = 'error'
     },
 
     ['invalid_input'] = {
-        title = 'BANKING',
-        text = 'Invalid input',
+        title = 'NGÂN HÀNG',
+        text = 'T Đầu vào không hợp lệ',
         time = 5000,
         type = 'error'
     },
 
     ['no_money_pocket'] = {
-        title = 'BANKING',
-        text = 'You don\'t have that much money on you',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn không có nhiều tiền trên người',
         time = 5000,
         type = 'error'
     },
 
     ['no_money_bank'] = {
-        title = 'BANKING',
-        text = 'You don\'t have that much money in the bank',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn không có nhiều tiền trong ngân hàng',
         time = 5000,
         type = 'error'
     },
 
     ['not_send_yourself'] = {
-        title = 'BANKING',
-        text = 'You can\'t send money to yourself',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn không thể gửi tiền cho chính mình',
         time = 5000,
         type = 'error'
     },
 
     ['society_no_money'] = {
-        title = 'BANKING',
-        text = 'Your society doesn\'t have that much money in the bank',
+        title = 'NGÂN HÀNG',
+        text = 'T Xã hội của bạn không có nhiều tiền trong ngân hàng',
         time = 5000,
         type = 'error'
     },
 
     ['not_use_bank'] = {
-        title = 'BANKING',
-        text = 'You can\'t use the bank at this moment',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn không thể sử dụng ngân hàng tại thời điểm này',
         time = 5000,
         type = 'error'
     },
 
     ['bought_cc'] = {
-        title = 'BANKING',
-        text = 'You bought a credit card for ${s1}$',
+        title = 'NGÂN HÀNG',
+        text = 'Bạn đã mua thẻ tín dụng ${s1}€',
         time = 5000,
         type = 'success'
     },
@@ -197,25 +197,25 @@ Locales['en'] = {
     -- TEXTUI LOCALES
 
     ['open_banking'] = {
-        text = '[E] Access Bank',
+        text = '[E] Truy Cập Ngân Hàng',
         color = 'darkblue',
-        side = 'left'
+        side = 'right'
     },
 
     ['open_atm'] = {
-        text = '[E] Access ATM',
+        text = '[E] Truy Cập ATM',
         color = 'darkblue',
-        side = 'left'
+        side = 'right'
     },
 
 
     -- QB-TARGET LOCALES
 
     ['open_banking_target'] = {
-        text = 'Access Bank',
+        text = 'Truy Cập Ngân Hàng',
     },
 
     ['open_atm_target'] = {
-        text = 'Access ATM',
+        text = 'Truy Cập ATM',
     },
 }
