@@ -821,11 +821,11 @@ function overview_page_function(event) {
 			datasets: [{
 				label: 'Earnings',
 				backgroundColor: gradient,
-				borderColor: '#219037',
+				borderColor: '#bc113d',
 				data: [day_earnings[6], day_earnings[5], day_earnings[4], day_earnings[3], day_earnings[2], day_earnings[1], day_earnings[0]],
 				tension: 0.25,
 				fill: 'start',
-				pointBackgroundColor: '#219037',
+				pointBackgroundColor: '#bc113d',
 				pointRadius: 4,
 				pointHoverRadius: 6,
 			}]
