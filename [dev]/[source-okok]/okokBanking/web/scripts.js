@@ -4,10 +4,10 @@ var data_graph = {}
 var isLoggingOut = false
 var useSound = false
 
-window.addEventListener('message', function(event) {
+window.addEventListener('message', function (event) {
 	if (event.data.UseSound) {
 		useSound = event.data.UseSound;
-	  }
+	}
 	switch (event.data.action) {
 		case 'loading_data':
 			if (selectedWindow == "none") {
@@ -15,7 +15,7 @@ window.addEventListener('message', function(event) {
 					<div class="d-flex justify-content-center flex-column align-items-center">
 						<span class="load"></span>
 						<br>
-						<div class="ldata-txt">Kiểm tra...</div>
+						<div class="ldata-txt">Loading Data...</div>
 					</div>
 				`);
 				$("#menu").fadeIn();
@@ -25,20 +25,20 @@ window.addEventListener('message', function(event) {
 			break
 		case 'bankmenu':
 			if (selectedWindow == "loading_data") {
-				if(useSound) {
+				if (useSound) {
 					var popup_sound = new Audio('popup.mp3');
 					popup_sound.volume = 0.2;
 					popup_sound.play();
 				}
 				$("#menu").fadeOut();
 
-				setTimeout(function(){
-					if (event.data.playerSex == "m") {
+				setTimeout(function () {
+					if (event.data.playerSex == "m" || "0") {
 						avatar = `<img src="img/avatar_male.png" class="avatar">`;
 					} else {
 						avatar = `<img src="img/avatar_female.png" class="avatar">`;
 					}
-					
+
 
 					$('#menu').html(`
 						<div class="col-md-2 d-flex flex-column sidebar-s">
@@ -56,7 +56,7 @@ window.addEventListener('message', function(event) {
 										<span id="playerName"></span> <span id="avatar">${avatar}</span>
 									</span>
 									<div class="wallet-div">
-										<span>Wallet: <span id="wallet_money"></span> ETR</span>
+										<span>Wallet: $<span id="wallet_money"></span></span>
 									</div>
 								</div>
 							</div>
@@ -67,7 +67,7 @@ window.addEventListener('message', function(event) {
 					$("#menu").fadeIn();
 					overview_page_function(event);
 				}, 400);
-				
+
 			}
 			break
 		case 'updatevalue':
@@ -83,14 +83,14 @@ window.addEventListener('message', function(event) {
 			overview_page_function(event);
 			break
 		case 'transactions_page':
-			for(var i=0; i<table.length; i++) {
+			for (var i = 0; i < table.length; i++) {
 				table[i].destroy();
 				table.splice(i, 1);
 			}
 
 			$('#page-title').html('Transactions');
 
-			if (event.data.isInSociety){
+			if (event.data.isInSociety) {
 				society = `<span class="sidebar-title mt-5">Society</span>
 						   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
 						   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
@@ -109,58 +109,58 @@ window.addEventListener('message', function(event) {
 			var num = event.data.db.length;
 			var numOfTransactions = 0
 
-			for(var i = 0; i < num; i++) {
+			for (var i = 0; i < num; i++) {
 				numOfTransactions++
 				var db = event.data.db[i];
 
 				// Received
 				if (db.type == 'transfer' && db.receiver_identifier == event.data.identifier) {
 					var name = db.sender_name;
-					if (name.length > 15){
-						name = name.substring(0, 15)+"..."
+					if (name.length > 15) {
+						name = name.substring(0, 15) + "..."
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-download"></i></span></td>';
 					data = `<td class="align-middle fw500">
 								From <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Received</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} ETR</td>`;
-				// Sent
+					amount = `<td class="align-middle fw500 transactions-received text-center">+ $${db.value.toLocaleString()}</td>`;
+					// Sent
 				} else if (db.type == 'transfer' && db.sender_identifier == event.data.identifier) {
 					var name = db.receiver_name;
-					if (name.length > 15){
-						name = name.substring(0, 15)+"..."
+					if (name.length > 15) {
+						name = name.substring(0, 15) + "..."
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-upload"></i></span></td>';
 					data = `<td class="align-middle fw500">
 								To <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Sent</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} ETR</td>`;
-				// Deposited
+					amount = `<td class="align-middle fw500 text-center">- $${db.value.toLocaleString()}</td>`;
+					// Deposited
 				} else if (db.type == 'deposit') {
 					var name = db.receiver_name;
-					if (name.length > 15){
-						name = name.substring(0, 15)+"..."
+					if (name.length > 15) {
+						name = name.substring(0, 15) + "..."
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-download"></i></span></td>';
 					data = `<td class="align-middle fw500">
 								Into <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Deposited</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} ETR</td>`;
-				// Withdrawn
+					amount = `<td class="align-middle fw500 transactions-received text-center">+ $${db.value.toLocaleString()}</td>`;
+					// Withdrawn
 				} else if (db.type == 'withdraw') {
 					var name = db.sender_name;
-					if (name.length > 15){
-						name = name.substring(0, 15)+"..."
+					if (name.length > 15) {
+						name = name.substring(0, 15) + "..."
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-upload"></i></span></td>';
 					data = `<td class="align-middle fw500">
 								From <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Withdrawn</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} ETR</td>`;
+					amount = `<td class="align-middle fw500 text-center">- $${db.value.toLocaleString()}</td>`;
 				}
 
 				row += `
@@ -189,7 +189,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">INCOME</h6>
-								<p class="card-text fw125" id="totalIncome">${event.data.graph_values[7].toLocaleString()}$</p>
+								<p class="card-text fw125" id="totalIncome">$${event.data.graph_values[7].toLocaleString()}</p>
 							</div>
 						</div>
 					</div>
@@ -197,7 +197,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">OUTCOME</h6>
-								<p class="card-text fw125" id="unpaidInvoices">${event.data.graph_values[8].toLocaleString()}$</p>
+								<p class="card-text fw125" id="unpaidInvoices">$${event.data.graph_values[8].toLocaleString()}</p>
 							</div>
 						</div>
 					</div>
@@ -205,7 +205,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">EARNINGS</h6>
-								<p class="card-text fw125" id="awaitedIncome">${event.data.graph_values[9].toLocaleString()}$</p>
+								<p class="card-text fw125" id="awaitedIncome">$${event.data.graph_values[9].toLocaleString()}</p>
 							</div>
 						</div>
 					</div>
@@ -226,14 +226,14 @@ window.addEventListener('message', function(event) {
 
 			break
 		case 'society_transactions':
-			for(var i=0; i<table.length; i++) {
+			for (var i = 0; i < table.length; i++) {
 				table[i].destroy();
 				table.splice(i, 1);
 			}
 
 			$('#page-title').html('Transactions');
 
-			if (event.data.isInSociety){
+			if (event.data.isInSociety) {
 				society = `<span class="sidebar-title mt-5">Society</span>
 						   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
 						   <p class="sidebar-item selected" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
@@ -252,58 +252,58 @@ window.addEventListener('message', function(event) {
 			var num = event.data.db.length;
 			var numOfTransactions = 0
 
-			for(var i = 0; i < num; i++) {
+			for (var i = 0; i < num; i++) {
 				numOfTransactions++
 				var db = event.data.db[i];
 
 				// Received
 				if (db.type == 'transfer' && db.receiver_identifier == event.data.identifier) {
 					var name = db.sender_name;
-					if (name.length > 15){
-						name = name.substring(0, 15)+"..."
+					if (name.length > 15) {
+						name = name.substring(0, 15) + "..."
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-download"></i></span></td>';
 					data = `<td class="align-middle transactions-name-div">
 								From <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Received</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} ETR</td>`;
-				// Sent
+					amount = `<td class="align-middle fw500 transactions-received text-center">+ $${db.value.toLocaleString()}</td>`;
+					// Sent
 				} else if (db.type == 'transfer' && db.sender_identifier == event.data.identifier) {
 					var name = db.receiver_name;
-					if (name.length > 15){
-						name = name.substring(0, 15)+"..."
+					if (name.length > 15) {
+						name = name.substring(0, 15) + "..."
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-upload"></i></span></td>';
 					data = `<td class="align-middle transactions-name-div">
 								To <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Sent</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} ETR</td>`;
-				// Deposited
+					amount = `<td class="align-middle fw500 text-center">- $${db.value.toLocaleString()}</td>`;
+					// Deposited
 				} else if (db.type == 'deposit') {
 					var name = db.receiver_name;
-					if (name.length > 15){
-						name = name.substring(0, 15)+"..."
+					if (name.length > 15) {
+						name = name.substring(0, 15) + "..."
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-download"></i></span></td>';
 					data = `<td class="align-middle transactions-name-div">
 								Into <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Deposited</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 transactions-received text-center">+ ${db.value.toLocaleString()} ETR</td>`;
-				// Withdrawn
+					amount = `<td class="align-middle fw500 transactions-received text-center">+ $${db.value.toLocaleString()}</td>`;
+					// Withdrawn
 				} else if (db.type == 'withdraw') {
 					var name = db.sender_name;
-					if (name.length > 15){
-						name = name.substring(0, 15)+"..."
+					if (name.length > 15) {
+						name = name.substring(0, 15) + "..."
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-upload"></i></span></td>';
 					data = `<td class="align-middle transactions-name-div">
 								From <span class="transactions-name">${name}</span>
 								<div class="mtm3125">Withdrawn</div>
 							</td>`;
-					amount = `<td class="align-middle fw500 text-center">- ${db.value.toLocaleString()} ETR</td>`;
+					amount = `<td class="align-middle fw500 text-center">- $${db.value.toLocaleString()}</td>`;
 				}
 
 				row += `
@@ -332,7 +332,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">INCOME</h6>
-								<p class="card-text fw125" id="totalIncome">${event.data.graph_values[7].toLocaleString()}$</p>
+								<p class="card-text fw125" id="totalIncome">$${event.data.graph_values[7].toLocaleString()}</p>
 							</div>
 						</div>
 					</div>
@@ -340,7 +340,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">OUTCOME</h6>
-								<p class="card-text fw125" id="unpaidInvoices">${event.data.graph_values[8].toLocaleString()}$</p>
+								<p class="card-text fw125" id="unpaidInvoices">$${event.data.graph_values[8].toLocaleString()}</p>
 							</div>
 						</div>
 					</div>
@@ -348,7 +348,7 @@ window.addEventListener('message', function(event) {
 						<div class="card stats-title">
 							<div class="card-body text-center">
 								<h6 class="card-title">EARNINGS</h6>
-								<p class="card-text fw125" id="awaitedIncome">${event.data.graph_values[9].toLocaleString()}$</p>
+								<p class="card-text fw125" id="awaitedIncome">$${event.data.graph_values[9].toLocaleString()}</p>
 							</div>
 						</div>
 					</div>
@@ -385,47 +385,47 @@ window.addEventListener('message', function(event) {
 });
 
 // Overview
-$(document).on('click', "#overview_page", function() {
+$(document).on('click', "#overview_page", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "overview_page",
 	}));
 });
 
 // Transactions
-$(document).on('click', "#transactions_page", function() {
+$(document).on('click', "#transactions_page", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "transactions_page",
 	}));
 });
 
-$(document).on('click', "#view_all_transactions", function() {
+$(document).on('click', "#view_all_transactions", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "transactions_page",
 	}));
 });
 
-$(document).on('click', "#view_all_transactions_society", function() {
+$(document).on('click', "#view_all_transactions_society", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "society_transactions",
 	}));
 });
 
 // Society
-$(document).on('click', "#society_page", function() {
+$(document).on('click', "#society_page", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "society_page",
 	}));
 });
 
 // Society transactions
-$(document).on('click', "#society_transactions", function() {
+$(document).on('click', "#society_transactions", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "society_transactions",
 	}));
 });
 
 // Settings
-$(document).on('click', "#settings_page", function() {
+$(document).on('click', "#settings_page", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "settings_page",
 	}));
@@ -433,57 +433,57 @@ $(document).on('click', "#settings_page", function() {
 
 // End Pages
 
-$(document).on('click', ".depositMoneyModal", function() {
+$(document).on('click', ".depositMoneyModal", function () {
 	var modalId = $('#depositModal');
 	var depositModal = new bootstrap.Modal(modalId);
 	depositModal.show()
 });
 
-$(document).on('click', ".withdrawMoneyModal", function() {
+$(document).on('click', ".withdrawMoneyModal", function () {
 	var modalId = $('#withdrawModal');
 	var depositModal = new bootstrap.Modal(modalId);
 	depositModal.show()
 });
 
-$(document).on('click', ".transferMoneyModal", function() {
+$(document).on('click', ".transferMoneyModal", function () {
 	var modalId = $('#transferModal');
 	var depositModal = new bootstrap.Modal(modalId);
 	depositModal.show()
 });
 
 // aqui
-$(document).on('click', "#buy_new_cc", function() {
+$(document).on('click', "#buy_new_cc", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "buy_new_cc",
 	}));
 });
 
-$(document).on('click', ".logout", function() {
-	if(!isLoggingOut) {
+$(document).on('click', ".logout", function () {
+	if (!isLoggingOut) {
 		isLoggingOut = true
 		logout_page()
 	}
 });
 
 // Close ESC Key
-$(document).ready(function() {
-	document.onkeyup = function(data) {
+$(document).ready(function () {
+	document.onkeyup = function (data) {
 		if (data.which == 27) {
 			switch (selectedWindow) {
 				case 'bankmenu':
-					if(!isLoggingOut) {
+					if (!isLoggingOut) {
 						isLoggingOut = true
 						logout_page()
 					}
 					break
 				case 'societies':
-					if(!isLoggingOut) {
+					if (!isLoggingOut) {
 						isLoggingOut = true
 						logout_page()
 					}
 					break
 				case 'settings':
-					if(!isLoggingOut) {
+					if (!isLoggingOut) {
 						isLoggingOut = true
 						logout_page()
 					}
@@ -501,10 +501,8 @@ $(document).ready(function() {
 	};
 });
 
-$(document).on('click', '#depositMoney', function() {
+$(document).on('click', '#depositMoney', function () {
 	var deposit_value = $('#deposit_value').val();
-
-	deposit_value = Math.trunc( deposit_value );
 
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: 'deposit',
@@ -515,10 +513,8 @@ $(document).on('click', '#depositMoney', function() {
 	document.getElementById('depositMoney').disabled = true;
 })
 
-$(document).on('click', '#withdrawMoney', function() {
+$(document).on('click', '#withdrawMoney', function () {
 	var withdraw_value = $('#withdraw_value').val();
-
-	withdraw_value = Math.trunc( withdraw_value );
 
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: 'withdraw',
@@ -529,7 +525,7 @@ $(document).on('click', '#withdrawMoney', function() {
 	document.getElementById('withdrawMoney').disabled = true;
 })
 
-$(document).on('click', "#transferMoney", function() {
+$(document).on('click', "#transferMoney", function () {
 	var transfer_value = $('#transfer_value').val();
 	var iban_value = $('#transfer_iban').val();
 
@@ -545,7 +541,7 @@ $(document).on('click', "#transferMoney", function() {
 });
 
 // Change iban
-$(document).on('click', "#change_iban", function() {
+$(document).on('click', "#change_iban", function () {
 	var new_iban = $('#new_iban').val();
 
 	$.post('https://okokBanking/action', JSON.stringify({
@@ -557,7 +553,7 @@ $(document).on('click', "#change_iban", function() {
 });
 
 // Change pin
-$(document).on('click', "#change_pin", function() {
+$(document).on('click', "#change_pin", function () {
 	var new_pin = $('#new_pin').val();
 
 	$.post('https://okokBanking/action', JSON.stringify({
@@ -568,8 +564,8 @@ $(document).on('click', "#change_pin", function() {
 	document.getElementById('change_pin').disabled = true;
 });
 
-$(document).on('click', ".close-atm", function() {
-	if(useSound) {
+$(document).on('click', ".close-atm", function () {
+	if (useSound) {
 		var popuprev_sound = new Audio('popupreverse.mp3');
 		popuprev_sound.volume = 0.2;
 		popuprev_sound.play();
@@ -585,51 +581,51 @@ function checkIfEmpty() {
 	// Deposit
 	if (document.getElementById("deposit_value").value === "") {
 		document.getElementById('depositMoney').disabled = true;
-	} else { 
-	document.getElementById('depositMoney').disabled = false;
+	} else {
+		document.getElementById('depositMoney').disabled = false;
 	}
 
 	// Withdraw
-	if(document.getElementById("withdraw_value").value === "") {
+	if (document.getElementById("withdraw_value").value === "") {
 		document.getElementById('withdrawMoney').disabled = true;
-	} else { 
-	document.getElementById('withdrawMoney').disabled = false;
+	} else {
+		document.getElementById('withdrawMoney').disabled = false;
 	}
 
 	// Transfer
-	if(document.getElementById("transfer_value").value === "" || document.getElementById("transfer_iban").value === "") {
+	if (document.getElementById("transfer_value").value === "" || document.getElementById("transfer_iban").value === "") {
 		document.getElementById('transferMoney').disabled = true;
-	} else { 
-	document.getElementById('transferMoney').disabled = false;
+	} else {
+		document.getElementById('transferMoney').disabled = false;
 	}
 }
 
 function checkIfEmptySettings() {
-	 // New pin
-	if(document.getElementById("new_pin").value === "") {
+	// New pin
+	if (document.getElementById("new_pin").value === "") {
 		document.getElementById('change_pin').disabled = true;
-	} else { 
-	document.getElementById('change_pin').disabled = false;
+	} else {
+		document.getElementById('change_pin').disabled = false;
 	}
 
 	// New iban
-	if(document.getElementById("new_iban").value === "") {
+	if (document.getElementById("new_iban").value === "") {
 		document.getElementById('change_iban').disabled = true;
-	} else { 
-	document.getElementById('change_iban').disabled = false;
+	} else {
+		document.getElementById('change_iban').disabled = false;
 	}
 }
 
 function overview_page_function(event) {
-	if(event.data.isUpdate && selectedWindow == "bankmenu" || !event.data.isUpdate){
-		for(var i=0; i<table.length; i++) {
+	if (event.data.isUpdate && selectedWindow == "bankmenu" || !event.data.isUpdate) {
+		for (var i = 0; i < table.length; i++) {
 			table[i].destroy();
 			table.splice(i, 1);
 		}
 
 		$('#page-title').html('Overview');
 
-		if (event.data.isInSociety){
+		if (event.data.isInSociety) {
 			society = `<span class="sidebar-title mt-5">Society</span>
 					   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
 					   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
@@ -644,7 +640,7 @@ function overview_page_function(event) {
 			${society}
 		`);
 
-		if(event.data.RequireCC) {
+		if (event.data.RequireCC) {
 			informations = `<span class="card-o-title">Informations<span class="badge bg-primary viewall-badge buy_new_card" data-bs-toggle="modal" data-bs-target="#buycc_modal"><i class="fa-solid fa-plus"></i> NEW</span></span>`;
 		} else {
 			informations = `<span class="card-o-title">Informations</span>`;
@@ -688,24 +684,10 @@ function overview_page_function(event) {
 						</div>
 						<div class="card-body ccard-body">
 							<div class="card creditcard-classic_card d-flex align-items-center">
-								<div class="card-body creditcard-classic_card-body">
-									<span class="d-flex justify-content-between"><span><img src="img/visa_white.svg" class="w20p"><span class="ccard-name">okokBank Classic</span></span><span><i class="fas fa-wifi"></i></span></span>
-									<div class="mt38p">
-										<div class="d-flex align-items-center">
-											<span class="ccard-status">Status</span>
-										</div>
-										<div class="d-flex justify-content-between align-items-center">
-											<span class="ccard-active">ACTIVE</span>
-											<div class="d-flex align-items-center ccard-valid">
-												<span class="ccard-thru">VALID THRU</span>
-												<span class="ccard-exp">08/25</span>
-											</div>
-										</div>
-									</div>
-								</div>
+								
 							</div>
 							<hr>
-							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;"><span class="fff">Balance:</span> <span id="playerBankMoney"></span> ETR</p>
+							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;"><span class="fff">Balance: $</span><span id="playerBankMoney"></span></p>
 							<p class="card-text text-center ccard-fs"><span class="fff">IBAN:</span> <span id="playerIBAN"></span></p>
 						</div>
 					</div>
@@ -741,58 +723,58 @@ function overview_page_function(event) {
 			num = 4
 		}
 
-		for(var i = 0; i < num; i++) {
+		for (var i = 0; i < num; i++) {
 
 			var db = event.data.db[i];
 
 			// Received
 			if (db.type == 'transfer' && db.receiver_identifier == event.data.identifier) {
 				var name = db.sender_name;
-				if (name.length > 15){
-					name = name.substring(0, 15)+"..."
+				if (name.length > 15) {
+					name = name.substring(0, 15) + "..."
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-download"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
 							From <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Received</div>
 						</td>`;
-				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} ETR</span></td>`;
-			// Sent
+				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ $${db.value.toLocaleString()}</span></td>`;
+				// Sent
 			} else if (db.type == 'transfer' && db.sender_identifier == event.data.identifier) {
 				var name = db.receiver_name;
-				if (name.length > 15){
-					name = name.substring(0, 15)+"..."
+				if (name.length > 15) {
+					name = name.substring(0, 15) + "..."
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-upload"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
 							To <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Sent</div>
 						</td>`;
-				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} ETR</span></td>`;
-			// Deposited
+				amount = `<td class="align-middle fw500"><span class="floatr">- $${db.value.toLocaleString()}</span></td>`;
+				// Deposited
 			} else if (db.type == 'deposit') {
 				var name = db.receiver_name;
-				if (name.length > 15){
-					name = name.substring(0, 15)+"..."
+				if (name.length > 15) {
+					name = name.substring(0, 15) + "..."
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-download"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
 							Into <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Deposited</div>
 						</td>`;
-				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} ETR</span></td>`;
-			// Withdrawn
+				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ $${db.value.toLocaleString()}</span></td>`;
+				// Withdrawn
 			} else if (db.type == 'withdraw') {
 				var name = db.sender_name;
-				if (name.length > 15){
-					name = name.substring(0, 15)+"..."
+				if (name.length > 15) {
+					name = name.substring(0, 15) + "..."
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-upload"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
 							From <span class="transactions-name">${name}</span>
 							<div class="mtm3125">Withdrawn</div>
 						</td>`;
-				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} ETR</span></td>`;
+				amount = `<td class="align-middle fw500"><span class="floatr">- $${db.value.toLocaleString()}</span></td>`;
 			}
 
 			row += `
@@ -820,17 +802,17 @@ function overview_page_function(event) {
 			var days = i;
 			var date = new Date();
 			var last = new Date(date.getTime() - (days * 24 * 60 * 60 * 1000));
-			var day =last.getDate();
-			var month=last.getMonth();
+			var day = last.getDate();
+			var month = last.getMonth();
 
-			labels.push(day+" "+months[month])
+			labels.push(day + " " + months[month])
 		}
 
 		var ctx = document.getElementById('myChart').getContext('2d');
 		var gradient = ctx.createLinearGradient(0, 0, 0, 300);
 
-		gradient.addColorStop(0, 'rgba(20, 75, 217, 0.5)');
-		gradient.addColorStop(1, 'rgba(25, 70, 189, 0)');
+		gradient.addColorStop(0, 'rgba(33, 144, 55, 0.5)');
+		gradient.addColorStop(1, 'rgba(37, 135, 61, 0)');
 
 		const day_earnings = event.data.graphDays;
 
@@ -839,11 +821,11 @@ function overview_page_function(event) {
 			datasets: [{
 				label: 'Earnings',
 				backgroundColor: gradient,
-				borderColor: '#1f5eff',
+				borderColor: '#219037',
 				data: [day_earnings[6], day_earnings[5], day_earnings[4], day_earnings[3], day_earnings[2], day_earnings[1], day_earnings[0]],
 				tension: 0.25,
 				fill: 'start',
-				pointBackgroundColor: '#1f5eff',
+				pointBackgroundColor: '#219037',
 				pointRadius: 4,
 				pointHoverRadius: 6,
 			}]
@@ -884,22 +866,22 @@ function overview_page_function(event) {
 			}
 		};
 
-		var myChart = new Chart (document.getElementById('myChart'), config);
+		var myChart = new Chart(document.getElementById('myChart'), config);
 
 		selectedWindow = "bankmenu";
 	}
 }
 
 function society_page_function(event) {
-	if(event.data.isUpdate && selectedWindow == "societies" || !event.data.isUpdate){
-		for(var i=0; i<table.length; i++) {
+	if (event.data.isUpdate && selectedWindow == "societies" || !event.data.isUpdate) {
+		for (var i = 0; i < table.length; i++) {
 			table[i].destroy();
 			table.splice(i, 1);
 		}
 
 		$('#page-title').html('Overview');
 
-		if (event.data.isInSociety){
+		if (event.data.isInSociety) {
 			society = `<span class="sidebar-title mt-5">Society</span>
 					   <p class="sidebar-item mt-2 selected" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
 					   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
@@ -952,24 +934,10 @@ function society_page_function(event) {
 						</div>
 						<div class="card-body ccard-body">
 							<div class="card creditcard-classic_card d-flex align-items-center">
-								<div class="card-body creditcard-classic_card-body">
-									<span class="d-flex justify-content-between"><span><img src="img/visa_white.svg" class="w20p"><span class="ccard-name">okokBank Classic</span></span><span><i class="fas fa-wifi"></i></span></span>
-									<div class="mt38p">
-										<div class="d-flex align-items-center">
-											<span class="ccard-status">Status</span>
-										</div>
-										<div class="d-flex justify-content-between align-items-center">
-											<span class="ccard-active">ACTIVE</span>
-											<div class="d-flex align-items-center ccard-valid">
-												<span class="ccard-thru">VALID THRU</span>
-												<span class="ccard-exp">08/25</span>
-											</div>
-										</div>
-									</div>
-								</div>
+								
 							</div>
 							<hr>
-							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;""><span class="fff">Balance:</span> <span id="playerBankMoney"></span> ETR</p>
+							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;""><span class="fff">Balance: $</span><span id="playerBankMoney"></span></p>
 							<p class="card-text text-center ccard-fs"><span class="fff">IBAN:</span> <span id="playerIBAN"></span></p>
 						</div>
 					</div>
@@ -1004,58 +972,58 @@ function society_page_function(event) {
 			num = 4
 		}
 
-		for(var i = 0; i < num; i++) {
+		for (var i = 0; i < num; i++) {
 
 			var db = event.data.db[i];
 
 			// Received
 			if (db.type == 'transfer' && db.receiver_identifier == event.data.identifier) {
 				var name = db.sender_name;
-				if (name.length > 15){
-					name = name.substring(0, 15)+"..."
+				if (name.length > 15) {
+					name = name.substring(0, 15) + "..."
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-download"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
 							From <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Received</div>
 						</td>`;
-				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} ETR</span></td>`;
-			// Sent
+				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ $${db.value.toLocaleString()}</span></td>`;
+				// Sent
 			} else if (db.type == 'transfer' && db.sender_identifier == event.data.identifier) {
 				var name = db.receiver_name;
-				if (name.length > 15){
-					name = name.substring(0, 15)+"..."
+				if (name.length > 15) {
+					name = name.substring(0, 15) + "..."
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-upload"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
 							To <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Sent</div>
 						</td>`;
-				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} ETR</span></td>`;
-			// Deposited
+				amount = `<td class="align-middle fw500"><span class="floatr">- $${db.value.toLocaleString()}</span></td>`;
+				// Deposited
 			} else if (db.type == 'deposit') {
 				var name = db.receiver_name;
-				if (name.length > 15){
-					name = name.substring(0, 15)+"..."
+				if (name.length > 15) {
+					name = name.substring(0, 15) + "..."
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-download"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
 							Into <span class="lastT-name">${name}</span>
 							<div class="mtm3125">Deposited</div>
 						</td>`;
-				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ ${db.value.toLocaleString()} ETR</span></td>`;
-			// Withdrawn
+				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ $${db.value.toLocaleString()}</span></td>`;
+				// Withdrawn
 			} else if (db.type == 'withdraw') {
 				var name = db.sender_name;
-				if (name.length > 15){
-					name = name.substring(0, 15)+"..."
+				if (name.length > 15) {
+					name = name.substring(0, 15) + "..."
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-upload"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
 							From <span class="transactions-name">${name}</span>
 							<div class="mtm3125">Withdrawn</div>
 						</td>`;
-				amount = `<td class="align-middle fw500"><span class="floatr">- ${db.value.toLocaleString()} ETR</span></td>`;
+				amount = `<td class="align-middle fw500"><span class="floatr">- $${db.value.toLocaleString()}</span></td>`;
 			}
 
 			row += `
@@ -1078,22 +1046,22 @@ function society_page_function(event) {
 		const labels = [];
 
 		const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
-		
+
 		for (i = 6; i > -1; i--) {
 			var days = i;
 			var date = new Date();
 			var last = new Date(date.getTime() - (days * 24 * 60 * 60 * 1000));
-			var day =last.getDate();
-			var month=last.getMonth();
+			var day = last.getDate();
+			var month = last.getMonth();
 
-			labels.push(day+" "+months[month])
+			labels.push(day + " " + months[month])
 		}
 
 		var ctx = document.getElementById('myChart').getContext('2d');
 		var gradient = ctx.createLinearGradient(0, 0, 0, 300);
 
-		gradient.addColorStop(0, 'rgba(20, 75, 217, 0.5)');
-		gradient.addColorStop(1, 'rgba(25, 70, 189, 0)');
+		gradient.addColorStop(0, 'rgba(33, 144, 55, 0.5)');
+		gradient.addColorStop(1, 'rgba(37, 135, 61, 0)');
 
 		const day_earnings = event.data.graphDays;
 
@@ -1102,11 +1070,11 @@ function society_page_function(event) {
 			datasets: [{
 				label: 'Earnings',
 				backgroundColor: gradient,
-				borderColor: '#1f5eff',
+				borderColor: '#219037',
 				data: [day_earnings[6], day_earnings[5], day_earnings[4], day_earnings[3], day_earnings[2], day_earnings[1], day_earnings[0]],
 				tension: 0.25,
 				fill: 'start',
-				pointBackgroundColor: '#1f5eff',
+				pointBackgroundColor: '#219037',
 				pointRadius: 4,
 				pointHoverRadius: 6,
 			}]
@@ -1146,22 +1114,22 @@ function society_page_function(event) {
 				}
 			}
 		};
-		
-		var myChart = new Chart (document.getElementById('myChart'), config);
+
+		var myChart = new Chart(document.getElementById('myChart'), config);
 
 		selectedWindow = "societies";
 	}
 }
 
 function settings_page_function(event) {
-	for(var i=0; i<table.length; i++) {
+	for (var i = 0; i < table.length; i++) {
 		table[i].destroy();
 		table.splice(i, 1);
 	}
 
 	$('#page-title').html('Settings');
 
-	if (event.data.isInSociety){
+	if (event.data.isInSociety) {
 		society = `<span class="sidebar-title mt-5">Society</span>
 				   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
 				   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
@@ -1201,7 +1169,7 @@ function settings_page_function(event) {
 							<div class="col col-md-6 d-flex align-items-center">
 								<div class="card w-100 h-100 d-flex justify-content-center settings_info-card">
 									<div class="card-body text-center fs1125">
-										<span>The IBAN has a change cost of ${event.data.ibanCost}$</span>
+										<span>The IBAN has a change cost of $${event.data.ibanCost}</span>
 										<hr class="fff">
 										<span>The IBAN always have the prefix "${event.data.ibanPrefix}"</span>
 										<hr class="fff">
@@ -1234,7 +1202,7 @@ function settings_page_function(event) {
 							<div class="col col-md-6 d-flex align-items-center">
 								<div class="card w-100 h-100 d-flex justify-content-center settings_info-card">
 									<div class="card-body text-center fs1125">
-										<span>The PIN has a change cost of ${event.data.pinCost}$</span>
+										<span>The PIN has a change cost of $${event.data.pinCost}</span>
 										<hr class="fff">
 										<span>The maximum number of characters is ${event.data.pinCharNum}</span>
 										<hr class="fff">
@@ -1263,14 +1231,14 @@ function logout_page() {
 			</div>
 		`);
 		$("#menu").fadeIn();
-		setTimeout(function(){
+		setTimeout(function () {
 			$("#menu").fadeOut();
 			$(".main_card").fadeOut();
 
 			selectedWindow = "none";
-			setTimeout(function(){
+			setTimeout(function () {
 				isLoggingOut = false
-				for(var i=0; i<table.length; i++) {
+				for (var i = 0; i < table.length; i++) {
 					table[i].destroy();
 					table.splice(i, 1);
 				}
@@ -1280,7 +1248,7 @@ function logout_page() {
 			}));
 		}, 1000);
 	}, 400);
-	if(useSound) {
+	if (useSound) {
 		var popuprev_sound = new Audio('popupreverse.mp3');
 		popuprev_sound.volume = 0.2;
 		popuprev_sound.play();
@@ -1297,14 +1265,14 @@ function atm_numpad(pin) {
 	numbers = document.querySelectorAll(".number");
 	dots = Array.prototype.slice.call(dots);
 	numbers = Array.prototype.slice.call(numbers);
-	
+
 
 	numbers.forEach(function (number, index) {
-		if (canSetClick){
+		if (canSetClick) {
 			number.addEventListener("click", numpad);
 		}
 		function numpad() {
-			if(useSound) {
+			if (useSound) {
 				var atm_sound = new Audio('atm.mp3');
 				atm_sound.volume = 0.2;
 				atm_sound.play();
@@ -1312,8 +1280,8 @@ function atm_numpad(pin) {
 			if (index == 9 || index == 11) {
 				if (index == 9) {
 					dots.forEach(function (dot, index) {
-							dot.className = "dot clear";
-						});
+						dot.className = "dot clear";
+					});
 				} else if (index == 11) {
 					if (input == correct) {
 						if (useSound) {
@@ -1330,7 +1298,7 @@ function atm_numpad(pin) {
 								action: "close",
 							}));
 							selectedWindow = "none";
-					
+
 							$.post('https://okokBanking/action', JSON.stringify({
 								action: "atm",
 							}));
@@ -1339,7 +1307,7 @@ function atm_numpad(pin) {
 						dots.forEach(function (dot, index) {
 							dot.className = "dot active wrong";
 						});
-						if(useSound) {
+						if (useSound) {
 							var wrong_sound = new Audio('wrong.mp3');
 							wrong_sound.volume = 0.2;
 							wrong_sound.play();
@@ -1358,14 +1326,14 @@ function atm_numpad(pin) {
 			} else {
 				if (input.length < 4) {
 					if (index == 10) {
-					index = -1
-				}
-				number.className = "number grow";
-				input += index + 1;
-				dots[input.length - 1].className = "dot active";
-				setTimeout(function () {
-					number.className = "number";
-				}, 1000);
+						index = -1
+					}
+					number.className = "number grow";
+					input += index + 1;
+					dots[input.length - 1].className = "dot active";
+					setTimeout(function () {
+						number.className = "number";
+					}, 1000);
 				}
 			}
 		}

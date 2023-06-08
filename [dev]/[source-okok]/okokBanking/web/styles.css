@@ -1,8 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
-*,*:focus,*:hover{
-	outline:none;
+*,
+*:focus,
+*:hover {
+	outline: none;
 }
 
 html {
@@ -32,7 +34,7 @@ body {
 .main_card {
 	width: 62.5rem;
 	border-radius: 1.25rem;
-	background-color: #202128;
+	background-color: #1a1a1a;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -69,11 +71,11 @@ body {
 
 .logo {
 	max-width: 9.5rem;
-	max-height: 2.64rem;
+	/* max-height: 2.64rem; */
 }
 
 hr {
-	color: #3e3f4b;
+	color: #262626;
 	opacity: 1;
 	height: 0.00625rem;
 }
@@ -83,7 +85,7 @@ hr:not([size]) {
 	opacity: 1;
 }
 
-.dataTable-table > thead > tr > th {
+.dataTable-table>thead>tr>th {
 	border-bottom: none;
 }
 
@@ -91,7 +93,8 @@ hr:not([size]) {
 	border-bottom: none;
 }
 
-.dataTable-top, .dataTable-bottom {
+.dataTable-top,
+.dataTable-bottom {
 	padding: 0 0;
 }
 
@@ -100,14 +103,14 @@ thead {
 }
 
 tr {
-	background-color: #2e2f36;
+	background-color: #242424;
 	margin-bottom: 0.625rem;
 	font-size: 1.25rem;
 	transition: .25s;
 }
 
 tr:hover {
-	background-color: #292a31;
+	background-color: #262626;
 	transition: .25s;
 }
 
@@ -123,7 +126,7 @@ td:last-child {
 }
 
 .dataTable-table {
-	border-collapse:separate; 
+	border-collapse: separate;
 	border-spacing: 0rem 0.4375rem;
 }
 
@@ -139,7 +142,7 @@ td:last-child {
 }
 
 .sidebar-item:hover {
-	background-color: #1f5eff;
+	background-color: #25873d;
 	cursor: pointer;
 	transition: 0.25s;
 	color: #fff;
@@ -153,7 +156,7 @@ td:last-child {
 
 .selected {
 	color: #fff;
-	background-color: #1f5eff;
+	background-color: #25873d;
 	font-weight: 600;
 }
 
@@ -200,12 +203,12 @@ td:last-child {
 }
 
 .btn-blue {
-	background-color: #1f5eff;
+	background-color: #25873d;
 	color: #e6e6e6;
 }
 
 .btn.btn-blue:hover {
-	background-color: #0a4df9;
+	background-color: #219037;
 	color: #e6e6e6;
 }
 
@@ -215,14 +218,14 @@ td:last-child {
 }
 
 .modal-body {
-	background-color: #292a31;
+	background-color: #262626;
 	border-radius: 0.625rem;
 	color: #fff;
 }
 
 .form-control {
 	border: none;
-	background-color: #1d1e24;
+	background-color: #161616;
 	height: 5rem;
 	font-size: 1.875rem;
 	border-radius: 0.625rem;
@@ -232,8 +235,8 @@ td:last-child {
 .form-control:focus {
 	box-shadow: none;
 	border: none;
-	background-color: #1d1e24;
-	box-shadow: 0rem 0rem 0.3125rem 0.0625rem #1f5eff !important;
+	background-color: #161616;
+	box-shadow: 0rem 0rem 0.3125rem 0.0625rem #25873d !important;
 	color: #fff;
 }
 
@@ -244,12 +247,12 @@ input::-webkit-inner-spin-button {
 }
 
 .viewall-badge {
-	background-color: #1f5eff !important;
+	background-color: #25873d !important;
 	transition: 0.25s;
 }
 
 .viewall-badge:hover {
-	background-color: #0a4df9 !important;
+	background-color: #219037 !important;
 	transition: 0.25s;
 	cursor: pointer;
 }
@@ -257,7 +260,7 @@ input::-webkit-inner-spin-button {
 .close-button {
 	color: #c7c7c9;
 	position: absolute;
-	right: 1.25rem; 
+	right: 1.25rem;
 	top: 0.9rem;
 	transition: .25s;
 	font-size: 1.6rem;
@@ -271,7 +274,7 @@ input::-webkit-inner-spin-button {
 }
 
 .dataTable-input {
-	background-color: #2e2f36;
+	background-color: #242424;
 	border: none;
 	border-radius: 0.625rem;
 	color: #fff;
@@ -279,8 +282,10 @@ input::-webkit-inner-spin-button {
 	font-size: 1.3rem;
 }
 
-.dataTable-pagination .active a, .dataTable-pagination .active a:focus, .dataTable-pagination .active a:hover {
-	background-color: #1f5eff;
+.dataTable-pagination .active a,
+.dataTable-pagination .active a:focus,
+.dataTable-pagination .active a:hover {
+	background-color: #25873d;
 	cursor: pointer;
 	transition: .25s;
 }
@@ -288,14 +293,14 @@ input::-webkit-inner-spin-button {
 .dataTable-pagination a {
 	border-radius: 0.313rem;
 	color: #fff;
-	background-color: #2e2f36;
+	background-color: #242424;
 	transition: .25s;
 	padding: 0.375rem 0.75rem;
 	margin-left: 0.125rem;
 }
 
 .dataTable-pagination a:hover {
-	background-color: #292a31;
+	background-color: #262626;
 	transition: .25s;
 }
 
@@ -310,7 +315,10 @@ input::-webkit-inner-spin-button {
 	font-size: 1.125rem;
 }
 
-.dataTable-top > nav:last-child, .dataTable-top > div:last-child, .dataTable-bottom > nav:last-child, .dataTable-bottom > div:last-child {
+.dataTable-top>nav:last-child,
+.dataTable-top>div:last-child,
+.dataTable-bottom>nav:last-child,
+.dataTable-bottom>div:last-child {
 	float: none;
 }
 
@@ -322,14 +330,14 @@ input::-webkit-inner-spin-button {
 	text-transform: uppercase;
 }
 
-::-webkit-input-placeholder { 
-	text-transform: none; 
+::-webkit-input-placeholder {
+	text-transform: none;
 }
 
 .atm_card {
 	width: 20rem;
 	border-radius: 1.25rem;
-	background-color: #202128;
+	background-color: #1a1a1a;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -410,10 +418,11 @@ input::-webkit-inner-spin-button {
 	user-select: none;
 	transition: all 0.5s ease;
 	border-radius: 0.625rem;
-	border: 0.125rem solid #1f5eff;
+	border: 0.125rem solid #25873d;
 }
+
 .number:hover {
-	background-color: #1f5eff;
+	background-color: #25873d;
 	color: #fff;
 	border-radius: 0.625rem;
 	cursor: pointer;
@@ -427,6 +436,7 @@ input::-webkit-inner-spin-button {
 	height: 2.5em;
 	transition: all 0.5s ease;
 }
+
 .number.grow {
 	-webkit-animation: grow 0.6s ease;
 	animation: grow 0.6s ease;
@@ -443,6 +453,7 @@ input::-webkit-inner-spin-button {
 	50% {
 		transform: scale3d(1.1, 1.1, 1.1);
 	}
+
 	100% {
 		transform: scale3d(1, 1, 1);
 	}
@@ -454,12 +465,15 @@ input::-webkit-inner-spin-button {
 		transform: scale3d(0.85, 0.85, 0.85);
 		left: 0;
 	}
+
 	40% {
 		left: -0.3125rem;
 	}
+
 	60% {
 		left: 0.625rem;
 	}
+
 	80% {
 		left: -0.3125rem;
 	}
@@ -471,12 +485,15 @@ input::-webkit-inner-spin-button {
 		transform: scale3d(0.85, 0.85, 0.85);
 		top: 0;
 	}
+
 	40% {
 		top: -0.3125rem;
 	}
+
 	60% {
 		top: 0.625rem;
 	}
+
 	80% {
 		top: -0.3125rem;
 	}
@@ -484,7 +501,7 @@ input::-webkit-inner-spin-button {
 
 @keyframes clear {
 	20% {
-		background: #1f5eff;
+		background: #25873d;
 		transform: scale3d(0.85, 0.85, 0.85);
 		left: 0;
 	}
@@ -496,8 +513,8 @@ input::-webkit-inner-spin-button {
 	height: 9.375rem;
 	border-radius: 50%;
 	border: 0.625rem solid transparent;
-	border-top: 0.625rem solid #1f5eff;
-	border-bottom: 0.625rem solid #1f5eff;
+	border-top: 0.625rem solid #25873d;
+	border-bottom: 0.625rem solid #25873d;
 	animation: rotateAntiCW 1.8s linear infinite;
 }
 
@@ -514,13 +531,23 @@ input::-webkit-inner-spin-button {
 }
 
 @keyframes rotate {
-	0%{transform: rotate(0deg);}
-	100%{transform: rotate(-360deg);}
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(-360deg);
+	}
 }
 
 @keyframes rotateAntiCW {
-	0%{transform: rotate(0deg);}
-	100%{transform: rotate(360deg);}
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 input[type=password]:not(:placeholder-shown) {
@@ -528,7 +555,12 @@ input[type=password]:not(:placeholder-shown) {
 	font-size: 2.5rem;
 }
 
-.dataTable-table > tbody > tr > td, .dataTable-table > tbody > tr > th, .dataTable-table > tfoot > tr > td, .dataTable-table > tfoot > tr > th, .dataTable-table > thead > tr > td, .dataTable-table > thead > tr > th {
+.dataTable-table>tbody>tr>td,
+.dataTable-table>tbody>tr>th,
+.dataTable-table>tfoot>tr>td,
+.dataTable-table>tfoot>tr>th,
+.dataTable-table>thead>tr>td,
+.dataTable-table>thead>tr>th {
 	vertical-align: top;
 	padding: 0.5rem 0.625rem;
 }
@@ -542,7 +574,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 #myChart {
-	margin-top: 0!important;
+	margin-top: 0 !important;
 	margin-top: 0.3125rem;
 	width: 100%;
 }
@@ -556,7 +588,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .sidebar-s {
-	border-right: 0.0625rem solid rgba(62, 63, 75);
+	border-right: 0.0625rem solid #262626;
 	width: 11.0625rem;
 }
 
@@ -576,17 +608,18 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .chart-main {
-	border-right: 0.0625rem solid rgba(62, 63, 75);
+	border-right: 0.0625rem solid #262626;
 }
 
-.chart-card, .settings-card {
+.chart-card,
+.settings-card {
 	background-color: transparent;
 	border-radius: 0.625rem;
 	box-shadow: 0rem 0rem 0.313rem 0rem rgba(10, 10, 10, 0.50);
 }
 
 .card-o-header {
-	background-color: #292a31;
+	background-color: #262626;
 	border-top-right-radius: 0.625rem !important;
 	border-top-left-radius: 0.625rem !important;
 }
@@ -597,7 +630,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .chart-card-body {
-	background-color: #1d1e24;
+	background-color: #161616;
 	border-bottom-left-radius: 0.625rem;
 	border-bottom-right-radius: 0.625rem;
 	padding: 0.6rem 1rem 0.5rem 1rem;
@@ -608,14 +641,18 @@ input[type=password]:not(:placeholder-shown) {
 	min-height: 13.107rem;
 }
 
-.last-t-card, .actions-card, .settings2-card {
+.last-t-card,
+.actions-card,
+.settings2-card {
 	background-color: transparent;
 	border-radius: 0.625rem;
 	box-shadow: 0rem 0rem 0.313rem 0rem rgba(10, 10, 10, 0.50);
 	margin-top: 0.75rem;
 }
 
-#view_all_transactions, #view_all_transactions_society, .buy_new_card {
+#view_all_transactions,
+#view_all_transactions_society,
+.buy_new_card {
 	position: absolute;
 	font-size: 0.875rem;
 	right: 0.5625rem;
@@ -623,7 +660,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 #last-t-body {
-	background-color: #1d1e24;
+	background-color: #161616;
 	border-bottom-left-radius: 0.625rem;
 	border-bottom-right-radius: 0.625rem;
 	padding: 0.6rem 1rem;
@@ -635,7 +672,10 @@ input[type=password]:not(:placeholder-shown) {
 	font-size: 1.125rem;
 }
 
-#depositMoney, #withdrawMoney, #transferMoney, .buyccbtn {
+#depositMoney,
+#withdrawMoney,
+#transferMoney,
+.buyccbtn {
 	border-radius: 0.625rem;
 	flex-basis: 100%;
 	margin-top: 1.125rem;
@@ -666,7 +706,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .ccard-body {
-	background-color: #1d1e24;
+	background-color: #161616;
 	border-bottom-left-radius: 0.625rem;
 	border-bottom-right-radius: 0.625rem;
 	font-size: 1rem;
@@ -725,13 +765,16 @@ input[type=password]:not(:placeholder-shown) {
 	color: #fff;
 }
 
-.actions-card_body, .settings-card_body {
-	background-color: #1d1e24;
+.actions-card_body,
+.settings-card_body {
+	background-color: #161616;
 	border-bottom-left-radius: 0.625rem;
 	border-bottom-right-radius: 0.625rem;
 }
 
-#depositMoneyModal, #withdrawMoneyModal, #transferMoneyModal {
+#depositMoneyModal,
+#withdrawMoneyModal,
+#transferMoneyModal {
 	border-radius: 0.625rem;
 	flex-basis: 100%;
 }
@@ -740,8 +783,9 @@ input[type=password]:not(:placeholder-shown) {
 	margin-top: 0.4375rem;
 }
 
-.lastT-action, .transactions-action {
-	background-color: #1d1e24;
+.lastT-action,
+.transactions-action {
+	background-color: #161616;
 	padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
 	border-radius: 0.625rem;
 }
@@ -751,8 +795,9 @@ input[type=password]:not(:placeholder-shown) {
 	font-size: 1rem;
 }
 
-.lastT-name, .transactions-name {
-	color: #1f5eff;
+.lastT-name,
+.transactions-name {
+	color: #25873d;
 	text-transform: capitalize;
 	font-weight: 600;
 }
@@ -765,7 +810,8 @@ input[type=password]:not(:placeholder-shown) {
 	font-weight: 500;
 }
 
-.lastT-received, .transactions-received {
+.lastT-received,
+.transactions-received {
 	color: #2ecc71;
 }
 
@@ -781,8 +827,9 @@ input[type=password]:not(:placeholder-shown) {
 	flex: 1 1 50%;
 }
 
-.changeiban-card, .changepin-card {
-	background-color: #292a31;
+.changeiban-card,
+.changepin-card {
+	background-color: #262626;
 	border-radius: 0.625rem;
 	color: #fff;
 }
@@ -805,7 +852,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .settings_info-card {
-	background-color: #1f5eff;
+	background-color: #25873d;
 	border-radius: 0.625rem;
 	color: #fff;
 }
@@ -832,7 +879,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .stats-title {
-	background-color: #1f5eff;
+	background-color: #25873d;
 	border-radius: 0.625rem;
 	color: #fff;
 }
@@ -860,7 +907,7 @@ input[type=password]:not(:placeholder-shown) {
 }
 
 .btn-dark {
-	background-color: #1d1e24;
+	background-color: #161616;
 }
 
 .btn-dark:hover {
