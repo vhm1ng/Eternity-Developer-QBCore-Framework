@@ -812,7 +812,7 @@ function overview_page_function(event) {
 		var gradient = ctx.createLinearGradient(0, 0, 0, 300);
 
 		gradient.addColorStop(0, 'rgba(33, 144, 55, 0.5)');
-		gradient.addColorStop(1, 'rgba(37, 135, 61, 0)');
+		gradient.addColorStop(1, 'rgba(140, 14, 47, 0)');
 
 		const day_earnings = event.data.graphDays;
 
@@ -1060,8 +1060,8 @@ function society_page_function(event) {
 		var ctx = document.getElementById('myChart').getContext('2d');
 		var gradient = ctx.createLinearGradient(0, 0, 0, 300);
 
-		gradient.addColorStop(0, 'rgba(33, 144, 55, 0.5)');
-		gradient.addColorStop(1, 'rgba(37, 135, 61, 0)');
+		gradient.addColorStop(0, 'rgba(188, 17, 61, 0.5)');
+		gradient.addColorStop(1, 'rgba(188, 17, 61, 0)');
 
 		const day_earnings = event.data.graphDays;
 
