@@ -9,11 +9,10 @@ lua54 'yes'
 this_is_a_map 'yes'
 
 files {
-    'stream/*.ytyp',
-    'stream/*.ydr',
+    'likemod_freefirethrone_props.ytyp',
 }
 
-data_file 'DLC_ITYP_REQUEST' 'likemod_freefirethrone_props.ytyp',
+data_file 'DLC_ITYP_REQUEST' 'likemod_freefirethrone_props.ytyp'
 
 shared_scripts { 'config.lua', 'shared/*.lua' }
 client_scripts { 'client/*.lua' }
