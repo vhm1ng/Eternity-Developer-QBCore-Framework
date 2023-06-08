@@ -252,7 +252,7 @@ AddEventHandler("okokBanking:WithdrawMoney", function(amount)
 		playerMoneyCashAmount = playerMoneyCash.amount
 	end
 
-	if amount <= playerMoney or amount <= playerMoneyCash then
+	if amount <= playerMoney then
 		if Config.UseCashAsItem then
 			xPlayer.Functions.AddItem('cash', amount)
 		else
@@ -1283,7 +1283,7 @@ AddEventHandler("okokBanking:UpdateIbanDB", function(iban, amount)
 		MySQL.query('SELECT charinfo FROM players WHERE citizenid = ?', {
 			xPlayer.PlayerData.citizenid
 		}, function(result)
-			local charinfo = json.decode(result)
+			local charinfo = json.decode(result[1].charinfo)
 			charinfo.account = iban
 			local updated = json.encode(charinfo)
 			MySQL.query('UPDATE players SET charinfo = ? WHERE citizenid = ?', {updated, xPlayer.PlayerData.citizenid})
