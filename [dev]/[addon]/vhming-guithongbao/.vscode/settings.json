@@ -1,0 +1,6 @@
+{
+    "livePreview.defaultPreviewPath": "/html/index.html",
+    "cSpell.enableFiletypes": [
+        "!html"
+    ]
+}
