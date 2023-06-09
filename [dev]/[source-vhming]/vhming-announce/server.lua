@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 local haveTB = false
 QBCore.Commands.Add("thongbao", "Thông báo toàn thành phố ", {} , false, function(source,args)
     local xPlayer = QBCore.Functions.GetPlayer(source)

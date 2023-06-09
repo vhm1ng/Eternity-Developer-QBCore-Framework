@@ -7,30 +7,22 @@ description 'Gửi thông báo tới tất cả mọi người, RegisterEvent'
 version '1.0.0'
 author 'VHMing'
 
-
-
-shared_scripts {
-
-}
-
-server_scripts {
-    '@oxmysql/lib/MySQL.lua',
-    'server/main.lua'
-}
-
 client_scripts {
-    'client/main.lua',
-    -- 'client/gui.lua',
-    '@PolyZone/client.lua',
-    '@PolyZone/BoxZone.lua',
-    '@PolyZone/CircleZone.lua',
+    'client.lua'
+} 
+
+server_scripts{
+    'server.lua'
 }
 
-dependencies {
-    'et-core',
-    'et-interior',
-    'et-clothing',
-    'et-weathersync'
+shared_scripts{
+    'config.lua'
 }
 
-lua54 'yes'
+files {
+    'html/index.html',
+    'html/*.css',
+    'html/script.js',
+    'html/*.png',
+    'html/audio.mp3',
+}
