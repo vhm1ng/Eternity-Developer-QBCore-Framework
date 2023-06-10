@@ -1,4 +1,4 @@
-    QBCore.Functions = {}
+QBCore.Functions = {}
 
 -- Player
 
