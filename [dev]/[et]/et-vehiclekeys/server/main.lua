@@ -68,6 +68,57 @@ QBCore.Functions.CreateCallback('et-vehiclekeys:server:checkPlayerOwned', functi
     cb(playerOwned)
 end)
 
+QBCore.Functions.CreateCallback('vehiclekeys:CheckHasKey', function(source, cb, plate)
+    local Player = QBCore.Functions.GetPlayer(source)
+	if Player ~= nil then 
+    cb(CheckOwner(plate, Player.PlayerData.citizenid))
+	end
+end)
+function CheckOwner(plate, identifier)
+    local retval = false
+    if VehicleList ~= nil then
+        for k, val in pairs(VehicleList) do
+            if val.plate == plate then
+                for key, owner in pairs(VehicleList[k].owners) do
+                    if owner == identifier then
+                        retval = true
+                    end
+                end
+            end
+        end
+    end
+    return retval
+end
+
+RegisterServerEvent('vehiclekeys:server:SetVehicleOwner')
+AddEventHandler('vehiclekeys:server:SetVehicleOwner', function(plate)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if VehicleList ~= nil then
+        if DoesPlateExist(plate) then
+            for k, val in pairs(VehicleList) do
+                if val.plate == plate then
+                    table.insert(VehicleList[k].owners, Player.PlayerData.citizenid)
+                end
+            end
+        else
+            local vehicleId = #VehicleList+1
+            VehicleList[vehicleId] = {
+                plate = plate, 
+                owners = {},
+            }
+            VehicleList[vehicleId].owners[1] = Player.PlayerData.citizenid
+        end
+    else
+        local vehicleId = #VehicleList+1
+        VehicleList[vehicleId] = {
+            plate = plate, 
+            owners = {},
+        }
+        VehicleList[vehicleId].owners[1] = Player.PlayerData.citizenid
+    end
+end)
+
 -----------------------
 ----   Functions   ----
 -----------------------
@@ -122,3 +173,8 @@ QBCore.Commands.Add("removekeys", Lang:t("addcom.rkeys"), {{name = Lang:t("addco
     end
     RemoveKeys(tonumber(args[1]), args[2])
 end, 'admin')
+
+QBCore.Functions.CreateUseableItem("lockpick", function(source, item)
+    local Player = QBCore.Functions.GetPlayer(source)
+    TriggerClientEvent("lockpicks:UseLockpick", source, false)
+end)
