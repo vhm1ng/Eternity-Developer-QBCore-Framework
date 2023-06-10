@@ -122,6 +122,7 @@ RegisterNetEvent('QBCore:Command:SpawnVehicle', function(vehName)
     local ped = PlayerPedId()
     local hash = GetHashKey(vehName)
     local veh = GetVehiclePedIsUsing(ped)
+    local vehicle2 = GetVehiclePedIsIn(ped, true)
     if not IsModelInCdimage(hash) then return end
     RequestModel(hash)
     while not HasModelLoaded(hash) do
@@ -137,7 +138,7 @@ RegisterNetEvent('QBCore:Command:SpawnVehicle', function(vehName)
     SetVehicleFuelLevel(vehicle, 100.0)
     SetVehicleDirtLevel(vehicle, 0.0)
     SetModelAsNoLongerNeeded(hash)
-    TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(vehicle))
+    TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(vehicle))
 end)
 
 RegisterNetEvent('QBCore:Command:DeleteVehicle', function()
