@@ -206,7 +206,7 @@ Citizen.CreateThread(function()
                         if result then
                             HasKey = true
                             TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
-                            SetVehicleEngineOn(vehicle, true, false, true)
+							SetVehicleEngineOn(vehicle, false, false, true)
                         else
                             HasKey = false
 							SetVehicleEngineOn(vehicle, false, false, true)

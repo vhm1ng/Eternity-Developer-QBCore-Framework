@@ -619,7 +619,7 @@ local function UpdateVehicleSpawnerSpawnedVehicle(veh, garage, heading, cb)
     else
         exports['LegacyFuel']:SetFuel(veh, 100) -- Don't change this. Change it in the  Defaults to legacy fuel if not set in the config
     end
-    TriggerEvent("vehiclekeys:client:SetOwner", plate)
+    TriggerEvent("vehiclekeys:client:SetOwner2", plate)
     TriggerServerEvent("et-garage:server:UpdateSpawnedVehicle", plate, true)
 
     ClearMenu()
@@ -662,7 +662,7 @@ function UpdateSpawnedVehicle(spawnedVehicle, vehicleInfo, heading, garage, prop
         else
             exports['LegacyFuel']:SetFuel(spawnedVehicle, 100) -- Don't change this. Change it in the  Defaults to legacy fuel if not set in the config
         end
-        TriggerEvent("vehiclekeys:client:SetOwner", plate)
+        TriggerEvent("vehiclekeys:client:SetOwner2", plate)
         TriggerServerEvent("et-garage:server:UpdateSpawnedVehicle", plate, true)
     else
         if plate then
@@ -679,7 +679,7 @@ function UpdateSpawnedVehicle(spawnedVehicle, vehicleInfo, heading, garage, prop
         SetAsMissionEntity(spawnedVehicle)
         ApplyVehicleDamage(spawnedVehicle, vehicleInfo)
         TriggerServerEvent('et-garage:server:updateVehicleState', 0, vehicleInfo.plate, vehicleInfo.garage)
-        TriggerEvent("vehiclekeys:client:SetOwner", vehicleInfo.plate)
+        TriggerEvent("vehiclekeys:client:SetOwner2", vehicleInfo.plate)
     end
     SetEntityHeading(spawnedVehicle, heading)
     SetAsMissionEntity(spawnedVehicle)
@@ -786,7 +786,8 @@ RegisterNetEvent('et-garages:client:TakeOutGarage', function(data, cb)
     local garage = data.garage
     local spawnDistance = garage.SpawnDistance and garage.SpawnDistance or Config.SpawnDistance
     local parkingSpots = garage.ParkingSpots or {}
-
+    local ped = PlayerPedId()
+    local vehicle2 = GetVehiclePedIsIn(ped, true)
     local location, heading = GetSpawnLocationAndHeading(garage, garageType, parkingSpots, vehicle, spawnDistance)
     if garage.useVehicleSpawner then
         SpawnVehicleSpawnerVehicle(vehicleModel, location, heading, cb)

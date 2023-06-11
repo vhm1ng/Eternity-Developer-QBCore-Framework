@@ -3,7 +3,6 @@
 -----------------------
 local QBCore = exports['et-core']:GetCoreObject()
 local VehicleList = {}
-
 -----------------------
 ----   Threads     ----
 -----------------------
@@ -118,6 +117,18 @@ AddEventHandler('vehiclekeys:server:SetVehicleOwner', function(plate)
         VehicleList[vehicleId].owners[1] = Player.PlayerData.citizenid
     end
 end)
+
+function DoesPlateExist(plate)
+    if VehicleList ~= nil then
+        for k, val in pairs(VehicleList) do
+            if val.plate == plate then
+                return true
+            end
+        end
+    end
+    return false
+end
+
 
 -----------------------
 ----   Functions   ----
