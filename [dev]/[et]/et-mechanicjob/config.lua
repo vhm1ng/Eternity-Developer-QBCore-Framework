@@ -82,7 +82,7 @@ Config.Plates = {
             heading = 250,
             length = 7,
             width = 4,
-            debugPoly = true
+            debugPoly = false
         },
         AttachedVehicle = nil,
     },
@@ -92,7 +92,7 @@ Config.Plates = {
             heading = 250,
             length = 7,
             width = 4,
-            debugPoly = true
+            debugPoly = false
         },
         AttachedVehicle = nil,
     },
@@ -102,7 +102,7 @@ Config.Plates = {
             heading = 250,
             length = 7,
             width = 4,
-            debugPoly = true
+            debugPoly = false
         },
         AttachedVehicle = nil,
     },
@@ -112,7 +112,7 @@ Config.Plates = {
             heading = 250,
             length = 7,
             width = 4,
-            debugPoly = true
+            debugPoly = false
         },
         AttachedVehicle = nil,
     },
@@ -122,7 +122,7 @@ Config.Plates = {
             heading = 250,
             length = 7,
             width = 4,
-            debugPoly = true
+            debugPoly = false
         },
         AttachedVehicle = nil,
     },
@@ -132,7 +132,7 @@ Config.Plates = {
             heading = 250,
             length = 7,
             width = 4,
-            debugPoly = true
+            debugPoly = false
         },
         AttachedVehicle = nil,
     },
