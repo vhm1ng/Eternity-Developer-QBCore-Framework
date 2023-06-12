@@ -1,6 +1,10 @@
 QBShared = QBShared or {}
 QBShared.Items = {
 
+	["wood_cut"] 		 		 	= {["name"] = "wood_cut",           			["label"] = "Cut Wood",	 				["weight"] = 1000,  	["type"] = "item", 		["image"] = "wood_cut.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Wood"},
+	["wood_pro"] 		 		 	= {["name"] = "wood_pro",           			["label"] = "Polish Wood",	 			["weight"] = 1000,  	["type"] = "item", 		["image"] = "wood_proc.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Wood"},
+	["wood"] 		 		 	= {["name"] = "wood",           			["label"] = "Wood",	 				["weight"] = 1000,  	["type"] = "item", 		["image"] = "wood.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Wood"},
+
 -- okok-bank
 ['creditcard']						 = {['name'] = 'creditcard',						['label'] = 'Thẻ ngân hàng',			['weight'] = 0,			['type'] = 'item',		['image'] = 'thenganhang.png',				['unique'] = true, 		['useable'] = true, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Một thẻ chứa tất cả thông tin của bạn để nhận dạng chính bạn'},
 
