@@ -3,7 +3,7 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use et-target in
 Config.MinimalDoctors = 2 -- How many players with the ambulance job to prevent the hospital check-in system from being used
 Config.DocCooldown = 1 -- Cooldown between doctor calls allowed, in minutes
 Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital
-Config.Helicopter = "polmav" -- Helicopter model that players with the ambulance job can use
+Config.Helicopter = "supervolito" -- Helicopter model that players with the ambulance job can use
 Config.BillCost = 2000 -- Price that players are charged for using the hospital check-in system
 Config.DeathTime = 300 -- How long the timer is for players to bleed out completely and respawn at the hospital
 Config.PainkillerInterval = 60 -- Set the length of time painkillers last (per one)
@@ -35,31 +35,25 @@ Config.AlertShowInfo = 2 -- How many injuries a player must have before being al
 
 Config.Locations = { -- Edit the various interaction points for players or create new ones
     ["checking"] = {
-	    [1] = vector3(308.19, -595.35, 43.29),
-	    [2] = vector3(-254.54, 6331.78, 32.43), -- paleto
+	    [1] = vector3(306.95, -595.18, 43.28),
     },
     ["duty"] = {
-        [1] = vector3(311.18, -599.25, 43.29),
-        [2] = vector3(-254.88, 6324.5, 32.58),
+        [1] = vector3(312.0, -592.76, 43.28),
     },
     ["vehicle"] = {
         [1] = vector4(294.578, -574.761, 43.179, 35.79),
-        [2] = vector4(-234.28, 6329.16, 32.15, 222.5),
     },
     ["helicopter"] = {
         [1] = vector4(351.58, -587.45, 74.16, 160.5),
-        [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
     },
     ["armory"] = {
         [1] = vector3(309.93, -602.94, 43.29),
-        [2] = vector3(-245.13, 6315.71, 32.82),
     },
     ["roof"] = {
         [1] = vector4(338.5, -583.85, 74.16, 245.5),
     },
     ["main"] = {
         [1] = vector3(332.16, -595.74, 43.28),
-
     },
     ["stash"] = {
         [1] = vector3(312.02, -597.6, 43.28),
