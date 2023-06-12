@@ -26,7 +26,6 @@ local usingAdvanced = false
 local function robKeyLoop()
     if looped == false then
         print(looped)
-        print('check loop')
         looped = true
         while true do
             local sleep = 1000
@@ -36,7 +35,6 @@ local function robKeyLoop()
                 local entering = GetVehiclePedIsTryingToEnter(ped)
                 local carIsImmune = false
                 if entering ~= 0 and not isBlacklistedVehicle(entering) then
-                    print('check 1')
                     sleep = 2000
                     local plate = QBCore.Functions.GetPlate(entering)
 
@@ -46,7 +44,6 @@ local function robKeyLoop()
                             carIsImmune = true
                         end
                     end
-                    print('check 3')
                     -- Driven vehicle logic
                     if driver ~= 0 and not IsPedAPlayer(driver) and not HasKeys(plate) and not carIsImmune then
                         if IsEntityDead(driver) then
@@ -80,7 +77,6 @@ local function robKeyLoop()
                                 end
                             end
                         end
-                        print('check driven vehicle lock')
                     -- Parked car logic
                     elseif driver == 0 and entering ~= lastPickedVehicle and not HasKeys(plate) and not isTakingKeys then
                         QBCore.Functions.TriggerCallback('et-vehiclekeys:server:checkPlayerOwned', function(playerOwned)
@@ -92,7 +88,6 @@ local function robKeyLoop()
                                 end
                             end
                         end, plate)
-                        print('Parked car logic')
                     end
                 end
 
@@ -136,7 +131,6 @@ local function robKeyLoop()
                             end
                         end
                     end
-                    print('Car Jack')
                 end
                 if entering == 0 and not IsPedInAnyVehicle(ped, false) and GetSelectedPedWeapon(ped) == `WEAPON_UNARMED` then
                     looped = false
@@ -172,7 +166,6 @@ function lockpickFinish(success)
 		HasKey = true
 		TriggerEvent("vehiclekeys:client:SetOwner2", GetVehicleNumberPlateText(vehicle))
 		IsHotwiring = false
-        print('done')
 		TriggerServerEvent('qb-hud:Server:GainStress', math.random(2, 4))
 	else
 		if usingAdvanced then
@@ -188,7 +181,6 @@ function lockpickFinish(success)
 		end
 		QBCore.Functions.Notify("Thất bại.", 'error')
 		StopAnimTask(PlayerPedId(), "anim@amb@clubhouse@tutorial@bkr_tut_ig3@", "machinic_loop_mechandplayer", 1.0)
-        print('failed')
 	end
 end
 Citizen.CreateThread(function()
@@ -367,7 +359,6 @@ RegisterNetEvent('et-vehiclekeys:client:GiveKeys', function(id)
 end)
 
 RegisterNetEvent('QBCore:Client:EnteringVehicle', function()
-    print('check')
     robKeyLoop()
 end)
 
