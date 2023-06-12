@@ -32,7 +32,6 @@ local function robKeyLoop()
             local sleep = 1000
             -- if LocalPlayer.state.isLoggedIn then
                 sleep = 100
-                print('chay function')
                 local ped = PlayerPedId()
                 local entering = GetVehiclePedIsTryingToEnter(ped)
                 local carIsImmune = false
