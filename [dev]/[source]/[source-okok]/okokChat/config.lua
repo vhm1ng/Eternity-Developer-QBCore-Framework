@@ -104,7 +104,7 @@ Config.Distance = 2.0
 --------------------------------
 -- [OOC]
 
-Config.EnableOOC = true
+Config.EnableOOC = false
 
 Config.OOCCommand = 'ooc'
 
