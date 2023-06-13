@@ -35,7 +35,6 @@ Config.AlertShowInfo = 2 -- How many injuries a player must have before being al
 
 Config.Locations = { -- Edit the various interaction points for players or create new ones
     ["checking"] = {
-	    [1] = vector3(306.95, -595.18, 43.28),
     },
     ["duty"] = {
         [1] = vector3(312.0, -592.76, 43.28),
@@ -93,7 +92,6 @@ Config.AuthorizedVehicles = { -- Vehicles players can use based on their ambulan
 	-- Grade 1
 	[1] = {
 		["ambulance"] = "Ambulance",
-
 	},
 	-- Grade 2
 	[2] = {
