@@ -73,7 +73,7 @@ function getNearPlayers(source)
 	return playersList
 end
 
-exports.chat:registerMessageHook(function(source, outMessage, hookRef)
+--[[exports.chat:registerMessageHook(function(source, outMessage, hookRef)
     local msg = outMessage.args[2]
 	if string.sub(msg, 1, 1) ~= "/" then
     	hookRef.cancel()
@@ -81,7 +81,7 @@ exports.chat:registerMessageHook(function(source, outMessage, hookRef)
     		OOC(source, msg)
     	end
     end
-end)
+end)]]--
 
 RegisterServerEvent("okokChat:ServerMessage")
 AddEventHandler("okokChat:ServerMessage", function(background, color, icon, title, playername, message, target, image)
@@ -114,7 +114,7 @@ if Config.EnableMeCommand then
 		local time = os.date(Config.DateFormat)
 		local playerName = Config.ShowIDOnMessageForEveryone and xPlayer.PlayerData.charinfo.firstname.." "..xPlayer.PlayerData.charinfo.lastname.." ["..source.."]" or xPlayer.PlayerData.charinfo.firstname.." "..xPlayer.PlayerData.charinfo.lastname
 		local playerNameAdmin = playerName.." ["..source.."]"
-		local length = string.len(Config.OOCCommand)
+		local length = string.len(Config.MeCommand)
 		local message = rawCommand:sub(length + 1)
 
 		if mutedList[source] ~= nil then
@@ -168,7 +168,7 @@ if Config.EnableDoCommand then
 		local time = os.date(Config.DateFormat)
 		local playerName = Config.ShowIDOnMessageForEveryone and xPlayer.PlayerData.charinfo.firstname.." "..xPlayer.PlayerData.charinfo.lastname.." ["..source.."]" or xPlayer.PlayerData.charinfo.firstname.." "..xPlayer.PlayerData.charinfo.lastname
 		local playerNameAdmin = playerName.." ["..source.."]"
-		local length = string.len(Config.OOCCommand)
+		local length = string.len(Config.DoCommand)
 		local message = rawCommand:sub(length + 1)
 
 		if mutedList[source] ~= nil then
