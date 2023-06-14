@@ -2,7 +2,7 @@ QBCore = nil
 local pings = nil
 local inMenu = false
 local menu = false
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 
 RegisterNetEvent('rst-ping:openMenu')
 AddEventHandler('rst-ping:openMenu',function()
@@ -15,7 +15,7 @@ RegisterCommand('openmenu',function()
     end
 end)
 
-RegisterCommand('911e', function()
+RegisterCommand('115', function()
     TriggerServerEvent('rst-ping:requestForServerP',GetEntityCoords(PlayerPedId()))
 end)
 RegisterNetEvent('rst-ping:getDataFromServerP')
