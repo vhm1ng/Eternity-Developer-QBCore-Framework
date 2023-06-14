@@ -1,6 +1,6 @@
 QBCore = nil
 local tableDsBs = {}
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 
 RegisterNetEvent('rst-ping:requestForServerP')
 AddEventHandler('rst-ping:requestForServerP', function(coords)
@@ -19,6 +19,7 @@ AddEventHandler('rst-ping:requestForServerP', function(coords)
             TriggerClientEvent('rst-ping:getDataFromServerP', xPlayers[i], tableDsBs)
             TriggerClientEvent("QBCore:Notify",src, "Bạn đã ping MED",'success',3000)
             TriggerClientEvent("QBCore:Notify",xPlayers[i], GetPlayerName(source).." vừa gọi MEDIC ",'success',3000)
+            TriggerEvent("InteractSound_SV:PlayOnSource", "ting", 0.5)
             TriggerClientEvent('rst-ping:dataInitP',xPlayers[i])
         end
     end

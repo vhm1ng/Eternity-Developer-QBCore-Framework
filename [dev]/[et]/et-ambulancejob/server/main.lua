@@ -399,6 +399,19 @@ QBCore.Commands.Add("revive", Lang:t('info.revive_player_a'), {{name = "id", hel
 		TriggerClientEvent('hospital:client:Revive', src)
 	end
 end, "admin")
+QBCore.Commands.Add("revive2", Lang:t('info.revive_player_a'), {{name = "id", help = Lang:t('info.player_id')}}, false, function(source, args)
+	local src = source
+	if args[1] then
+		local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+		if Player then
+			TriggerClientEvent('hospital:client:Revive2', Player.PlayerData.source)
+		else
+			TriggerClientEvent('QBCore:Notify', src, Lang:t('error.not_online'), "error")
+		end
+	else
+		TriggerClientEvent('hospital:client:Revive2', src)
+	end
+end, "admin")
 
 QBCore.Commands.Add("setpain", Lang:t('info.pain_level'), {{name = "id", help = Lang:t('info.player_id')}}, false, function(source, args)
 	local src = source
