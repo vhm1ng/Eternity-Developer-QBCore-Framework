@@ -19,7 +19,7 @@ AddEventHandler('rst-ping:requestForServerP', function(coords)
             TriggerClientEvent('rst-ping:getDataFromServerP', xPlayers[i], tableDsBs)
             TriggerClientEvent("QBCore:Notify",src, "Bạn đã ping MED",'success',3000)
             TriggerClientEvent("QBCore:Notify",xPlayers[i], GetPlayerName(source).." vừa gọi MEDIC ",'success',3000)
-            TriggerEvent("InteractSound_SV:PlayOnSource", "ting", 0.5)
+            TriggerEvent("InteractSound_SV:PlayOnSource", "Shop", 0.5)
             TriggerClientEvent('rst-ping:dataInitP',xPlayers[i])
         end
     end
