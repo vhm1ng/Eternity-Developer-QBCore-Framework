@@ -589,6 +589,9 @@ RegisterNetEvent('hospital:client:Revive', function()
     SetPlayerSprint(PlayerId(), true)
     ResetAll()
     ResetPedMovementClipset(player, 0.0)
+    SendNUIMessage({
+        status = "close"
+    })
     TriggerServerEvent('hud:server:RelieveStress', 100)
     TriggerServerEvent("hospital:server:SetDeathStatus", false)
     TriggerServerEvent("hospital:server:SetLaststandStatus", false)
@@ -642,6 +645,11 @@ RegisterNetEvent('hospital:client:SendToBed', function(id, data, isRevive)
     bedOccupying = id
     bedOccupyingData = data
     SetBedCam()
+    SendNUIMessage({
+        status = 'open',
+        title = Lang:t('nui.getting_helped_title'),
+	msg = Lang:t('nui.getting_helped')
+    })
     CreateThread(function ()
         Wait(5)
         if isRevive then
