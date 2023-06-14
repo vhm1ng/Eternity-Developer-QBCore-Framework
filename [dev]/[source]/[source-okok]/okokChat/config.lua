@@ -112,7 +112,7 @@ Config.OOCIcon = 'fas fa-door-open'
 
 Config.OOCMessageTitle = 'OOC'
 
-Config.OOCMessageWithoutCommand = true -- true: sends OOC message without command (/ooc) | false: doesn't send any message without it being a command
+Config.OOCMessageWithoutCommand = false -- true: sends OOC message without command (/ooc) | false: doesn't send any message without it being a command
 
 --------------------------------
 -- [Me]
