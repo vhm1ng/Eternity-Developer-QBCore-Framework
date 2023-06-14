@@ -1012,6 +1012,14 @@ Config.VehicleSeats = {
 Config.JobInteractions = {
     ["ambulance"] = {
         {
+            id = 'openmenu',
+            title = 'Nhận Ca',
+            icon = 'user-md',
+            type = 'client',
+            event = 'rst-ping:openMenu',
+            shouldClose = true
+        },
+        {
             id = 'statuscheck',
             title = 'Kiểm tra',
             icon = 'heartbeat',

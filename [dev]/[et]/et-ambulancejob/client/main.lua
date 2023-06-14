@@ -563,7 +563,69 @@ RegisterNetEvent('hospital:client:ambulanceAlert', function(coords, text)
         end
     end
 end)
-
+RegisterNetEvent('hospital:client:Revive2', function()
+    QBCore.Functions.Notify("Bạn Đang Được Hồi Sức !!", "info", 10000)
+    QBCore.Functions.Progressbar("hoisuc", "Đang Hồi Sức ..", 90000, false, false, { 
+        disableMovement = true,
+        disableCarMovement = true,
+        disableMouse = false,
+        disableCombat = true,
+    }, {}, {}, {}, function() -- Done
+        local player = PlayerPedId()
+        if isDead or InLaststand then
+            local pos = GetEntityCoords(player, true)
+            NetworkResurrectLocalPlayer(pos.x, pos.y, pos.z, GetEntityHeading(player), true, false)
+            isDead = false
+            SetEntityInvincible(player, false)
+            SetLaststand(false)
+        end
+        if isInHospitalBed then
+            loadAnimDict(inBedDict)
+            TaskPlayAnim(player, inBedDict , inBedAnim, 8.0, 1.0, -1, 1, 0, 0, 0, 0 )
+            SetEntityInvincible(player, true)
+            canLeaveBed = true
+        end
+        TriggerServerEvent("hospital:server:RestoreWeaponDamage")
+        SetEntityMaxHealth(player, 200)
+        SetEntityHealth(player, 200)
+        ClearPedBloodDamage(player)
+        SetPlayerSprint(PlayerId(), true)
+        ResetAll()
+        ResetPedMovementClipset(player, 0.0)
+        SendNUIMessage({
+            status = "close"
+        })
+        TriggerServerEvent('hud:server:RelieveStress', 100)
+        TriggerServerEvent("hospital:server:SetDeathStatus", false)
+        TriggerServerEvent("hospital:server:SetLaststandStatus", false)
+        emsNotified = false
+        Wait(500)
+        QBCore.Functions.Notify("Bạn sẽ phải đi nạng trong 2 phút")
+        exports['crutches']:ToggleCrutch()
+        InCrutch = true
+        Wait(120000)
+        exports['crutches']:ToggleCrutch()
+        InCrutch = false
+        QBCore.Functions.Notify(Lang:t('info.healthy'))
+    end)
+end)
+Citizen.CreateThread(function()
+    while true do
+        sleep = 0
+        if InCrutch then
+			DisableControlAction(0, 75, true)
+            DisableControlAction(0, 23, true)
+            DisableControlAction(0, 25, true)
+            DisableControlAction(0, 21, true)
+            DisableControlAction(0, 22, true)
+            DisableControlAction(27, 75, true)
+            DisableControlAction(1, 141, true)
+			DisableControlAction(1, 142, true)
+            DisableControlAction(1, 140, true)
+        end
+        Wait(sleep)
+    end
+end)
 RegisterNetEvent('hospital:client:Revive', function()
     local player = PlayerPedId()
 
@@ -655,7 +717,7 @@ RegisterNetEvent('hospital:client:SendToBed', function(id, data, isRevive)
         if isRevive then
             QBCore.Functions.Notify(Lang:t('success.being_helped'), 'success')
             Wait(Config.AIHealTimer * 1000)
-            TriggerEvent("hospital:client:Revive")
+            TriggerEvent("hospital:client:Revive2")
         else
             canLeaveBed = true
         end

@@ -199,14 +199,14 @@ RegisterNetEvent('hospital:server:RevivePlayer', function(playerId, isOldMan)
 				if Player.Functions.RemoveMoney("cash", 5000, "revived-player") then
 					Player.Functions.RemoveItem('firstaid', 1)
 					TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['firstaid'], "remove")
-					TriggerClientEvent('hospital:client:Revive', Patient.PlayerData.source)
+					TriggerClientEvent('hospital:client:Revive2', Patient.PlayerData.source)
 				else
 					TriggerClientEvent('QBCore:Notify', src, Lang:t('error.not_enough_money'), "error")
 				end
 			else
 				Player.Functions.RemoveItem('firstaid', 1)
 				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['firstaid'], "remove")
-				TriggerClientEvent('hospital:client:Revive', Patient.PlayerData.source)
+				TriggerClientEvent('hospital:client:Revive2', Patient.PlayerData.source)
 			end
 		else
 			MySQL.insert('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (?, ?, ?, ?, ?, ?, ?)', {
@@ -342,7 +342,7 @@ end)
 
 -- Commands
 
-QBCore.Commands.Add('911e', Lang:t('info.ems_report'), {{name = 'message', help = Lang:t('info.message_sent')}}, false, function(source, args)
+QBCore.Commands.Add('115', Lang:t('info.ems_report'), {{name = 'message', help = Lang:t('info.message_sent')}}, false, function(source, args)
 	local src = source
 	local message
 	if args[1] then message = table.concat(args, " ") else message = Lang:t('info.civ_call') end
