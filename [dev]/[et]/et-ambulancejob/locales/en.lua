@@ -57,6 +57,16 @@ local Translations = {
         kill = 'Giết người chơi hoặc bản thân (Chỉ Admin)',
         heal_player_a = 'Hồi máu cho bản thân hoặc ngươi chơi (Chỉ Admin)',
     },
+    nui = {
+        respawn_title = "BẠN ĐÃ CHẾT",
+        respawn_txt = 'RESPAWN IN:<font color="red"> %{deathtime} </font>SECONDS',
+        respawn_revive = 'HOLD [<font color="green">E</font>] IN<font color="red"> %{holdtime} </font>SECONDS TO RESPAWN FOR $<font color="yellow"> %{cost} </font>',
+        bleed_out_title = "👻 BẠN ĐÃ MẤT HẾT Ý THỨC, SẮP LÊN THIÊN ĐƯỜNG 👻",
+        bleed_out = 'BẠN SẼ CHẾT HẲN SAU:<font color="red"> %{time} </font>GIÂY NỮA',
+        bleed_out_help = 'BẠN SẼ CHẾT HẲN SAU:<font color="red"> %{time} </font>GIÂY NỮA',
+        getting_helped_title = "YOU DIED",
+	    getting_helped = 'YOU ARE GETTING HELPED, PLEASE WAIT!',
+    },
     mail = {
         sender = 'Bệnh Viện',
         subject = 'Thoanh toán',
