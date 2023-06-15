@@ -1,4 +1,4 @@
-print("^2REPUBLIC OF ETERNITY")
+
 
 Loc = {}
 
