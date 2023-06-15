@@ -19,7 +19,7 @@ ui_page 'html/ui.html'
 
 files {
   'html/ui.html',
-  'html/badge',
+  -- 'html/badge',
   'html/dmv.png',
   'html/cursor.png',
   'html/styles.css',
