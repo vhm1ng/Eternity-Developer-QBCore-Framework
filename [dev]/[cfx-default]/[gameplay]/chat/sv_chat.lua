@@ -201,21 +201,21 @@ local function routeMessage(source, author, message, mode, fromConsole)
     end
 end
 
-AddEventHandler('_chat:messageEntered', function(author, color, message, mode)
-    if not message or not author then
-        return
-    end
+-- AddEventHandler('_chat:messageEntered', function(author, color, message, mode)
+--     if not message or not author then
+--         return
+--     end
 
-    local source = source
+--     local source = source
 
-    routeMessage(source, author, message, mode)
-end)
+--     routeMessage(source, author, message, mode)
+-- end)
 
 AddEventHandler('__cfx_internal:commandFallback', function(command)
     local name = GetPlayerName(source)
 
     -- route the message as if it were a /command
-    routeMessage(source, name, '/' .. command, nil, true)
+    TriggerEvent('chatMessage', source, name, '/' .. command)
 
     CancelEvent()
 end)
