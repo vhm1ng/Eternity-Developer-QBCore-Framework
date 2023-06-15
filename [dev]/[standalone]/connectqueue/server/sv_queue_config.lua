@@ -16,7 +16,7 @@ Config.RequireSteam = false
 Config.PriorityOnly = false
 
 -- disables hardcap, should keep this true
-Config.DisableHardCap = true
+Config.DisableHardCap = false
 
 -- will remove players from connecting if they don't load within: __ seconds; May need to increase this if you have a lot of downloads.
 -- i have yet to find an easy way to determine whether they are still connecting and downloading content or are hanging in the loadscreen.
