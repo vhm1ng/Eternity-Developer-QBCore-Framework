@@ -226,23 +226,23 @@ Config.Alerts = {
     ['error_corncob'] = 'Có vẻ như bạn không có bắp ngô nào để chế biến... Hãy quay lại sau!',
 
     ['grape_picking'] = 'Đang hái nho',
-    ['grape_progressbar'] = 'Straining Grapes',
-    ['grape_processing'] = 'Strained ' ..Config.GrapeProcessing.. ' grapes',
-    ['grape_processed'] = 'Made ' ..Config.GrapeProcessed.. ' bottles of juice',
-    ['error_grape'] = 'Hm, It seems like you don\'t have any grapes to process... Come back later!',
+    ['grape_progressbar'] = 'Sơ chế Nho',
+    ['grape_processing'] = 'Đã sơ chế ' ..Config.GrapeProcessing.. ' Nho',
+    ['grape_processed'] = 'Đã nhận ' ..Config.GrapeProcessed.. ' Nước Nho',
+    ['error_grape'] = 'Hm, Có vẻ như bạn không có nho để chế biến... Hãy quay lại sau!',
 
-    ['greenpepper_picking'] = "Picking GreenPeppers",
+    ['greenpepper_picking'] = "Dang hái ớt Xanh",
 
-    ['chillypepper_picking'] = 'Picking ChillyPeppers',
-    ['chilly_hotsauce'] = 'Making Hot Sauce',
-    ['chilly_processing'] = 'Crushed ' ..Config.ChillyProcessing.. ' chilly Peppers',
-    ['chilly_processed'] = 'Made ' ..Config.ChillyProcessed.. ' hot sauce bottle\'s',
+    ['chillypepper_picking'] = 'Đang hái ớt Sim',
+    ['chilly_hotsauce'] = 'Đang làm nước sốt cay',
+    ['chilly_processing'] = 'đã Nghiền ' ..Config.ChillyProcessing.. ' ớt sim',
+    ['chilly_processed'] = 'đã nhân ' ..Config.ChillyProcessed.. ' Nước sốt cay',
     ['error_chilly'] = 'Hừm, có vẻ như bạn không có ớt để chế biến... Hãy quay lại sau!',
 
-    ['tomatoes_picking'] = 'Picking Tomatoes',
-    ['tomatoes_progressbar'] = 'Smashing Tomatoes',
-    ['tomatoes_processing'] = 'Squeezed ' ..Config.TomatoesProcessing.. ' tomatoes',
-    ['tomatoes_processed'] = 'Made ' ..Config.TomatoesProcessed.. ' jars of tomatopaste',
+    ['tomatoes_picking'] = 'Đang hái cà chua',
+    ['tomatoes_progressbar'] = 'SƠ chế cà chua',
+    ['tomatoes_processing'] = 'đã sơ chế ' ..Config.TomatoesProcessing.. ' Cà chua',
+    ['tomatoes_processed'] = 'đã nhận ' ..Config.TomatoesProcessed.. ' Sốt cà chua',
     ['error_tomatoes'] = 'Hm, Có vẻ như bạn không có cà chua nào để chế biến... Hãy quay lại sau!',
 
 
