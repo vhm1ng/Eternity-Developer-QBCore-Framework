@@ -36,12 +36,12 @@ fx_version 'bodacious'
 game 'gta5'
 
 ui_page 'client/html/index.html'
--- client_script 'client/Hypnonema.Client.net.dll'
--- server_script 'server/Hypnonema.Server.net.dll'
+client_script 'client/Hypnonema.Client.net.dll'
+server_script 'server/Hypnonema.Server.net.dll'
 
 files {
-    -- 'client/Newtonsoft.Json.dll',
-    -- 'client/Hypnonema.Shared.dll',
+    'client/Newtonsoft.Json.dll',
+    'client/Hypnonema.Shared.dll',
     'client/html/index.html',
     'client/html/static/js/main.js',
     'client/html/static/css/main.css',
