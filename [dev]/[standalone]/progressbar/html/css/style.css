@@ -25,44 +25,63 @@ body {
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 6px;
 }
+
+@keyframes gelatine {
+    from, to { transform: scale(1, 1) perspective(1em) rotateZ(-4deg); }
+    25% { transform: scale(0.6, 1.3) perspective(1em) rotateZ(-4deg); }
+    50% { transform: scale(1.3, 0.6) perspective(1em) rotateZ(-4deg); }
+    75% { transform: scale(1.1, 1) perspective(1em) rotateZ(-4deg); }
+    100% { transform: scale(1, 1) perspective(1em) rotateZ(-4deg); }
+  }
 
 .progress-labels {
     width: 100%;
     height: 4vh;
     line-height: 4vh;
     text-align: center;
-    position: absolute;
+    position: fixed;
+    bottom: 164;
+    right: 0;
     display: inline-block;
     white-space: nowrap;
 }
 
 .progress-labels div {
-    font-size: 1.3vh;
+    font-size: 1.7vh;
     line-height: 4vh;
     position: relative;
     color: #ffffff;
     z-index: 10;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
+    animation: gelatine 0.6s;
+    transform: perspective(1em) rotateZ(-4deg);
 }
 
 .progress-bar-container {
     width: 100%;
-    height: 4vh;
+    height: 1.5vh;
     background: rgba(0, 0, 0, 0.246);
     text-align: left;
-    overflow: hidden;
     position: relative;
     display: block;
     white-space: nowrap;
-    border-radius: 2px;
+    border-radius: 6px;
+
+    animation: gelatine 0.6s;
+    transform: perspective(1em) rotateZ(-4deg);
 }
 
 .progress-bar {
     background-color: #dc143c !important;
     width: 0%;
-    height: 4vh;
+    height: 1.5vh;
     transition: width 0.3s;
     transition-timing-function: ease-out;
+    box-shadow: 0 0 1em 0 #dc143c;
+    border-radius: 6px;
+
+    animation: gelatine 0.6s;
 }
