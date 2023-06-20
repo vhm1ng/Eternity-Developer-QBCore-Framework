@@ -42,25 +42,25 @@ local function umfpsBooster(type)
         setShadowAndAir(true, true)
         setEntityTracker(true, true, 5.0, 5.0, 5.0)
         setLights(10.0, 10.0)
-        notify("Mode: Reset")
+        notify("Mod: Reset")
     elseif type == "ulow" then
         setShadowAndAir(false, false)
         setEntityTracker(true, false, 0.0, 0.0, 0.0)
         setLights(0.0, 0.0)
-        notify("Mode: Ultra Low")
+        notify("Mod: Ultra Low")
     elseif type == "low" then
         setShadowAndAir(false, false)
         setEntityTracker(true, false, 0.0, 0.0, 0.0)
         setLights(5.0, 5.0)
-        notify("Mode: Low")
+        notify("Mod: Low")
     elseif type == "medium" then
         setShadowAndAir(true, false)
         setEntityTracker(true, false, 5.0, 3.0, 3.0)
         setLights(3.0, 3.0)
-        notify("Mode: Medium")
+        notify("Mod: Medium")
     else
-        notify("Usage: /fps [reset/ulow/low/medium]")
-        notify("Invalid type: "..type)
+        notify("Dùng: /fps [reset/ulow/low/medium]")
+        notify("Không rõ: "..type)
         return
     end
     loopType = type
@@ -70,7 +70,7 @@ end
 
 RegisterCommand("fps", function(_,args) 
     if args[1] == nil then
-        notify("Usage: /fps [reset/ulow/low/medium]")
+        notify("Dùng: /fps [reset/ulow/low/medium]")
         return
     end
     umfpsBooster(args[1]) 
