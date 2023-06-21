@@ -281,7 +281,7 @@ Config.Garages = {
         type = 'public',
         vehicleCategories = {'car', 'motorcycle', 'other'},
         drawText = 'Parking',
-        debug = true,
+        debug = false,
         ['ParkingSpots'] = {
             vector4(48.46, -600.58, 31.05, 339.83),
             vector4(45.27, -598.81, 31.05, 337.94),
@@ -378,7 +378,7 @@ Config.Garages = {
         jobGarageIdentifier = 'am1',  
         vehicleCategories = {'xenhanuoc'},
         drawText = 'Parking',
-        debug = true,
+        debug = false,
         ['ParkingSpots'] = {
             vector4(316.4, -578.24, 28.41, 249.78),
             vector4(319.28, -569.63, 28.41, 250.45),
