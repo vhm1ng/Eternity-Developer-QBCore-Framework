@@ -30,7 +30,7 @@ Config = {
     MenuImage = "https://i.giphy.com/media/kL2WStvEEokt0MioqC/giphy.gif", ----[Custom banner IMGUR or GIPHY URLs go here ]---
     -- You can change the menu image by pasting a link above. It must be the same width and length
     -- You can change the name of the menu here or leave it blank to remove the text in front of the custom banners
-    MenuTitle = "VHMING RPEMOTES",
+    MenuTitle = "",
     -- You can change the menu position here
     MenuPosition = "right", -- (left, right)
     -- You can enable or disable the Ragdoll keybinding here.
