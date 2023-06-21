@@ -5,8 +5,8 @@ Config.Timeout = 20 * (60 * 1000)                                   -- 20 minute
 
 -- Blips
 LumberDepo = {
-    targetZone = vector3(1167.73, -1347.27, 33.92),                 -- qb-target vector
-    targetHeading = 273.47,                                         -- qb-target box zone
+    targetZone = vector3(1167.73, -1347.27, 33.92),                 -- et-target vector
+    targetHeading = 273.47,                                         -- et-target box zone
     coords = vector4(1167.73, -1347.27, 33.92, 273.47),             -- Move Location (Ped and blip)
     SetBlipSprite = 85,                                             -- Blip Icon (https://docs.fivem.net/docs/game-references/blips/)
     SetBlipDisplay = 6,                                             -- Blip Behavior (https://docs.fivem.net/natives/?_0x9029B2F3DA924928)

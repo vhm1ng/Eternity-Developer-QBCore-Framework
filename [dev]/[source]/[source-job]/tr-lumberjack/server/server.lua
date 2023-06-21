@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 local Chopped = false
 
 RegisterNetEvent('tr-lumberjack:sellItems', function()

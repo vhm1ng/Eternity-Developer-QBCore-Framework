@@ -17,14 +17,14 @@ LumberJack Script for QBCore
 - Turn on and off blips
 
 ## Dependencies
-- [qb-core](https://github.com/qbcore-framework/qb-core)
-- [qb-target](https://github.com/BerkieBb/qb-target)
-- [qb-menu](https://github.com/qbcore-framework/qb-menu)
+- [et-core](https://github.com/qbcore-framework/et-core)
+- [et-target](https://github.com/BerkieBb/et-target)
+- [et-menu](https://github.com/qbcore-framework/et-menu)
 - [PolyZone](https://github.com/mkafrin/PolyZone)
 
 ## Installation
 
-[If you would like to use this as a job feature] Add the job to your **qb-core/shared/job.lua**  
+[If you would like to use this as a job feature] Add the job to your **et-core/shared/job.lua**  
 
 ```
 	['lumberjack'] = {
@@ -39,13 +39,13 @@ LumberJack Script for QBCore
         },
 	},
 ```
-in **qb-cityhall/server/main.lua** add under Local AvailableJobs
+in **et-cityhall/server/main.lua** add under Local AvailableJobs
 
 ```
 "lumberjack",
 ```
 
-If you are using Booya Nopixel styled phone to add the job feature go to **qb-phone/config.lua  (Config.JobCenter)** [nopixel-style-phone](https://github.com/vBooya/qb-phone-npstyle)
+If you are using Booya Nopixel styled phone to add the job feature go to **et-phone/config.lua  (Config.JobCenter)** [nopixel-style-phone](https://github.com/vBooya/et-phone-npstyle)
 
 ```
     [7] = {
@@ -56,14 +56,14 @@ If you are using Booya Nopixel styled phone to add the job feature go to **qb-ph
 ```
 
 
-Add the item to your **qb-core/shared/item.lua**
+Add the item to your **et-core/shared/item.lua**
 
 ```
 	["tree_lumber"]						= {["name"] = "tree_lumber",  	  		["label"] = "Lumber",	  		["weight"] = 50, 		["type"] = "item", 		["image"] = "lumber.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 	["tree_bark"]						= {["name"] = "tree_bark",  	  		["label"] = "Tree Bark",	  	["weight"] = 50, 		["type"] = "item", 		["image"] = "treebark.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 	["wood_plank"]						= {["name"] = "wood_plank",  	  		["label"] = "Wood Plank",	  	["weight"] = 50, 		["type"] = "item", 		["image"] = "woodplank.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 ```
-For images move the images from the img folder to your inventory image folder **qb-inventory/html/images**
+For images move the images from the img folder to your inventory image folder **et-inventory/html/images**
 
 If you are using lj-fuel or a different fuel system
 

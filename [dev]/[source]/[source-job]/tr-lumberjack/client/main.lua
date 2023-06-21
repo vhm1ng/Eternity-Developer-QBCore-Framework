@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 local chopping = false
 
 RegisterNetEvent('tr-lumberjack:getLumberStage', function(stage, state, k)
@@ -74,7 +74,7 @@ end)
 if Config.Job then
     CreateThread(function()
         for k, v in pairs(Config.TreeLocations) do
-            exports["qb-target"]:AddBoxZone("trees" .. k, v.coords, 1.5, 1.5, {
+            exports["et-target"]:AddBoxZone("trees" .. k, v.coords, 1.5, 1.5, {
                 name = "trees" .. k,
                 heading = 40,
                 minZ = v.coords["z"] - 2,
@@ -106,7 +106,7 @@ if Config.Job then
 
         end
     end)
-    exports['qb-target']:AddBoxZone("lumberjackdepo", LumberDepo.targetZone, 1, 1, {
+    exports['et-target']:AddBoxZone("lumberjackdepo", LumberDepo.targetZone, 1, 1, {
         name = "Lumberjackdepo",
         heading = LumberDepo.targetHeading,
         debugPoly = false,
@@ -124,7 +124,7 @@ if Config.Job then
         },
         distance = 1.0
     })
-    exports['qb-target']:AddBoxZone("LumberProcessor", LumberProcessor.targetZone, 1, 1, {
+    exports['et-target']:AddBoxZone("LumberProcessor", LumberProcessor.targetZone, 1, 1, {
         name = "LumberProcessor",
         heading = LumberProcessor.targetHeading,
         debugPoly = false,
@@ -142,7 +142,7 @@ if Config.Job then
         },
         distance = 1.0
     })
-    exports['qb-target']:AddBoxZone("LumberSeller", LumberSeller.targetZone, 1, 1, {
+    exports['et-target']:AddBoxZone("LumberSeller", LumberSeller.targetZone, 1, 1, {
         name = "LumberProcessor",
         heading = LumberSeller.targetHeading,
         debugPoly = false,
@@ -163,7 +163,7 @@ if Config.Job then
 else
     CreateThread(function()
         for k, v in pairs(Config.TreeLocations) do
-            exports["qb-target"]:AddBoxZone("trees" .. k, v.coords, 1.5, 1.5, {
+            exports["et-target"]:AddBoxZone("trees" .. k, v.coords, 1.5, 1.5, {
                 name = "trees" .. k,
                 heading = 40,
                 minZ = v.coords["z"] - 2,
@@ -194,7 +194,7 @@ else
 
         end
     end)
-    exports['qb-target']:AddBoxZone("lumberjackdepo", LumberDepo.targetZone, 1, 1, {
+    exports['et-target']:AddBoxZone("lumberjackdepo", LumberDepo.targetZone, 1, 1, {
         name = "Lumberjackdepo",
         heading = LumberDepo.targetHeading,
         debugPoly = false,
@@ -211,7 +211,7 @@ else
         },
         distance = 1.0
     })
-    exports['qb-target']:AddBoxZone("LumberProcessor", LumberProcessor.targetZone, 1, 1, {
+    exports['et-target']:AddBoxZone("LumberProcessor", LumberProcessor.targetZone, 1, 1, {
         name = "LumberProcessor",
         heading = LumberProcessor.targetHeading,
         debugPoly = false,
@@ -228,7 +228,7 @@ else
         },
         distance = 1.0
     })
-    exports['qb-target']:AddBoxZone("LumberSeller", LumberSeller.targetZone, 1, 1, {
+    exports['et-target']:AddBoxZone("LumberSeller", LumberSeller.targetZone, 1, 1, {
         name = "LumberProcessor",
         heading = LumberSeller.targetHeading,
         debugPoly = false,
@@ -268,7 +268,7 @@ RegisterNetEvent('tr-lumberjack:vehicle', function()
         TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(JobVehicle))
         DoScreenFadeIn(1500)
         Wait(2000)
-        TriggerServerEvent('qb-phone:server:sendNewMail', {
+        TriggerServerEvent('et-phone:server:sendNewMail', {
             sender = Config.Alerts["phone_sender"],
             subject = Config.Alerts["phone_subject"],
             message = Config.Alerts["phone_message"],
@@ -320,7 +320,7 @@ RegisterNetEvent('tr-lumberjack:bossmenu', function()
         header = Config.Alerts["goback"],
       },
     }
-exports['qb-menu']:openMenu(vehicle)
+exports['et-menu']:openMenu(vehicle)
 end)
 
 RegisterNetEvent('tr-lumberjack:processormenu', function()
@@ -340,7 +340,7 @@ RegisterNetEvent('tr-lumberjack:processormenu', function()
         header = Config.Alerts["goback"],
       },
     }
-exports['qb-menu']:openMenu(processor)
+exports['et-menu']:openMenu(processor)
 end)
 
 RegisterNetEvent('tr-lumberjack:processor', function()

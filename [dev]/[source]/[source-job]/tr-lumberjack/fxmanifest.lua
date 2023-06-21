@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'TRClassic#0001'
-description 'LumberJack Job For QB-Core'
+description 'LumberJack Job For et-Core'
 version '1.0.2'
 
 client_scripts {
@@ -18,8 +18,8 @@ shared_scripts {'config.lua'}
 
 dependencies {
     'PolyZone',
-    'qb-menu',
-    'qb-target'
+    'et-menu',
+    'et-target'
 }
 
 this_is_a_map 'yes'

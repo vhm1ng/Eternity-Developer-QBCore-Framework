@@ -1,7 +1,12 @@
 QBShared = QBShared or {}
 QBShared.Items = {
 
--- jOB
+-- Nghề Gỗ
+	["tree_lumber"]					= {["name"] = "tree_lumber",  	  				["label"] = "Lumber",	  				["weight"] = 50, 		["type"] = "item", 		["image"] = "lumber.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
+	["tree_bark"]					= {["name"] = "tree_bark",  	  				["label"] = "Tree Bark",	  			["weight"] = 50, 		["type"] = "item", 		["image"] = "treebark.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
+	["wood_plank"]					= {["name"] = "wood_plank",  	  				["label"] = "Wood Plank",	  			["weight"] = 50, 		["type"] = "item", 		["image"] = "woodplank.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
+
+-- MultiJob
 	["apple"] 						= {["name"] = "apple",  	     				["label"] = "Táo",	 					["weight"] = 25, 		["type"] = "item", 		["image"] = "apple.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 	["apple_juice"] 				= {["name"] = "apple_juice",  	     			["label"] = "Nước táo",	 				["weight"] = 100, 		["type"] = "item", 		["image"] = "apple_juice.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 	["emptycowbucket"] 				= {["name"] = "emptycowbucket",  	    		["label"] = "Thùng sữa",	 			["weight"] = 25, 		["type"] = "item", 		["image"] = "emptybucket.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
