@@ -16,7 +16,7 @@ Config = {
     -- Set this to true if you want to disarm the player when they play an emote.
     DisarmPlayer = false,
     -- Set this if you really wanna disable emotes in cars, as of 1.7.2 they only play the upper body part if in vehicle
-    AllowedInCars = true,
+    AllowedInCars = false,
     -- You can disable the menu here / change the keybind. It is currently set to F5
     MenuKeybindEnabled = true,
     MenuKeybind = 'f3', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
