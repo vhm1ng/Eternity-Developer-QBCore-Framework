@@ -2,11 +2,11 @@ Config = {}
 
 Config.keyBind = {
     useRadio = "CAPS",
-    openRadio = "F7",
-    volUp1 = "PAGEUP",
-    radioVolDown = "PAGEDOWN",
-    RadioChannelUp = "F9",
-    RadioChannelDown = "F10"
+    -- openRadio = "F7",
+    -- volUp1 = "PAGEUP",
+    -- radioVolDown = "PAGEDOWN",
+    -- RadioChannelUp = "F9",
+    -- RadioChannelDown = "F10"
 }
 
 Config.RestrictedChannels = {

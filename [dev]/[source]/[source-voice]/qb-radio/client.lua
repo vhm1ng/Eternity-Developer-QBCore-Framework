@@ -241,11 +241,11 @@ RegisterCommand('openradio', function()
 
 end)
 
-RegisterKeyMapping('openradio', 'Open Radio', 'keyboard', Config.keyBind.openRadio)
-RegisterKeyMapping('Volup1', 'Turn Radio Up', 'keyboard', Config.keyBind.volUp1)
-RegisterKeyMapping('Radiovoldown', 'Turn Radio Down', 'keyboard', Config.keyBind.radioVolDown)
-RegisterKeyMapping('RadioChannelUp+', 'Radio Channel Up', 'keyboard', Config.keyBind.RadioChannelUp)
-RegisterKeyMapping('RadioChannelDown-', 'Radio Channel Down', 'keyboard', Config.keyBind.RadioChannelDown)
+-- RegisterKeyMapping('openradio', 'Open Radio', 'keyboard', Config.keyBind.openRadio)
+-- RegisterKeyMapping('Volup1', 'Turn Radio Up', 'keyboard', Config.keyBind.volUp1)
+-- RegisterKeyMapping('Radiovoldown', 'Turn Radio Down', 'keyboard', Config.keyBind.radioVolDown)
+-- RegisterKeyMapping('RadioChannelUp+', 'Radio Channel Up', 'keyboard', Config.keyBind.RadioChannelUp)
+-- RegisterKeyMapping('RadioChannelDown-', 'Radio Channel Down', 'keyboard', Config.keyBind.RadioChannelDown)
 
 RegisterNUICallback('poweredOff', function(_, cb)
     leaveradio()
