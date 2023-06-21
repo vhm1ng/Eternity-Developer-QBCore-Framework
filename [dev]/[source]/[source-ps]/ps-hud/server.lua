@@ -1,19 +1,19 @@
 local QBCore = exports['et-core']:GetCoreObject()
 local ResetStress = false
 
-QBCore.Commands.Add('cash', 'Check Cash Balance', {}, false, function(source, args)
+QBCore.Commands.Add('cash', 'Kiểm tra số tiền trên người', {}, false, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
     local cashamount = Player.PlayerData.money.cash
     TriggerClientEvent('hud:client:ShowAccounts', source, 'cash', cashamount)
 end)
 
-QBCore.Commands.Add('bank', 'Check Bank Balance', {}, false, function(source, args)
+QBCore.Commands.Add('bank', 'Kiểm tra số tiền trong ngân hàng', {}, false, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
     local bankamount = Player.PlayerData.money.bank
     TriggerClientEvent('hud:client:ShowAccounts', source, 'bank', bankamount)
 end)
 
-QBCore.Commands.Add("dev", "Enable/Disable developer Mode", {}, false, function(source, args)
+QBCore.Commands.Add("dev", "Bật/Tắt chế độ của dev lỏ", {}, false, function(source, args)
     TriggerClientEvent("et-admin:client:ToggleDevmode", source)
 end, 'admin')
 
