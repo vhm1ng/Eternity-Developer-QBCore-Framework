@@ -5,7 +5,7 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use et-target in
 
 Config.BossMenus = {
     ['police'] = {
-        vector3(461.45, -986.2, 30.73),
+        vector3(619.04, -0.7, 82.63),
     },
     ['ambulance'] = {
         vector3(335.46, -594.52, 43.28),
