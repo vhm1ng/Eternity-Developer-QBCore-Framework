@@ -15,7 +15,7 @@ window.addEventListener('message', function (event) {
 					<div class="d-flex justify-content-center flex-column align-items-center">
 						<span class="load"></span>
 						<br>
-						<div class="ldata-txt">Loading Data...</div>
+						<div class="ldata-txt">Truy xuất dữ liệu...</div>
 					</div>
 				`);
 				$("#menu").fadeIn();
@@ -44,19 +44,19 @@ window.addEventListener('message', function (event) {
 						<div class="col-md-2 d-flex flex-column sidebar-s">
 							<img src="img/logo.png" class="logo">
 							<hr>
-							<span class="sidebar-title">Personal</span>
+							<span class="sidebar-title">Cá nhân</span>
 							<div id="sidebar"></div>
-							<p class="sidebar-item mt-auto logout"><i class="fas fa-sign-out-alt"></i></i> <span class="ms-1">Logout</span></p>
+							<p class="sidebar-item mt-auto logout"><i class="fas fa-sign-out-alt"></i></i> <span class="ms-1">Đăng xuất</span></p>
 						</div>
 						<div class="col-md-10 tab-s">
 							<div class="d-flex justify-content-between align-items-center">
-								<span class="selected-page"><span id="page-title">Overview</span></span>
+								<span class="selected-page"><span id="page-title">Tổng quát</span></span>
 								<div>
 									<span class="username align-middle">
 										<span id="playerName"></span> <span id="avatar">${avatar}</span>
 									</span>
 									<div class="wallet-div">
-										<span>Wallet: $<span id="wallet_money"></span></span>
+										<span>Ví: $<span id="wallet_money"></span></span>
 									</div>
 								</div>
 							</div>
@@ -91,17 +91,17 @@ window.addEventListener('message', function (event) {
 			$('#page-title').html('Transactions');
 
 			if (event.data.isInSociety) {
-				society = `<span class="sidebar-title mt-5">Society</span>
-						   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-						   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
+				society = `<span class="sidebar-title mt-5">Doanh nghiệp</span>
+						   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+						   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>`;
 			} else {
 				society = '';
 			}
 
 			$('#sidebar').html(`
-				<p class="sidebar-item mt-2" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-				<p class="sidebar-item selected" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>
-				<p class="sidebar-item mt-2" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Settings</span></p>
+				<p class="sidebar-item mt-2" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+				<p class="sidebar-item selected" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>
+				<p class="sidebar-item mt-2" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Cài đặt</span></p>
 				${society}
 			`);
 
@@ -121,8 +121,8 @@ window.addEventListener('message', function (event) {
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-download"></i></span></td>';
 					data = `<td class="align-middle fw500">
-								From <span class="transactions-name">${name}</span>
-								<div class="mtm3125">Received</div>
+								Từ <span class="transactions-name">${name}</span>
+								<div class="mtm3125">Đã nhận</div>
 							</td>`;
 					amount = `<td class="align-middle fw500 transactions-received text-center">+ $${db.value.toLocaleString()}</td>`;
 					// Sent
@@ -133,8 +133,8 @@ window.addEventListener('message', function (event) {
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-upload"></i></span></td>';
 					data = `<td class="align-middle fw500">
-								To <span class="transactions-name">${name}</span>
-								<div class="mtm3125">Sent</div>
+								Từ <span class="transactions-name">${name}</span>
+								<div class="mtm3125">Đã nhận</div>
 							</td>`;
 					amount = `<td class="align-middle fw500 text-center">- $${db.value.toLocaleString()}</td>`;
 					// Deposited
@@ -146,7 +146,7 @@ window.addEventListener('message', function (event) {
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-download"></i></span></td>';
 					data = `<td class="align-middle fw500">
 								Into <span class="transactions-name">${name}</span>
-								<div class="mtm3125">Deposited</div>
+								<div class="mtm3125">Gửi tiền</div>
 							</td>`;
 					amount = `<td class="align-middle fw500 transactions-received text-center">+ $${db.value.toLocaleString()}</td>`;
 					// Withdrawn
@@ -157,8 +157,8 @@ window.addEventListener('message', function (event) {
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-upload"></i></span></td>';
 					data = `<td class="align-middle fw500">
-								From <span class="transactions-name">${name}</span>
-								<div class="mtm3125">Withdrawn</div>
+								Từ <span class="transactions-name">${name}</span>
+								<div class="mtm3125">Rút tiền</div>
 							</td>`;
 					amount = `<td class="align-middle fw500 text-center">- $${db.value.toLocaleString()}</td>`;
 				}
@@ -180,7 +180,7 @@ window.addEventListener('message', function (event) {
 					<div class="col col-md-3 pr05">
 						<div class="card stats-title">
 							<div class="card-body text-center">
-								<h6 class="card-title">TRANSACTIONS</h6>
+								<h6 class="card-title">GIAO DỊCH</h6>
 								<p class="card-text fw125" id="totalInvoices">${numOfTransactions}</p>
 							</div>
 						</div>
@@ -188,7 +188,7 @@ window.addEventListener('message', function (event) {
 					<div class="col col-md-3 pr05 pl05">
 						<div class="card stats-title">
 							<div class="card-body text-center">
-								<h6 class="card-title">INCOME</h6>
+								<h6 class="card-title">ĐẦU VÀO</h6>
 								<p class="card-text fw125" id="totalIncome">$${event.data.graph_values[7].toLocaleString()}</p>
 							</div>
 						</div>
@@ -196,7 +196,7 @@ window.addEventListener('message', function (event) {
 					<div class="col col-md-3 pr05 pl05">
 						<div class="card stats-title">
 							<div class="card-body text-center">
-								<h6 class="card-title">OUTCOME</h6>
+								<h6 class="card-title">ĐẦU RA</h6>
 								<p class="card-text fw125" id="unpaidInvoices">$${event.data.graph_values[8].toLocaleString()}</p>
 							</div>
 						</div>
@@ -204,7 +204,7 @@ window.addEventListener('message', function (event) {
 					<div class="col col-md-3 pl05">
 						<div class="card stats-title">
 							<div class="card-body text-center">
-								<h6 class="card-title">EARNINGS</h6>
+								<h6 class="card-title">THU NHẬP</h6>
 								<p class="card-text fw125" id="awaitedIncome">$${event.data.graph_values[9].toLocaleString()}</p>
 							</div>
 						</div>
@@ -234,17 +234,17 @@ window.addEventListener('message', function (event) {
 			$('#page-title').html('Transactions');
 
 			if (event.data.isInSociety) {
-				society = `<span class="sidebar-title mt-5">Society</span>
-						   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-						   <p class="sidebar-item selected" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
+				society = `<span class="sidebar-title mt-5">Ban ngành</span>
+						   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+						   <p class="sidebar-item selected" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>`;
 			} else {
 				society = '';
 			}
 
 			$('#sidebar').html(`
-				<p class="sidebar-item mt-2" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-				<p class="sidebar-item" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>
-				<p class="sidebar-item mt-2" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Settings</span></p>
+				<p class="sidebar-item mt-2" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+				<p class="sidebar-item" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>
+				<p class="sidebar-item mt-2" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Cài đặt</span></p>
 				${society}
 			`);
 
@@ -264,8 +264,8 @@ window.addEventListener('message', function (event) {
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-download"></i></span></td>';
 					data = `<td class="align-middle transactions-name-div">
-								From <span class="transactions-name">${name}</span>
-								<div class="mtm3125">Received</div>
+								Từ <span class="transactions-name">${name}</span>
+								<div class="mtm3125">Đã nhận</div>
 							</td>`;
 					amount = `<td class="align-middle fw500 transactions-received text-center">+ $${db.value.toLocaleString()}</td>`;
 					// Sent
@@ -276,8 +276,8 @@ window.addEventListener('message', function (event) {
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-upload"></i></span></td>';
 					data = `<td class="align-middle transactions-name-div">
-								To <span class="transactions-name">${name}</span>
-								<div class="mtm3125">Sent</div>
+								Từ <span class="transactions-name">${name}</span>
+								<div class="mtm3125">Đã gửi</div>
 							</td>`;
 					amount = `<td class="align-middle fw500 text-center">- $${db.value.toLocaleString()}</td>`;
 					// Deposited
@@ -289,7 +289,7 @@ window.addEventListener('message', function (event) {
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-download"></i></span></td>';
 					data = `<td class="align-middle transactions-name-div">
 								Into <span class="transactions-name">${name}</span>
-								<div class="mtm3125">Deposited</div>
+								<div class="mtm3125">Gửi tiền</div>
 							</td>`;
 					amount = `<td class="align-middle fw500 transactions-received text-center">+ $${db.value.toLocaleString()}</td>`;
 					// Withdrawn
@@ -300,8 +300,8 @@ window.addEventListener('message', function (event) {
 					}
 					icon = '<td class="align-middle"><span class="transactions-action"><i class="bi bi-upload"></i></span></td>';
 					data = `<td class="align-middle transactions-name-div">
-								From <span class="transactions-name">${name}</span>
-								<div class="mtm3125">Withdrawn</div>
+								Từ <span class="transactions-name">${name}</span>
+								<div class="mtm3125">Rút tiền</div>
 							</td>`;
 					amount = `<td class="align-middle fw500 text-center">- $${db.value.toLocaleString()}</td>`;
 				}
@@ -323,7 +323,7 @@ window.addEventListener('message', function (event) {
 					<div class="col col-md-3 pr05">
 						<div class="card stats-title">
 							<div class="card-body text-center">
-								<h6 class="card-title">TRANSACTIONS</h6>
+								<h6 class="card-title">CHUYỀN TIỀN</h6>
 								<p class="card-text fw125" id="totalInvoices">${numOfTransactions}</p>
 							</div>
 						</div>
@@ -331,7 +331,7 @@ window.addEventListener('message', function (event) {
 					<div class="col col-md-3 pr05 pl05">
 						<div class="card stats-title">
 							<div class="card-body text-center">
-								<h6 class="card-title">INCOME</h6>
+								<h6 class="card-title">ĐẦU VÀO</h6>
 								<p class="card-text fw125" id="totalIncome">$${event.data.graph_values[7].toLocaleString()}</p>
 							</div>
 						</div>
@@ -339,7 +339,7 @@ window.addEventListener('message', function (event) {
 					<div class="col col-md-3 pr05 pl05">
 						<div class="card stats-title">
 							<div class="card-body text-center">
-								<h6 class="card-title">OUTCOME</h6>
+								<h6 class="card-title">ĐẦU RA</h6>
 								<p class="card-text fw125" id="unpaidInvoices">$${event.data.graph_values[8].toLocaleString()}</p>
 							</div>
 						</div>
@@ -347,7 +347,7 @@ window.addEventListener('message', function (event) {
 					<div class="col col-md-3 pl05">
 						<div class="card stats-title">
 							<div class="card-body text-center">
-								<h6 class="card-title">EARNINGS</h6>
+								<h6 class="card-title">THU NHẬP</h6>
 								<p class="card-text fw125" id="awaitedIncome">$${event.data.graph_values[9].toLocaleString()}</p>
 							</div>
 						</div>
@@ -410,14 +410,14 @@ $(document).on('click', "#view_all_transactions_society", function () {
 	}));
 });
 
-// Society
+// Ban ngành
 $(document).on('click', "#society_page", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "society_page",
 	}));
 });
 
-// Society transactions
+// Ban ngành transactions
 $(document).on('click', "#society_transactions", function () {
 	$.post('https://okokBanking/action', JSON.stringify({
 		action: "society_transactions",
@@ -623,27 +623,27 @@ function overview_page_function(event) {
 			table.splice(i, 1);
 		}
 
-		$('#page-title').html('Overview');
+		$('#page-title').html('Tổng quát');
 
 		if (event.data.isInSociety) {
-			society = `<span class="sidebar-title mt-5">Society</span>
-					   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-					   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
+			society = `<span class="sidebar-title mt-5">Ban ngành</span>
+					   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+					   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>`;
 		} else {
 			society = '';
 		}
 
 		$('#sidebar').html(`
-			<p class="sidebar-item mt-2 selected" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-			<p class="sidebar-item" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>
-			<p class="sidebar-item mt-2" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Settings</span></p>
+			<p class="sidebar-item mt-2 selected" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+			<p class="sidebar-item" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>
+			<p class="sidebar-item mt-2" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Cài đặt</span></p>
 			${society}
 		`);
 
 		if (event.data.RequireCC) {
-			informations = `<span class="card-o-title">Informations<span class="badge bg-primary viewall-badge buy_new_card" data-bs-toggle="modal" data-bs-target="#buycc_modal"><i class="fa-solid fa-plus"></i> NEW</span></span>`;
+			informations = `<span class="card-o-title">Thông tin<span class="badge bg-primary viewall-badge buy_new_card" data-bs-toggle="modal" data-bs-target="#buycc_modal"><i class="fa-solid fa-plus"></i> NEW</span></span>`;
 		} else {
-			informations = `<span class="card-o-title">Informations</span>`;
+			informations = `<span class="card-o-title">Thông tin</span>`;
 		}
 
 		$('#page_info').addClass('row');
@@ -652,7 +652,7 @@ function overview_page_function(event) {
 			<div class="col-md-7 chart-main">
 				<div class="card chart-card text-center">
 					<div class="card-header card-o-header">
-						<span class="card-o-title">Statistics</span>
+						<span class="card-o-title">Số liệu thống kê</span>
 					</div>
 					<div class="card-body chart-card-body">
 						<div class="chart-div">
@@ -664,7 +664,7 @@ function overview_page_function(event) {
 					<div class="col-md-12">
 						<div class="card last-t-card">
 							<div class="card-header card-o-header text-center">
-								<span class="card-o-title">Last Transactions<span class="badge bg-primary viewall-badge" id="view_all_transactions"><i class="fas fa-eye"></i> VIEW ALL</span></span>
+								<span class="card-o-title">Giao dịch cuối cùng<span class="badge bg-primary viewall-badge" id="view_all_transactions"><i class="fas fa-eye"></i> Xem đầy đủ</span></span>
 							</div>
 							<div class="card-body" id="last-t-body">
 								<table id="lastTransactionsTable">
@@ -687,23 +687,23 @@ function overview_page_function(event) {
 								
 							</div>
 							<hr>
-							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;"><span class="fff">Balance: $</span><span id="playerBankMoney"></span></p>
-							<p class="card-text text-center ccard-fs"><span class="fff">IBAN:</span> <span id="playerIBAN"></span></p>
+							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;"><span class="fff">Số dư: $</span><span id="playerBankMoney"></span></p>
+							<p class="card-text text-center ccard-fs"><span class="fff">STK:</span> <span id="playerIBAN"></span></p>
 						</div>
 					</div>
 					<div class="card text-center h-100 actions-card">
 						<div class="card-header card-o-header">
-							<span class="card-o-title">Actions</span>
+							<span class="card-o-title">Hành động</span>
 						</div>
 						<div class="card-body actions-card_body">
 							<div class="d-flex justify-content-center">
-								<button type="button" id="depositMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#depositModal"><i class="bi bi-upload"></i> Deposit</button>
+								<button type="button" id="depositMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#depositModal"><i class="bi bi-upload"></i> Gửi tiền</button>
 							</div>
 							<div class="d-flex justify-content-center mt4375">
-								<button type="button" id="withdrawMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#withdrawModal"><i class="bi bi-download"></i> Withdraw</button>
+								<button type="button" id="withdrawMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#withdrawModal"><i class="bi bi-download"></i> Rút tiền</button>
 							</div>
 							<div class="d-flex justify-content-center mt4375">
-								<button type="button" id="transferMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#transferModal"><i class="fas fa-exchange-alt"></i> Transfer</button>
+								<button type="button" id="transferMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#transferModal"><i class="fas fa-exchange-alt"></i> Chuyển tiền</button>
 							</div>
 						</div>
 					</div>
@@ -735,8 +735,8 @@ function overview_page_function(event) {
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-download"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
-							From <span class="lastT-name">${name}</span>
-							<div class="mtm3125">Received</div>
+							Từ <span class="lastT-name">${name}</span>
+							<div class="mtm3125">Đã nhận</div>
 						</td>`;
 				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ $${db.value.toLocaleString()}</span></td>`;
 				// Sent
@@ -771,8 +771,8 @@ function overview_page_function(event) {
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-upload"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
-							From <span class="transactions-name">${name}</span>
-							<div class="mtm3125">Withdrawn</div>
+					Từ <span class="transactions-name">${name}</span>
+							<div class="mtm3125">Rút tiền</div>
 						</td>`;
 				amount = `<td class="align-middle fw500"><span class="floatr">- $${db.value.toLocaleString()}</span></td>`;
 			}
@@ -879,20 +879,20 @@ function society_page_function(event) {
 			table.splice(i, 1);
 		}
 
-		$('#page-title').html('Overview');
+		$('#page-title').html('Tổng quan');
 
 		if (event.data.isInSociety) {
-			society = `<span class="sidebar-title mt-5">Society</span>
-					   <p class="sidebar-item mt-2 selected" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-					   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
+			society = `<span class="sidebar-title mt-5">Ban ngành</span>
+					   <p class="sidebar-item mt-2 selected" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+					   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>`;
 		} else {
 			society = '';
 		}
 
 		$('#sidebar').html(`
-			<p class="sidebar-item mt-2" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-			<p class="sidebar-item" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>
-			<p class="sidebar-item mt-2" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Settings</span></p>
+			<p class="sidebar-item mt-2" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+			<p class="sidebar-item" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>
+			<p class="sidebar-item mt-2" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Cài đặt</span></p>
 			${society}
 		`);
 
@@ -902,7 +902,7 @@ function society_page_function(event) {
 			<div class="col-md-7 chart-main">
 				<div class="card chart-card text-center">
 					<div class="card-header card-o-header">
-						<span class="card-o-title">Statistics</span>
+						<span class="card-o-title">Số liệu thống kê</span>
 					</div>
 					<div class="card-body chart-card-body">
 						<div class="chart-div">
@@ -914,7 +914,7 @@ function society_page_function(event) {
 					<div class="col-md-12">
 						<div class="card last-t-card">
 							<div class="card-header card-o-header text-center">
-								<span class="card-o-title">Last Transactions<span class="badge bg-primary viewall-badge" id="view_all_transactions_society"><i class="fas fa-eye"></i> VIEW ALL</span></span>
+								<span class="card-o-title">Giao dịch cuối cùng<span class="badge bg-primary viewall-badge" id="view_all_transactions_society"><i class="fas fa-eye"></i> Xem đầy đủ</span></span>
 							</div>
 							<div class="card-body" id="last-t-body">
 								<table id="lastTransactionsTable">
@@ -930,30 +930,30 @@ function society_page_function(event) {
 				<div class="col-md-12">
 					<div class="card ccard-card">
 						<div class="card-header card-o-header text-center">
-							<span class="card-o-title">Informations</span>
+							<span class="card-o-title">Thông tin</span>
 						</div>
 						<div class="card-body ccard-body">
 							<div class="card creditcard-classic_card d-flex align-items-center">
 								
 							</div>
 							<hr>
-							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;""><span class="fff">Balance: $</span><span id="playerBankMoney"></span></p>
-							<p class="card-text text-center ccard-fs"><span class="fff">IBAN:</span> <span id="playerIBAN"></span></p>
+							<p class="card-text text-center ccard-fs" style="margin-bottom: 1.1rem;""><span class="fff">Số dư: $</span><span id="playerBankMoney"></span></p>
+							<p class="card-text text-center ccard-fs"><span class="fff">STKDN:</span> <span id="playerIBAN"></span></p>
 						</div>
 					</div>
 					<div class="card text-center h-100 actions-card">
 						<div class="card-header card-o-header">
-							<span class="card-o-title">Actions</span>
+							<span class="card-o-title">Hành động</span>
 						</div>
 						<div class="card-body actions-card_body">
 							<div class="d-flex justify-content-center">
-								<button type="button" id="depositMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#depositModal"><i class="bi bi-upload"></i> Deposit</button>
+								<button type="button" id="depositMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#depositModal"><i class="bi bi-upload"></i> Gửi tiền</button>
 							</div>
 							<div class="d-flex justify-content-center mt4375">
-								<button type="button" id="withdrawMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#withdrawModal"><i class="bi bi-download"></i> Withdraw</button>
+								<button type="button" id="withdrawMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#withdrawModal"><i class="bi bi-download"></i> Rút tiền</button>
 							</div>
 							<div class="d-flex justify-content-center mt4375">
-								<button type="button" id="transferMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#transferModal"><i class="fas fa-exchange-alt"></i> Transfer</button>
+								<button type="button" id="transferMoneyModal" class="btn btn-blue flex-grow-1" data-bs-toggle="modal" data-bs-target="#transferModal"><i class="fas fa-exchange-alt"></i> Chuyển tiền</button>
 							</div>
 						</div>
 					</div>
@@ -984,8 +984,8 @@ function society_page_function(event) {
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-download"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
-							From <span class="lastT-name">${name}</span>
-							<div class="mtm3125">Received</div>
+							Từ <span class="lastT-name">${name}</span>
+							<div class="mtm3125">Đã nhận</div>
 						</td>`;
 				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ $${db.value.toLocaleString()}</span></td>`;
 				// Sent
@@ -996,8 +996,8 @@ function society_page_function(event) {
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-upload"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
-							To <span class="lastT-name">${name}</span>
-							<div class="mtm3125">Sent</div>
+							Đến <span class="lastT-name">${name}</span>
+							<div class="mtm3125">Đã gửi</div>
 						</td>`;
 				amount = `<td class="align-middle fw500"><span class="floatr">- $${db.value.toLocaleString()}</span></td>`;
 				// Deposited
@@ -1008,8 +1008,8 @@ function society_page_function(event) {
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-download"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
-							Into <span class="lastT-name">${name}</span>
-							<div class="mtm3125">Deposited</div>
+							Từ <span class="lastT-name">${name}</span>
+							<div class="mtm3125">Đã gửi</div>
 						</td>`;
 				amount = `<td class="align-middle fw500 lastT-received"><span class="floatr">+ $${db.value.toLocaleString()}</span></td>`;
 				// Withdrawn
@@ -1020,8 +1020,8 @@ function society_page_function(event) {
 				}
 				icon = '<td class="align-middle"><span class="lastT-action"><i class="bi bi-upload"></i></span></td>';
 				data = `<td class="align-middle lastT-name-div">
-							From <span class="transactions-name">${name}</span>
-							<div class="mtm3125">Withdrawn</div>
+					Từ <span class="transactions-name">${name}</span>
+							<div class="mtm3125">Rút tiền</div>
 						</td>`;
 				amount = `<td class="align-middle fw500"><span class="floatr">- $${db.value.toLocaleString()}</span></td>`;
 			}
@@ -1130,17 +1130,17 @@ function settings_page_function(event) {
 	$('#page-title').html('Settings');
 
 	if (event.data.isInSociety) {
-		society = `<span class="sidebar-title mt-5">Society</span>
-				   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-				   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>`;
+		society = `<span class="sidebar-title mt-5">Ban ngành</span>
+				   <p class="sidebar-item mt-2" id="society_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+				   <p class="sidebar-item" id="society_transactions"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>`;
 	} else {
 		society = '';
 	}
 
 	$('#sidebar').html(`
-		<p class="sidebar-item mt-2" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Overview</span></p>
-		<p class="sidebar-item" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Transactions</span></p>
-		<p class="sidebar-item mt-2 selected" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Settings</span></p>
+		<p class="sidebar-item mt-2" id="overview_page"><i class="bi bi-grid-1x2-fill"></i> <span class="ms-1">Tổng quát</span></p>
+		<p class="sidebar-item" id="transactions_page"><i class="fas fa-exchange-alt"></i> <span class="ms-1">Giao dịch</span></p>
+		<p class="sidebar-item mt-2 selected" id="settings_page"><i class="fas fa-cog"></i> <span class="ms-1">Cài đặt</span></p>
 		${society}
 	`);
 
@@ -1151,7 +1151,7 @@ function settings_page_function(event) {
 			<div class="card d-flex flex-column flex-grow-1 settings-card">
 				<div class="card-header card-o-header text-center">
 					<span class="card-o-title">
-						<span>Account IBAN</span>
+						<span>SỐ TÀI KHOẢN</span>
 					</span>
 				</div>
 				<div class="card-body settings-card_body flex-grow-1">
@@ -1160,20 +1160,20 @@ function settings_page_function(event) {
 							<div class="col col-md-6 d-flex justify-content-center">
 								<div class="card w-100 h-100 changeiban-card">
 									<div class="card-body text-center">
-										<span class="fs15 fff">Change IBAN</span>
-										<input type="text" maxlength="${event.data.ibanCharNum}" id="new_iban" class="form-control text-center" placeholder="New IBAN" onkeyup="checkIfEmptySettings()">
-										<button type="button" id="change_iban" class="btn btn-blue" disabled><i class="fas fa-paper-plane"></i> Submit</button>
+										<span class="fs15 fff">Đổi STK</span>
+										<input type="text" maxlength="${event.data.ibanCharNum}" id="new_iban" class="form-control text-center" placeholder="STK MỚI" onkeyup="checkIfEmptySettings()">
+										<button type="button" id="change_iban" class="btn btn-blue" disabled><i class="fas fa-paper-plane"></i> Xác nhận</button>
 									</div>
 								</div>
 							</div>
 							<div class="col col-md-6 d-flex align-items-center">
 								<div class="card w-100 h-100 d-flex justify-content-center settings_info-card">
 									<div class="card-body text-center fs1125">
-										<span>The IBAN has a change cost of $${event.data.ibanCost}</span>
+										<span>Đổi STK có phí là: $${event.data.ibanCost}</span>
 										<hr class="fff">
-										<span>The IBAN always have the prefix "${event.data.ibanPrefix}"</span>
+										<span>STK luôn có chữ đầu là: "${event.data.ibanPrefix}"</span>
 										<hr class="fff">
-										<span>The maximum number of characters is ${event.data.ibanCharNum}</span>
+										<span>Số lượng ký tự tối đa là ${event.data.ibanCharNum}</span>
 									</div>
 								</div>
 							</div>
@@ -1184,7 +1184,7 @@ function settings_page_function(event) {
 			<div class="card d-flex flex-column flex-grow-1 settings2-card">
 				<div class="card-header card-o-header text-center">
 					<span class="card-o-title">
-						<span>PIN Code</span>
+						<span>Mã PIN</span>
 					</span>
 				</div>
 				<div class="card-body flex-grow-1 settings-card_body">
@@ -1193,20 +1193,20 @@ function settings_page_function(event) {
 							<div class="col col-md-6 d-flex justify-content-center">
 								<div class="card w-100 h-100 changepin-card">
 									<div class="card-body text-center">
-										<span class="fs15 fff">Change PIN</span>
-										<input type="password" maxlength="4" id="new_pin" class="form-control text-center" placeholder="New PIN" onkeyup="checkIfEmptySettings()">
-										<button type="button" id="change_pin" class="btn btn-blue" disabled><i class="fas fa-paper-plane"></i> Submit</button>
+										<span class="fs15 fff">Thay đổi mã PIN</span>
+										<input type="password" maxlength="4" id="new_pin" class="form-control text-center" placeholder="MÃ PIN MỚI" onkeyup="checkIfEmptySettings()">
+										<button type="button" id="change_pin" class="btn btn-blue" disabled><i class="fas fa-paper-plane"></i> Xác nhận</button>
 									</div>
 								</div>
 							</div>
 							<div class="col col-md-6 d-flex align-items-center">
 								<div class="card w-100 h-100 d-flex justify-content-center settings_info-card">
 									<div class="card-body text-center fs1125">
-										<span>The PIN has a change cost of $${event.data.pinCost}</span>
+										<span>Thay đổi mã pin có giá là: $${event.data.pinCost}</span>
 										<hr class="fff">
-										<span>The maximum number of characters is ${event.data.pinCharNum}</span>
+										<span>Số lượng ký tự tối đa là ${event.data.pinCharNum}</span>
 										<hr class="fff">
-										<span>You can only use numbers</span>
+										<span>Bạn chỉ có thể sử dụng số</span>
 									</div>
 								</div>
 							</div>
@@ -1227,7 +1227,7 @@ function logout_page() {
 			<div class="d-flex justify-content-center flex-column align-items-center">
 				<span class="load"></span>
 				<br>
-				<div class="ldata-txt">Logging out...</div>
+				<div class="ldata-txt">Đăng xuất...</div>
 			</div>
 		`);
 		$("#menu").fadeIn();
