@@ -47,20 +47,20 @@ LumberJob = {
     LumberModel = "s_m_y_construct_01",                             -- Ped model  https://wiki.rage.mp/index.php?title=Peds
     LumberHash = 0xD7DA9E99,                                        -- Hash numbers for ped model
     
-    ChoppingTreeTimer = 12 * 1000,                                  -- 12 second timer
-    ProcessingTime = 10 * 1000,                                     -- 10 second timer
+    ChoppingTreeTimer = 1 * 1000,                                  -- 12 second timer
+    ProcessingTime = 1 * 1000,                                     -- 10 second timer
 
-    LumberAmount_Min = 2,
-    LumberAmount_Max = 6,
+    LumberAmount_Min = 1,
+    LumberAmount_Max = 1,
 
     TreeBarkAmount_Min = 1,
-    TreeBarkAmount_Max = 10,
+    TreeBarkAmount_Max = 1,
 
-    TradeAmount_Min = 3,
-    TradeAmount_Max = 6,
+    TradeAmount_Min = 1,
+    TradeAmount_Max = 1,
 
-    TradeRecevied_Min = 1,
-    TradeRecevied_Max = 3,
+    TradeRecevied_Min = 2,
+    TradeRecevied_Max = 2,
 
     AxePrice = 100,                                                 -- Axe Price ($100)
 }
