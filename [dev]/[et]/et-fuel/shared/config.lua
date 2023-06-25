@@ -1,5 +1,6 @@
 Config = {}
-Config.ShowNearestGasStationOnly = true -- show nearest gas stations when close enough. If set to false, will show all blips for all gas stations.
+Config.ShowNearestGasStationOnly = true -- show nearest gas stations when close enough
+Config.ShowAllGasStations = true -- show all gas stations around map
 Config.LeaveEngineRunning = true -- when set to true vehicle engine will run upon exiting vehicle
 Config.VehicleBlowUp = true -- when set to true vehicle has a chance to blow up if engine is left running
 Config.BlowUpChance = 5 -- percentage for chance of engine explosion
@@ -8,7 +9,7 @@ Config.CostMultiplier = 3.0 -- tax basically
 Config.canCost = 400 -- buy jerry can price
 Config.refuelCost = 600 -- refueling jerry can price
 Config.GlobalTax = 15.0
-
+Config.nozzleprice = 100
 Config.fuelPrice = 2.0 -- fuel price in litres I guess
 
 Config.FuelDecor = "_FUEL_LEVEL" -- don't touch
@@ -17,32 +18,16 @@ Config.FuelDecor = "_FUEL_LEVEL" -- don't touch
 Config.Blacklist = {
 	--"Adder",
 	--276773164
-	"surge",
-	"iwagen",
-	"voltic",
-	"voltic2",
-	"raiden",
-	"cyclone",
-	"tezeract",
-	"neon",
-	"omnisegt",
-	"iwagen",
-	"caddy",
-	"caddy2",
-	"caddy3",
-	"airtug",
-	"rcbandito",
-	"imorgon",
-	"dilettante",
-	"khamelion",
-	"wheelchair",
-    	"bmx",
-    	"tribike3",
-    	"fixter",
-    	"cruiser",
-    	"scorcher",
-    	"tribike2",
-    	"tribike",
+}
+
+Config.PumpModels = {
+	[-2007231801] = true,
+	[1339433404] = true,
+	[1694452750] = true,
+	[1933174915] = true,
+	[-462817101] = true,
+	[-469694731] = true,
+	[-164877493] = true
 }
 
 -- Class multipliers. If you want SUVs to use less fuel, you can change it to anything under 1.0, and vise versa.

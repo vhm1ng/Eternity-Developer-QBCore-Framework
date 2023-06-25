@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'et-fuel'
-version '1.0'
-author 'github.com/Project-Sloth'
+version '2.0'
+author 'github.com/Project-Sloth and github.com/krrm1'
 
 client_scripts {
     '@PolyZone/client.lua',

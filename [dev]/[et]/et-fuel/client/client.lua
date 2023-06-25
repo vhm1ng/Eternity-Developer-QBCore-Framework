@@ -4,8 +4,9 @@ local QBCore = exports['et-core']:GetCoreObject()
 local fuelSynced = false
 local inBlacklisted = false
 local inGasStation = false
-local isFueling = false
-local Stations = {}
+local haveNozzle = false
+local isNearPump = false
+local NozzlePrice = Config.nozzleprice
 local props = {
 	'prop_gas_pump_1d',
 	'prop_gas_pump_1a',
@@ -18,10 +19,6 @@ local props = {
 local CurrentWeaponData = {}
 
 -- Functions
-
-local function isHoldingWeapon(weaponHash)
-	return GetSelectedPedWeapon(PlayerPedId()) == weaponHash
-end
 
 local function ManageFuelUsage(vehicle)
 	if not DecorExistOn(vehicle, Config.FuelDecor) then
@@ -41,6 +38,30 @@ end
 -- Threads
 
 CreateThread(function()
+	while true do
+		Wait(500)
+
+		local pumpObject, pumpDistance = FindNearestFuelPump()
+
+		if pumpDistance < 2.5 then
+			isNearPump = pumpObject
+			-- currentCash = QBCore.Functions.GetPlayerData().money['cash']
+			Wait(500)
+		else
+			isNearPump = false
+			if haveNozzle == true then
+				QBCore.Functions.Notify(Lang:t("notify.broke_nozle"), "error")
+				TriggerServerEvent('et-fuel:server:PayForFuel', NozzlePrice)
+				DeleteEntity(Nozzle)
+				DeleteObject(Nozzle)
+				haveNozzle = false
+			end
+			Wait(2000)
+		end
+	end
+end)
+
+CreateThread(function()
 	local bones = {
 		"petroltank",
 		"petroltank_l",
@@ -50,19 +71,19 @@ CreateThread(function()
 		"petrolcap ",
 		"seat_dside_r",
 		"engine",
-	}
+		}
 	exports['et-target']:AddTargetBone(bones, {
 		options = {
-			{
-				type = "client",
-				event = "et-fuel:client:SendMenuToServer",
-				icon = "fas fa-gas-pump",
-				label = "Refuel Vehicle",
-				canInteract = function()
-					return inGasStation or HasPedGotWeapon(PlayerPedId(), 883325847)
-				end
-			}
-		},
+		{
+			type = "client",
+			event = "et-fuel:client:SendMenuToServer",
+			icon = "fas fa-gas-pump",
+			label = "Refuel Vehicle",
+			canInteract = function()
+				return haveNozzle == true
+			end
+		}
+	},
 		distance = 1.5,
 	})
 end)
@@ -87,53 +108,35 @@ if Config.LeaveEngineRunning then
 end
 
 if Config.ShowNearestGasStationOnly then
-	CreateThread(function()
-		local currentGasBlip = 0
-		while true do
-			local coords = GetEntityCoords(PlayerPedId())
-			local closest = 1000
-			local closestCoords
-			
-			for _, gasStationCoords in pairs(Config.GasStationsBlips) do
-				local dstcheck = #(coords - gasStationCoords)
-				if dstcheck < closest then
-					closest = dstcheck
-					closestCoords = gasStationCoords
-				end
-			end
-			if DoesBlipExist(currentGasBlip) then
-				RemoveBlip(currentGasBlip)
-			end
-			currentGasBlip = CreateBlip(closestCoords)
-			Wait(10000)
-		end
-	end)
-	
-else
-	CreateThread(function()
-		for _, gasStationCoords in pairs(Config.GasStationsBlips) do
-			CreateBlip(gasStationCoords)
-		end
-	end)
-end
+    CreateThread(function()
+	local currentGasBlip = 0
+	while true do
+		local coords = GetEntityCoords(PlayerPedId())
+		local closest = 1000
+		local closestCoords
 
-CreateThread(function()
-	for k=1, #Config.GasStations do
-		Stations[k] = PolyZone:Create(Config.GasStations[k].zones, {
-			name="GasStation"..k,
-			minZ = 	Config.GasStations[k].minz,
-			maxZ = Config.GasStations[k].maxz,
-			debugPoly = false
-		})
-		Stations[k]:onPlayerInOut(function(isPointInside)
-			if isPointInside then
-				inGasStation = true
-			else
-				inGasStation = false
+		for _, gasStationCoords in pairs(Config.GasStationsBlips) do
+			local dstcheck = #(coords - gasStationCoords)
+			if dstcheck < closest then
+				closest = dstcheck
+				closestCoords = gasStationCoords
 			end
-		end)
+		end
+		if DoesBlipExist(currentGasBlip) then
+			RemoveBlip(currentGasBlip)
+		end
+		currentGasBlip = CreateBlip(closestCoords)
+		Wait(10000)
 	end
 end)
+
+elseif Config.ShowAllGasStations then
+    CreateThread(function()
+        for _, gasStationCoords in pairs(Config.GasStationsBlips) do
+            CreateBlip(gasStationCoords)
+        end
+    end)
+end
 
 CreateThread(function()
 	DecorRegister(Config.FuelDecor, 1)
@@ -173,235 +176,144 @@ end)
 
 -- Client Events
 
-RegisterNetEvent('et-fuel:client:buyCanMenu', function()
-	exports['et-menu']:openMenu({
-		{
-			header = "Gas Station",
-			txt = 'The total cost is going to be: $'..Config.canCost..' including taxes.',
-			params = {
-				event = "et-fuel:client:buyCan",
-			}
-		},
-	})
-end)
-
-RegisterNetEvent('et-fuel:client:buyCan', function()
-	local ped = PlayerPedId()
-	if not HasPedGotWeapon(ped, 883325847) then
-		QBCore.Functions.TriggerCallback('et-fuel:server:fuelCanPurchase', function(hasMoney)
-			if hasMoney then 
-				TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["weapon_petrolcan"], "add") -- Just put this here so the if statement don't feel empty.
-			end
-		end)
-	end
-end)
-
-RegisterNetEvent('et-fuel:client:refuelCanMenu', function()
-	local ped = PlayerPedId()
-	local price = 0
-	local weapon = GetSelectedPedWeapon(PlayerPedId())
-	local ammo = GetAmmoInPedWeapon(PlayerPedId(), weapon)
-	local ammotoAdd = 4500 - ammo
-	
-	local fuelToAdd = tonumber(ammotoAdd/45)
-	if fuelToAdd ~= 0 then
-		price = math.floor(fuelToAdd * Config.fuelPrice)
-		exports['et-menu']:openMenu({
-			{
-				header = "Gas Station",
-				txt = "The total cost of refueling the Gas can will be "..price.."$",
-				params = {
-					event = "et-fuel:client:refuelCan",
-				}
-			},
-		})
-	else
-		QBCore.Functions.Notify(Lang:t("already_full"), "error")
-	end
-end)
-
-RegisterNetEvent('et-fuel:client:refuelCan', function()
-	local vehicle = QBCore.Functions.GetClosestVehicle()
-	local ped = PlayerPedId()
-	local CurFuel = GetVehicleFuelLevel(vehicle)
-	if HasPedGotWeapon(ped, 883325847) then
-		if GetAmmoInPedWeapon(ped, 883325847) < 4500 then
-			RequestAnimDict("weapon@w_sp_jerrycan")
-			while not HasAnimDictLoaded('weapon@w_sp_jerrycan') do Wait(100) end
-			TaskPlayAnim(ped, "weapon@w_sp_jerrycan", "fire", 8.0, 1.0, -1, 1, 0, 0, 0, 0 )
-			QBCore.Functions.Progressbar("refuel-car", "Refueling", 10000, false, true, {
-				disableMovement = true,
-				disableCarMovement = true,
-				disableMouse = false,
-				disableCombat = true,
-			}, {}, {}, {}, function() -- Done
-				TriggerServerEvent('et-fuel:server:PayForFuel', Config.refuelCost, GetPlayerServerId(PlayerId()))
-				TriggerServerEvent("weapons:server:UpdateWeaponAmmo", CurrentWeaponData, tonumber(4500))
-				PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
-				StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
-			end, function() -- Cancel
-				QBCore.Functions.Notify(Lang:t("notify.refuel_cancel"), "error")
-				StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
-			end)
-		else
-			QBCore.Functions.Notify(Lang:t("notify.jerrycan_full"), "error")
-		end
-	end
-end)
-
 RegisterNetEvent('et-fuel:client:SendMenuToServer', function()
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local CurFuel = GetVehicleFuelLevel(vehicle)
 	local refillCost = Round(Config.RefillCost - CurFuel) * Config.CostMultiplier
 	local ped = PlayerPedId()
-	if HasPedGotWeapon(ped, 883325847) then
-		if GetAmmoInPedWeapon(ped, 883325847) ~= 0 then
-			if CurFuel < 95 then
-				TriggerServerEvent('et-fuel:server:OpenMenu', 0, inGasStatio, true)
-			else
-				QBCore.Functions.Notify(Lang:t("notify.vehicle_full"), "error")
-			end
+		if haveNozzle == true then
+		    if CurFuel < 95 then
+		     	TriggerServerEvent('et-fuel:server:OpenMenu', refillCost, inGasStation, false)
+	     	else
+			   QBCore.Functions.Notify(Lang:t("notify.vehicle_full"), "error")
+		    end
 		else
-			QBCore.Functions.Notify(Lang:t("notify.jerrycan_empty"), "error")
+			QBCore.Functions.Notify(Lang:t("notify.no_nozzle"), "error")
 		end
-	else
-		if CurFuel < 95 then
-			TriggerServerEvent('et-fuel:server:OpenMenu', refillCost, inGasStation, false)
-		else
-			QBCore.Functions.Notify(Lang:t("notify.vehicle_full"), "error")
-		end
-	end
-end)
-
-AddEventHandler('weapons:client:SetCurrentWeapon', function(data, bool)
-	if bool ~= false then
-		CurrentWeaponData = data
-	else
-		CurrentWeaponData = {}
-	end
-	CanShoot = bool
 end)
 
 RegisterNetEvent('et-fuel:client:RefuelVehicle', function(refillCost)
-	local gasProp = 0
-	local gasNozzle = "prop_cs_fuel_nozle"
 	local ped = PlayerPedId()
 	local vehicle = QBCore.Functions.GetClosestVehicle()
 	local ped = PlayerPedId()
 	local CurFuel = GetFuel(vehicle)
 	local time = (100 - CurFuel) * 400
 	local vehicleCoords = GetEntityCoords(vehicle)
-	if inGasStation == false and not HasPedGotWeapon(ped, 883325847) then
-	elseif inGasStation == false and GetAmmoInPedWeapon(ped, 883325847) == 0 then
-		return
-	end
-	if HasPedGotWeapon(ped, 883325847) then
-		local fuelToAdd = tonumber((100 - CurFuel) * 45)
-		local weapon = GetSelectedPedWeapon(PlayerPedId())
-		local ammo = GetAmmoInPedWeapon(PlayerPedId(), weapon)
-		if fuelToAdd == 0 then
-			QBCore.Functions.Notify("Vehicle already full", "error")
-			return
-		end
-		if ammo <= 40 then
-			QBCore.Functions.Notify("No fuel in gas can", "error")
-		else
-			RequestAnimDict("weapon@w_sp_jerrycan")
-			while not HasAnimDictLoaded('weapon@w_sp_jerrycan') do
-				Wait(100)
-			end
-			TaskPlayAnim(ped, "weapon@w_sp_jerrycan", "fire", 8.0, 1.0, -1, 1, 0, 0, 0, 0 )
-			if GetIsVehicleEngineRunning(vehicle) and Config.VehicleBlowUp then
-				local Chance = math.random(1, 100)
-				if Chance <= Config.BlowUpChance then
-					AddExplosion(vehicleCoords, 5, 50.0, true, false, true)
-					return
-				end
-			end
-			TriggerEvent("et-fuel:client:fuelTick", vehicle)
-			QBCore.Functions.Progressbar("refuel-car", "Refueling", time, false, true, {
-				disableMovement = true,
-				disableCarMovement = true,
-				disableMouse = false,
-				disableCombat = true,
-			}, {}, {}, {}, function() -- Done
-				SetFuel(vehicle, 100)
-				local totalAmmo = math.floor(math.abs(ammo - fuelToAdd))
-				if totalAmmo < 0 then
-					totalAmmo = 0
-				end
-				TriggerServerEvent("weapons:server:UpdateWeaponAmmo", CurrentWeaponData, totalAmmo)
-				PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
-				StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
-				isFueling = false
-			end, function() -- Cancel
-				QBCore.Functions.Notify(Lang:t("notify.refuel_cancel"), "error")
-				StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
-			end)
-		end
-	else
-		if inGasStation then
 			if isCloseVeh() then
-				if QBCore.Functions.GetPlayerData().money['cash'] <= refillCost then
+				if QBCore.Functions.GetPlayerData().money['cash'] <= refillCost then 
 					QBCore.Functions.Notify(Lang:t("notify.no_money"), "error")
 				else
-					RequestAnimDict("amb@world_human_security_shine_torch@male@base")
-					while not HasAnimDictLoaded('amb@world_human_security_shine_torch@male@base') do Wait(100) end
-					TaskPlayAnim(ped, "amb@world_human_security_shine_torch@male@base", "base", 8.0, 1.0, -1, 1, 0, 0, 0, 0 )
-					
-					gasProp = CreateObject(gasNozzle, 1.0, 1.0, 1.0, 1, 1, 0)
-					local bone = GetPedBoneIndex(PlayerPedId(), 60309)
-					AttachEntityToEntity(gasProp, PlayerPedId(), bone, 0.0, 0.0, 0.05, 350.0, 350.0, 250.0, 1, 1, 0, 0, 2, 1)
-					
-					if GetIsVehicleEngineRunning(vehicle) and Config.VehicleBlowUp then
-						local Chance = math.random(1, 100)
-						if Chance <= Config.BlowUpChance then
-							AddExplosion(vehicleCoords, 5, 50.0, true, false, true)
-							return
-						end
+				RequestAnimDict("friends@")
+				while not HasAnimDictLoaded('friends@') do Wait(100) end
+				TaskPlayAnim(ped, "friends@", "pickupwait", 8.0, 1.0, -1, 1, 0, 0, 0, 0 )
+				if GetIsVehicleEngineRunning(vehicle) and Config.VehicleBlowUp then
+					local Chance = math.random(1, 100)
+				if Chance <= Config.BlowUpChance then
+					AddExplosion(vehicleCoords, 5, 50.0, true, false, true)
+						return
 					end
-					QBCore.Functions.Progressbar("refuel-car", "Refueling", time, false, true, {
-						disableMovement = true,
-						disableCarMovement = true,
-						disableMouse = false,
-						disableCombat = true,
-					}, {}, {}, {}, function() -- Done
-						TriggerServerEvent('et-fuel:server:PayForFuel', refillCost, GetPlayerServerId(PlayerId()))
-						SetFuel(vehicle, 100)
-						PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
-						StopAnimTask(ped, "amb@world_human_security_shine_torch@male@base", "base", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
-						DeleteObject(gasProp)
-					end, function() -- Cancel
-						QBCore.Functions.Notify(Lang:t("notify.refuel_cancel"), "error")
-						StopAnimTask(ped, "amb@world_human_security_shine_torch@male@base", "base", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
-						DeleteObject(gasProp)
+				end
+				TriggerEvent('et-fuel:deleteNozzle')
+				QBCore.Functions.Progressbar("refuel-car", "Refueling", time, false, true, {
+					disableMovement = true,
+					disableCarMovement = true,
+					disableMouse = false,
+					disableCombat = true,
+				}, {}, {}, {}, function() -- Done
+					TriggerServerEvent('et-fuel:server:PayForFuel', refillCost, GetPlayerServerId(PlayerId()))
+					SetFuel(vehicle, 100)
+					PlaySound(-1, "5_SEC_WARNING", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
+					StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
+					TriggerEvent('et-fuel:createNozzle')
+				end, function() -- Cancel
+					QBCore.Functions.Notify(Lang:t("notify.refuel_cancel"), "error")
+					TriggerEvent('et-fuel:createNozzle')
+					StopAnimTask(ped, "weapon@w_sp_jerrycan", "fire", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
 					end)
 				end
 			end
-		end
+end)
+
+-- fuel Nozzle
+
+RegisterNetEvent('et-fuel:createNozzle', function (model)
+	local ped = PlayerPedId()
+	local model = 'prop_cs_fuel_nozle'
+	local boneId = 28422
+	local modelHash = type(model) == 'string' and GetHashKey(model) or model
+    local bone = GetPedBoneIndex(ped, boneId)
+
+	if haveNozzle == false then
+    QBCore.Functions.LoadModel(modelHash)
+    Nozzle = CreateObject(modelHash, -50.0, -50.0, 5.0, 4, 10)
+    AttachEntityToEntity(Nozzle, ped, bone, 0.04, 0.0, -0.03, 10.0, -60.0, -100.0, false, false, false, false, 2, true)
+    SetModelAsNoLongerNeeded(modelHash)
+	haveNozzle = true
+	else
+		QBCore.Functions.Notify(Lang:t("notify.cant_havenozzle"), "error")
 	end
+end)
+
+RegisterNetEvent('et-fuel:deleteNozzle', function ()
+	if haveNozzle == true then
+    DeleteEntity(Nozzle)
+	DeleteObject(Nozzle)
+	haveNozzle = false
+	else
+		QBCore.Functions.Notify(Lang:t("notify.cant_dontnozzle"), "error")
+	end
+end)
+
+RegisterNetEvent('et-fuel:pumpmenu', function ()
+        local myMenu = {
+                {
+                    header = "Fuel Pump",
+                    icon = 'fas fa-gas-pump',
+                    txt = "",
+                    isMenuHeader = true
+                },
+                {
+                    id = 1,
+                    header = "Take Nozzle",
+                    icon = 'fas fa-hand',
+                    txt = "",
+                    params = {
+                        event = "et-fuel:createNozzle",
+                    }
+                },
+				{
+                    id = 1,
+                    header = "Put Nozzle",
+                    icon = 'fas fa-hand-back-fist',
+                    txt = "",
+                    params = {
+                        event = "et-fuel:deleteNozzle",
+                    }
+                },
+                {
+                    id = 7,
+                    header = 'close',
+                    icon = 'fas fa-x',
+                    params = {
+                        event = 'et-menu:client:closeMenu',
+                    }
+                },
+            }
+            exports['et-menu']:openMenu(myMenu)
+
 end)
 
 -- Target Export
 
--- exports['et-target']:AddTargetModel(props, {
--- 	options = {
--- 		{
--- 			type = "client",
--- 			event = "et-fuel:client:buyCanMenu",
--- 			icon = "fas fa-burn",
--- 			label = "Buy Jerry Can",
+exports['et-target']:AddTargetModel(props, {
+	options = {
+		{
+			type = "client",
+			event = "et-fuel:pumpmenu",
+			icon = "fas fa-burn",
+			label = "Use Pump",
 			
--- 		},
--- 		{
--- 			type = "client",
--- 			event = "et-fuel:client:refuelCanMenu",
--- 			icon = "fas fa-gas-pump",
--- 			label = "Refuel Jerry Can",
--- 			canInteract = function(entity)
--- 				return isHoldingWeapon(GetHashKey("weapon_petrolcan"))
--- 			end,
--- 		},
--- 	},
--- 	distance = 2.0
--- })
+		},
+	},
+	distance = 2.0
+})

@@ -18,7 +18,6 @@ RegisterNetEvent("et-fuel:server:OpenMenu", function (amount, inGasStation, hasW
 	if not player then return end
 	local tax = GlobalTax(amount)
 	local total = math.ceil(amount + tax)
-	if inGasStation == true and not hasWeapon then
 		TriggerClientEvent('et-menu:client:openMenu', src, {
 			{
 				header = 'Gas Station',
@@ -29,18 +28,6 @@ RegisterNetEvent("et-fuel:server:OpenMenu", function (amount, inGasStation, hasW
 				}
 			},
 		})
-	else
-		TriggerClientEvent('et-menu:client:openMenu', src, {
-			{
-				header = 'Gas Station',
-				txt = 'Refuel from jerry can' ,
-				params = {
-					event = "et-fuel:client:RefuelVehicle",
-					args = total,
-				}
-			},
-		})
-	end
 end)
 
 QBCore.Functions.CreateCallback('et-fuel:server:fuelCan', function(source, cb)
@@ -56,20 +43,4 @@ RegisterNetEvent("et-fuel:server:PayForFuel", function (amount)
 	local player = QBCore.Functions.GetPlayer(src)
 	if not player then return end
 	player.Functions.RemoveMoney('cash', amount)
-end)
-
-QBCore.Functions.CreateCallback('et-fuel:server:fuelCanPurchase', function(source, cb)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    local cashBalance = Player.PlayerData.money.cash
-	if not Player then return end
-    if cashBalance >= Config.canCost then
-		Player.Functions.RemoveMoney('cash', Config.canCost)
-        Player.Functions.AddItem("weapon_petrolcan", 1, false)
-		TriggerClientEvent('QBCore:Notify', src, "You purchased a jerry can for $"..Config.canCost, "success")
-        cb(true)
-    else
-        TriggerClientEvent('QBCore:Notify', src, "You dont have enough cash on you..", "error")
-        cb(false)
-    end
 end)
