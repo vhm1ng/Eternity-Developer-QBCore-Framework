@@ -227,7 +227,7 @@ function setupLocations(locations, myHouses) {
             arrCitiesDivided.push(city.match(exp));
         });
 
-        console.log(arrCitiesDivided);
+        // console.log(arrCitiesDivided);
 
         for (let i = 0, length = numOfCities; i < length; i++) {
             generateSlide(i);
