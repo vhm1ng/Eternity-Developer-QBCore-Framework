@@ -8,7 +8,3 @@ files {
 	"html/css/*.ttf",
 	"html/css/*.css"
 }
-
-client_scripts {
-	"client/client.lua",
-}
