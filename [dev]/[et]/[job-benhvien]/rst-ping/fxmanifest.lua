@@ -16,7 +16,7 @@ files {
     'html/ui.html',
     'html/*.css',
     'html/*.js',
-    'html/img/*.png',
+    -- 'html/img/*.png',
 }
 
 server_scripts { '@mysql-async/lib/MySQL.lua' }
