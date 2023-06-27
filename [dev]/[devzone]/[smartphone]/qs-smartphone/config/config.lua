@@ -21,8 +21,8 @@ Config.ValetPrice = 1000 -- Price to bring your vehicle to you.
 Config.DeleteStoriesAndNotifies = true -- Do you want the notifications and stories to be deleted after a certain time?
 Config.MaxApp = 36 -- Don't touch here.
 
-Config.IbanBank = true -- If you set true to this the bank app will use an IBAN, false to use the ID of the player.
-Config.okokBankingIban = false -- With the option above set in true and okokBankingIban in true you will be able to use the okokBanking Alias
+Config.IbanBank = false -- If you set true to this the bank app will use an IBAN, false to use the ID of the player.
+Config.okokBankingIban = true -- With the option above set in true and okokBankingIban in true you will be able to use the okokBanking Alias
 --  If you use are not using Iban and the player its disconnect you will not be able to send him money.
 
 Config.WetPhone = true -- Being in the water, the phone will break and will give you the same item but with the prefix "wet_".
