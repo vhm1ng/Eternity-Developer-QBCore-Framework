@@ -12,7 +12,7 @@ Config.RepeatTimeout = 2000 -- Don't touch here.
 Config.CallRepeats = 999999 -- Don't touch here.
 Config.DisableMovement = false -- Block all the movement while you are using the phone
 
-Config.Voice = 'mumble' -- Options: 'mumble', 'toko', 'pma' or 'salty.'
+Config.Voice = 'pma' -- Options: 'mumble', 'toko', 'pma' or 'salty.'
 
 Config.ScreenshotBasic = 'screenshot-basic' -- Leave it as default if you don't know what you are doing
 
