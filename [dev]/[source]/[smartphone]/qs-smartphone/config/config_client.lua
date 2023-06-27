@@ -7,7 +7,7 @@ Citizen.CreateThread(function()
     end
 end)
 
-RegisterKeyMapping('TooglePhone', 'Open Phone', 'keyboard', 'F1')
+RegisterKeyMapping('TooglePhone', 'Open Phone', 'keyboard', 'm')
 
 local AbleToOpen = true
 RegisterCommand("TooglePhone",function()
