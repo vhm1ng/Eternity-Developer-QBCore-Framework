@@ -412,7 +412,7 @@ Config.Products = {
 Config.Locations = {
     -- 24/7 Locations
     ["247supermarket"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(24.47, -1346.62, 29.5, 271.66),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
@@ -428,7 +428,7 @@ Config.Locations = {
     },
 
     ["247supermarket2"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(-3039.54, 584.38, 7.91, 17.27),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
@@ -444,7 +444,7 @@ Config.Locations = {
     },
 
     ["247supermarket3"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(-3242.97, 1000.01, 12.83, 357.57),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
@@ -460,7 +460,7 @@ Config.Locations = {
     },
 
     ["247supermarket4"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(1728.07, 6415.63, 35.04, 242.95),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
@@ -476,7 +476,7 @@ Config.Locations = {
     },
 
     ["247supermarket5"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(1959.82, 3740.48, 32.34, 301.57),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
@@ -492,7 +492,7 @@ Config.Locations = {
     },
 
     ["247supermarket6"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(549.13, 2670.85, 42.16, 99.39),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
@@ -508,7 +508,7 @@ Config.Locations = {
     },
 
     ["247supermarket7"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(2677.47, 3279.76, 55.24, 335.08),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
@@ -524,7 +524,7 @@ Config.Locations = {
     },
 
     ["247supermarket8"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(2556.66, 380.84, 108.62, 356.67),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
@@ -540,7 +540,7 @@ Config.Locations = {
     },
 
     ["247supermarket9"] = {
-        ["label"] = "SIêu thị 24/7",
+        ["label"] = "Siêu thị 24/7",
         ["coords"] = vector4(372.66, 326.98, 103.57, 253.73),
         ["ped"] = 'mp_m_shopkeep_01',
         ["scenario"] = "WORLD_HUMAN_STAND_MOBILE",
