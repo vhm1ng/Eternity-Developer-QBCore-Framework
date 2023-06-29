@@ -66,11 +66,11 @@ RegisterServerEvent('lotus-nuongthit:ProcessThitbo',function()
     local a=source;
     local b=QBCore.Functions.GetPlayer(a)
     local c=b.Functions.GetItemByName('thitdongvat')
-    local d=b.Functions.GetItemByName('wood_cut')
+    local d=b.Functions.GetItemByName('wood_plank')
     if c and d then 
         if c.amount>=2 and d.amount>=1 then 
             b.Functions.RemoveItem('thitdongvat',2)
-            b.Functions.RemoveItem('wood_cut',1)
+            b.Functions.RemoveItem('wood_plank',1)
             b.Functions.AddItem('thitbonuong',2)
             TriggerClientEvent("inventory:client:ItemBox",source,QBCore.Shared.Items['thitdongvat'],"remove")
             TriggerClientEvent("inventory:client:ItemBox",source,QBCore.Shared.Items['thitbonuong'],"add")

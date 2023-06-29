@@ -167,15 +167,13 @@ QBShared.Items = {
 	['fake_license_plate'] 		 	 = {['name'] = 'fake_license_plate', 			['label'] = 'Biển số xe giả', 			['weight'] = 150, 		['type'] = 'item', 		['image'] = 'licenseplate.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A fake license plate.'},
 	['registered_license_plate'] 	 = {['name'] = 'registered_license_plate', 		['label'] = 'Biển số xe đã đăng ký', 	['weight'] = 150, 		['type'] = 'item', 		['image'] = 'licenseplate.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A registered license plate ready to use'},
 
---[[]
-	NGHE BO
+	-- Nghề bò
 	['xosua'] 	    		 = {['name'] = 'xosua', 				['label'] = 'Xô sữa', 						['weight'] = 200, 		['type'] = 'item', 		['image'] = 'xosua.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Xô để vắt sữa'},
 	['milk'] 	    		 = {['name'] = 'milk', 					['label'] = 'Sữa', 							['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'milk.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Sữa được vắt từ bò'},
 	['milk_pack']            = {['name'] = 'milk_pack',             ['label'] = 'Hộp sữa',                      ['weight'] = 2000,      ['type'] = 'item',      ['image'] = 'milk_pack', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Hộp sữa được làm từ sữa bỏ'},
  	['knife'] 	     		 = {['name'] = 'knife', 				['label'] = 'Dao mổ', 						['weight'] = 200, 		['type'] = 'item', 		['image'] = 'knife.png', 		['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Dao mổ bò'},
 	['thitdongvat'] 	     = {['name'] = 'thitdongvat', 			['label'] = 'Thịt bò', 						['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'thitdongvat.png', 	['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Dao mổ bò'},
 	['thitbonuong'] 	     = {['name'] = 'thitbonuong', 			['label'] = 'Thịt bò nướng', 				['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'thitbonuong.png', 	['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Dao mổ bò'},
-]]--
 
 	-- Nghề gà
 	["alive_chicken"] 		 		 = {["name"] = "alive_chicken", 				["label"] = "Gà sống", 					["weight"] = 2000, 		["type"] = "item", 		["image"] = "alive_chicken.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Alive Chicken"},
