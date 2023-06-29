@@ -49,7 +49,7 @@ RegisterNetEvent("et-rental:attemptvehiclespawn", function(vehicle)
 end)
 
 RegisterNetEvent("et-rental:attemptvehiclespawnfail", function()
-  QBCore.Functions.Notify("Not enough money.", "error")
+  QBCore.Functions.Notify("Không đủ tiền.", "error")
 end)
 
 local PlayerName = nil
@@ -75,15 +75,15 @@ RegisterNetEvent("et-rental:returnvehicle", function()
           TriggerServerEvent('et-rental:server:payreturn',vehname)
           QBCore.Functions.DeleteVehicle(car)
         else
-          QBCore.Functions.Notify("I cannot take a vehicle without its papers.", "error")
+          QBCore.Functions.Notify("Tôi không thể lấy một chiếc xe mà không có giấy tờ của nó.", "error")
         end
       end)
     else
-      QBCore.Functions.Notify("This is not a rented vehicle.", "error")
+      QBCore.Functions.Notify("Đây không phải là xe thuê.", "error")
     end
 
   else
-    QBCore.Functions.Notify("I don't see any rented vehicle, make sure its nearby.", "error")
+    QBCore.Functions.Notify("Tôi không thấy bất kỳ phương tiện thuê nào, đảm bảo rằng nó ở đây.", "error")
   end
 end)
 
@@ -141,9 +141,9 @@ AddEventHandler("nc-inventory:itemUsed", function(item, info)
       if isRental then
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
-        QBCore.Functions.Notify("You received the vehicle keys.", "success")
+        QBCore.Functions.Notify("Bạn đã nhận được chìa khóa xe.", "success")
       else
-        QBCore.Functions.Notify("This rental does not exist.", "success")
+        QBCore.Functions.Notify("Cho thuê này không tồn tại.", "success")
       end
   end
 end)

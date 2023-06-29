@@ -30,12 +30,12 @@ CreateThread(function()
             {
                 event = "et-rental:vehiclelist",
                 icon = "fas fa-circle",
-                label = "Rent vehicle",
+                label = "Thuê Xe",
             },
             {
                 event = "et-rental:returnvehicle",
                 icon = "fas fa-circle",
-                label = "Return Vehicle (Receive Back 50% of original price)",
+                label = "Trả xe (Nhận lại 50% giá gốc)",
             },
         },
         distance = 3.5,

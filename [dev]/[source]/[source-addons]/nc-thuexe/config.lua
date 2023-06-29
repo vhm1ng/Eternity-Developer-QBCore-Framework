@@ -11,7 +11,7 @@ Config.CreatePed = vector4(247.6, -561.06, 42.27, 227.58)
 -- Blips 
 Config.Locations = {
     ["rentalstations"] = {
-        [1] = {label = "Rental Stations", coords = vector4(247.6, -561.06, 43.27, 227.58)},
+        [1] = {label = "Thuê Xe", coords = vector4(247.6, -561.06, 43.27, 227.58)},
     },
 }
 

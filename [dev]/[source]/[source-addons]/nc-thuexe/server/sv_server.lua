@@ -7,7 +7,7 @@ RegisterServerEvent('et-rental:attemptPurchase', function(car,price)
     if cash >= price then
         Player.Functions.RemoveMoney("cash",price,"rentals")
         TriggerClientEvent('et-rental:vehiclespawn', source, car)
-        TriggerClientEvent('QBCore:Notify', src, car .. " has been rented for $" .. price .. ", return it in order to receive 50% of the total costs.", "success")
+        TriggerClientEvent('QBCore:Notify', src, car .. " đã được thuê với giá $" .. price .. ", nếu trả lại bạn sẽ nhận được lại 50% chi phí thuê xe.", "success")
     else
         TriggerClientEvent('et-rental:attemptvehiclespawnfail', source)
     end
@@ -30,7 +30,7 @@ RegisterServerEvent('et-rental:server:payreturn', function(model)
         if string.lower(v.model) == model then
             local payment = v.price / 2
             Player.Functions.AddMoney("cash",payment,"rental-return")
-            TriggerClientEvent('QBCore:Notify', src, "You have returned your rented vehicle and received $" .. payment .. " in return.", "success")
+            TriggerClientEvent('QBCore:Notify', src, "Bạn đã trả lại chiếc xe đã thuê của mình và nhận được lại $" .. payment .. , "success")
         end
     end
 end)
