@@ -11,7 +11,7 @@ Config.Cityhalls = {
             display = 4,
             scale = 0.65,
             colour = 0,
-            title = "Toà Thị Chính"
+            title = "Giấy phép"
         },
         licenses = {
             ["id_card"] = {
