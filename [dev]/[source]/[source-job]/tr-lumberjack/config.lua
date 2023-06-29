@@ -1,7 +1,7 @@
 Config = Config or {}
 Config.Job = false                                                  -- False = Job is not required / True = Job is required
 Config.UseBlips = true                                              -- True / false option for toggling farm blips
-Config.Timeout = 20 * (60 * 1000)                                   -- 20 minutes
+Config.Timeout = 1 * (20 * 1000)                                   -- 20 minutes
 
 -- Blips
 LumberDepo = {
@@ -47,7 +47,7 @@ LumberJob = {
     LumberModel = "s_m_y_construct_01",                             -- Ped model  https://wiki.rage.mp/index.php?title=Peds
     LumberHash = 0xD7DA9E99,                                        -- Hash numbers for ped model
     
-    ChoppingTreeTimer = 1 * 1000,                                  -- 12 second timer
+    ChoppingTreeTimer = 10 * 1000,                                  -- 12 second timer
     ProcessingTime = 1 * 1000,                                     -- 10 second timer
 
     LumberAmount_Min = 1,
