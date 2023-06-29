@@ -280,7 +280,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false,
         ['ParkingSpots'] = {
             vector4(48.46, -600.58, 31.05, 339.83),
@@ -343,7 +343,7 @@ Config.Garages = {
         job = "ambulance",
         jobGarageIdentifier = 'am1',  
         vehicleCategories = {'xenhanuoc'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false,
         ['ParkingSpots'] = {
             vector4(298.32, -605.26, 42.50, 68.76),
@@ -377,7 +377,7 @@ Config.Garages = {
         job = "ambulance",
         jobGarageIdentifier = 'am1',  
         vehicleCategories = {'xenhanuoc'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false,
         ['ParkingSpots'] = {
             vector4(316.4, -578.24, 28.41, 249.78),
@@ -431,7 +431,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false,
         ['ParkingSpots'] = {
             vector4(1023.5, -756.15, 57.48, 225.44),
@@ -521,7 +521,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false,
         ['ParkingSpots'] = {
             vector4(874.36, -77.52, 78.34, 326.7),
@@ -701,7 +701,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false,
         ['ParkingSpots'] = {
             vector4(19.23, -880.71, 29.8, 341.54),
@@ -769,7 +769,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                -- public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},                --car, air, sea
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false,
         ['ParkingSpots'] = {
             vector4(277.62, -340.01, 44.5, 70.08),
@@ -829,7 +829,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false,                 --car, air, sea
         ['ParkingSpots'] = {
             vector4(-356.89, -749.29, 33.54, 270.15),
@@ -909,7 +909,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false
     },
     ['caears24'] = {
@@ -932,7 +932,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
             vector4(54.49, 19.49, 69.14, 339.68),
@@ -961,7 +961,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
             vector4(-477.62, -816.44, 30.05, 271.2),
@@ -1020,7 +1020,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
             vector4(359.53, 270.99, 102.65, 341.37),
@@ -1121,7 +1121,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         debug = false
     },
     ['beachp'] = {
@@ -1154,7 +1154,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false
     },
     ["themotorhotel"] = {
@@ -1179,7 +1179,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false
     },
     ['liqourparking'] = {
@@ -1200,7 +1200,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false
     },
     ['haanparking'] = {
@@ -1245,7 +1245,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false
     },
     ['legionsquare'] = {
@@ -1268,7 +1268,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',                 --car, air, sea
+        drawText = 'Garage để xe,                 --car, air, sea
         debug = false,
         ['ParkingSpots'] = {
             vector4(219.38, -765.95, 30.41, 247.04),
@@ -1405,7 +1405,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'public',                --public, job, gang, depot
         vehicleCategories = {'emergency'},
-        drawText = 'Gara Cảnh Sát ETERNITY',              --car, air, sea
+        drawText = 'Garage Cảnh Sát ETERNITY',              --car, air, sea
         job = "police",
         debug = false,
         ['ParkingSpots'] = {
@@ -1470,7 +1470,7 @@ Config.Garages = {
         blipNumber = 357,
         type = 'job',                --public, job, gang, depot
         vehicleCategories = {'emergency'},
-        drawText = 'Parking',              --car, air, sea
+        drawText = 'Garage để xe,              --car, air, sea
         job = "police",
         debug = false,
         ['ParkingSpots'] = {
@@ -1502,7 +1502,7 @@ Config.Garages = {
         label = 'LS Customs',
         type = 'job',
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         job = 'mechanic',
         debug = false
     },
@@ -1528,7 +1528,7 @@ Config.Garages = {
         type = 'gang',
         gang = 'vagos',
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         ["ParkingSpots"] = {
             vector4(-297.71, -990.11, 30.76, 338.79),
             vector4(-301.09, -988.82, 30.76, 339.11),
@@ -1659,7 +1659,7 @@ Config.Garages = {
         label = 'City Hall Parking',
         type = 'public',
         vehicleCategories = {'car', 'motorcycle', 'other'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         ["ParkingSpots"] = {
             vector4(-475.26, -219.26, 36.05, 30.12),
             vector4(-478.26, -214.06, 36.21, 30.11),
@@ -1689,7 +1689,7 @@ Config.Garages = {
         type = 'job',
         job = "police",
         vehicleCategories = {'emergency'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         ["ParkingSpots"] = {
             vector4(407.44, -997.7, 28.94, 52.87),
             vector4(407.55, -992.85, 28.94, 51.63),
@@ -1718,7 +1718,7 @@ Config.Garages = {
         --useVehicleSpawner = false,
         --jobGarageIdentifier = 'pd1',
         vehicleCategories = {'emergency'},
-        drawText = 'Parking',
+        drawText = 'Garage để xe,
         ["ParkingSpots"] = {
             vector4(445.67, -997.0, 24.81, 269.98),
             vector4(445.83, -994.31, 25.21, 267.42),
