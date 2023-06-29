@@ -62,9 +62,17 @@
     height: 100%;
     opacity: 0;
     transition: all .4s;
-    padding: 1rem;
+    /* padding: 1rem; */
     overflow: auto;
     scrollbar-width: none;
+}
+
+iframe {
+    overflow: hidden;
+    position: relative;
+    width: 890px;
+    height: 700px;
+    
 }
 
 .page::-webkit-scrollbar {
@@ -79,28 +87,28 @@
 }
 
 .page {
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     background-color: #c5c3c3;
 }
 
 .page > .content {
     font-family: 'Poppins', sans-serif;
     color: rgb(37, 37, 37);
-    width: 90%;
+    text-align: center;
+    /* width: 90%; */
 }
 
 .subtitle {
     font-size: 20px;
 }
-
 a {
     color: rgb(37, 37, 37);
     text-decoration: none;
     cursor: pointer;
 }
 
-.page > .content > h1 {
+/* .page > .content > h1 {
     text-align: center;
 }
 
@@ -123,7 +131,7 @@ a {
 
 .page > .content > .img-container > video {
     width: 100%;
-}
+} */
 
 .misc {
     display: grid;
