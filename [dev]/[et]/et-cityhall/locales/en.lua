@@ -1,24 +1,24 @@
 local Translations = {
     error = {
-        not_in_range = 'Too far from the city hall'
+        not_in_range = 'Quá xa tòa thị chính'
     },
     success = {
-        recived_license = 'You have recived your %{value} for $50'
+        recived_license = 'Bạn đã nhận được %{value} của mình với giá $50'
     },
     info = {
-        bilp_text = 'City Services',
-        city_services_menu = '~g~E~w~ - City Services Menu',
-        id_card = 'ID Card',
-        driver_license = 'Drivers License',
-        weaponlicense = 'Firearms License',
-        new_job = 'Congratulations with your new job! (%{job})'
+        bilp_text = 'Dịch vụ thành phố',
+        city_services_menu = '~g~E~w~ - Menu dịch vụ thành phố',
+        id_card = 'Căn Cước Công Dân',
+        driver_license = 'Giấy phép lái xe',
+        weaponlicense = 'Giấy phép sử dụng súng',
+        new_job = 'Chúc mừng với công việc mới của bạn! (%{job})'
     },
     email = {
-        mr = 'Mr',
-        mrs = 'Mrs',
-        sender = 'Township',
-        subject = 'Driving lessons request',
-        message = 'Hello %{gender} %{lastname}<br /><br />We have just received a message that someone wants to take driving lessons<br />If you are willing to teach, please contact us:<br />Name: <strong>%{firstname} %{lastname}</strong><br />Phone Number: <strong>%{phone}</strong><br/><br/>Kind regards,<br />Township Los Santos'
+        mr = 'Mít tơ',
+        mrs = 'Mit tơsss',
+        sender = 'Thị Trấn',
+        subject = 'Yêu cầu học lái xe',
+        message = 'Xin chào %{gender} %{lastname}<br /><br />Chúng tôi vừa nhận được một tin nhắn rằng ai đó muốn tham gia các bài học lái xe<br />Bạn nào có nhu cầu dạy thì liên hệ:<br />Tên: <strong>%{firstname} %{lastname}</strong><br />Số điện thoại: <strong>%{phone}</strong><br/><br/>Trân trọng,<br />Thị trấn Los Santos'
     }
 }
 
