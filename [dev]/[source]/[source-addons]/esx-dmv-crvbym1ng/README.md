@@ -77,7 +77,7 @@ RegisterNetEvent('et-cityhall:server:requestId', function(item, hall)
         info.lastname = Player.PlayerData.charinfo.lastname
         info.birthdate = Player.PlayerData.charinfo.birthdate
     else
-        return false -- DropPlayer(src, 'Attempted exploit abuse')
+        return false -- DropPlayer(src, 'Ảo Thuật Gia Tài Ba')
     end
     if not Player.Functions.AddItem(item, 1, nil, info) then return end
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
@@ -128,7 +128,7 @@ RegisterNetEvent('et-cityhall:server:requestId', function(item, hall)
         info.lastname = Player.PlayerData.charinfo.lastname
         info.birthdate = Player.PlayerData.charinfo.birthdate
     else
-        return DropPlayer(src, 'Attempted exploit abuse')
+        return DropPlayer(src, 'Ảo Thuật Gia Tài Ba')
     end
     if not Player.Functions.AddItem(item, 1, nil, info) then return end
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')

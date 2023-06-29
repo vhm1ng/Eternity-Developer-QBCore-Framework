@@ -82,7 +82,7 @@ RegisterNetEvent('et-cityhall:server:ApplyJob', function(job, cityhallCoords)
     local pedCoords = GetEntityCoords(ped)
     local JobInfo = QBCore.Shared.Jobs[job]
     if #(pedCoords - cityhallCoords) >= 20.0 or not availableJobs[job] then
-        return DropPlayer(source, "Attempted exploit abuse")
+        return DropPlayer(source, "Ảo Thuật Gia Tài Ba")
     end
     Player.Functions.SetJob(job, 0)
     exports['et-phone']:hireUser(job, Player.PlayerData.citizenid, 0)

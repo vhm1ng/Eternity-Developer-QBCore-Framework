@@ -138,7 +138,7 @@ local function spawnPeds()
                 }
             elseif current.cityhall then
                 opts = {
-                    label = 'Open Cityhall',
+                    label = 'Tòa Thị Chính',
                     icon = 'fa-solid fa-city',
                     action = function()
                         inRangeCityhall = true
@@ -170,7 +170,7 @@ local function spawnPeds()
                                 exports['et-core']:DrawText('[E] Take Driving Lessons')
                             elseif current.cityhall then
                                 inRangeCityhall = true
-                                exports['et-core']:DrawText('[E] Open Cityhall')
+                                exports['et-core']:DrawText('[E] Tòa Thị Chính')
                             end
                         else
                             exports['et-core']:HideText()
@@ -246,7 +246,7 @@ end)
 
 RegisterNUICallback('close', function(_, cb)
     setCityhallPageState(false, false)
-    if not Config.UseTarget and inRangeCityhall then exports['et-core']:DrawText('[E] Open Cityhall') end -- Reopen interaction when you're still inside the zone
+    if not Config.UseTarget and inRangeCityhall then exports['et-core']:DrawText('[E] Tòa Thị Chính') end -- Reopen interaction when you're still inside the zone
     cb('ok')
 end)
 
