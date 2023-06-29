@@ -11,7 +11,7 @@ Config.Cityhalls = {
             display = 4,
             scale = 0.65,
             colour = 0,
-            title = "Giấy phép"
+            title = "Tòa Thị Chính"
         },
         licenses = {
             ["id_card"] = {
@@ -45,7 +45,7 @@ Config.Peds = {
     -- Cityhall Ped
     {
         model = 'a_m_y_smartcaspat_01',
-        coords = vec4(-550.87, -191.97, 38.22, 174.86),
+        coords = vector4(-550.84, -192.56, 38.22, 187.85),
         scenario = 'WORLD_HUMAN_STAND_MOBILE',
         cityhall = true,
         zoneOptions = { -- Used for when UseTarget is false
