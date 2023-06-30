@@ -30,7 +30,7 @@ RegisterServerEvent('et-rental:server:payreturn', function(model)
         if string.lower(v.model) == model then
             local payment = v.price / 2
             Player.Functions.AddMoney("cash",payment,"rental-return")
-            TriggerClientEvent('QBCore:Notify', src, "Bạn đã trả lại chiếc xe đã thuê của mình và nhận được lại $" .. payment .. , "success")
+            TriggerClientEvent('QBCore:Notify', src, "Bạn đã trả lại chiếc xe đã thuê của mình và nhận được lại $" .. payment .. "success")
         end
     end
 end)
