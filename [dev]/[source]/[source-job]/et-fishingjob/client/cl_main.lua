@@ -29,7 +29,7 @@ local fishAnimation = function()
             TriggerServerEvent('hud:server:RelieveStress', 2)
             TriggerServerEvent('et-fishing:server:ReceiveFish')
         else
-            QBCore.Functions.Notify('The fish got away!', 'error', 2500)
+            QBCore.Functions.Notify('Con cá đã biến mất!', 'error', 2500)
             TriggerServerEvent('hud:server:RelieveStress', 1)
         end
     end, math.random(Shared.MinigameCirclesMin, Shared.MinigameCirclesMax), Shared.MinigameTime)
@@ -66,7 +66,7 @@ end
 RegisterNetEvent('et-fishing:client:FishingRod', function()
     -- Check if inside fishing zone
     if not canFish then
-        QBCore.Functions.Notify('You can\'t fish over here..', 'error', 2500)
+        QBCore.Functions.Notify('Bạn không thể câu cá ở đây ..', 'error', 2500)
         return
     end
 
@@ -76,7 +76,7 @@ RegisterNetEvent('et-fishing:client:FishingRod', function()
         -- Start Fishing
         startFishing()
     else
-        QBCore.Functions.Notify('You need both a fishing rod and bait to start fishing..', 'error', 2500)
+        QBCore.Functions.Notify('Bạn cần cả cần câu và mồi câu để bắt đầu câu cá..', 'error', 2500)
     end
 end)
 
