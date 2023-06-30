@@ -1,16 +1,16 @@
 local moneyType = 'cash'
 local priceTable = {
-    fish = 50,
-    fish2 = 120,
-    catfish = 132,
-    goldfish = 165,
-    largemouthbass = 193,
-    redfish = 220,
-    salmon = 220,
-    stingray = 440,
-    stripedbass = 440,
-    whale = 450,
-    whale2 = 500
+    fish = 25,
+    fish2 = 27,
+    -- catfish = 132,
+    goldfish = 30,
+    largemouthbass = 32,
+    redfish = 35,
+    salmon = 37,
+    stingray = 75,
+    stripedbass = 80,
+    whale = 210,
+    whale2 = 220
 }
 
 RegisterNetEvent('et-fishing:server:SellFish', function(fish, amount)
