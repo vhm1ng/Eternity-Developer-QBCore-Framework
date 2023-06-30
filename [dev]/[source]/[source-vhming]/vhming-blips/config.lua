@@ -1,5 +1,5 @@
 Config = Config or {}     
-Config.SuDungBlipsTest = true  -- 540
+Config.SuDungBlipsTest = false  -- 540
 Config.SuDungBlips = true
 
 -- Đây là config test
@@ -27,3 +27,12 @@ BlipTestNoPed = {
 }
 
 -- Đây là config chuẩn
+
+BlipVHMingBlip = {
+    coords = vector3(714.21, 4123.86, 35.78),                       -- Vector vị trí blips
+    SetBlipSprite = 68,                                             -- Icon Blips (https://docs.fivem.net/docs/game-references/blips/)
+    SetBlipDisplay = 6,                                             -- Cái này k biết nói như nào tự check (https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
+    SetBlipScale = 0.8,                                            -- Cỡ của blips
+    SetBlipColour = 38,                                              -- Màu blips
+    BlipLabel = "Câu cá",                           -- Tên blips 
+}

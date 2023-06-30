@@ -9,11 +9,11 @@ client_scripts {
     '@PolyZone/client.lua',
     '@PolyZone/BoxZone.lua',
     '@PolyZone/ComboZone.lua',
-    'client/*.lua',
+    'client/blips.lua',
+
 }
 
 shared_scripts {
-    'shared/blips.lua',
     'config.lua',
 }
 

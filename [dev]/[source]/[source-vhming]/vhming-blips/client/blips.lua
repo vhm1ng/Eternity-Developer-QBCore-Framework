@@ -27,9 +27,16 @@ if Config.SuDungBlipsTest then
     end)
 end
 
--- Đây là function chuẩn
--- if Config.SuDungBlips then
---     CreateThread(function()
---         -- ...
---     end)
--- end
+if Config.SuDungBlips then
+    CreateThread(function()
+        VHMingBlip = AddBlipForCoord(BlipVHMingBlip.coords)
+        SetBlipSprite (VHMingBlip, BlipVHMingBlip.SetBlipSprite)
+        SetBlipDisplay(VHMingBlip, BlipVHMingBlip.SetBlipDisplay)
+        SetBlipScale  (VHMingBlip, BlipVHMingBlip.SetBlipScale)
+        SetBlipAsShortRange(VHMingBlip, true)
+        SetBlipColour(VHMingBlip, BlipVHMingBlip.SetBlipColour)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentSubstringPlayerName(BlipVHMingBlip.BlipLabel)
+        EndTextCommandSetBlipName(VHMingBlip)
+    end)
+end
