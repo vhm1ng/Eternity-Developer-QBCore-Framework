@@ -12,17 +12,16 @@ local function loadAnimDict(dict)
     end
 end
 
-local function axe()
-    local ped = PlayerPedId()
-    local pedWeapon = GetSelectedPedWeapon(ped)
-
-    for k, v in pairs(Config.Axe) do
-        if pedWeapon == k then
-            return true
-        end
-    end
-    QBCore.Functions.Notify(Config.Alerts["error_axe"], 'error')
-end
+-- local function axe()
+--     local ped = PlayerPedId()
+--     local pedWeapon = GetSelectedPedWeapon(ped)
+--     for k, v in pairs(Config.axe) do
+--         if ped == k then
+--             return true
+--         end
+--     end
+--     QBCore.Functions.Notify(Config.Alerts["error_axe"], 'error')
+-- end
 
 local function ChopLumber(k)
     local animDict = "melee@hatchet@streamed_core"
@@ -64,9 +63,19 @@ end
 RegisterNetEvent('tr-lumberjack:StartChopping', function()
     for k, v in pairs(Config.TreeLocations) do
         if not Config.TreeLocations[k]["isChopped"] then
-            if axe() then
+            -- if axe() then
+            --     ChopLumber(k)
+            -- end
+            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(weapon_battleaxe)
+                -- if axe() then
+                if weapon_battleaxe then
+            -- if axe() then
                 ChopLumber(k)
-            end
+            -- end
+                else
+                    QBCore.Functions.Notify(Config.Alerts["error_axe"], 'error')
+                end
+            end)
         end
     end
 end)
@@ -84,9 +93,16 @@ if Config.Job then
                 options = {
                     {
                         action = function()
-                            if axe() then
+                            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(weapon_battleaxe)
+                                -- if axe() then
+                                if weapon_battleaxe then
+                            -- if axe() then
                                 ChopLumber(k)
-                            end
+                            -- end
+                                else
+                                    QBCore.Functions.Notify(Config.Alerts["error_axe"], 'error')
+                                end
+                            end)
                         end,
                         type = "client",
                         event = "tr-lumberjack:StartChopping",
@@ -106,8 +122,8 @@ if Config.Job then
 
         end
     end)
-    exports['et-target']:AddBoxZone("lumberjackdepo", LumberDepo.targetZone, 1, 1, {
-        name = "Lumberjackdepo",
+    exports['et-target']:AddBoxZone("LumberDepo", LumberDepo.targetZone, 1, 1, {
+        name = "LumberDepo",
         heading = LumberDepo.targetHeading,
         debugPoly = false,
         minZ = LumberDepo.minZ,
@@ -143,7 +159,7 @@ if Config.Job then
         distance = 1.0
     })
     exports['et-target']:AddBoxZone("LumberSeller", LumberSeller.targetZone, 1, 1, {
-        name = "LumberProcessor",
+        name = "LumberSeller",
         heading = LumberSeller.targetHeading,
         debugPoly = false,
         minZ = LumberSeller.minZ,
@@ -173,9 +189,16 @@ else
                 options = {
                     {
                         action = function()
-                            if axe() then
+                            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(weapon_battleaxe)
+                                -- if axe() then
+                                if weapon_battleaxe then
+                            -- if axe() then
                                 ChopLumber(k)
-                            end
+                            -- end
+                                else
+                                    QBCore.Functions.Notify(Config.Alerts["error_axe"], 'error')
+                                end
+                            end)
                         end,
                         type = "client",
                         event = "tr-lumberjack:StartChopping",
@@ -194,8 +217,25 @@ else
 
         end
     end)
-    exports['et-target']:AddBoxZone("lumberjackdepo", LumberDepo.targetZone, 1, 1, {
-        name = "Lumberjackdepo",
+    exports['et-target']:AddBoxZone("LumberProcessor", LumberProcessor.targetZone, 1, 1, {
+        name = "LumberProcessor",
+        heading = LumberProcessor.targetHeading,
+        debugPoly = false,
+        minZ = LumberProcessor.minZ,
+        maxZ = LumberProcessor.maxZ,
+    }, {
+        options = {
+        {
+          type = "client",
+          event = "tr-lumberjack:processormenu",
+          icon = "Fas Fa-hands",
+          label = Config.Alerts["mill_label"],
+        },
+        },
+        distance = 1.0
+    })
+    exports['et-target']:AddBoxZone("LumberDepo", LumberDepo.targetZone, 1, 1, {
+        name = "LumberDepo",
         heading = LumberDepo.targetHeading,
         debugPoly = false,
         minZ = LumberDepo.minZ,
@@ -229,7 +269,7 @@ else
         distance = 1.0
     })
     exports['et-target']:AddBoxZone("LumberSeller", LumberSeller.targetZone, 1, 1, {
-        name = "LumberProcessor",
+        name = "LumberSeller",
         heading = LumberSeller.targetHeading,
         debugPoly = false,
         minZ = LumberSeller.minZ,
@@ -321,6 +361,26 @@ RegisterNetEvent('tr-lumberjack:bossmenu', function()
       },
     }
 exports['et-menu']:openMenu(vehicle)
+end)
+
+RegisterNetEvent('tr-lumberjack:bossmenu', function()
+    local getaxe = {
+      {
+        header = Config.Alerts["battleaxe_label"],
+        isMenuHeader = true,
+      },
+      {
+        header = Config.Alerts["battleaxe_label"],
+        txt = Config.Alerts["battleaxe_text"],
+        params = {
+            event = 'tr-lumberjack:getaxe',
+          }
+      },
+      {
+        header = Config.Alerts["goback"],
+      },
+    }
+exports['et-menu']:openMenu(getaxe)
 end)
 
 RegisterNetEvent('tr-lumberjack:processormenu', function()
