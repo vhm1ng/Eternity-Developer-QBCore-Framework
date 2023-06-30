@@ -1,9 +1,10 @@
 Config = Config or {}
 Config.Job = false                                                  -- False = Job is not required / True = Job is required
 Config.UseBlips = true                                              -- True / false option for toggling farm blips
-Config.Timeout = 1 * (20 * 1000)                                   -- 20 minutes
+Config.Timeout = 1 * (30 * 1000)                                   -- 20 minutes
 
 -- Blips
+
 LumberDepo = {
     targetZone = vector3(1167.73, -1347.27, 33.92),                 -- et-target vector
     targetHeading = 273.47,                                         -- et-target box zone
@@ -18,6 +19,7 @@ LumberDepo = {
     Vehicle = 'tiptruck',                                           -- Job Vehicle
     VehicleCoords = vector4(1162.27, -1318.55, 34.74, 173.91),      -- Job Vehcile Coords
 }
+
 LumberProcessor = {
     targetZone = vector3(-517.13, 5331.54, 79.26),
     targetHeading = 336.38,
@@ -48,7 +50,7 @@ LumberJob = {
     LumberHash = 0xD7DA9E99,                                        -- Hash numbers for ped model
     
     ChoppingTreeTimer = 10 * 1000,                                  -- 12 second timer
-    ProcessingTime = 1 * 1000,                                     -- 10 second timer
+    ProcessingTime = 8 * 1000,                                     -- 10 second timer
 
     LumberAmount_Min = 1,
     LumberAmount_Max = 1,
@@ -62,18 +64,18 @@ LumberJob = {
     TradeRecevied_Min = 2,
     TradeRecevied_Max = 2,
 
-    AxePrice = 100,                                                 -- Axe Price ($100)
+    AxePrice = 0,                                                 -- Axe Price ($100)
 }
 
 Config.Sell = {
     ["tree_lumber"] = {
-        ["price"] = math.random(45, 60)                             -- Seller Price
+        ["price"] = math.random(50, 60)                             -- Seller Price
     },
     ["tree_bark"] = {
-        ["price"] = math.random(20, 30)
+        ["price"] = math.random(10, 15)
     },
     ["wood_plank"] = {
-        ["price"] = math.random(65, 100)
+        ["price"] = math.random(80, 90)
     },
 }
 
