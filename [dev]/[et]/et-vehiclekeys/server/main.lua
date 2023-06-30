@@ -189,3 +189,20 @@ QBCore.Functions.CreateUseableItem("lockpick", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
     TriggerClientEvent("lockpicks:UseLockpick", source, false)
 end)
+
+RegisterServerEvent('vehiclekeys:server:GiveVehicleKeys')
+AddEventHandler('vehiclekeys:server:GiveVehicleKeys', function(plate, target)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if CheckOwner(plate, Player.PlayerData.citizenid) then
+        if QBCore.Functions.GetPlayer(target) ~= nil then
+            TriggerClientEvent('vehiclekeys:client:SetOwner2', target, plate)
+            TriggerClientEvent('QBCore:Notify', src, "Bạn đã đưa cho người ở cạnh chìa khóa của xe có biển số : "..plate.."")
+            TriggerClientEvent('QBCore:Notify', target, "Bạn đã nhận được chìa khóa của chiếc xe có biển số : "..plate.."")
+        else
+            TriggerClientEvent('QBCore:Notify', source,  "Người chơi không online", "error")
+        end
+    else
+        TriggerClientEvent('QBCore:Notify', source,  "Bạn không sở hữu chiếc xe này", "error")
+    end
+end)

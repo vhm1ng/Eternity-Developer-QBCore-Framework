@@ -846,3 +846,19 @@ RegisterNUICallback('engine', function()
     ToggleEngine(GetVehicle())
 	SetNuiFocus(false, false)
 end)
+
+RegisterNetEvent('vehiclekeys:client:GiveKeys')
+AddEventHandler('vehiclekeys:client:GiveKeys', function()
+	local player, distance = QBCore.Functions.GetClosestPlayer()
+    local plate = GetVehicleNumberPlateText(GetVehiclePedIsIn(PlayerPedId(), true))
+	if player ~= -1 and distance < 2.5 then
+		local playerId = GetPlayerServerId(player)
+		TriggerServerEvent('vehiclekeys:server:GiveVehicleKeys', plate, playerId)
+	else 
+        QBCore.Functions.Notify("Không có ai ở gần!", "error")
+    end
+end)
+
+RegisterCommand('duachiakhoa', function()
+    TriggerEvent('vehiclekeys:client:GiveKeys')
+end)

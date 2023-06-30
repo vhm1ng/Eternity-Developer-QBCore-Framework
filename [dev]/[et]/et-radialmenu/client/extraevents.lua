@@ -12,8 +12,8 @@ local function givekeys()
             id = 'give_keys',
             title = 'Đưa chìa khoá',
             icon = 'key',
-            type = 'command',
-            event = 'givekeys',
+            type = 'client',
+            event = 'vehiclekeys:client:GiveKeys',
             shouldClose = true
         }, vehoption1)
     else

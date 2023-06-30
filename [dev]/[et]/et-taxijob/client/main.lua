@@ -290,7 +290,7 @@ RegisterNetEvent("et-taxi:client:TakeVehicle", function(data)
                 closeMenuFull()
                 SetEntityHeading(veh, Config.CabSpawns[SpawnPoint].w)
                 TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+                TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(veh))
                 SetVehicleEngineOn(veh, true, true)
             end, data.model, coords, true)
         else
@@ -305,6 +305,12 @@ end)
 function closeMenuFull()
     exports['et-menu']:closeMenu()
 end
+
+-- --- FUNCTION --- 
+--     local ped = PlayerPedId()
+--     local veh = GetVehiclePedIsIn()
+--     TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(veh))
+
 
 -- Events
 RegisterNetEvent('et-taxi:client:DoTaxiNpc', function()
