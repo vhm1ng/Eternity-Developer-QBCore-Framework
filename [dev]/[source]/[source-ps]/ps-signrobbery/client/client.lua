@@ -33,11 +33,13 @@ end
 --Events
 RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
     local ped = PlayerPedId()
+    print('Chạy alert thông báo cảnh sát')
+    TriggerServerEvent('police:server:policeAlert', 'Có hành vi cướp biển báo')
     exports['ps-ui']:Circle(function(success)
         if success then
             loadAnimDict("amb@prop_human_bum_bin@base")
             TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-            QBCore.Functions.Progressbar("robbing_sign", "Stealing Stop Sign..", math.random(3000, 4000), false, true, {
+            QBCore.Functions.Progressbar("robbing_sign", "Lau biển cho sạch nàoo", math.random(180000), false, true, {
                 disableMovement = true,
                 disableCarMovement = true,
                 disableMouse = false,
@@ -53,7 +55,7 @@ RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
                 AlertCops()
             end)
         end
-    end, 2, 6)
+    end, 5, 6)
 end)
 
 -- RegisterNetEvent("et-signrobbery:client:WalkingManSign", function(data)
