@@ -1,10 +1,10 @@
 Config = {}; // Don't touch
 
-Config.ServerIP = "YOUR IP SERVER";
+Config.ServerIP = "113.175.188.99:30120";
 
 // Social media buttons on the left side
 Config.Socials = [
-    {name: "discord", label: "Discord", description: "Click here to copy the link and join our Discord server!", icon: "assets/media/icons/discord.png", link: "https://discord.gg/cKt4Mpd2PQ"},
+    {name: "discord", label: "Discord", description: "Nhấp vào đây để sao chép liên kết và tham gia máy chủ Discord của chúng tôi!", icon: "assets/media/icons/discord.png", link: "https://discord.gg/eternity-rp"},
     {name: "instagram", label: "Instagram", description: "An Instagram page will open for us soon, feel free to join and follow us!", icon: "assets/media/icons/tiktok.png", link: "#"},
     {name: "tebex", label: "Donations", description: "For donations, feel free to look at the room - #Donations at Discord.", icon: "assets/media/icons/tebex.png", link: "#"},
 ];
@@ -14,17 +14,23 @@ Config.CustomBindText = "F1"; // leave as "" if you don't want the bind text in 
 
 // Staff list
 Config.Staff = [
-    {name: "VHMing #1", description: "Owner & Dev", color: "#ff0000", image: "https://cdn.discordapp.com/attachments/894588279591161926/997613293034287236/unnamed__1_-removebg-preview.png"},
-    {name: "ThanhNQ #2", description: "Owner & Dev", color: "#ff0000", image: "https://cdn.discordapp.com/attachments/894588279591161926/997613293034287236/unnamed__1_-removebg-preview.png"},
-    {name: "Mynh Bu #3", description: "Dev lord", color: "#ff0000", image: "https://cdn.discordapp.com/attachments/894588279591161926/997613293034287236/unnamed__1_-removebg-preview.png"},
-
+    {name: "VHMing #1", description: "Admin & Developed", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/478160040683896832/81a090daec27adf5df1029c62b0f6028.png?size=2048"},
+    {name: "ThanhNQ #2", description: "Admin & TTC", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/962331753882722314/9c7ac26e34163ebe128646c9fdcdbf51.png?size=2048"},
+    {name: "DRLord #3", description: "Admin & TTC", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/1098295677475373107/a_2cc06335ea55c90140235a4f0fa8d025.gif?size=2048"},
+    {name: "Huynh Dat #4", description: "Admin & TTC", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/798219312841621534/a9018a1036ba96ea91b1440c3bee4dbf.png?size=2048"},
+    {name: "Thanh Doki #5", description: "Staff", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/867090046142382110/c182e5513f3a10589d3fe3d38630ee2e.png?size=2048"},
+    {name: "Ai dậy ta #6", description: "Staff", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/842146148923998209/d3c6c833ec8b2b12881f5aedb4ea87c8.png?size=2048"},
+    {name: "Loki #7", description: "Staff", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/689166884687708167/f0bf08adc99edc2c4850b3db643b5a59.png?size=2048"},
+    {name: "Hades #8", description: "Staff", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/1104078584005529701/0cf2334b91b5a001f2ef83c30675b695.png?size=2048"},
+    {name: "Mynh Bu #9", description: "Developed", color: "#ff0000", image: "https://cdn.discordapp.com/avatars/430940414069964800/edcf103b6cba5049994978f2c9090510.png?size=2048"},
 
 ];
 
 // Categories
 Config.Categories = [
     {label: "Social Media", default: true},
-    {label: "Staff", default: false}
+    {label: "Staff", default: false},
+
 ];
 
 // Music
