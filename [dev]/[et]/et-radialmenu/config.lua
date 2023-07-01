@@ -1093,13 +1093,6 @@ Config.JobInteractions = {
             type = 'client',
             event = 'et-taxi:client:enableMeter',
             shouldClose = true
-        }, {
-            id = 'npc_mission',
-            title = 'Đón NPC',
-            icon = 'taxi',
-            type = 'client',
-            event = 'et-taxi:client:DoTaxiNpc',
-            shouldClose = true
         }
     },
     ["tow"] = {
