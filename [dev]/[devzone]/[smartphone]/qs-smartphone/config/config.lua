@@ -32,7 +32,7 @@ Config.RepairWetPhoneNpcPrice = 100 -- Price to repair a wet phone in the Techni
 Config.RepairWetPhoneNpcAccount = 'bank' -- Choose here the account to pay the technician for repairing the wet phone.
 
 function VehicleKeys(vehicle) -- Use this function in case of using vehiclekeys, otherwise empty it.
-    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
+    TriggerEvent("vehiclekeys:client:SetOwner2", GetVehicleNumberPlateText(vehicle))
 end
 
 Config.PoliceAppJobs = { -- Jobs available to receive Police App alerts.

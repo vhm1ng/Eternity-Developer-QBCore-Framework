@@ -115,7 +115,7 @@ RegisterNetEvent("et-rental:vehiclespawn", function(data, cb)
     exports['LegacyFuel']:SetFuel(veh, 100.0)
     TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
     SetEntityAsMissionEntity(veh, true, true)
-    TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+    TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(veh))
     SetVehicleEngineOn(veh, true, true)
     CurrentPlate = QBCore.Functions.GetPlate(veh)
   end, closestSpawn.coords, true)
@@ -140,7 +140,7 @@ AddEventHandler("nc-inventory:itemUsed", function(item, info)
       local isRental = vin ~= nil and string.sub(vin, 2, 3) == "NC"
       if isRental then
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-        TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+        TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(veh))
         QBCore.Functions.Notify("Bạn đã nhận được chìa khóa xe.", "success")
       else
         QBCore.Functions.Notify("Cho thuê này không tồn tại.", "success")

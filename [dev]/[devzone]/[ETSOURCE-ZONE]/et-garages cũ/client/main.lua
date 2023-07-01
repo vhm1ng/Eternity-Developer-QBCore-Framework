@@ -343,7 +343,7 @@ RegisterNetEvent('et-garages:client:takeOutGarage', function(data)
                 doCarDamage(veh, vehicle)
                 TriggerServerEvent('et-garage:server:updateVehicleState', 0, vehicle.plate, index)
                 closeMenuFull()
-                TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+                TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(veh))
                 SetVehicleEngineOn(veh, true, true)
                 if type == "house" then
                     exports['et-core']:DrawText(Lang:t("info.park_e"), 'left')

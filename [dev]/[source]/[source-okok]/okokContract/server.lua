@@ -50,7 +50,7 @@ AddEventHandler('okokContract:changeVehicleOwner', function(data)
 								TriggerEvent('okokBanking:AddNewTransaction', source_name, xPlayer.PlayerData.citizenid, target_name, tPlayer.PlayerData.citizenid, vehicle_price, 'Vehicle Sale')
 							end
 
-							TriggerClientEvent("vehiclekeys:client:SetOwner", target, plate)
+							TriggerClientEvent("vehiclekeys:client:SetOwner2", target, plate)
 							TriggerEvent("vehiclekeys:server:RemoveKeys", plate, xPlayer.PlayerData.citizenid)
 							TriggerClientEvent('okokNotify:Alert', _source, "VEHICLE", "You successfully sold the vehicle <b>"..model.."</b> with the plate number <b>"..plate.."</b>", 10000, 'success')
 							TriggerClientEvent('okokNotify:Alert', target, "VEHICLE", "You successfully bought the vehicle <b>"..model.."</b> with the plate number <b>"..plate.."</b>", 10000, 'success')
@@ -78,7 +78,7 @@ AddEventHandler('okokContract:changeVehicleOwner', function(data)
 				}, function (result2)
 					if result2 ~= 0 then
 						sellingVehicles["veh_".._source] = nil
-						TriggerClientEvent("vehiclekeys:client:SetOwner", target, plate)
+						TriggerClientEvent("vehiclekeys:client:SetOwner2", target, plate)
 						TriggerEvent("vehiclekeys:server:RemoveKeys", plate, xPlayer.PlayerData.citizenid)
 						TriggerClientEvent('okokNotify:Alert', _source, "VEHICLE", "You successfully sold the vehicle <b>"..model.."</b> with the plate number <b>"..plate.."</b>", 10000, 'success')
 						TriggerClientEvent('okokNotify:Alert', target, "VEHICLE", "You successfully bought the vehicle <b>"..model.."</b> with the plate number <b>"..plate.."</b>", 10000, 'success')

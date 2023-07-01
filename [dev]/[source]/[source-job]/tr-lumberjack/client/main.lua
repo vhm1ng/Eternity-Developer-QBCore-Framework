@@ -305,7 +305,7 @@ RegisterNetEvent('tr-lumberjack:vehicle', function()
         Wait(1500)
         SetNetworkIdCanMigrate(id, true)
         TaskWarpPedIntoVehicle(TR, JobVehicle, -1)
-        TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(JobVehicle))
+        TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(JobVehicle))
         DoScreenFadeIn(1500)
         Wait(2000)
         TriggerServerEvent('et-phone:server:sendNewMail', {

@@ -278,7 +278,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
     LockpickDoor(isAdvanced)
 end)
 -- Backwards Compatibility ONLY -- Remove at some point --
-RegisterNetEvent('vehiclekeys:client:SetOwner', function(plate)
+RegisterNetEvent('vehiclekeys:client:SetOwner2', function(plate)
     TriggerServerEvent('et-vehiclekeys:server:AcquireVehicleKeys', plate)
 end)
 -- Backwards Compatibility ONLY -- Remove at some point --

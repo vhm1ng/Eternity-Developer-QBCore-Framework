@@ -334,7 +334,7 @@ RegisterNetEvent('et-dmv:client:StartDrivingTest', function(data)
     SetVehicleNumberPlateText(veh, Config.VehPlate)
     SetEntityAsMissionEntity(veh, true, true)
     SetEntityHeading(veh,StartingPoint.w)
-    TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
+    TriggerEvent('vehiclekeys:client:SetOwner2', QBCore.Functions.GetPlate(veh))
     TriggerServerEvent('et-vehicletuning:server:SaveVehicleProps', QBCore.Functions.GetVehicleProperties(veh))
     LastVehicleHealth = GetVehicleBodyHealth(veh)
     CurrentVehicle = veh

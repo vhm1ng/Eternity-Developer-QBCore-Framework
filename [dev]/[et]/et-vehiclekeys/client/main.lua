@@ -196,7 +196,7 @@ Citizen.CreateThread(function()
                     QBCore.Functions.TriggerCallback('vehiclekeys:CheckHasKey', function(result)
                         if result then
                             HasKey = true
-                            TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
+                            TriggerEvent("vehiclekeys:client:SetOwner2", GetVehicleNumberPlateText(vehicle))
 							SetVehicleEngineOn(vehicle, false, false, true)
                         else
                             HasKey = false
@@ -372,7 +372,7 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
     LockpickDoor(isAdvanced)
 end)
 -- Backwards Compatibility ONLY -- Remove at some point --
-RegisterNetEvent('vehiclekeys:client:SetOwner', function(plate)
+RegisterNetEvent('vehiclekeys:client:SetOwner2', function(plate)
     TriggerServerEvent('et-vehiclekeys:server:AcquireVehicleKeys', plate)
 end)
 -- Backwards Compatibility ONLY -- Remove at some point --
@@ -669,7 +669,7 @@ function LockpickFinishCallback(success)
         lastPickedVehicle = vehicle
         QBCore.Functions.Notify("Đã phá khóa thành công")
 		HasKey = true
-		TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(vehicle))
+		TriggerEvent("vehiclekeys:client:SetOwner2", GetVehicleNumberPlateText(vehicle))
         SetVehicleEngineOn(vehicle, true, false, true)
 		IsHotwiring = false
     else

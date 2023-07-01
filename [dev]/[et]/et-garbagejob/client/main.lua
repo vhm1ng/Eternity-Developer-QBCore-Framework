@@ -463,7 +463,7 @@ RegisterNetEvent('et-garbagejob:client:RequestRoute', function()
                             currentStopNum = 1
                             amountOfBags = totalBags
                             SetGarbageRoute()
-                            TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+                            TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(veh))
                             QBCore.Functions.Notify(Lang:t("info.deposit_paid", { value = Config.TruckPrice }))
                             QBCore.Functions.Notify(Lang:t("info.started"))
                             TriggerServerEvent("et-garbagejob:server:payDeposit")

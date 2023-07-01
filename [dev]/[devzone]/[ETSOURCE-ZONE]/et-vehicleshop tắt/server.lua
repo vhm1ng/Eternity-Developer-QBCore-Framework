@@ -471,7 +471,7 @@ QBCore.Commands.Add('transfervehicle', Lang:t('general.command_transfervehicle')
     if not sellAmount then
         MySQL.update('UPDATE player_vehicles SET citizenid = ?, license = ? WHERE plate = ?', {targetcid, targetlicense, plate})
         TriggerClientEvent('QBCore:Notify', src, Lang:t('success.gifted'), 'success')
-        TriggerClientEvent('vehiclekeys:client:SetOwner', buyerId, plate)
+        TriggerClientEvent('vehiclekeys:client:SetOwner2', buyerId, plate)
         TriggerClientEvent('QBCore:Notify', buyerId, Lang:t('success.received_gift'), 'success')
         return
     end
@@ -480,14 +480,14 @@ QBCore.Commands.Add('transfervehicle', Lang:t('general.command_transfervehicle')
         player.Functions.AddMoney('cash', sellAmount)
         target.Functions.RemoveMoney('cash', sellAmount)
         TriggerClientEvent('QBCore:Notify', src, Lang:t('success.soldfor') .. comma_value(sellAmount), 'success')
-        TriggerClientEvent('vehiclekeys:client:SetOwner', buyerId, plate)
+        TriggerClientEvent('vehiclekeys:client:SetOwner2', buyerId, plate)
         TriggerClientEvent('QBCore:Notify', buyerId, Lang:t('success.boughtfor') .. comma_value(sellAmount), 'success')
     elseif target.Functions.GetMoney('bank') > sellAmount then
         MySQL.update('UPDATE player_vehicles SET citizenid = ?, license = ? WHERE plate = ?', {targetcid, targetlicense, plate})
         player.Functions.AddMoney('bank', sellAmount)
         target.Functions.RemoveMoney('bank', sellAmount)
         TriggerClientEvent('QBCore:Notify', src, Lang:t('success.soldfor') .. comma_value(sellAmount), 'success')
-        TriggerClientEvent('vehiclekeys:client:SetOwner', buyerId, plate)
+        TriggerClientEvent('vehiclekeys:client:SetOwner2', buyerId, plate)
         TriggerClientEvent('QBCore:Notify', buyerId, Lang:t('success.boughtfor') .. comma_value(sellAmount), 'success')
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t('error.buyertoopoor'), 'error')

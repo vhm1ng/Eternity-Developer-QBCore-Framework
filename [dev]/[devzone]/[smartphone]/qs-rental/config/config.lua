@@ -1,7 +1,7 @@
 Config = {}
 
 function VehicleKeys(veh) -- Use this function in case of using vehiclekeys, otherwise empty it.
-    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+    TriggerEvent("vehiclekeys:client:SetOwner2", GetVehicleNumberPlateText(veh))
 end
 
 Config.Blips = { -- Configure your blips here.

@@ -236,7 +236,7 @@ RegisterNetEvent('et-tow:client:SpawnVehicle', function()
         SetEntityAsMissionEntity(veh, true, true)
         CloseMenuFull()
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-        TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+        TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(veh))
         SetVehicleEngineOn(veh, true, true)
         for i = 1, 9, 1 do
             SetVehicleExtra(veh, i, 0)
