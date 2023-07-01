@@ -11,7 +11,7 @@ Config.AllowedVehicles = {
 }
 
 Config.Meter = {
-    ["defaultPrice"] = 125.0, -- price per mile
+    ["defaultPrice"] = 200.0, -- price per mile
     ["startingPrice"] = 0  -- static starting price
 }
 
