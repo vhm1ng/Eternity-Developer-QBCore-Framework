@@ -339,10 +339,8 @@ Config.Garages = {
             ['maxZ'] = 44.30,  -- max height of the parking zone
         },
         label = 'Garage Bệnh Viện ETERNITY',
-        type = 'job',
-        job = "ambulance",
-        jobGarageIdentifier = 'am1',  
-        vehicleCategories = {'xenhanuoc'},
+        type = 'public',
+        vehicleCategories = {'car', 'motorcycle', 'other'},
         drawText = 'Garage để xe',
         debug = false,
         ['ParkingSpots'] = {
