@@ -36,3 +36,12 @@ BlipVHMingBlip = {
     SetBlipColour = 38,                                              -- Màu blips
     BlipLabel = "Câu cá",                           -- Tên blips 
 }
+
+BlipThiBangBlip = {
+    coords = vector3(215.59, -1399.29, 30.58),                      -- Vector vị trí blips
+    SetBlipSprite = 326,                                             -- Icon Blips (https://docs.fivem.net/docs/game-references/blips/)
+    SetBlipDisplay = 6,                                             -- Cách icon hiển thị (https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
+    SetBlipScale = 0.8,                                            -- Cỡ của blips
+    SetBlipColour = 26,                                              -- Màu blips
+    BlipLabel = "Thi bằng lái xe",                           -- Tên blips 
+}
