@@ -1,29 +1,29 @@
 local Translations = {
     error = {
-        ["already_mission"] = "You Are Already Doing An NPC Mission",
-        ["not_in_taxi"] = "You Are Not In A Taxi",
-        ["missing_meter"] = "This Vehicle Has No Taxi Meter",
-        ["no_vehicle"] = "You're not in a vehicle",
-        ["not_active_meter"] = "The Taxi Meter Is Not Active",
-        ["no_meter_sight"] = "No Taxi Meter In Sight",
+        ["already_mission"] = "Bạn đang có khách",
+        ["not_in_taxi"] = "Bạn không có trong xe",
+        ["missing_meter"] = "Xe này không có công tơ mét",
+        ["no_vehicle"] = "Bạn không có trong xe",
+        ["not_active_meter"] = "Công tơ mét của xe không hoạt động",
+        ["no_meter_sight"] = "Không có công tơ mét",
     },
     success = {},
     info = {
-        ["person_was_dropped_off"] = "Person Was Dropped Off!",
-        ["npc_on_gps"] = "The NPC Is Indicated On Your GPS",
-        ["go_to_location"] = "Bring The NPC To The Specified Location",
-        ["vehicle_parking"] = "[E] Vehicle Parking",
-        ["job_vehicles"] = "[E] Job Vehicles",
-        ["drop_off_npc"] = "[E] Drop Off NPC",
-        ["call_npc"] = "[E] Call NPC",
-        ["blip_name"] = "Downtown Cab",
-        ["taxi_label_1"] = "Standard Cab",
-        ["no_spawn_point"] = "Unable to find a location to bring the cab",
-        ["taxi_returned"] = "Cab Parked"
+        ["person_was_dropped_off"] = "Bạn đã thả người!",
+        ["npc_on_gps"] = "Khách đã được định vị",
+        ["go_to_location"] = "Hãy chở khách đến địa chỉ",
+        ["vehicle_parking"] = "[E] Đậu xe",
+        ["job_vehicles"] = "[E] Lấy xe",
+        ["drop_off_npc"] = "[E] Thả khách",
+        ["call_npc"] = "[E] Gọi khách",
+        ["blip_name"] = "Taxi",
+        ["taxi_label_1"] = "Xe taxi",
+        ["no_spawn_point"] = "Không thấy địa điểm",
+        ["taxi_returned"] = "Đậu xe thành công"
     },
     menu = {
-        ["taxi_menu_header"] = "Taxi Vehicles",
-        ["close_menu"] = "⬅ Close Menu",
+        ["taxi_menu_header"] = "Xe taxi",
+        ["close_menu"] = "⬅ Đóng",
         ['boss_menu'] = "Boss Menu"
     }
 }
