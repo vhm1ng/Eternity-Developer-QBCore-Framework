@@ -1,62 +1,62 @@
 local Translations = {
     afk = {
-        will_kick = 'You are AFK and will be kicked in ',
-        time_seconds = ' seconds!',
-        time_minutes = ' minute(s)!'
+        will_kick = 'Bạn đang AFK và sẽ bị kick sau ',
+        time_seconds = ' giây!',
+        time_minutes = ' phút!'
     },
     wash = {
-        in_progress = "Vehicle is being washed ..",
-        wash_vehicle = "[E] Wash Vehicle",
-        wash_vehicle_target = "Wash Vehicle",
-        dirty = "The vehicle isn't dirty",
-        cancel = "Washing canceled ..",
+        in_progress = "Xe đang được rửa ..",
+        wash_vehicle = "[E] Rửa xe",
+        wash_vehicle_target = "Rửa xe",
+        dirty = "Xe không dơ",
+        cancel = "Hủy rửa xe ..",
     },
     consumables = {
-        eat_progress = "Eating..",
-        drink_progress = "Drinking..",
-        liqour_progress = "Drinking liquor..",
-        coke_progress = "Quick sniff..",
-        crack_progress = "Smoking crack..",
-        ecstasy_progress = "Pops Pills",
-        healing_progress = "Healing",
-        meth_progress = "Smoking Ass Meth",
-        joint_progress = "Lighting joint..",
-        use_parachute_progress = "Putting on parachute..",
-        pack_parachute_progress = "Packing parachute..",
-        no_parachute = "You dont have a parachute!",
-        armor_full = "You already have enough armor on!",
-        armor_empty = "You're not wearing a vest..",
-        armor_progress = "Putting on the body armour..",
-        heavy_armor_progress = "Putting on body armour..",
-        remove_armor_progress = "Removing the body armour..",
-        canceled = "Canceled..",
+        eat_progress = "Đang ăn..",
+        drink_progress = "Đang uống..",
+        liqour_progress = "Đang uống..",
+        coke_progress = "Hít hà~~~..",
+        crack_progress = "Bú bú~..",
+        ecstasy_progress = "Bú mạnh~",
+        healing_progress = "Hồi phục",
+        meth_progress = "Húp húp",
+        joint_progress = "Mút mút..",
+        use_parachute_progress = "Đang đeo dù..",
+        pack_parachute_progress = "Đang cất dù..",
+        no_parachute = "Bạn không có dù!",
+        armor_full = "Bạn đã mặc giáp!",
+        armor_empty = "Bạn không có giáp..",
+        armor_progress = "Đang mặc giáp..",
+        heavy_armor_progress = "Đang mặc giáp xịn..",
+        remove_armor_progress = "Đang cời giáp xịn..",
+        canceled = "Hủy..",
     },
     cruise = {
-        unavailable = "Cruise control unavailable",
-        activated = "Cruise Activated: ",
-        deactivated = "Cruise Deactivated",
+        unavailable = "Cruise control không thành công",
+        activated = "Cruise: ",
+        deactivated = "Cruise bị hủy",
     },
     editor = {
-        started = "Started Recording!",
-        save = "Saved Recording!",
-        delete = "Deleted Recording!",
+        started = "Bắt đầu quay!",
+        save = "Lưu vid!",
+        delete = "Xóa vid!",
         editor = "Later aligator!"
     },
     firework = {
-        place_progress = "Placing object..",
-        canceled = "Canceled..",
-        time_left = "Firework over ~r~"
+        place_progress = "Đang đặt..",
+        canceled = "Hủy..",
+        time_left = "Pháo hoa trong ~r~"
     },
     seatbelt = {
         use_harness_progress = "Attaching Race Harness",
         remove_harness_progress = "Removing Race Harness",
-        no_car = "You're not in a car."
+        no_car = "Bạn không trong xe."
     },
     teleport = {
-        teleport_default = 'Use Elevator'
+        teleport_default = 'Dùng thang máy'
     },
     pushcar = {
-        stop_push = "[E] Stop Pushing"
+        stop_push = "[E] Ngừng đẩy"
     }
 
 
