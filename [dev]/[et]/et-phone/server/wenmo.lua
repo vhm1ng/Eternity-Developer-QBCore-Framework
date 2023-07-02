@@ -9,7 +9,7 @@ RegisterNetEvent('et-phone:server:wenmo_givemoney_toID', function(data)
 
     if src == tonumber(data.ID) then return end
 
-    if not OtherPly then return TriggerClientEvent('QBCore:Notify', src, 'Player not Online', "error") end
+    if not OtherPly then return TriggerClientEvent('QBCore:Notify', src, 'Người dùng không khả dụng', "error") end
 
     local txt = "Wenmo: "..Reason
     
@@ -28,6 +28,6 @@ RegisterNetEvent('et-phone:server:wenmo_givemoney_toID', function(data)
             exports['Renewed-Banking']:handleTransaction(cid2, "Wenmo Transaction", Amount, txt, name, name2, "deposit")
         end
     else
-        TriggerClientEvent("QBCore:Notify", src, 'You don\'t have enough money!', "error") -- replace this with Phone Notify
+        TriggerClientEvent("QBCore:Notify", src, 'Bạn không đủ tiền!', "error") -- replace this with Phone Notify
     end
 end)

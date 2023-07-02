@@ -992,7 +992,8 @@
 #phone-header-text {
     position: absolute;
     top: 30.5%;
-    left: 31%;
+    left: 22.5%;
+    
     font-family: 'Arial', sans-serif;
     font-size: 1.7vh;
     font-weight: bold;

@@ -12,13 +12,13 @@ function formatPhoneNumber(phoneNumberString) {
 SetupTaxiDrivers = function(data) {
     $(".taxis-list").html("");
     $.each(data, function(job, jobData) {
-        $(".taxis-list").append(`<h1 style="font-size:1.64vh; padding:1.02vh; color:#fff; margin-top:0; width:100%; display:block; background-color: #2c465f;">Available Drivers</h1>`);
+        $(".taxis-list").append(`<h1 style="font-size:1.64vh; padding:1.02vh; color:#fff; margin-top:0; width:100%; display:block; background-color: #2c465f;">Tài xế</h1>`);
         $.each(jobData.Players, function(i, player) {
             $(".taxis-list").append(`<div class="taxi-list" id=${player.Phone}> <div class="taxi-list-fullname">${player.Name}</div> <div class="taxi-list-phone">${formatPhoneNumber(player.Phone)}</div> <div class="taxi-list-call"><i class="fas fa-phone"></i></div></div>`);
         });
 
         if (jobData.Players.length === 0) {
-            $(".taxis-list").append('<p class="notaxidrivers">None Available! <i class="fas fa-frown" id="taxi-frown"></i></p>');
+            $(".taxis-list").append('<p class="notaxidrivers">Hiện không có ai! <i class="fas fa-frown" id="taxi-frown"></i></p>');
         }
         $(".taxis-list").append("<br>");
     });
@@ -66,16 +66,16 @@ $(document).on('click', '.taxi-list-call', function(e){
         
                                 QB.Phone.Data.currentApplication = "phone-call";
                             } else {
-                                QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You're already in a call!");
+                                QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn đang trong cuộc gọi");
                             }
                         } else {
-                            QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is busy!");
+                            QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng bận!");
                         }
                     } else {
-                        QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is not available!");
+                        QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng không gọi được!");
                     }
                 } else {
-                    QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You can't call yourself!");
+                    QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn không thể tự gọi cho bản thân!");
                 }
             });
         } 

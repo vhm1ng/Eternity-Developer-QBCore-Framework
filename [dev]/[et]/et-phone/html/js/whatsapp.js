@@ -165,7 +165,7 @@ QB.Phone.Functions.ReloadWhatsappAlerts = function(chats) {
     });
 }
 
-const monthNames = ["January", "February", "March", "April", "May", "June", "JulY", "August", "September", "October", "November", "December"];
+const monthNames = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
 
 FormatChatDate = function(date) {
     var TestDate = date.split("-");
@@ -223,7 +223,7 @@ $(document).on('click', '#whatsapp-save-note-for-doc', function(e){
             QB.Phone.Functions.LoadWhatsappChats(chats);
         });
     } else {
-        QB.Phone.Notifications.Add("fas fa-comment", "Messages", "You can't send a empty message!", "#25D366", 1750);
+        QB.Phone.Notifications.Add("fas fa-comment", "Tin nhắn", "Bạn không thẻ gửi tin nhắn trống!", "#25D366", 1750);
     }
 });
 
@@ -322,16 +322,16 @@ $(document).on('click', '#whatsapp-openedchat-call', function(e){
 
                             QB.Phone.Data.currentApplication = "phone-call";
                         } else {
-                            QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You're already in a call!");
+                            QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn đang trong cuộc gọi!");
                         }
                     } else {
-                        QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is busy!");
+                        QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng bận!");
                     }
                 } else {
-                    QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is not available!");
+                    QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người này không thể gọi!");
                 }
             } else {
-                QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You can't call yourself!");
+                QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn không thê tự gọi cho bản thân!");
             }
         });
     }

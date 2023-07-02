@@ -3,7 +3,7 @@ var DocEndtext = null
 var DocEndid = null
 var DocEndcitizenid = null
 var ExtraButtonsOpen = false;
-var MonthFormatting = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var MonthFormatting = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
 
 $(document).ready(function(){
     $("#documents-search").on("keyup", function() {
@@ -93,9 +93,9 @@ function AddDocuments(data){
 
 function LoadGetNotes(){
     $(".documents-dropdown-menu").html("");
-    var Shitter = '<li id="documents-docs" data-title="Documents">Documents' +
-        '<li id="documents-licenses" data-title="Licenses">Licenses</li>' +
-        '<li id="documents-vehicle" data-title="Vehicle">Vehicle Registrations</li>' +
+    var Shitter = '<li id="documents-docs" data-title="Documents">Note' +
+        '<li id="documents-licenses" data-title="Licenses">Giấy phép</li>' +
+        '<li id="documents-vehicle" data-title="Vehicle">Đăng ký xe</li>' +
     '</li>';
 
     $('.documents-dropdown-menu').append(Shitter);
@@ -163,14 +163,14 @@ $(document).on('click', '#documents-vehicle', function(e) {
                 
                         var AddOption = '<div class="documents-test">' + 
                             '<div class="documents-title-title">'+Fulltext+'</div>' +
-                            '<div class="documents-title-icon-registration" data-title="'+vehicle.fullname+'" data-text="<b><center><u>San Andreas DMV</u></b></center><p><p><b>Name: </b>'+vehicle.brand+'</p></p><p><b>Model: </b>'+vehicle.model+'</p><p><b>Plate: </b>'+vehicle.plate+'</p><p><b>Owner: </b>'+FirstName+' '+LastName+'</p><p><b><center>Official State Document Of San Andreas</p></b></center>"><i class="fas fa-eye"></i></div>'+
+                            '<div class="documents-title-icon-registration" data-title="'+vehicle.fullname+'" data-text="<b><center><u>San Andreas DMV</u></b></center><p><p><b>Tên: </b>'+vehicle.brand+'</p></p><p><b>Kiểu mẫu: </b>'+vehicle.model+'</p><p><b>Biển số: </b>'+vehicle.plate+'</p><p><b>Chủ sở hữu: </b>'+FirstName+' '+LastName+'</p><p><b><center>Official State Document Of San Andreas</p></b></center>"><i class="fas fa-eye"></i></div>'+
                         '</div>';
                 
                         $('.documents-list').append(AddOption);
                     }
             });
         } else {
-            var AddOption = '<div class="casino-text-clear">Nothing Here!</div>'+
+            var AddOption = '<div class="casino-text-clear">Không có gì!</div>'+
             '<div class="casino-text-clear" style="font-size: 500%;color: #0d1218c0;"><i class="fas fa-frown"></i></div>'
         $('.documents-list').append(AddOption);
         }
@@ -202,14 +202,14 @@ $(document).on('click', '#documents-licenses', function(e) {
                 var AddOption = `
                 <div class="documents-test">
                     <div class="documents-title-title">${Fulltext}</div>
-                    <div class="documents-title-icon-registration" data-title=${Fulltext} data-text="<b><u>Issued To</u></b><p><p><b>Name: </b>${FirstName} ${LastName}</p></p></b><p><b>ID: </b>${StateId}</p></b><p><b>Sex: </b>${label}</p></b><p><b><u>Issued By</u></b></p><p><b>Name: </b>State Account</p><p><b><center>Official Document Of San Andreas</p></b></center>"><i class="fas fa-eye"></i></div>
+                    <div class="documents-title-icon-registration" data-title=${Fulltext} data-text="<b><u>Cấp cho</u></b><p><p><b>Tên: </b>${FirstName} ${LastName}</p></p></b><p><b>CCCD: </b>${StateId}</p></b><p><b>Giới tính: </b>${label}</p></b><p><b><u>Bởi</u></b></p><p><b>Tên: </b>Nhà nước</p><p><b><center>Official Document Of San Andreas</p></b></center>"><i class="fas fa-eye"></i></div>
                 </div>`
         
                 $('.documents-list').append(AddOption);
             }
         }
     } else {
-        var AddOption = '<div class="casino-text-clear">Nothing Here!</div>'+
+        var AddOption = '<div class="casino-text-clear">Không có gì!</div>'+
         '<div class="casino-text-clear" style="font-size: 500%;color: #0d1218c0;"><i class="fas fa-frown"></i></div>'
     $('.documents-list').append(AddOption);
     }

@@ -53,7 +53,7 @@ RegisterNUICallback('DeleteTweet',function(data)
 end)
 
 RegisterNUICallback('FlagTweet',function(data, cb)
-    QBCore.Functions.Notify(data.name..' was reported for saying '..data.message, "error")
+    QBCore.Functions.Notify(data.name..' đã tố cáo vì '..data.message, "error")
     cb('ok')
 end)
 
@@ -70,7 +70,7 @@ RegisterNetEvent('et-phone:client:UpdateTweets', function(src, Tweets, delete)
             action = "PhoneNotification",
             PhoneNotify = {
                 title = "Twitter",
-                text = "Tweet deleted!",
+                text = "Đã xóa Tweet!",
                 icon = "fab fa-twitter",
                 color = "#1DA1F2",
                 timeout = 1000,

@@ -50,5 +50,5 @@ RegisterNetEvent('et-phone:server:flagAdvert', function(number)
     local citizenid = Player.PlayerData.citizenid
     local name = Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname
     -- Add some type of log here for admins to keep track of flagged posts
-    TriggerClientEvent('QBCore:Notify', src, 'Post by '..name.. ' ['..citizenid..'] has been flagged', 'error')
+    TriggerClientEvent('QBCore:Notify', src, 'Đăng bởi '..name.. ' ['..citizenid..'] đã ăn gậy', 'error')
 end)

@@ -41,27 +41,27 @@ QB.Phone.Functions.RefreshAdverts = function(Adverts) {
                     var element = '<div class="advert" id="'+ advert.number +'">'+
                     '<div class="advert-message">' + advert.message + '</span></div>'+
                     '<div class="advert-contact-info">'+ advert.name + ' ┃ ' + formatPhoneNumber(advert.number) + '</span></div>'+
-                    '<div class="advert-image-attached">Images Attached: 1<p><u>Hide (click image to copy URL)</u></p></div>'+
+                    '<div class="advert-image-attached">Ảnh: <p><u>Che ảnh</u></p></div>'+
                     '<div class="advert-flag"><i class="fas fa-flag"></i></div>'+
                     '<div class="advert-trash"><i class="fas fa-trash"></i></div>'+
                     '<img class="image" src= ' + advert.url + ' style = " display: none; border-radius:4px; width: 70%; position:relative; z-index: 1; left:25px; margin:.6rem .5rem .6rem 1rem;height: auto; bottom: 20px;">' +
                         '<div class="advert-block">' +
                             '<div class="advert-eye"><i class="fas fa-eye"></i></div>'+
-                            '<div class="advert-image-text">Click to View</div>'+
-                            '<div class="advert-image-text-other">Only revel images from those you<p>know are not dick heads</p></div>'+
+                            '<div class="advert-image-text">Xem Ảnh</div>'+
+                            <!-- '<div class="advert-image-text-other">Only revel images from those you<p>know are not dick heads</p></div>'+ -->
                         '</div>'+
                     '</div>';
                 }else{
                     var element = '<div class="advert" id="'+ advert.number +'">'+
                     '<div class="advert-message">' + advert.message + '</span></div>'+
                     '<div class="advert-contact-info">'+ advert.name + ' ┃ ' + formatPhoneNumber(advert.number) + '</span></div>'+
-                    '<div class="advert-image-attached">Images Attached: 1<p><u>Hide (click image to copy URL)</u></p></div>'+
+                    '<div class="advert-image-attached">Ảnh: <p><u>Che ảnh</u></p></div>'+
                     '<div class="advert-flag" id="adv-delete"><i class="fas fa-flag"></i></div>'+
                     '<img class="image" src= ' + advert.url + ' style = " display: none; border-radius:4px; width: 70%; position:relative; z-index: 1; left:25px; margin:.6rem .5rem .6rem 1rem;height: auto; bottom: 20px;">' +
                         '<div class="advert-block">' +
                             '<div class="advert-eye"><i class="fas fa-eye"></i></div>'+
-                            '<div class="advert-image-text">Click to View</div>'+
-                            '<div class="advert-image-text-other">Only revel images from those you<p>know are not dick heads</p></div>'+
+                            '<div class="advert-image-text">Xem Ảnh</div>'+
+                            <!-- '<div class="advert-image-text-other">Only revel images from those you<p>know are not dick heads</p></div>'+ -->
                         '</div>'+
                     '</div>';
                 }
@@ -85,7 +85,7 @@ QB.Phone.Functions.RefreshAdverts = function(Adverts) {
             $(".advert-list").append(element);
         });
     } else {
-        $(".advert-list").html('<p class="noadverts">Nothing Here! <i class="fas fa-frown" id="advert-frown"></i></p>');
+        $(".advert-list").html('<p class="noadverts">Chưa có quảng cáo <i class="fas fa-frown" id="advert-frown"></i></p>');
     }
 }
 
@@ -117,7 +117,7 @@ $(document).on('click', '#advert-sendmessage-chat', function(e){
         ClearInputNew()
         $('#advert-box-textt').fadeOut(350);
     } else {
-        QB.Phone.Notifications.Add("fas fa-ad", "Advertisement", "You can\'t post an empty ad!", "#ff8f1a", 2000);
+        QB.Phone.Notifications.Add("fas fa-ad", "Quảng cáo", "Bạn không thể đăng quảng cáo trống", "#ff8f1a", 2000);
     }
 });
 
@@ -161,16 +161,16 @@ $(document).on('click','.advert-contact-info',function(e){
         
                                 QB.Phone.Data.currentApplication = "phone-call";
                             } else {
-                                QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You're already in a call!");
+                                QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn đang trong cuộc gọi!");
                             }
                         } else {
-                            QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is busy!");
+                            QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng bận!");
                         }
                     } else {
-                        QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is not available!");
+                        QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng không gọi được!");
                     }
                 } else {
-                    QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You can't call yourself!");
+                    QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn không thể tự gọi cho bản thân!");
                 }
             });
         } 
@@ -201,7 +201,7 @@ $(document).on('click','.advert-trash',function(e){
     e.preventDefault();
     setTimeout(function(){
         ConfirmationFrame()
-        QB.Phone.Notifications.Add("fas fa-ad", "Advertisement", "The ad was deleted", "#ff8f1a", 2000);
+        QB.Phone.Notifications.Add("fas fa-ad", "Quảng cáo", "Quảng cáo đã được xóa", "#ff8f1a", 2000);
     }, 150);
     $.post('https://et-phone/DeleteAdvert', function(){});
 })

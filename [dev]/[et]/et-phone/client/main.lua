@@ -258,7 +258,7 @@ local function OpenPhone()
 
         updateTime()
     else
-        QBCore.Functions.Notify("You don't have a phone?", "error")
+        QBCore.Functions.Notify("Bạn không có điện thoại", "error")
     end
 end
 
@@ -403,7 +403,7 @@ RegisterCommand('phone', function()
         if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then
             OpenPhone()
         else
-            QBCore.Functions.Notify("Action not available at the moment..", "error")
+            QBCore.Functions.Notify("Không thể thực hiện hành động..", "error")
         end
     end
 end) RegisterKeyMapping('phone', 'Open Phone', 'keyboard', 'M')
@@ -413,7 +413,7 @@ RegisterCommand("+answer", function()
         if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() and hasPhone() then
             AnswerCall()
         else
-            QBCore.Functions.Notify("Action not available at the moment..", "error")
+            QBCore.Functions.Notify("Không thể thực hiện hành động..", "error")
         end
     end
 end) RegisterKeyMapping('+answer', 'Answer Phone Call', 'keyboard', 'Y')
@@ -423,7 +423,7 @@ RegisterCommand("+decline", function()
         if not PlayerData.metadata['ishandcuffed'] and not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] and not IsPauseMenuActive() then
             CancelCall()
         else
-            QBCore.Functions.Notify("Action not available at the moment..", "error")
+            QBCore.Functions.Notify("Không thể thực hiện hành động..", "error")
         end
     end
 end) RegisterKeyMapping('+decline', 'Decline Phone Call', 'keyboard', 'J')
@@ -614,7 +614,7 @@ RegisterNUICallback("TakePhoto", function(_, cb)
             break
         elseif IsControlJustPressed(1, 176) then
             QBCore.Functions.TriggerCallback("et-phone:server:GetWebhook",function(hook)
-                QBCore.Functions.Notify('Touching up photo...', 'primary')
+                QBCore.Functions.Notify('Đang chụp...', 'primary')
                 exports['screenshot-basic']:requestScreenshotUpload(tostring(hook), "files[]", function(uploadData)
                     local image = json.decode(uploadData)
                     DestroyMobilePhone()
@@ -623,7 +623,7 @@ RegisterNUICallback("TakePhoto", function(_, cb)
                     Wait(400)
                     TriggerServerEvent('et-phone:server:getImageFromGallery')
                     cb(json.encode(image.attachments[1].proxy_url))
-                    QBCore.Functions.Notify('Photo saved!', "success")
+                    QBCore.Functions.Notify('Đã lưu!', "success")
                     OpenPhone()
                 end)
             end)
@@ -699,11 +699,11 @@ end)
 RegisterNUICallback('phone-silent-button', function(_, cb)
     if CallVolume == tonumber("0.2") then
         CallVolume = 0
-        QBCore.Functions.Notify("Silent Mode On", "success")
+        QBCore.Functions.Notify("Bật chế độ im lặng", "success")
         cb(true)
     else
         CallVolume = 0.2
-        QBCore.Functions.Notify("Silent Mode Off", "error")
+        QBCore.Functions.Notify("Tăt chế độ im lặng", "error")
         cb(false)
     end
 end)
@@ -963,7 +963,7 @@ RegisterNetEvent('et-phone:client:GiveContactDetails', function()
         local PlayerId = GetPlayerServerId(player)
         TriggerServerEvent('et-phone:server:GiveContactDetails', PlayerId)
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Xung quanh không có ai!", "error")
     end
 end)
 

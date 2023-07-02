@@ -92,7 +92,7 @@ $(document).on('click', '#phone-recent-chat', function(e){
             });
         }, 400)
     } else {
-        QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You can't whatsapp yourself..", "default", 3500);
+        QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn không thể tự gọi cho bản thân", "default", 3500);
     }
 });
 
@@ -104,7 +104,7 @@ $(document).on('click', '#phone-recent-copy-contact', function(e){
     var RecentData = $("[data-recentid='"+RecentId+"']").data('recentData');
     var PhoneNumber = RecentData.number
     copyToClipboard(PhoneNumber)
-    QB.Phone.Notifications.Add("fas fa-phone", "Contacts", "Phone Number Copied!");
+    QB.Phone.Notifications.Add("fas fa-phone", "Danh bạ", "Đã copy sdt!");
 });
 
 $(document).on('click', '#phone-recent-start-call', function(e){
@@ -127,7 +127,7 @@ $(document).on('click', '#phone-recent-start-call', function(e){
                 if (status.CanCall) {
                     if (!status.InCall) {
                         if (QB.Phone.Data.AnonymousCall) {
-                            QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You started a anonymous call!");
+                            QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Gọi ẩn danh!");
                         }
                         $(".phone-call-outgoing").css({"display":"none"});
                         $(".phone-call-incoming").css({"display":"none"});
@@ -148,16 +148,16 @@ $(document).on('click', '#phone-recent-start-call', function(e){
 
                         QB.Phone.Data.currentApplication = "phone-call";
                     } else {
-                        QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You're already in a call!");
+                        QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn đang trong cuộc gọi!");
                     }
                 } else {
-                    QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is busy!");
+                    QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng bận!");
                 }
             } else {
-                QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is not available!");
+                QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng không gọi được!");
             }
         } else {
-            QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You can't call yourself!");
+            QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn không thể tự gọi cho bản thân!");
         }
     });
 });
@@ -207,16 +207,16 @@ $(document).on('click', "#phone-number-call-free-btn", function(e){
 
                             QB.Phone.Data.currentApplication = "phone-call";
                         } else {
-                            QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You're already in a call!");
+                            QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn đang trong cuộc gọi!");
                         }
                     } else {
-                        QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is busy!");
+                        QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng bận!");
                     }
                 } else {
-                    QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is not available!");
+                    QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng không gọi được!");
                 }
             } else {
-                QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You can't call yourself!");
+                QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn không thể tự gọi cho bản thân!");
             }
         });
     }
@@ -296,7 +296,7 @@ $(document).on('click', '#new-chat-phone', function(e){
             });
         }, 400)
     } else {
-        QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You can't whatsapp yourself..", "default", 3500);
+        QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn không thể nhắn tin cho bản thân..", "default", 3500);
     }
 });
 
@@ -332,7 +332,7 @@ $(document).on('click', '#copy-contact', function(e){
     var ContactData = $("[data-contactid='"+ContactId+"']").data('contactData');
     var PhoneNumber = ContactData.number
     copyToClipboard(PhoneNumber)
-    QB.Phone.Notifications.Add("fas fa-phone", "Contacts", "Phone Number Copied!");
+    QB.Phone.Notifications.Add("fas fa-phone", "Danh bạ", "Đã copy sdt!");
 });
 
 $(document).on('click', '#phone-number-savecontact-edit', function(e){
@@ -363,7 +363,7 @@ $(document).on('click', '#phone-number-savecontact-edit', function(e){
             $('#phone-contacts-edit-ui').fadeOut(350);
         }, 250)
     } else {
-        QB.Phone.Notifications.Add("fas fa-exclamation-circle", "Edit Contact", "Fill out all fields!");
+        QB.Phone.Notifications.Add("fas fa-exclamation-circle", "Danh bạ", "Hãy điền đủ thông tin!");
     }
 });
 
@@ -432,7 +432,7 @@ $(document).on('click', '#phone-number-savecontact', function(e){
             $('#phone-contacts-new-ui').fadeOut(350);
         }, 250)
     } else {
-        QB.Phone.Notifications.Add("fas fa-exclamation-circle", "Add Contact", "Fill out all fields!");
+        QB.Phone.Notifications.Add("fas fa-exclamation-circle", "Danh bạ", "Hãy điền đủ thông tin!");
     }
 });
 
@@ -483,16 +483,16 @@ SetupCall = function(cData) {
 
                         QB.Phone.Data.currentApplication = "phone-call";
                     } else {
-                        QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You're already in a call!");
+                        QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn đang trong cuộc gọi!");
                     }
                 } else {
-                    QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is in a call!");
+                    QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng bận!");
                 }
             } else {
-                QB.Phone.Notifications.Add("fas fa-phone", "Phone", "This person is not available!");
+                QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Người dùng không gọi được!");
             }
         } else {
-            QB.Phone.Notifications.Add("fas fa-phone", "Phone", "You can't call your own number!");
+            QB.Phone.Notifications.Add("fas fa-phone", "Điện thoại", "Bạn không thể tự gọi cho bản thân!");
         }
     });
 }

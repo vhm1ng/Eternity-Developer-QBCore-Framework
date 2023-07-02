@@ -29,7 +29,7 @@ QB.Phone.Functions.SetupMails = function(Mails) {
                             '<div class="mail-subject"><p>Subject: '+mail.subject+'</p></div>' +
                             '<div class="mail-block">' +
                                 '<div class="mail-message">'+mail.message+'</div>' +
-                                '<div class="mail-box"><span class="mail-box mail-accept" style="margin-left: 4.0vh;">ACCEPT</span><span class="mail-box mail-delete" style = "margin-left: 1.1vh;">DELETE</span></div>' +
+                                '<div class="mail-box"><span class="mail-box mail-accept" style="margin-left: 4.0vh;">Đồng ý</span><span class="mail-box mail-delete" style = "margin-left: 1.1vh;">Xóa</span></div>' +
                             '</div>' +
                             '<div class="mail-line"></div>' +
                             '<div class="mail-time">'+TimeAgo+'</div>' +
@@ -42,7 +42,7 @@ QB.Phone.Functions.SetupMails = function(Mails) {
                             '<div class="mail-subject"><p>Subject: '+mail.subject+'</p></div>' +
                             '<div class="mail-block">' +
                                 '<div class="mail-message">'+mail.message+'</div>' +
-                                '<div class="mail-box"><span class="mail-box mail-delete" style = "margin-left: 7.0vh;">DELETE</span></div>' +
+                                '<div class="mail-box"><span class="mail-box mail-delete" style = "margin-left: 7.0vh;">Xóa</span></div>' +
                             '</div>' +
                             '<div class="mail-line"></div>' +
                             '<div class="mail-time">'+TimeAgo+'</div>' +
@@ -52,7 +52,7 @@ QB.Phone.Functions.SetupMails = function(Mails) {
                 }
             });
         } else {
-            $(".mail-list").html('<p class="nomails">Nothing Here! <i class="fas fa-frown" id="mail-frown"></i></p>');
+            $(".mail-list").html('<p class="nomails">Không có gì! <i class="fas fa-frown" id="mail-frown"></i></p>');
         }
 
     }

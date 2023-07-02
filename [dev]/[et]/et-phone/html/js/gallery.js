@@ -134,7 +134,7 @@ $(document).on('click', '#tweet-button', function(e){
         })
         returnDetail()
     } else {
-        QB.Phone.Notifications.Add("fab fa-twitter", "Twitter", "Fill a message!", "#1DA1F2");
+        QB.Phone.Notifications.Add("fab fa-twitter", "Twitter", "Nhập nội dung!", "#1DA1F2");
     };
     $('#tweet-new-url').val("");
     $("#tweet-new-message").val("");
@@ -168,7 +168,7 @@ $(document).on('click', '#advert-button', function(e){
         }
         $("#new-textarea").val(' ');
     } else {
-        QB.Phone.Notifications.Add("fas fa-ad", "Advertisement", "You can\'t post an empty ad!", "#ff8f1a", 2000);
+        QB.Phone.Notifications.Add("fas fa-ad", "Quảng cáo", "Bạn không thể đăng quảng cáo trống!", "#ff8f1a", 2000);
     }
 });
 
