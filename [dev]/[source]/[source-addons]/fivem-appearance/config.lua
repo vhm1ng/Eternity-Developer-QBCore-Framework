@@ -3,7 +3,7 @@ Config = {}
 Config.DrawDistance = 10.0
 Config.MarkerSize   = {x = 7.0, y = 7.0, z = 1.0}
 
-Config.Money = 5000 -- How much it takes from you when you open the clothing menu
+Config.Money = 1000 -- How much it takes from you when you open the clothing menu
 Config.Debug = false
 
 Config.ClothingShops = {
