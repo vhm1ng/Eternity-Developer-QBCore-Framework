@@ -1145,6 +1145,13 @@ Config.JobInteractions = {
             event = 'police:client:SeizeDriverLicense',
             shouldClose = true
         }, {
+            id = 'impoundvehicle',
+            title = 'Giam xe',
+            icon = 'car-crash',
+            type = 'client',
+            event = 'police:client:ImpoundVehicle',
+            shouldClose = true
+        }, {
             id = 'policeinteraction',
             title = 'Hành động',
             icon = 'bars',
