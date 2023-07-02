@@ -67,7 +67,7 @@ window.addEventListener('message', function(event) {
 				<div class="card h-100">
 					<div class="selectionMyInvoices card-body text-center selection-subcard" id="selectionMyInvoices" onclick="selectionMyInvoices()">
 						<span class="selection-subcard_card-title"><i class="fas fa-user"></i></span>
-						<p class="selection-subcard_title">Personal<br>Invoices</p>
+						<p class="selection-subcard_title">Hóa đơn<br>của tôi</p>
 					</div>
 				</div>
 			</div>
@@ -75,7 +75,7 @@ window.addEventListener('message', function(event) {
 				<div class="card h-100">
 					<div class="selectionPayReference card-body text-center selection-subcard" id="selectionPayReference" onclick="selectionPayReference()">
 						<span class="selection-subcard_card-title"><i class="fa-solid fa-receipt"></i></span>
-						<p class="selection-subcard_title">Pay<br>Reference</p>
+						<p class="selection-subcard_title">Hóa đơn<br>đã ghi</p>
 					</div>
 				</div>
 			</div>
@@ -87,7 +87,7 @@ window.addEventListener('message', function(event) {
 				<div class="card h-100">
 					<div class="selectionCreateInvoice card-body text-center selection-subcard" id="selectionCreateInvoice" onclick="selectionCreateInvoice()">
 						<span class="selection-subcard_card-title"><i class="fas fa-paper-plane"></i></span>
-						<p class="selection-subcard_title">Create<br>Invoice</p>
+						<p class="selection-subcard_title">Viết<br>hóa đơn</p>
 					</div>
 				</div>
 			</div>
@@ -98,7 +98,7 @@ window.addEventListener('message', function(event) {
 					<div class="card h-100">
 						<div class="selectionSocietyInvoices card-body text-center selection-subcard_disabled" id="selectionSocietyInvoices" onclick="selectionSocietyInvoices()">
 							<span class="selection-subcard_card-title"><i class="fas fa-building"></i></span>
-							<p class="selection-subcard_title">Society<br>Invoices</p>
+							<p class="selection-subcard_title">Hóa đơn<br>xã hội</p>
 						</div>
 					</div>
 				</div>`;
@@ -108,7 +108,7 @@ window.addEventListener('message', function(event) {
 					<div class="card h-100">
 						<div class="card-body text-center selection-subcard" id="selectionInspectCitizen" onclick="selectionInspectCitizen()">
 							<span class="selection-subcard_card-title"><i class="fa-solid fa-magnifying-glass"></i></span>
-							<p class="selection-subcard_title">Inspect<br>Citizen</p>
+							<p class="selection-subcard_title">Kiểm tra<br>Người dân</p>
 						</div>
 					</div>
 				</div>`;
@@ -118,7 +118,7 @@ window.addEventListener('message', function(event) {
 					<div class="card h-100">
 						<div class="card-body text-center selection-subcard" id="selectionCityInvoices" onclick="selectionCityInvoices()">
 							<span class="selection-subcard_card-title"><i class="fa-solid fa-city"></i></span>
-							<p class="selection-subcard_title">City<br>Invoices</p>
+							<p class="selection-subcard_title">Hóa đơn<br>thành phố</p>
 						</div>
 					</div>
 				</div>`;
@@ -213,10 +213,10 @@ window.addEventListener('message', function(event) {
 
 				if(!p2p){
 					$('#invoicesFirstMenu').html(`
-						<button type="button" class="btn btn-blue w-100 ci-option">JOB</button>
+						<button type="button" class="btn btn-blue w-100 ci-option">DOANH NGHIỆP</button>
 					`);
 					$('#invoicesSecondMenu').html(`
-						<button type="button" id="openBillsListInvoice" class="btn btn-odark w-100 ci-option">JOB</button>
+						<button type="button" id="openBillsListInvoice" class="btn btn-odark w-100 ci-option">DOANH NGHIỆP</button>
 					`);
 				}
 			}
@@ -326,10 +326,10 @@ window.addEventListener('message', function(event) {
 
 				if(!p2p){
 					$('#invoicesFirstMenu').html(`
-						<button type="button" class="btn btn-blue w-100 ci-option">JOB</button>
+						<button type="button" class="btn btn-blue w-100 ci-option">DOANH NGHIỆP</button>
 					`);
 					$('#invoicesSecondMenu').html(`
-						<button type="button" id="openBillsListInvoice" class="btn btn-odark w-100 ci-option">JOB</button>
+						<button type="button" id="openBillsListInvoice" class="btn btn-odark w-100 ci-option">DOANH NGHIỆP</button>
 					`);
 				}
 			}

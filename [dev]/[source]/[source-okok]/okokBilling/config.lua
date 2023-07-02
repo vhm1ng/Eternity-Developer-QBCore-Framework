@@ -78,11 +78,11 @@ Config.SocietyAccessRanks = { -- Which ranks of the society have access to Socie
 
 Config.BillsList = {
 	['police'] = {
-		{'High Speed', 550},
-		{'Parking on bridge', 1200},
-		{'Jumping a red light', 250},
-		{'Driving dangerously', 750},
-		{'Reckless driving', 1000},
+		-- {'High Speed', 550},
+		-- {'Parking on bridge', 1200},
+		-- {'Jumping a red light', 250},
+		-- {'Driving dangerously', 750},
+		-- {'Reckless driving', 1000},
 		{'Custom'}, -- If set without a price it'll let the players create a custom invoice (custom price)
 	},
 	['ambulance'] = {
@@ -93,6 +93,7 @@ Config.BillsList = {
 		{'Cứu dưới nước', 2500},
 		{'Cứu quân sự', 5000},
 		{'Đánh nhau', 20000},
+		{'Custom'},
 	},
 }
 
