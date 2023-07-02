@@ -86,11 +86,10 @@ Config.BillsList = {
 		{'Custom'}, -- If set without a price it'll let the players create a custom invoice (custom price)
 	},
 	['ambulance'] = {
-		{'Ambulance Ride', 550},
-		{'Medical treatment 1', 750},
-		{'Medical treatment 2', 1200},
-		{'Medical treatment 3', 250},
-		{'Medical treatment 4', 400},
+		{'Chữa', 600},
+		{'Cứu TTP', 800},
+		{'Cứu NTP', 1500},
+		{'Cứu 12h', 2000},
 	},
 }
 
