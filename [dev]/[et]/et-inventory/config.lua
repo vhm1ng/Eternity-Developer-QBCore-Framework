@@ -23,6 +23,22 @@ Config.BinObjects = {
 Config.CraftingObject = `prop_toolchest_05`
 
 Config.VendingItem = {
+    [1] = {
+        name = "water_bottle",
+        price = 200,
+        amount = 100,
+        info = {},
+        type = "item",
+        slot = 1,
+    },
+    [2] = {
+        name = "sandwich",
+        price = 200,
+        amount = 100,
+        info = {},
+        type = "item",
+        slot = 2,
+    },
 }
 
 Config.AttachmentCraftingLocation = vector3(88.91, 3743.88, 40.7)
