@@ -51,24 +51,24 @@ QBShared.Jobs = {
 		grades = {
             ['0'] = {
                 name = 'Thực tập',
-                payment = 1100
+                payment = 700
             },
 			['1'] = {
                 name = 'Bác sĩ',
-                payment = 1300
+                payment = 900
             },
 			['2'] = {
                 name = 'Quản lý',
-                payment = 1500
+                payment = 1100
             },
 			['3'] = {
                 name = 'Trưởng khoa',
-                payment = 1700
+                payment = 1300
             },
 			['4'] = {
                 name = 'Viện trưởng',
 				isboss = true,
-                payment = 1900
+                payment = 1500
             },
         },
 	},
