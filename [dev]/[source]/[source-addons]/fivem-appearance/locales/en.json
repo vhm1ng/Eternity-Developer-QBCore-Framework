@@ -106,13 +106,14 @@
     "mask": "Mặt nạ",
     "upperBody": "Cánh tay",
     "lowerBody": "Quần",
-    "bags": "Túi và Dù",
+    "shirt": "Áo sơ mi",
+    "decals": "Decan",
+    "jackets": "Áo Khoác",
     "shoes": "Giày",
+    "bags": "Túi và Dù",
     "scarfAndChains": "Phụ Kiện",
-    "shirt": "Áo phông",
-    "bodyArmor": "Áo giáp",
-    "decals": "nhãn dán",
-    "jackets": "Áo Khoác"
+    "bodyArmor": "Áo giáp"
+
   },
   "props": {
     "title": "Phụ kiện",
