@@ -298,6 +298,19 @@ Config.PhoneApplications = {
         slot = 12,
         Alerts = 0,
     },
+    ["lawyers"] = {
+        app = "lawyers",
+        color = "#26d4ce",
+        color2 = "#1e9c98",
+        icon = "fas fa-briefcase",
+        tooltipText = "Dịch vụ",
+        tooltipPos = "bottom",
+        style = "font-size: 3vh";
+        job = false,
+        blockedjobs = {},
+        slot = 13,
+        Alerts = 0,
+    },
     -- ["racing"] = {
     --     app = "racing",
     --     color = "#353b48",
@@ -315,11 +328,11 @@ Config.PhoneApplications = {
     --     color = "#9c88ff",
     --     color2 = "#8070d5",
     --     icon = "fas fa-file-contract",
-    --     tooltipText = "Invoices",
+    --     tooltipText = "Ngân hàng",
     --     style = "font-size: 2.7vh";
     --     job = false,
     --     blockedjobs = {},
-    --     slot = 23,
+    --     slot = 14,
     --     Alerts = 0,
     -- },
     -- ["gopro"] = {

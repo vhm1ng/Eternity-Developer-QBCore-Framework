@@ -213,6 +213,10 @@ $(document).on('click', '.phone-application', function(e){
                     });
                 } else if (PressedApplication == "meos") {
                     SetupMeosHome();
+                } else if (PressedApplication == "lawyers") {
+                    $.post('https://et-phone/GetCurrentLawyers', JSON.stringify({}), function(data){
+                        SetupLawyers(data);
+                    });
                 } else if (PressedApplication == "taxi") {
                     $.post('https://et-phone/GetAvailableTaxiDrivers', JSON.stringify({}), function(data){
                         SetupTaxiDrivers(data);
