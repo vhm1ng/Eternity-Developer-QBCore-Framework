@@ -294,6 +294,10 @@ local function EMSControls(variable)
                     TriggerEvent('et-ambulancejob:elevator_main')
                 elseif variable == "main" then
                     TriggerEvent('et-ambulancejob:elevator_roof')
+                elseif variable == "xuongt1" then
+                    TriggerEvent('et-ambulancejob:xuongt1')
+                elseif variable == "lent1" then
+                    TriggerEvent('et-ambulancejob:lent1')
                 end
             end
             Wait(1)
@@ -388,6 +392,48 @@ local function EMSHelicopter(k)
         end
     end)
 end
+
+-- Thang May H - 1
+
+RegisterNetEvent('et-ambulancejob:xuongt1', function()
+    local ped = PlayerPedId()
+    for k, _ in pairs(Config.Locations["xuongt1"]) do
+        DoScreenFadeOut(500)
+        while not IsScreenFadedOut() do
+            Wait(10)
+        end
+
+        currentHospital = k
+
+        local coords = Config.Locations["lent1"][currentHospital]
+        SetEntityCoords(ped, coords.x, coords.y, coords.z, 0, 0, 0, false)
+        SetEntityHeading(ped, coords.w)
+
+        Wait(100)
+
+        DoScreenFadeIn(1000)
+    end
+end)
+
+RegisterNetEvent('et-ambulancejob:lent1', function()
+    local ped = PlayerPedId()
+    for k, _ in pairs(Config.Locations["lent1"]) do
+        DoScreenFadeOut(500)
+        while not IsScreenFadedOut() do
+            Wait(10)
+        end
+
+        currentHospital = k
+
+        local coords = Config.Locations["xuongt1"][currentHospital]
+        SetEntityCoords(ped, coords.x, coords.y, coords.z, 0, 0, 0, false)
+        SetEntityHeading(ped, coords.w)
+
+        Wait(100)
+
+        DoScreenFadeIn(1000)
+    end
+end)
 
 RegisterNetEvent('et-ambulancejob:elevator_roof', function()
     local ped = PlayerPedId()
@@ -578,6 +624,46 @@ if Config.UseTarget then
                 distance = 8
             })
         end
+        for k, v in pairs(Config.Locations["xuongt1"]) do
+            exports['et-target']:AddBoxZone("xuongt1" .. k, vector3(v.x, v.y, v.z), 1.5, 1.5, {
+                name = "xuongt1" .. k,
+                debugPoly = false,
+                heading = -20,
+                minZ = v.z - 2,
+                maxZ = v.z + 2,
+            }, {
+                options = {
+                    {
+                        type = "client",
+                        event = "et-ambulancejob:xuongt1",
+                        icon = "fas fa-hand-point-up",
+                        label = "Take Elevator",
+                        job = "ambulance"
+                    },
+                },
+                distance = 8
+            })
+        end
+        for k, v in pairs(Config.Locations["lent1"]) do
+            exports['et-target']:AddBoxZone("lent1" .. k, vector3(v.x, v.y, v.z), 1.5, 1.5, {
+                name = "lent1" .. k,
+                debugPoly = false,
+                heading = -20,
+                minZ = v.z - 2,
+                maxZ = v.z + 2,
+            }, {
+                options = {
+                    {
+                        type = "client",
+                        event = "et-ambulancejob:lent1",
+                        icon = "fas fa-hand-point-up",
+                        label = "Take Elevator",
+                        job = "ambulance"
+                    },
+                },
+                distance = 8
+            })
+        end
     end)
 else
     CreateThread(function()
@@ -655,6 +741,62 @@ else
                 exports['et-core']:HideText()
             end
         end)
+
+---------------------------
+
+        local xuongt1Poly = {}
+        for k, v in pairs(Config.Locations["xuongt1"]) do
+            xuongt1Poly[#xuongt1Poly + 1] = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 2, 2, {
+                name = "xuongt1" .. k,
+                debugPoly = false,
+                heading = 70,
+                minZ = v.z - 2,
+                maxZ = v.z + 2,
+            })
+        end
+
+        local xuongt1Combo = ComboZone:Create(xuongt1Poly, { name = "xuongt1Combo", debugPoly = false })
+        xuongt1Combo:onPlayerInOut(function(isPointInside)
+            if isPointInside and PlayerJob.name == "ambulance" then
+                if onDuty then
+                    exports['et-core']:DrawText(Lang:t('text.elevator_xuongt1'), 'left')
+                    EMSControls("xuongt1")
+                else
+                    exports['et-core']:DrawText(Lang:t('error.not_ems'), 'left')
+                end
+            else
+                check = false
+                exports['et-core']:HideText()
+            end
+        end)
+
+        local lent1Poly = {}
+        for k, v in pairs(Config.Locations["lent1"]) do
+            lent1Poly[#lent1Poly + 1] = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 1.5, 1.5, {
+                name = "lent1" .. k,
+                debugPoly = false,
+                heading = 70,
+                minZ = v.z - 2,
+                maxZ = v.z + 2,
+            })
+        end
+
+        local lent1Combo = ComboZone:Create(lent1Poly, { name = "lent1Poly", debugPoly = false })
+        lent1Combo:onPlayerInOut(function(isPointInside)
+            if isPointInside and PlayerJob.name == "ambulance" then
+                if onDuty then
+                    exports['et-core']:DrawText(Lang:t('text.elevator_lent1'), 'left')
+                    EMSControls("lent1")
+                else
+                    exports['et-core']:DrawText(Lang:t('error.not_ems'), 'left')
+                end
+            else
+                check = false
+                exports['et-core']:HideText()
+            end
+        end)
+
+---------------------------
 
         local roofPoly = {}
         for k, v in pairs(Config.Locations["roof"]) do
