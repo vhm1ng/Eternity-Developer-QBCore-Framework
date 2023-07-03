@@ -50,7 +50,7 @@ AddEventHandler('wasabi_elevator:goToFloor', function(data)
     local coords = Config.Elevators[elevator][floor].coords
     local heading = Config.Elevators[elevator][floor].heading
     local ped = cache.ped
-	DoScreenFadeOut(1500)
+	DoScreenFadeOut(200)
 	while not IsScreenFadedOut() do
 		Wait(10)
 	end
@@ -61,7 +61,7 @@ AddEventHandler('wasabi_elevator:goToFloor', function(data)
 	SetEntityCoords(ped, coords.x, coords.y, coords.z, false, false, false, false)
 	SetEntityHeading(ped, heading and heading or 0.0)
 	Wait(3000)
-	DoScreenFadeIn(1500)
+	DoScreenFadeIn(200)
 end)
 
 AddEventHandler('wasabi_elevator:noAccess', function()

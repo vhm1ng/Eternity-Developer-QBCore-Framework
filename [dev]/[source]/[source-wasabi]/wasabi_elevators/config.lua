@@ -38,7 +38,7 @@ Config.Elevators = {
 
         LSPDVINEWOOD = { -- Elevator name(Doesn't show it's just to name table)
         [1] = {
-            coords = vector3(624.6, 1.29, 82.63), -- Coords, if you're new; last number is heading
+            coords = vector3(565.68, 4.93, 103.23), -- Coords, if you're new; last number is heading
             heading = 252.84,
             title = 'Tầng thượng',
             description = '',
