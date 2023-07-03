@@ -34,7 +34,7 @@ QBShared.Jobs = {
                 payment = 1700
             },
 			['3'] = {
-                name = 'Thanh tra',
+                name = 'Phó giám đốc',
                 payment = 1900
             },
 			['4'] = {
