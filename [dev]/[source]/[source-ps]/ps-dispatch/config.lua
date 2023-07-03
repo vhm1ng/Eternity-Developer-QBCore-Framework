@@ -24,9 +24,9 @@ Config.ExplosionTypes = {9}
 -- Enable default alerts
 Config.Enable.Speeding = true
 Config.Enable.Shooting = true
-Config.Enable.Autotheft = true
+Config.Enable.Autotheft = false
 Config.Enable.Melee = true
-Config.Enable.PlayerDowned = true
+Config.Enable.PlayerDowned = false
 
 -- Enable alerts when cops break the law, also prints to console.
 Config.Debug = false

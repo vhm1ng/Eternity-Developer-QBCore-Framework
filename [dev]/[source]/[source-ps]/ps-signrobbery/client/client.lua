@@ -32,7 +32,7 @@ end
 
 --Events
 local hasTimeout = false
-local timeoutDuration = 1000 * 60 * 20 --timeout
+local timeoutDuration = 1000 * 60 * 1 --timeout
 local robbery
 local timeLogin = 60*10 --thời gian cần có ở trong tp để cướp
 local timeRobberySign = 1000*60*3 --thời gian lau biển
@@ -46,7 +46,7 @@ RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
         
         else
             local ped = PlayerPedId()
-            TriggerServerEvent('police:server:policeAlert', 'Có hành vi cướp biển báo')
+            exports['ps-dispatch']:SignRobbery()
             exports['ps-ui']:Circle(function(success)
                 if success then
                     loadAnimDict("amb@prop_human_bum_bin@base")
