@@ -31,31 +31,54 @@ end
 
 
 --Events
+local hasTimeout = false
+local timeoutDuration = 1000 * 60 * 20 --timeout
+local robbery
+local timeLogin = 60*10 --thời gian cần có ở trong tp để cướp
+local timeRobberySign = 1000*60*3 --thời gian lau biển
 RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
-    local ped = PlayerPedId()
-    print('Chạy alert thông báo cảnh sát')
-    TriggerServerEvent('police:server:policeAlert', 'Có hành vi cướp biển báo')
-    exports['ps-ui']:Circle(function(success)
-        if success then
-            loadAnimDict("amb@prop_human_bum_bin@base")
-            TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-            QBCore.Functions.Progressbar("robbing_sign", "Lau biển cho sạch nàoo", math.random(180000), false, true, {
-                disableMovement = true,
-                disableCarMovement = true,
-                disableMouse = false,
-                disableCombat = true,
-            }, {}, {}, function()
-            end, function()
-                local coords = GetEntityCoords(data.entity)
-                SetEntityAsMissionEntity(data.entity, true, true)
-                StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
-                DeleteEntity(data.entity)
-                local object = {coords = coords, model = -949234773}
-                TriggerServerEvent("et-signrobbery:server:delete", object)
-                AlertCops()
-            end)
+    local test = GetGameTimer() / 1000 --giây
+    if test >= timeLogin then --10 phút
+        if hasTimeout == true then 
+            local remainingTime = math.ceil((timeoutDuration/1000 - (test - robbery) )) --tính theo giây
+            QBCore.Functions.Notify("Bạn vừa thực hiện hành vi này rồi, hãy thử lại sau ".. remainingTime .." giây", "test")
+    
+        
+        else
+            local ped = PlayerPedId()
+            TriggerServerEvent('police:server:policeAlert', 'Có hành vi cướp biển báo')
+            exports['ps-ui']:Circle(function(success)
+                if success then
+                    loadAnimDict("amb@prop_human_bum_bin@base")
+                    hasTimeout = true
+                    TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+                    QBCore.Functions.Progressbar("robbing_sign", "Lau biển cho sạch nàoo", math.random(timeRobberySign), false, true, {
+                        disableMovement = true,
+                        disableCarMovement = true,
+                        disableMouse = false,
+                        disableCombat = true,
+                    }, {}, {}, function()
+                    end, function()
+                        local coords = GetEntityCoords(data.entity)
+                        SetEntityAsMissionEntity(data.entity, true, true)
+                        StopAnimTask(ped, "amb@prop_human_bum_bin@base", "base", 1.0)
+                        DeleteEntity(data.entity)
+                        local object = {coords = coords, model = -949234773}
+                        TriggerServerEvent("et-signrobbery:server:delete", object)
+                        AlertCops()
+                        
+                        Citizen.SetTimeout(timeoutDuration, function()
+                            hasTimeout = false -- Reset the flag to false after the timeout
+                        end)
+                    end)
+                    robbery = GetGameTimer() / 1000
+                end
+            end, 5, 6)
         end
-    end, 5, 6)
+    else
+        local timeToRobbery = math.ceil((timeLogin - test))
+        QBCore.Functions.Notify("Bạn cần ở trong thành phố thêm ".. timeToRobbery .." giây nữa để thực hiện hành vi", "test")
+    end    
 end)
 
 -- RegisterNetEvent("et-signrobbery:client:WalkingManSign", function(data)
