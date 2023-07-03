@@ -10,22 +10,22 @@ local Translations = {
         ["oxygenlevel"] = 'the gear level is %{oxygenlevel} must be 0%'
     },
     success = {
-        ["took_out"] = "You took your wetsuit off",
-        ["tube_filled"] = "The tube has been filled successfully"
+        ["took_out"] = "Bạn đã cởi đồ lặn",
+        ["tube_filled"] = "Đã gắn ống thở"
     },
     info = {
-        ["collecting_coral"] = "Collecting coral",
-        ["diving_area"] = "Diving Area",
+        ["collecting_coral"] = "Đang thu thập san hô",
+        ["diving_area"] = "Khu vực lặn",
         ["collect_coral"] = "Collect coral",
-        ["collect_coral_dt"] = "[E] - Collect Coral",
-        ["checking_pockets"] = "Checking Pockets To Sell Coral",
-        ["sell_coral"] = "Sell Coral",
-        ["sell_coral_dt"] = "[E] - Sell Coral",
+        ["collect_coral_dt"] = "[E] - Thu thập san hô",
+        ["checking_pockets"] = "Đang kiểm tra san hô",
+        ["sell_coral"] = "Bán san hô",
+        ["sell_coral_dt"] = "[E] - Bán san hô",
         ["blip_text"] = "911 - Dive Site",
-        ["put_suit"] = "Put on a diving suit",
-        ["pullout_suit"] = "Pull out a diving suit ..",
-        ["cop_msg"] = "This coral may be stolen",
-        ["cop_title"] = "Illegal diving",
+        ["put_suit"] = "Đang mặc đồ lặn",
+        ["pullout_suit"] = "Đang cởi đồ lặn ..",
+        ["cop_msg"] = "San hô có thể đã bị trộm",
+        ["cop_title"] = "Lặn trái phép",
         ["command_diving"] = "Take off your diving suit",
     },
     warning = {
