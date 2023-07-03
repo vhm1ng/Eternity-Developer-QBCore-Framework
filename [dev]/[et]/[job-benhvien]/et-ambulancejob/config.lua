@@ -118,6 +118,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             info = {},
             type = "item",
             slot = 1,
+            authorizedJobGrades = {4}
         },
         [2] = {
             name = "bandage",
@@ -126,6 +127,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             info = {},
             type = "item",
             slot = 2,
+            authorizedJobGrades = {4}
         },
         [3] = {
             name = "painkillers",
@@ -134,6 +136,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             info = {},
             type = "item",
             slot = 3,
+            authorizedJobGrades = {4}
         },
         [4] = {
             name = "firstaid",
@@ -142,6 +145,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             info = {},
             type = "item",
             slot = 4,
+            authorizedJobGrades = {4}
         },
         [5] = {
             name = "weapon_flashlight",
@@ -150,6 +154,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             info = {},
             type = "item",
             slot = 5,
+            authorizedJobGrades = {4}
         },
         [6] = {
             name = "weapon_fireextinguisher",
@@ -158,6 +163,7 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             info = {},
             type = "item",
             slot = 6,
+            authorizedJobGrades = {4}
         },
     }
 }

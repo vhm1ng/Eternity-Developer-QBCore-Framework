@@ -309,10 +309,31 @@ RegisterNetEvent('et-ambulancejob:stash', function()
     end
 end)
 
+-- Hàm kho đồ cũ
+
+-- RegisterNetEvent('et-ambulancejob:armory', function()
+--     if onDuty then
+--         TriggerServerEvent("inventory:server:OpenInventory", "shop", "hospital", Config.Items)
+--     end
+-- end)
+
 RegisterNetEvent('et-ambulancejob:armory', function()
-    if onDuty then
-        TriggerServerEvent("inventory:server:OpenInventory", "shop", "hospital", Config.Items)
+    local authorizedItems = {
+        label = Lang:t('info.safe'),
+        slots = 30,
+        items = {}
+    }
+    local index = 1
+    for _, armoryItem in pairs(Config.Items.items) do
+        for i=1, #armoryItem.authorizedJobGrades do
+            if armoryItem.authorizedJobGrades[i] == PlayerJob.grade.level then
+                authorizedItems.items[index] = armoryItem
+                authorizedItems.items[index].slot = index
+                index = index + 1
+            end
+        end
     end
+    TriggerServerEvent("inventory:server:OpenInventory", "shop", "ambulance", authorizedItems)
 end)
 
 local CheckVehicle = false
