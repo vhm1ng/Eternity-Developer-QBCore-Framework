@@ -37,7 +37,7 @@ p { margin: 0 !important; }
 }
 
 .brand-logo {
-    position: relative;
+    position: relative; 
     left: 50%;
     transform: translateX(-50%);
     padding-top: 3px;
@@ -85,14 +85,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .pro {
-    background: linear-gradient(to right, #07adf4, #0881d2 500px);
+    background: linear-gradient(to right, #0fffd5, #0b9a82 500px);
     height: 10px;
     max-width: 100%;
     transition: width 1s, background-color 1s;
 }
 
 .pro1 {
-    background: linear-gradient(to right, #07adf4, #0881d2 500px);
+    background: linear-gradient(to right, #0fffd5, #0b9a82 500px);
     height: 10px;
     max-width: 100%;
     transition: width 1s, background-color 1s;
@@ -149,7 +149,7 @@ body {
     max-width: 41%;
     height: 75%;
     max-height: 81%;
-    background:  rgba(4, 88, 206, 0.23);
+    background: rgb(35 34 56 / 80%);
 }
 
 .player-inventory {
@@ -176,7 +176,7 @@ body {
     max-width: 41%;
     height: 75%;
     max-height: 81%;
-    background: rgba(4, 88, 206, 0.23);
+    background: rgb(35 34 56 / 80%);
 }
 
 .other-inventory {
@@ -316,6 +316,18 @@ body {
     font-size: 1.5vh;
     font-weight: 300;
     font-family: 'Roboto', sans-serif !important;
+}
+.inv-option-item > label {
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    text-transform: normal;
+    font-size: 1.5vh;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif !important;
+    margin-right: 10px;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 .inv-option-item {
@@ -1126,23 +1138,9 @@ body {
     background-color: rgb(18, 18, 18);
 }
 
-.nearbyPlayerButton {
-    width: 100%;
-    margin-top: 5px;
-    display: block;
-    text-decoration: none;
-    padding: 2px;
-    color: rgba(255, 255, 255, 0.85);
-    background-color: rgba(63, 57, 83, 0.226);
-    text-shadow: none;
-    font-size: 14px !important;
-    outline: none;
-    text-transform: none;
-    text-align: center;
-    line-height: 30px;
-    border: none;
-}
-
-.nearbyPlayerButton:hover {
-    background-color: rgba(34, 29, 46, 0.8);
+.color-picker-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
