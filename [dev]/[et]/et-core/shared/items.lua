@@ -1,8 +1,16 @@
 QBShared = QBShared or {}
 QBShared.Items = {
 
+-- Nghề Bò
+	["milk"] 						= {["name"] = "milk",  	     					["label"] = "Xô sữa",	 				["weight"] = 500, 		["type"] = "item", 		["image"] = "milk.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Xô sữa được lấy từ con Bòa"},
+	["xosua"] 						= {["name"] = "xosua",  	     				["label"] = "Xô rỗng",	 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "xosua.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Xô rỗng để bóp zú Bòa"},
+	["knife"] 						= {["name"] = "knife",  	     				["label"] = "Phóng bòa",	 			["weight"] = 500, 		["type"] = "item", 		["image"] = "knife.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Phóng bòa để làm thịt Bòa"},	
+	["milk_pack"] 					= {["name"] = "milk_pack",  	     			["label"] = "Hộp sữa",	 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "milk_pack.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Hộp sữa được làm từ 2 xô sữa Boà"},	
+	["thitdongvat"] 				= {["name"] = "thitdongvat",  	     			["label"] = "Thịt bòa",	 				["weight"] = 500, 		["type"] = "item", 		["image"] = "thitdongvat.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Thịt Bòa sống được lấy từ con Bòa"},
+	["thitbonuong"] 				= {["name"] = "thitbonuong",  	     			["label"] = "Thịt bòa nướng",	 		["weight"] = 500, 		["type"] = "item", 		["image"] = "thitbonuong.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Thịt Bòa nướng được nướng chế biến từ Con Bò. Ăn được rấc thơm ngon :3"},
+	
 -- Thuốc lá
-	['thuocla'] 				 	 = {['name'] = 'thuocla', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 's12.png', 				['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
+	['thuocla'] 				 	 = {['name'] = 'thuocla', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 's12.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
 
 -- [QUASAR SMARTPHONE]
 	['classic_phone'] 			 	 = {['name'] = 'classic_phone', 			  	['label'] = 'Classic Phone', 			['weight'] = 700, 		['type'] = 'item', 		['image'] = 'classic_phone.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'},
@@ -168,14 +176,6 @@ QBShared.Items = {
 	['empty_license_plate'] 		 = {['name'] = 'empty_license_plate', 			['label'] = 'Biển số xe trống', 		['weight'] = 150, 		['type'] = 'item', 		['image'] = 'licenseplate.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'An empty license plate.'},
 	['fake_license_plate'] 		 	 = {['name'] = 'fake_license_plate', 			['label'] = 'Biển số xe giả', 			['weight'] = 150, 		['type'] = 'item', 		['image'] = 'licenseplate.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A fake license plate.'},
 	['registered_license_plate'] 	 = {['name'] = 'registered_license_plate', 		['label'] = 'Biển số xe đã đăng ký', 	['weight'] = 150, 		['type'] = 'item', 		['image'] = 'licenseplate.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A registered license plate ready to use'},
-
-	-- Nghề bò
-	['xosua'] 	    		 		= {['name'] = 'xosua', 							['label'] = 'Xô sữa', 					['weight'] = 200, 		['type'] = 'item', 		['image'] = 'xosua.png', 				['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Xô để vắt sữa'},
-	['milk'] 	    		 		= {['name'] = 'milk', 							['label'] = 'Sữa', 						['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'milk.png', 				['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Sữa được vắt từ bò'},
-	['milk_pack']            		= {['name'] = 'milk_pack',             			['label'] = 'Hộp sữa',                  ['weight'] = 2000,      ['type'] = 'item',      ['image'] = 'milk_pack', 				['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Hộp sữa được làm từ sữa bỏ'},
- 	['knife'] 	     		 		= {['name'] = 'knife', 							['label'] = 'Dao mổ', 					['weight'] = 200, 		['type'] = 'item', 		['image'] = 'knife.png', 				['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Dao mổ bò'},
-	['thitdongvat'] 	     		= {['name'] = 'thitdongvat', 					['label'] = 'Thịt bò', 					['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'thitdongvat.png', 			['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Dao mổ bò'},
-	['thitbonuong'] 	     		= {['name'] = 'thitbonuong', 					['label'] = 'Thịt bò nướng', 			['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'thitbonuong.png', 			['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Dao mổ bò'},
 
 	-- Nghề gà
 	["alive_chicken"] 		 		 = {["name"] = "alive_chicken", 				["label"] = "Gà sống", 					["weight"] = 2000, 		["type"] = "item", 		["image"] = "alive_chicken.png", 		["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "Alive Chicken"},
