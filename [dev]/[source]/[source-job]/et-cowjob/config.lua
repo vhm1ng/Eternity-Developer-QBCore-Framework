@@ -23,4 +23,5 @@ Cow.PackingMilk = {
 
 Cow.SecondaryColor = {r = 33, g = 244, b = 218, a = 255} -- Use RGB color picker
 Cow.nuongthit = {coords = vector3(454.27, -841.57, 27.62), name = 'blip_weedprocessing', color = 0, sprite = 6, radius = 10.0}
---X: 454.92874 Y: -841.5122 Z: 27.647983 H: 73.541542
+Cow.hopsua = {coords = vector3(2503.19, 4799.74, 35.02)}
+-- Cow.hopsua = vector3(2502.33, 4798.65, 35.0),

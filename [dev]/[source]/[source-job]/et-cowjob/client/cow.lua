@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
 	SetBlipAsShortRange(blip, true)
 	SetBlipColour(blip, 16)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Bóp Zú Bò") -- Mudar nome do Blip aqui!
+	AddTextComponentSubstringPlayerName("Bóp Zú Bòa") -- Mudar nome do Blip aqui!
     EndTextCommandSetBlipName(blip)
 end)
 
@@ -42,7 +42,7 @@ Citizen.CreateThread(function()
 	SetBlipAsShortRange(blip, true)
 	SetBlipColour(blip, 17)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Nướng Thịt Bò") -- Mudar nome do Blip aqui!
+	AddTextComponentSubstringPlayerName("Nướng Thịt Bòa") -- Mudar nome do Blip aqui!
     EndTextCommandSetBlipName(blip)
 end)
 
@@ -62,10 +62,10 @@ RegisterNetEvent('lotus-milky:client:Apanhar', function()
                 -- local time = math.random(6,10)
                 -- local circles = 1
                 -- local success = exports['et-ui']:StartLockPickCircle(circles, time, success)
-                exports['et-ui']:Circle(function(success)
+                exports['ps-ui']:Circle(function(success)
                     if success then
                         TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, false)
-                        QBCore.Functions.Progressbar('Apanhar', 'Đang bóp zú...', math.random(15000, 15000), false, true, {
+                        QBCore.Functions.Progressbar('Apanhar', 'Đang bóp zú...',(10), false, true, {
                             disableMovement = true, --
                             disableCarMovement = true,
                             disableMouse = false,
@@ -80,7 +80,7 @@ RegisterNetEvent('lotus-milky:client:Apanhar', function()
                             ClearPedTasks(playerPed) 
                             QBCore.Functions.Notify('Đã hủy.') 
                         end)
-                    else
+                    else    
                         QBCore.Functions.Notify('Bạn bóp nặng tay quá, nhẹ nhẹ thôiii!', 'error')
                     end
                 end, 1, 10)
@@ -110,7 +110,7 @@ RegisterNetEvent('lotus-milky:client:Apanhar', function()
                 --     end
                 -- })
             else
-                QBCore.Functions.Notify('Quá xa con bò...', 'error', 3500)
+                QBCore.Functions.Notify('Quá xa con bòa...', 'error', 3500)
             end
 		--else
 			--QBCore.Functions.Notify('You dont have a towler!', 'error', 3500)
@@ -273,7 +273,8 @@ function PackingMilk()
     TaskPlayAnim(GetPlayerPed(-1), 'amb@medic@standing@tendtodead@idle_a', 'idle_a', 8.0, -8.0, -1, 1, 0.0, 0, 0, 0)
     LoadDict('amb@medic@standing@tendtodead@exit')
     TaskPlayAnim(PlayerPedId(), 'amb@medic@standing@tendtodead@exit', 'exit', 8.0, -8.0, -1, 1, 0.0, 0, 0, 0)
-    QBCore.Functions.Progressbar("search_register", "Đang đóng hộp..", timerPacking, false, true, {disableMovement = true,
+    QBCore.Functions.Progressbar("search_register", "Đang đóng hộp..", timerPacking, false, true, {
+        disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
         disableCombat = true,
@@ -323,7 +324,8 @@ Citizen.CreateThread(function()
     while true do
 	        local s1d7 = false
 	        if inPackingMilkStation then
-                --exports['et-core']:DrawText('[E] Đóng hộp', 'left')
+                Draw3DText(Cow.hopsua.coords.x, Cow.hopsua.coords.y, Cow.hopsua.coords.z, '[E] - Đóng hộp sữa', 1, 0.2, 0.2, Cow.SecondaryColor)
+                -- exports['et-core']:DrawText('[E] Đóng hộp', 'left')
 		        if IsControlJustPressed(0, 38) then 
 					        s1d7 = true
                             PackingMilk()
@@ -391,7 +393,7 @@ RegisterNetEvent('lotus-milky:slaughterCow', function()
 --WORLD_COW_GRAZING
     if nearbyObject and IsPedOnFoot(playerPed) then
         isPickingUp = true
-        QBCore.Functions.TriggerCallback('QBCore:HasItem', function(hasItem)
+        QBCore.Functions.TriggerCallback('QBCore.Functions.HasItem', function(hasItem)
         if hasItem then
             killCowTime(10000)
             --if DoesEntityExist(nearbyObject) then
