@@ -24,39 +24,39 @@ local IsInsideLogoutZone = false
 local function ShowEntranceHeaderMenu()
     local headerMenu = {}
 
-    if IsOwned then
-        headerMenu[#headerMenu+1] = {
-            header = Lang:t('text.enter'),
-            params = {
-                event = 'apartments:client:EnterApartment',
-                args = {}
-            }
-        }
-     elseif not IsOwned then
-        headerMenu[#headerMenu+1] = {
-            header = Lang:t('text.move_here'),
-            params = {
-                event = 'apartments:client:UpdateApartment',
-                args = {}
-            }
-        }
-     end
+    -- if IsOwned then
+    --     headerMenu[#headerMenu+1] = {
+    --         header = Lang:t('text.enter'),
+    --         params = {
+    --             event = 'apartments:client:EnterApartment',
+    --             args = {}
+    --         }
+    --     }
+    --  if not IsOwned then
+    --     headerMenu[#headerMenu+1] = {
+    --         header = Lang:t('text.move_here'),
+    --         params = {
+    --             event = 'apartments:client:UpdateApartment',
+    --             args = {}
+    --         }
+    --     }
+    --  end
 
-    headerMenu[#headerMenu+1] = {
-        header = Lang:t('text.ring_doorbell'),
-        params = {
-            event = 'apartments:client:DoorbellMenu',
-            args = {}
-        }
-    }
+    -- headerMenu[#headerMenu+1] = {
+    --     header = Lang:t('text.ring_doorbell'),
+    --     params = {
+    --         event = 'apartments:client:DoorbellMenu',
+    --         args = {}
+    --     }
+    -- }
 
-    headerMenu[#headerMenu+1] = {
-        header = Lang:t('text.close_menu'),
-        txt = "",
-        params = {
-            event = "et-menu:client:closeMenu"
-        }
-    }
+    -- headerMenu[#headerMenu+1] = {
+    --     header = Lang:t('text.close_menu'),
+    --     txt = "",
+    --     params = {
+    --         event = "et-menu:client:closeMenu"
+    --     }
+    -- }
 
     exports['et-menu']:showHeader(headerMenu)
 end
