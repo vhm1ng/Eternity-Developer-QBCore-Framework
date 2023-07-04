@@ -26,12 +26,12 @@ const DebugLogs = false;
 const EnableDiscordBot = true;
 
 // DISCORD BOT
-const DiscordBotToken = "MTExMTIyNzMyMjkyNjkxMTUxOA.G1j77H.wHZk3sqmS5mwlXPJP37GoerJRRNXUO-VF_1Vjw";
-const DiscordGuildId = "990644706348245043";
+const DiscordBotToken = "MTEyNTc5MDM4NTgwNjAwMDE0OA.GDKPwV.R22_6pq1dpVCj-wWBeuppOqN5J-nE5fZjuwAOE";
+const DiscordGuildId = "1108751413191901255";
 
 // STAFF CHAT
 const EnableStaffChatForwarding = true;
-const DiscordStaffChannelId = "1119852880434823268";
+const DiscordStaffChannelId = "1125191941575954522";
 const AdditionalStaffChatRoleIds = [
     // "000000000000000",
 ];
@@ -43,8 +43,8 @@ const DiscordWhitelistRoleIds = "1119854424014200842";
 // SLASH COMMANDS / DISCORD PERMISSIONS
 const EnableDiscordSlashCommands = true;
 const DiscordModRoleId = "000000000000000000";
-const DiscordAdminRoleId = "000000000000000000";
-const DiscordGodRoleId =  "994780262577733722";
+const DiscordAdminRoleId = "1108752189704392715";
+const DiscordGodRoleId =  "1108757257358946374";
 
 // DISCORD BOT STATUS
 const EnableBotStatusMessages = true;
