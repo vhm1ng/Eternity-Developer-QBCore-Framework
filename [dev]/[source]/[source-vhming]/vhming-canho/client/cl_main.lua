@@ -23,17 +23,17 @@ CreateThread(function()
     local zones = {}
 
     -- Create individual fishing zones and add them to the array
-    for k, v in pairs(Shared.ThangmayZones) do
+    for k, v in pairs(Shared.CanHoZones) do
         if v.box then -- BoxZone
             -- zones[#zones+1] = BoxZone:Create(v.coords, v.length, v.width, {
-            --     name = "ThangmayZones"..k,
+            --     name = "CanHoZones"..k,
             --     minZ = v.minZ,
             --     maxZ = v.maxZ,
             --     debugPoly = false
             -- })
         else -- PolyZone
             zones[#zones+1] = PolyZone:Create(v.points, {
-                name = "ThangmayZones"..k,
+                name = "CanHoZones"..k,
                 minZ = v.minZ,
                 maxZ = v.maxZ,
                 debugGrid = false,
@@ -42,15 +42,15 @@ CreateThread(function()
     end
     -- print('End 1')
     -- Create ComboZone
-    local ThangmayCombo = ComboZone:Create(zones, {
-        name = "ThangmayCombo", 
+    local CanHoCombo = ComboZone:Create(zones, {
+        name = "CanHoCombo", 
         debugPoly = false
     })
     -- print('Tao combozone')
     -- Enter/Exit Fishing Zone
-    ThangmayCombo:onPlayerInOut(function(isPointInside, point, zone)
+    CanHoCombo:onPlayerInOut(function(isPointInside, point, zone)
         if isPointInside then
-            exports['et-core']:DrawText('Thang máy', 'left')
+            exports['et-core']:DrawText('Căn hộ', 'left')
             ctvch = true -- ctvch = Có thể vào căn hộ
         else
             exports['et-core']:HideText()
