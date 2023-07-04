@@ -66,19 +66,19 @@ RegisterServerEvent('lotus-nuongthit:ProcessThitbo',function()
     local a=source;
     local b=QBCore.Functions.GetPlayer(a)
     local c=b.Functions.GetItemByName('thitdongvat')
-    local d=b.Functions.GetItemByName('wood_plank')
+    local d=b.Functions.GetItemByName('tree_bark')
     if c and d then 
         if c.amount>=2 and d.amount>=1 then 
             b.Functions.RemoveItem('thitdongvat',2)
-            b.Functions.RemoveItem('wood_plank',1)
+            b.Functions.RemoveItem('tree_bark',1)
             b.Functions.AddItem('thitbonuong',2)
             TriggerClientEvent("inventory:client:ItemBox",source,QBCore.Shared.Items['thitdongvat'],"remove")
             TriggerClientEvent("inventory:client:ItemBox",source,QBCore.Shared.Items['thitbonuong'],"add")
             TriggerClientEvent('QBCore:Notify',a, 'Bạn đã nướng xong thịt bò',"success", 4000)
         else 
-            TriggerClientEvent('QBCore:Notify',a, 'Bạn cần thêm thịt hoặt gỗ',"error", 4000)
+            TriggerClientEvent('QBCore:Notify',a, 'Bạn cần 2 thịt bòa và 2 vỏ gỗ',"error", 4000)
         end 
     else 
-        TriggerClientEvent('QBCore:Notify',a, 'Bạn cần thêm thịt hoặt gỗ',"error", 4000)
+        TriggerClientEvent('QBCore:Notify',a, 'Bạn cần 2 thịt bòa và 2 vỏ gỗ',"error", 4000)
     end 
 end)
