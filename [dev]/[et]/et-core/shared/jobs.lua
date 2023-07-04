@@ -5,12 +5,12 @@ QBShared.Jobs = {} -- All of below has been migrated into et-jobs
 if QBShared.QBJobsStatus then return end
 QBShared.Jobs = {
 	['unemployed'] = {
-		label = 'Civilian',
+		label = 'Vô gia cư',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Freelancer',
+                name = 'Tự do',
                 payment = 0
             },
         },
@@ -204,6 +204,17 @@ QBShared.Jobs = {
             ['0'] = {
                 name = 'Judge',
                 payment = 100
+            },
+        },
+	},
+    ['ttc'] = {
+		label = 'Tòa thị chính',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Admin',
+                payment = 0
             },
         },
 	},
