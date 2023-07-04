@@ -210,6 +210,14 @@ Config.MenuItems = {
             --     shouldClose = false
             -- }, 
             {
+                id = 'vaocanho',
+                title = 'Vào căn hộ',
+                icon = 'address-book',
+                type = 'client',
+                event = 'vhming-canho:client:VaoCanHo',
+                shouldClose = true
+            }, 
+            {
                 id = 'givenum',
                 title = 'Chia sẻ liên hệ',
                 icon = 'address-book',
