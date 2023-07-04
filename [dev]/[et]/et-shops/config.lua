@@ -183,7 +183,7 @@ Config.Products = {
             slot = 8,
         },
         [9] = {
-            name = "riuchatgo",
+            name = "weapon_battleaxe",
             price = 1000,
             amount = 100,
             info = {},
