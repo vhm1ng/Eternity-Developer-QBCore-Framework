@@ -36,7 +36,7 @@ Config.GracePower = 5
 -- how long grace time lasts in seconds
 Config.GraceTime = 480
 
-Config.AntiSpam = true
+Config.AntiSpam = false
 Config.AntiSpamTimer = 30
 Config.PleaseWait = "Từ từ đã thử lại sau %f giây. Sẽ tự động bắt đầu vào server!"
 
