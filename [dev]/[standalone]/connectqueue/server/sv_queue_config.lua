@@ -10,7 +10,7 @@ Config.Priority = {
 }
 
 -- require people to run steam
-Config.RequireSteam = false
+Config.RequireSteam = true
 
 -- "whitelist" only server
 Config.PriorityOnly = false
@@ -36,9 +36,9 @@ Config.GracePower = 5
 -- how long grace time lasts in seconds
 Config.GraceTime = 480
 
-Config.AntiSpam = false
+Config.AntiSpam = true
 Config.AntiSpamTimer = 30
-Config.PleaseWait = "Please wait %f seconds. The connection will start automatically!"
+Config.PleaseWait = "Từ từ đã thử lại sau %f giây. Sẽ tự động bắt đầu vào server!"
 
 -- on resource start, players can join the queue but will not let them join for __ milliseconds
 -- this will let the queue settle and lets other resources finish initializing
@@ -49,13 +49,13 @@ Config.ShowTemp = false
 
 -- simple localization
 Config.Language = {
-    joining = "\xF0\x9F\x8E\x89Joining...",
-    connecting = "\xE2\x8F\xB3Connecting...",
-    idrr = "\xE2\x9D\x97[Queue] Error: Couldn't retrieve any of your id's, try restarting.",
-    err = "\xE2\x9D\x97[Queue] There was an error",
-    pos = "\xF0\x9F\x90\x8CYou are %d/%d in queue \xF0\x9F\x95\x9C%s",
-    connectingerr = "\xE2\x9D\x97[Queue] Error: Error adding you to connecting list",
-    timedout = "\xE2\x9D\x97[Queue] Error: Timed out?",
-    wlonly = "\xE2\x9D\x97[Queue] You must be whitelisted to join this server",
-    steam = "\xE2\x9D\x97 [Queue] Error: Steam must be running"
+    joining = "\xF0\x9F\x8E\x89Trải nghiệm thôiii...",
+    connecting = "\xE2\x8F\xB31 chút xíu nữa hoi...",
+    idrr = "\xE2\x9D\x97[Hàng chờ] Lỗi: Hãy mở STEAM và DISCORD lên trước mới mở FIVEM.",
+    err = "\xE2\x9D\x97[Hàng chờ] Liên hệ admin VHMing",
+    pos = "\xF0\x9F\x90\x8CBạn đang là số %d/%d trên hàng chờ \xF0\x9F\x95\x9C%s",
+    connectingerr = "\xE2\x9D\x97[Hàng chờ] Lỗi: Lỗi khi thêm bạn vào danh sách kết nối",
+    timedout = "\xE2\x9D\x97[Hàng chờ] Lỗi: Timed out? Ngất xĩu =(((",
+    wlonly = "\xE2\x9D\x97[Hàng chờ] Ơ kìa đã có whitelist đâu. Phải vào ngay mới được - discord.gg/eternity-rp",
+    steam = "\xE2\x9D\x97 [Hàng chờ] Lỗi: Bật STEAM chưa trờiii"
 }
