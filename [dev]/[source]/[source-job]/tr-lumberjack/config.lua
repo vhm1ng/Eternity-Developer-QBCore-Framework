@@ -1,7 +1,7 @@
 Config = Config or {}
 Config.Job = false                                                  -- False = Job is not required / True = Job is required
 Config.UseBlips = true                                              -- True / false option for toggling farm blips
-Config.Timeout = 1 * (30 * 1000)                                   -- 20 minutes
+Config.Timeout = 1 * (30 * 1000)                                   -- 30 senconds
 
 -- Blips
 
@@ -35,7 +35,7 @@ LumberProcessor = {
 LumberSeller = {
     targetZone = vector3(453.35, -759.37, 26.96),
     targetHeading = 131.34,
-    coords = vector4(453.35, -759.37, 26.96, 269.71),
+    coords = vector4(453.35, -759.37, 26.35, 269.71),
     SetBlipSprite = 605,
     SetBlipDisplay = 6,
     SetBlipScale = 0.85,
@@ -85,7 +85,7 @@ Config.Axe = {
 
 Config.TreeLocations = {
     [1] = {
-        ["coords"] = vector3(-504.47, 5392.09, 75.82),
+        ["coords"] = vector3(-504.6, 5391.9, 75.82),
         ["isChopped"] = false,
         ["isOccupied"] = false,
     },
@@ -252,29 +252,29 @@ Config.TreeLocations = {
 }
 
 Config.Alerts = {
-    ['cancel'] = 'Cancelled',
-    ['error_lumber'] = 'You do not have any lumber to do this',
-    ['error_axe'] = 'You dont have a axe to chop the tree',
-    ['lumber_progressbar'] = 'Trading lumber for wooden planks',
-    ['itemamount'] = 'You are trying to process a amount that is invalid try again!',
-    ['lumber_processed_trade'] = 'You successfully traded ',
-    ['lumber_processed_lumberamount'] = ' Amount of Lumber for ',
-    ['lumber_processed_received'] = ' Piles of wooden panks',
-    ['error_sold'] = 'You dont have the items to sell here!',
-    ['successfully_sold'] = 'You have sold your items',
+    ['cancel'] = 'Hủy',
+    ['error_lumber'] = 'Bạn không có đủ gỗ sồi',
+    ['error_axe'] = 'Bạn không có rìu để chặt cây',
+    ['lumber_progressbar'] = 'Đang chế biến gỗ',
+    ['itemamount'] = 'Lỗi. Hãy thử lại!',
+    ['lumber_processed_trade'] = 'Thành công ',
+    ['lumber_processed_lumberamount'] = ' gỗ sồi cho ',
+    ['lumber_processed_received'] = ' ván gỗ',
+    ['error_sold'] = 'Bạn không có đủ số lượng để bán!',
+    ['successfully_sold'] = 'Bán thành công',
 
-    ["axe_check"] = 'You already have a axe',
-    ["axe_bought"] = 'You have bought a axe from the boss for $' ..LumberJob.AxePrice,
+    ["axe_check"] = 'Bạn đã có rìu gòi',
+    ["axe_bought"] = 'Bạn đã mua rìu với giá $' ..LumberJob.AxePrice,
 
-    ['phone_sender'] = 'Lumber Mill Supervisor',
-    ['phone_subject'] = 'Job task',
-    ['phone_message'] = 'You have been tasked to gather lumber near the paleto bay lumber mill. Once you have finished gathering lumber speak to the mill boss to process the lumber.',
+    ['phone_sender'] = 'Giám sát xưởng gỗ',
+    ['phone_subject'] = 'Nhiệm vụ',
+    ['phone_message'] = 'Bạn hãy đi thu thập gỗ ở nhà máy gỗ rồi nói chuyện với ông chủ nhà máy.',
 
-    ['chopping_tree'] = 'Chopping Tree',
+    ['chopping_tree'] = 'Đang chặt gỗ',
 
-    ['Tree_label'] = 'Start Chopping',
-    ['depo_label'] = 'Talk to boss',
-    ['mill_label'] = 'Talk to mill boss',
+    ['Tree_label'] = 'Bắt đầu chặt gỗ',
+    ['depo_label'] = 'Nói chuyện',
+    ['mill_label'] = 'Nói chuyện',
 
     ['depo_blocked'] = 'Vehicle blocking depo',
     ['depo_stored'] = 'Job Vehicle Stored',
@@ -283,18 +283,18 @@ Config.Alerts = {
     ['vehicle_get'] = 'Logger Vehicle',
     ['vehicle_text'] = 'Job Vehicle',
 
-    ['battleaxe_label'] = 'Lumber Axe',
-    ['battleaxe_text'] = 'Axe used for chopping down trees',
+    ['battleaxe_label'] = 'Rìu chặt gỗ',
+    ['battleaxe_text'] = 'Dùng rìu để chặt gõ',
     
-    ['vehicle_remove'] = 'Remove Vehicle',
-    ['remove_text'] = 'Remove Job Vehicle',
+    ['vehicle_remove'] = 'Cất xe',
+    ['remove_text'] = 'Cất xe',
 
     ['lumber_mill'] = 'Lumber Mill',
-    ['lumber_header'] = 'Process Lumber',
-    ['lumber_text'] = 'Trade for wooden planks',
+    ['lumber_header'] = 'Chế biến gỗ',
+    ['lumber_text'] = 'Chế biến thành ván gỗ',
 
-    ['Lumber_Seller'] = 'Sell Lumber',
+    ['Lumber_Seller'] = 'Bán gỗ',
 
-    ['goback'] = '< Go Back',
+    ['goback'] = '< Quay lại',
 
 }
