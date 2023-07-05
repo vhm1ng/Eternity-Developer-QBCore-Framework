@@ -48,5 +48,17 @@ if Config.SuDungBlips then
         BeginTextCommandSetBlipName("STRING")
         AddTextComponentSubstringPlayerName(BlipThiBangBlip.BlipLabel)
         EndTextCommandSetBlipName(ThiBangBlip)
+
+        ChoTrieuKhucBlip = AddBlipForCoord(BlipChoTrieuKhucBlip.coords)
+        SetBlipSprite (ChoTrieuKhucBlip, BlipChoTrieuKhucBlip.SetBlipSprite)
+        SetBlipDisplay(ChoTrieuKhucBlip, BlipThiBangBlip.SetBlipDisplay)
+        SetBlipScale  (ChoTrieuKhucBlip, BlipChoTrieuKhucBlip.SetBlipScale)
+        SetBlipAsShortRange(ChoTrieuKhucBlip, true)
+        SetBlipColour(TChoTrieuKhucBlip, BlipChoTrieuKhucBlip.SetBlipColour)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentSubstringPlayerName(BlipChoTrieuKhucBlip.BlipLabel)
+        EndTextCommandSetBlipName(ChoTrieuKhucBlip)
     end)
 end
+
+
