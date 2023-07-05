@@ -40,7 +40,7 @@ Apartments.Locations = {
         name = "apartment1",
         label = "Chung cư bệnh viện",
         coords = {
-            enter = vector4(284.39, -641.48, 42.02, 163.71),
+            enter = vector4(269.79, -640.89, 42.02, 266.36),
         },
         polyzoneBoxData = {
             heading = 250,
