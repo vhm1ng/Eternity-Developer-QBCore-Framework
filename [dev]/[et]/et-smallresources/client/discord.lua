@@ -11,7 +11,7 @@ CreateThread(function()
 
         if conf.ShowPlayerCount then
             QBCore.Functions.TriggerCallback('smallresources:server:GetCurrentPlayers', function(result)
-                SetRichPresence('Players: ' .. result .. '/' .. conf.MaxPlayers)
+                SetRichPresence(result .. '/' .. conf.MaxPlayers .. ' ghệ đẹp trong TP ' )
             end)
         end
 
