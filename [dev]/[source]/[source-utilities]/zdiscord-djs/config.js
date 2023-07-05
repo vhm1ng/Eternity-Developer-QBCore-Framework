@@ -68,13 +68,13 @@ const SaveScreenshotsToServer = false;
  * WEBHOOK LOGGING SETTINGS
 **************************/
 
-const EnableLoggingWebhooks = false;
+const EnableLoggingWebhooks = true;
 const LoggingWebhookName = "zLogs";
 // put "&" in front of the id if you're to ping a role
 const LoggingAlertPingId = "&000000000000000000";
 // example: "bank": "https://discord.com/webhook/...",
 const LoggingWebhooks = {
-    "example": "https://discord.com/api/webhooks/1119854122947055686/SM6bx8qrcjzahI2eCxC020YXha7L8BFLEHwnZv3IVZQpSTjE3dLlWex4KfyZrKL75qhR",
+    "example": "https://discord.com/api/webhooks/1126147661213466804/pgvgCg9T9oilMImugDh0otAnxGRwWneruPO27uJ_PQjf-9a08zea5HPBiAi9c13vw-r-",
 };
 
 
