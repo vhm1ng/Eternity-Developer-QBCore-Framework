@@ -4649,7 +4649,7 @@ class oi extends ue {
 
 function ql(n) {
     let e, t, o, i, l, s, f, u, a, c, d;
-    t = new oi({ props: { maxLengthDisplay: 66, rotateDegree: 212, ringSize: 5.5, progressColor: "white", outlineColor: "white", outlineColorOpacity: .6, height: 60, width: 60, progressValue: n[0].speed, text: "MKPH", displayNumber: n[0].speed, maxProgressValue: 180 } }), l = new oi({ props: { maxLengthDisplay: 69, rotateDegree: 235, ringSize: 3.5, progressColor: n[0].fuelColor, outlineColor: n[0].fuelColor, outlineColorOpacity: .6, height: 36, width: 36, progressValue: n[0].fuel, icon: Jr, iconColor: "white", iconScaling: .38 } });
+    t = new oi({ props: { maxLengthDisplay: 66, rotateDegree: 212, ringSize: 5.5, progressColor: "white", outlineColor: "white", outlineColorOpacity: .6, height: 60, width: 60, progressValue: n[0].speed, text: "KM/H", displayNumber: n[0].speed, maxProgressValue: 180 } }), l = new oi({ props: { maxLengthDisplay: 69, rotateDegree: 235, ringSize: 3.5, progressColor: n[0].fuelColor, outlineColor: n[0].fuelColor, outlineColorOpacity: .6, height: 36, width: 36, progressValue: n[0].fuel, icon: Jr, iconColor: "white", iconScaling: .38 } });
     let h = n[0].showAltitude && jl(n);
     const _ = [E0, F0],
         k = [];
