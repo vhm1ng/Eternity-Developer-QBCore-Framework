@@ -26,7 +26,7 @@ Config.okokRequests = false -- Player to Player invoices only, to avoid abuse
 
 Config.AuthorReceivesAPercentage = true -- When sending a society invoice
 
-Config.AuthorPercentage = 10 -- Percentage that the invoice author receives
+Config.AuthorPercentage = 0 -- Percentage that the invoice author receives
 
 Config.VATPercentage = 10
 
