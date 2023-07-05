@@ -22,8 +22,8 @@ RegisterNetEvent('et-fishing:client:OpenSale', function()
     -- Start with empty menu
     local menu = {
         {
-            header = "Fish Sale Menu",
-            txt = "ESC or click to close",
+            header = "Bán cá",
+            txt = "ESC hoặc click để tắt",
             icon = 'fas fa-angle-left',
             params = {
                 event = "et-menu:closeMenu",
@@ -37,7 +37,7 @@ RegisterNetEvent('et-fishing:client:OpenSale', function()
         if fish[v.name] then
             menu[#menu+1] = {
                 header = QBCore.Shared.Items[v.name].label,
-                txt = "Amount: "..v.amount,
+                txt = "Số lượng: "..v.amount,
                 icon = "fas fa-fish-fins",
                 params = {
                     event = "et-fishing:client:SellFish",
@@ -54,14 +54,14 @@ end)
 RegisterNetEvent('et-fishing:client:SellFish', function(itemName)
     -- Ask the player how many he wishes to sell
     local sellingAmount = exports['et-input']:ShowInput({
-        header = "Sell "..QBCore.Shared.Items[itemName].label,
-        submitText = "Submit",
+        header = "Bán "..QBCore.Shared.Items[itemName].label,
+        submitText = "Đồng ý",
         inputs = {
             {
                 type = 'number',
                 isRequired = true,
                 name = 'amount',
-                text = 'Amount'
+                text = 'Số lượng'
             }
         }
     })
@@ -105,7 +105,7 @@ RegisterNetEvent('et-fishing:client:SellFish', function(itemName)
             FreezeEntityPosition(playerPed, false)
             isSelling = false
         else
-            QBCore.Functions.Notify('You don\t have enough '..QBCore.Shared.Items[itemName].label, 'error', 2500)
+            QBCore.Functions.Notify('Bạn không có đủ '..QBCore.Shared.Items[itemName].label, 'error', 2500)
         end
     end, itemName, tonumber(sellingAmount.amount))
 end)
@@ -141,7 +141,7 @@ CreateThread(function()
                 type = "client",
                 event = "et-fishing:client:OpenSale",
                 icon = 'fas fa-hand-holding-dollar',
-                label = 'Sell Fish',
+                label = 'Bán cá',
             }
         },
         distance = 1.5,

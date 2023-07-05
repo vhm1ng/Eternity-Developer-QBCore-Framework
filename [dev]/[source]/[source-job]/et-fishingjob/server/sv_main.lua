@@ -44,7 +44,7 @@ RegisterNetEvent('et-fishing:server:ReceiveFish', function()
         TriggerClientEvent('inventory:client:ItemBox', Player.PlayerData.source, QBCore.Shared.Items[item], 'add', 1)
         TriggerEvent('et-log:server:CreateLog', 'fishing', 'Received Fish', 'blue', "**"..Player.PlayerData.name .. " (citizenid: "..Player.PlayerData.citizenid.." | id: "..Player.PlayerData.source..")** received 1x "..QBCore.Shared.Items[item].label)
     else
-        TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, 'Your inventory is full already..', 'error', 2500)
+        TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, 'Kho đồ của bạn đã đầy..', 'error', 2500)
     end
 end)
 

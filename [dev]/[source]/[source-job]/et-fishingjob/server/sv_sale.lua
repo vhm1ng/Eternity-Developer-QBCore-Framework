@@ -43,7 +43,7 @@ RegisterNetEvent('et-fishing:server:SellFish', function(fish, amount)
             TriggerEvent('et-log:server:CreateLog', 'fishing', 'Sale Fish', 'lightgreen', "**"..Player.PlayerData.name .. " (citizenid: "..Player.PlayerData.citizenid.." | id: "..Player.PlayerData.source..")** received $"..amount * priceTable[item.name].." for selling "..amount.."x "..QBCore.Shared.Items[item.name].label)
 
             -- Notification
-            TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, 'You received $'..amount * priceTable[item.name]..' for selling your '..QBCore.Shared.Items[item.name].label, 'success', 2500)
+            TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, 'Bạn nhận $'..amount * priceTable[item.name]..' vì đã bán '..QBCore.Shared.Items[item.name].label, 'success', 2500)
         end
     end
 end)
