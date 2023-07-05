@@ -33,16 +33,16 @@ LumberProcessor = {
     maxZ = 81.26,
 }
 LumberSeller = {
-    targetZone = vector3(259.44, -3059.57, 4.86),
+    targetZone = vector3(453.35, -759.37, 26.96),
     targetHeading = 131.34,
-    coords = vector4(259.44, -3059.57, 4.86, 131.34),
+    coords = vector4(453.35, -759.37, 26.96, 269.71),
     SetBlipSprite = 605,
     SetBlipDisplay = 6,
     SetBlipScale = 0.85,
     SetBlipColour = 45,
     BlipLabel = "Lumber Seller",
-    minZ = 2.86,
-    maxZ = 6.86,
+    minZ = 27.1,
+    maxZ = 28.96,
 }
 
 LumberJob = {
