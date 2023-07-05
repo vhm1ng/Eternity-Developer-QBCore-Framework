@@ -17,14 +17,14 @@ QBCore.Functions.CreateUseableItem("xosua", function(source, item)
     end
 end)
 
-QBCore.Functions.CreateUseableItem("knife", function(source, item)
-    --Player = QBCore.Functions.GetPlayer(source)
-    local Player = QBCore.Functions.GetPlayer(source)
-	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
-        TriggerClientEvent("lotus-milky:slaughterCow", source)
-        TriggerClientEvent('lotus-milky:client:dobenknife', source, item.slot)
-    end
-end)
+-- QBCore.Functions.CreateUseableItem("knife", function(source, item)
+--     --Player = QBCore.Functions.GetPlayer(source)
+--     local Player = QBCore.Functions.GetPlayer(source)
+-- 	if Player.Functions.GetItemBySlot(item.slot) ~= nil then
+--         TriggerClientEvent("lotus-milky:slaughterCow", source)
+--         TriggerClientEvent('lotus-milky:client:dobenknife', source, item.slot)
+--     end
+-- end)
 -- Processo
 RegisterServerEvent("lotus-milky:processo")
 AddEventHandler("lotus-milky:processo", function()
