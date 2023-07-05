@@ -46,22 +46,22 @@ Config.EnableWantedLevel = false
 -- To Set This Up visit https://forum.cfx.re/t/how-to-updated-discord-rich-presence-custom-image/157686
 Config.Discord = {
     ["IsEnabled"] = true, -- If set to true, then discord rich presence will be enabled
-    ["ApplicationId"] = '915674222628585472', -- The discord application id
-    ["IconLarge"] = 'logo_name', -- The name of the large icon
+    ["ApplicationId"] = '1096329028559970375', -- The discord application id
+    ["IconLarge"] = 'main', -- The name of the large icon
     ["IconLargeHoverText"] = 'This is a Large icon with text', -- The hover text of the large icon
-    ["IconSmall"] = 'small_logo_name', -- The name of the small icon
+    ["IconSmall"] = 'fivem', -- The name of the small icon
     ["IconSmallHoverText"] = 'This is a Small icon with text', -- The hover text of the small icon
     ["UpdateRate"] = 60000, -- How often the player count should be updated
     ["ShowPlayerCount"] = true, -- If set to true the player count will be displayed in the rich presence
-    ["MaxPlayers"] = 48, -- Maximum amount of players
+    ["MaxPlayers"] = 128, -- Maximum amount of players
     ["Buttons"] = {
         {
-            text = 'First Button!',
-            url = 'fivem://connect/localhost:30120'
+            text = 'Trải nghiệm hoi!',
+            url = 'https://discord.gg/eternity-rp'
         },
         {
-            text = 'Second Button!',
-            url = 'fivem://connect/localhost:30120'
+            text = 'Website',
+            url = 'https://eternity.vnpxe.net/'
         }
     }
 }
