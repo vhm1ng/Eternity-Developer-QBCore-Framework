@@ -99,7 +99,7 @@ QBCore.Functions.CreateUseableItem("parachute", function(source, item)
     TriggerClientEvent("consumables:client:UseParachute", source)
 end)
 
-QBCore.Commands.Add("resetparachute", "Resets Parachute", {}, false, function(source)
+QBCore.Commands.Add("coidu", "Cởi dù", {}, false, function(source)
     TriggerClientEvent("consumables:client:ResetParachute", source)
 end)
 
