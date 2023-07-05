@@ -3,7 +3,7 @@ local QBCore = exports["et-core"]:GetCoreObject()
 RegisterServerEvent('lotus-milky:server:Apanhar', function() 
     local src = source
     local Player  = QBCore.Functions.GetPlayer(src)
-    local quantity = math.random(1, 3)
+    local quantity = math.random(1, 2)
     Player.Functions.AddItem("milk", quantity)
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["milk"], 'add')
 end)
