@@ -378,7 +378,7 @@ end)
 
 RegisterNetEvent('consumables:client:UseParachute', function()
     EquipParachuteAnim()
-    QBCore.Functions.Progressbar("use_parachute", Lang:t('consumables.use_parachute_progress'), 5000, false, true, {
+    QBCore.Functions.Progressbar("use_parachute", Lang:t('consumables.use_parachute_progress'), 5*1000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
         disableMouse = false,
@@ -387,12 +387,16 @@ RegisterNetEvent('consumables:client:UseParachute', function()
         local ped = PlayerPedId()
         TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["parachute"], "remove")
         GiveWeaponToPed(ped, `GADGET_PARACHUTE`, 1, false, false)
-        local ParachuteData = {
-            outfitData = {
-                ["bag"]   = { item = 7, texture = 0},  -- Adding Parachute Clothing
-            }
-        }
-        TriggerEvent('et-clothing:client:loadOutfit', ParachuteData)
+        -- local ParachuteData = {
+        --     outfitData = {
+        --         ["bags"]   = { item = 7, texture = 0},  -- Adding Parachute Clothing
+        --     }
+        -- }
+        -- GiveWeaponToPed(ped, `GADGET_PARACHUTE`, 1, false, false)
+        
+        SetPedComponentVariation(ped, 5, 7, 0, 0)
+
+        -- TriggerEvent('et-clothing:client:loadOutfit', ParachuteData)
         ParachuteEquiped = true
         TaskPlayAnim(ped, "clothingshirt", "exit", 8.0, 1.0, -1, 49, 0, false, false, false)
     end)
@@ -401,7 +405,7 @@ end)
 RegisterNetEvent('consumables:client:ResetParachute', function()
     if ParachuteEquiped then
         EquipParachuteAnim()
-        QBCore.Functions.Progressbar("reset_parachute", Lang:t('consumables.pack_parachute_progress'), 40000, false, true, {
+        QBCore.Functions.Progressbar("reset_parachute", Lang:t('consumables.pack_parachute_progress'), 30*1000, false, true, {
             disableMovement = false,
             disableCarMovement = false,
             disableMouse = false,
@@ -409,12 +413,16 @@ RegisterNetEvent('consumables:client:ResetParachute', function()
         }, {}, {}, {}, function() -- Done
             local ped = PlayerPedId()
             TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["parachute"], "add")
-            local ParachuteRemoveData = {
-                outfitData = {
-                    ["bag"] = { item = 0, texture = 0} -- Removing Parachute Clothing
-                }
-            }
-            TriggerEvent('et-clothing:client:loadOutfit', ParachuteRemoveData)
+            -- local ParachuteRemoveData = {
+            --     outfitData = {
+            --         ["bags"] = { item = 0, texture = 0} -- Removing Parachute Clothing
+            --     }
+            -- }
+
+            -- TriggerEvent('et-clothing:client:loadOutfit', ParachuteRemoveData)
+
+            SetPedComponentVariation(ped, 5, 0, 0, 0) -- Remove the parachute clothing component
+
             TaskPlayAnim(ped, "clothingshirt", "exit", 8.0, 1.0, -1, 49, 0, false, false, false)
             TriggerServerEvent("et-smallpenis:server:AddParachute")
             ParachuteEquiped = false

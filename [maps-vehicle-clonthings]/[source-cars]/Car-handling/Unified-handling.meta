@@ -25492,12 +25492,12 @@
 			<fWeaponDamageMult value="0.300000" />
 			<fDeformationDamageMult value="0.300000" />
 			<fEngineDamageMult value="0.300000" />
-			<fPetrolTankVolume value="65.000000" />
-			<fOilVolume value="5.000000" />
-			<fSeatOffsetDistX value="0.000000" />
-			<fSeatOffsetDistY value="0.000000" />
-			<fSeatOffsetDistZ value="0.000000" />
-			<nMonetaryValue value="35000" />
+     		<fPetrolTankVolume value="100.000000" />
+      		<fOilVolume value="4.500000" />
+      		<fSeatOffsetDistX value="0.000000" />
+      		<fSeatOffsetDistY value="-0.100000" />
+     		<fSeatOffsetDistZ value="0.100000" />
+     		<nMonetaryValue value="150000" />
 			<strModelFlags>440010</strModelFlags>
 			<strHandlingFlags>0</strHandlingFlags>
 			<strDamageFlags>0</strDamageFlags>
@@ -25553,12 +25553,12 @@
 			<fWeaponDamageMult value="0.200000" />
 			<fDeformationDamageMult value="0.200000" />
 			<fEngineDamageMult value="0.200000" />
-			<fPetrolTankVolume value="65.000000" />
-			<fOilVolume value="5.000000" />
-			<fSeatOffsetDistX value="0.000000" />
-			<fSeatOffsetDistY value="0.000000" />
-			<fSeatOffsetDistZ value="0.000000" />
-			<nMonetaryValue value="25000" />
+    		<fPetrolTankVolume value="100.000000" />
+    		<fOilVolume value="4.500000" />
+     		<fSeatOffsetDistX value="0.000000" />
+      		<fSeatOffsetDistY value="-0.100000" />
+    		<fSeatOffsetDistZ value="0.100000" />
+    		<nMonetaryValue value="150000" />
 			<strModelFlags>440010</strModelFlags>
 			<strHandlingFlags>1</strHandlingFlags>
 			<strDamageFlags>0</strDamageFlags>
@@ -25614,12 +25614,12 @@
 			<fWeaponDamageMult value="0.100000" />
 			<fDeformationDamageMult value="0.100000" />
 			<fEngineDamageMult value="0.100000" />
-			<fPetrolTankVolume value="65.000000" />
-			<fOilVolume value="5.000000" />
-			<fSeatOffsetDistX value="0.000000" />
-			<fSeatOffsetDistY value="0.000000" />
-			<fSeatOffsetDistZ value="0.000000" />
-			<nMonetaryValue value="25000" />
+		    <fPetrolTankVolume value="100.000000" />
+      		<fOilVolume value="4.500000" />
+      		<fSeatOffsetDistX value="0.000000" />
+      		<fSeatOffsetDistY value="-0.100000" />
+      		<fSeatOffsetDistZ value="0.100000" />
+      		<nMonetaryValue value="150000" />
 			<strModelFlags>440010</strModelFlags>
 			<strHandlingFlags>20000</strHandlingFlags>
 			<strDamageFlags>0</strDamageFlags>
