@@ -1024,7 +1024,7 @@ Config.JobInteractions = {
             title = 'Nhận Ca',
             icon = 'user-md',
             type = 'client',
-            event = 'rst-ping:openMenu',
+            event = 'vhming-ping:openMenu',
             shouldClose = true
         },
         {
