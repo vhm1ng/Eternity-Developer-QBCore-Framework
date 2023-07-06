@@ -92,13 +92,13 @@ RegisterCommand('911', function(source, args, rawCommand)
                 DeletePhone()
                 StopEntityAnim(PlayerPedId(), 'cellphone_text_to_call', "cellphone@", 3)
             else
-                QBCore.Functions.Notify("Bạn không thể gọi điện mà không có điện thoại!", "error", 4500)
+                QBCore.Functions.Notify("You can't call without a Phone!", "error", 4500)
             end
         else
-            QBCore.Functions.Notify("Bạn không thể gọi cảnh sát khi đang bị còng!", "error", 4500)
+            QBCore.Functions.Notify("You can't call police while handcuffed!", "error", 4500)
         end
     else
-        QBCore.Functions.Notify('Hãy điền nội dung sau 911', "success")
+        QBCore.Functions.Notify('Please put a reason after the 911', "success")
     end
 end)
 
@@ -134,13 +134,13 @@ RegisterCommand('911a', function(source, args, rawCommand)
                 DeletePhone()
                 StopEntityAnim(PlayerPedId(), 'cellphone_text_to_call', "cellphone@", 3)
             else
-                QBCore.Functions.Notify("Bạn không thể gọi điện mà không có điện thoại!", "error", 4500)
+                QBCore.Functions.Notify("You can't call without a Phone!", "error", 4500)
             end
         else
-            QBCore.Functions.Notify("Bạn không thể gọi cảnh sát khi đang bị còng!", "error", 4500)
+            QBCore.Functions.Notify("You can't call police while handcuffed!", "error", 4500)
         end
     else
-        QBCore.Functions.Notify('Hãy điền nội dung sau 911', "success")
+        QBCore.Functions.Notify('Please put a reason after the 911', "success")
     end
 end)
 
@@ -177,13 +177,13 @@ RegisterCommand('311', function(source, args, rawCommand)
                 DeletePhone()
                 StopEntityAnim(PlayerPedId(), 'cellphone_text_to_call', "cellphone@", 3)
             else
-                QBCore.Functions.Notify("Bạn không thể gọi điện mà không có điện thoại!", "error", 4500)
+                QBCore.Functions.Notify("You can't call without a Phone!", "error", 4500)
             end
         else
-            QBCore.Functions.Notify("Bạn không thể gọi cảnh sát khi đang bị còng!", "error", 4500)
+            QBCore.Functions.Notify("You can't call police while handcuffed!", "error", 4500)
         end
     else
-        QBCore.Functions.Notify('Hãy điền nội dung sau 911', "success")
+        QBCore.Functions.Notify('Please put a reason after the 911', "success")
     end
 end)
 
@@ -220,20 +220,20 @@ RegisterCommand('311a', function(source, args, rawCommand)
                 DeletePhone()
                 StopEntityAnim(PlayerPedId(), 'cellphone_text_to_call', "cellphone@", 3)
             else
-                QBCore.Functions.Notify("Bạn không thể gọi điện mà không có điện thoại!", "error", 4500)
+                QBCore.Functions.Notify("You can't call without a Phone!", "error", 4500)
             end
         else
-            QBCore.Functions.Notify("Bạn không thể gọi cảnh sát khi đang bị còng!", "error", 4500)
+            QBCore.Functions.Notify("You can't call police while handcuffed!", "error", 4500)
         end
     else
-        QBCore.Functions.Notify('Bạn không thể gọi cảnh sát khi đang bị còng!', "success")
+        QBCore.Functions.Notify('Please put a reason after the 911', "success")
     end
 end)
 
 
 Citizen.CreateThread(function()
-    TriggerEvent('chat:addSuggestion', '/911', 'Gửi tin nhắn cho cảnh sát.', {{ name="message", help="Message to police."}})
-    TriggerEvent('chat:addSuggestion', '/911a', 'Gửi tin nhắn ẩn danh cho cảnh sát.', {{ name="message", help="Message to police anonymous."}})
-    TriggerEvent('chat:addSuggestion', '/311', 'Gửi tin nhắn cho bác sĩ.', {{ name="message", help="Message to EMS."}})
-    TriggerEvent('chat:addSuggestion', '/311a', 'Gửi tin nhắn ẩn danh cho bác sĩ.', {{ name="message", help="Message to EMS anonymous."}})
+    -- TriggerEvent('chat:addSuggestion', '/911', 'Send a message to the police.', {{ name="message", help="Message to police."}})
+    -- TriggerEvent('chat:addSuggestion', '/911a', 'Send a message to the police anonymously.', {{ name="message", help="Message to police anonymous."}})
+    -- TriggerEvent('chat:addSuggestion', '/311', 'Send a message to the EMS.', {{ name="message", help="Message to EMS."}})
+    -- TriggerEvent('chat:addSuggestion', '/311a', 'Send a message to the EMS anonymously.', {{ name="message", help="Message to EMS anonymous."}})
 end)
