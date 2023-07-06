@@ -89,19 +89,19 @@ function setupCharInfo(cData) {
     if (cData == 'empty') {
         $('.character-info-valid').html('<span id="no-char"><br><br></span>');
     } else {
-        var gender = "Man"
-        if (cData.charinfo.gender == 1) { gender = "Woman" }
+        var gender = "Nam"
+        if (cData.charinfo.gender == 1) { gender = "Nữ" }
         $('.character-info-valid').html(
-        '<div class="character-info-box"><span id="info-label">Name: </span><span class="char-info-js">'+cData.charinfo.firstname+' '+cData.charinfo.lastname+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Birth: </span><span class="char-info-js">'+cData.charinfo.birthdate+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Sex: </span><span class="char-info-js">'+gender+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Nationality: </span><span class="char-info-js">'+cData.charinfo.nationality+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Job: </span><span class="char-info-js">'+cData.job.label+'</span></div>' +
-	    '<div class="character-info-box"><span id="info-label">Grade: </span><span class="char-info-js">' + cData.job.grade.name + '</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Cash: </span><span class="char-info-js">&#36; '+dollar.format(cData.money.cash)+'$</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Bank: </span><span class="char-info-js">&#36; '+dollar.format(cData.money.bank)+'$</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Phone number: </span><span class="char-info-js">'+cData.charinfo.phone+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Account: </span><span class="char-info-js">'+cData.charinfo.account+'</span></div>');
+        '<div class="character-info-box"><span id="info-label">Họ và tên: </span><span class="char-info-js">'+cData.charinfo.firstname+' '+cData.charinfo.lastname+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">Ngày sinh: </span><span class="char-info-js">'+cData.charinfo.birthdate+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">Giới tính: </span><span class="char-info-js">'+gender+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">Quốc tịch: </span><span class="char-info-js">'+cData.charinfo.nationality+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">Nghề: </span><span class="char-info-js">'+cData.job.label+'</span></div>' +
+	    '<div class="character-info-box"><span id="info-label">Chức: </span><span class="char-info-js">' + cData.job.grade.name + '</span></div>' +
+        '<div class="character-info-box"><span id="info-label">Tiền: </span><span class="char-info-js">&#36; '+dollar.format(cData.money.cash)+'$</span></div>' +
+        '<div class="character-info-box"><span id="info-label">Ngân hàng: </span><span class="char-info-js">&#36; '+dollar.format(cData.money.bank)+'$</span></div>' +
+        '<div class="character-info-box"><span id="info-label">SDT: </span><span class="char-info-js">'+cData.charinfo.phone+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">TK Ngân hàng: </span><span class="char-info-js">'+cData.charinfo.account+'</span></div>');
     }
 }
 
@@ -278,7 +278,7 @@ function setCharactersList() {
     var htmlResult = '<div class="character-list-header"></div>'
     htmlResult += '<div class="characters">'
     for (let i = 1; i <= NChar; i++) {
-        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><div class="user"><i class="fa-solid fa-plus"></i></div><span id="slot-name">Empty slot<span id="cid"></span></span></div>'
+        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><div class="user"><i class="fa-solid fa-plus"></i></div><span id="slot-name">Trống<span id="cid"></span></span></div>'
     }
     htmlResult += '</div>'
     $('.characters-list').html(htmlResult)
@@ -287,7 +287,7 @@ function setCharactersList() {
 function refreshCharacters() {
     var htmlResult = ''
     for (let i = 1; i <= NChar; i++) {
-        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><div class="user"><i class="fa-solid fa-plus"></i></div><span id="slot-name">Empty slot<span id="cid"></span></span></div>'
+        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><div class="user"><i class="fa-solid fa-plus"></i></div><span id="slot-name">Trống<span id="cid"></span></span></div>'
     }
 
     $('.characters-list').html(htmlResult)
