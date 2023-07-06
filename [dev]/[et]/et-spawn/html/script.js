@@ -31,7 +31,7 @@ $(document).on('click', '.location', function(evt){
     var type = $(this).data('type'); //get the text
     var label = $(this).data('label'); //get the text
     if (type !== "lab") {
-        $("#spawn-label").html("Confirm")
+        $("#spawn-label").html("Đồng ý")
         $("#submit-spawn").attr("data-location", location);
         $("#submit-spawn").attr("data-type", type);
         $("#submit-spawn").fadeIn(100)
@@ -71,7 +71,7 @@ function setupLocations(locations, myHouses) {
     var parent = $('.spawn-locations')
     $(parent).html("");
 
-    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="Where would you like to start?"><p><span id="null">Where would you like to start?</span></p></div>')
+    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="Chọn điểm bạn muốn bắt đầu"><p><span id="null">Chọn điểm bạn muốn bắt đầu</span></p></div>')
     
     setTimeout(function(){
         $(parent).append('<div class="location" id="location" data-location="current" data-type="current" data-label="Địa điểm cuối cùng"><p><span id="current-location">Địa điểm cuối cùng</span></p></div>');
