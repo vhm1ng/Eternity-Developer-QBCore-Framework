@@ -38,7 +38,7 @@ Apartments.Locations = {
     -- },
     ["apartment1"] = {
         name = "apartment1",
-        label = "Chung cư bệnh viện",
+        label = "HN Centerpoint",
         coords = {
             enter = vector4(269.79, -640.89, 42.02, 266.36),
         },
