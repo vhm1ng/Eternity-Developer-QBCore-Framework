@@ -26,10 +26,10 @@ RegisterNetEvent('tr-lumberjack:BuyAxe', function()
     local source = source
     local Player = QBCore.Functions.GetPlayer(tonumber(source))
     local TRAxeClassicPrice = LumberJob.AxePrice
-    local axe = Player.Functions.GetItemByName('weapon_battleaxe')
+    local axe = Player.Functions.GetItemByName('riuchatgo')
     if not axe then
-        Player.Functions.AddItem('weapon_battleaxe', 1)
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['weapon_battleaxe'], "add")
+        Player.Functions.AddItem('riuchatgo', 1)
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['riuchatgo'], "add")
         Player.Functions.RemoveMoney("cash", TRAxeClassicPrice)
         TriggerClientEvent('QBCore:Notify', source, Config.Alerts["axe_bought"])
     elseif axe then
@@ -40,7 +40,7 @@ end)
 QBCore.Functions.CreateCallback('tr-lumberjack:axe', function(source, cb)
     local Player = QBCore.Functions.GetPlayer(source)
     if Player ~= nil then
-        if Player.Functions.GetItemByName("weapon_battleaxe") ~= nil then
+        if Player.Functions.GetItemByName("riuchatgo") ~= nil then
             cb(true)
         else
             cb(false)

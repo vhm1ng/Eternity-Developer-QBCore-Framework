@@ -42,6 +42,8 @@ QBShared.Items = {
 	['phone_module'] 			 	 = {['name'] = 'phone_module', 			  	    ['label'] = 'Phone Module', 			['weight'] = 300, 		['type'] = 'item', 		['image'] = 'phone_module.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'It seems that we can fix a wet phone with this module, interesting.'},
 
 -- Nghề Gỗ
+-- riuchatgo
+	["riuchatgo"]					= {["name"] = "riuchatgo",  	  				["label"] = "Rìu chặt gỗ",	  			["weight"] = 1000, 		["type"] = "item", 		["image"] = "weapon_battleaxe.png", 	["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 	["tree_lumber"]					= {["name"] = "tree_lumber",  	  				["label"] = "Gỗ sồi",	  				["weight"] = 2000, 		["type"] = "item", 		["image"] = "lumber.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 	["tree_bark"]					= {["name"] = "tree_bark",  	  				["label"] = "Vỏ gỗ",	  				["weight"] = 100, 		["type"] = "item", 		["image"] = "treebark.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},
 	["wood_plank"]					= {["name"] = "wood_plank",  	  				["label"] = "Ván gỗ",	  				["weight"] = 1000, 		["type"] = "item", 		["image"] = "woodplank.png", 			["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = ""},

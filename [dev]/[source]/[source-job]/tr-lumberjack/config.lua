@@ -80,7 +80,7 @@ Config.Sell = {
 }
 
 Config.Axe = {
-    [`weapon_battleaxe`] = {}
+    [`riuchatgo`] = {}
 }
 
 Config.TreeLocations = {

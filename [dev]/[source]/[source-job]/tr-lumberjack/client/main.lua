@@ -66,9 +66,9 @@ RegisterNetEvent('tr-lumberjack:StartChopping', function()
             -- if axe() then
             --     ChopLumber(k)
             -- end
-            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(weapon_battleaxe)
+            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(riuchatgo)
                 -- if axe() then
-                if weapon_battleaxe then
+                if riuchatgo then
             -- if axe() then
                 ChopLumber(k)
             -- end
@@ -93,9 +93,9 @@ if Config.Job then
                 options = {
                     {
                         action = function()
-                            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(weapon_battleaxe)
+                            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(riuchatgo)
                                 -- if axe() then
-                                if weapon_battleaxe then
+                                if riuchatgo then
                             -- if axe() then
                                 ChopLumber(k)
                             -- end
@@ -189,9 +189,9 @@ else
                 options = {
                     {
                         action = function()
-                            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(weapon_battleaxe)
+                            QBCore.Functions.TriggerCallback('tr-lumberjack:axe', function(riuchatgo)
                                 -- if axe() then
-                                if weapon_battleaxe then
+                                if riuchatgo then
                             -- if axe() then
                                 ChopLumber(k)
                             -- end
