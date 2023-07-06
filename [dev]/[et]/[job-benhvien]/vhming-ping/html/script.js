@@ -6,7 +6,7 @@ function menuToggle(state, send) {
         $(".info").hide();
     }
     if(send){
-        $.post("https://rst-ping/toggle",JSON.stringify({state:state}));
+        $.post("https://vhming-ping/toggle",JSON.stringify({state:state}));
     }
 }
 
@@ -28,12 +28,12 @@ $(function(){
 
     $(document).on("click",".nhan",function(){
         if($(this).val() != 0){
-            $.post("https://rst-ping/nhan",JSON.stringify({id:$(this).val(), x: $(this).attr('x'), y: $(this).attr('y')}));
+            $.post("https://vhming-ping/nhan",JSON.stringify({id:$(this).val(), x: $(this).attr('x'), y: $(this).attr('y')}));
         }
     });
 
     $(document).on("click",".huy",function(){
-        $.post("https://rst-ping/huy",JSON.stringify({id:$(this).val()}));
+        $.post("https://vhming-ping/huy",JSON.stringify({id:$(this).val()}));
     });
 
     $(document).on("click",".xoa",function(){
@@ -51,7 +51,7 @@ $(function(){
           callback: function (value) {
             var response = value ? "Yes" : "No";
             if(response == "Yes"){
-                $.post("https://rst-ping/xoa",JSON.stringify({id:data}));
+                $.post("https://vhming-ping/xoa",JSON.stringify({id:data}));
             }
           }
         });

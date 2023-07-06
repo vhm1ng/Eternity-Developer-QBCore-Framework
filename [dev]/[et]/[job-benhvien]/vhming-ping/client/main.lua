@@ -4,27 +4,27 @@ local inMenu = false
 local menu = false
 local QBCore = exports['et-core']:GetCoreObject()
 
-RegisterNetEvent('rst-ping:openMenu')
-AddEventHandler('rst-ping:openMenu',function()
+RegisterNetEvent('vhming-ping:openMenu')
+AddEventHandler('vhming-ping:openMenu',function()
     OpenMenu()
     inMenu = true
 end)
 RegisterCommand('openmenu',function()
     if QBCore.Functions.GetPlayerData().job.name =='ambulance' then
-        TriggerEvent('rst-ping:openMenu')
+        TriggerEvent('vhming-ping:openMenu')
     end
 end)
 
 RegisterCommand('115', function()
-    TriggerServerEvent('rst-ping:requestForServerP',GetEntityCoords(PlayerPedId()))
+    TriggerServerEvent('vhming-ping:requestForServerP',GetEntityCoords(PlayerPedId()))
 end)
-RegisterNetEvent('rst-ping:getDataFromServerP')
-AddEventHandler('rst-ping:getDataFromServerP', function(data)
+RegisterNetEvent('vhming-ping:getDataFromServerP')
+AddEventHandler('vhming-ping:getDataFromServerP', function(data)
     pings = data
 end)
 
-RegisterNetEvent('rst-ping:dataInitP')
-AddEventHandler('rst-ping:dataInitP',function()
+RegisterNetEvent('vhming-ping:dataInitP')
+AddEventHandler('vhming-ping:dataInitP',function()
     if inMenu then
         for k,v in ipairs(pings) do
             local cord = vector3(v.cords.x,v.cords.y,v.cords.z)
@@ -44,7 +44,7 @@ end)
 
 RegisterNUICallback('xoa',function(data)
     print(data.id)
-    TriggerServerEvent('rst-ping:removeP',data.id)
+    TriggerServerEvent('vhming-ping:removeP',data.id)
 end)
 
 
@@ -53,7 +53,7 @@ end)
 RegisterNUICallback('nhan',function(data)
     print(data.x,data.y)
     SetNewWaypoint(tonumber(data.x), tonumber(data.y))
-    TriggerServerEvent('rst-ping:updateP',data.id)
+    TriggerServerEvent('vhming-ping:updateP',data.id)
 end)
 
 function OpenMenu()
@@ -78,7 +78,7 @@ function OpenMenu()
 end
 
 RegisterNUICallback('huy',function(data)
-    TriggerServerEvent('rst-ping:cancelP',data.id)
+    TriggerServerEvent('vhming-ping:cancelP',data.id)
 end)
 
 function toggle(state,send)

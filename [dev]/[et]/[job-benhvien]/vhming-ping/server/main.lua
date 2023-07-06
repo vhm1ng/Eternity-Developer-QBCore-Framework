@@ -2,8 +2,8 @@ QBCore = nil
 local tableDsBs = {}
 local QBCore = exports['et-core']:GetCoreObject()
 
-RegisterNetEvent('rst-ping:requestForServerP')
-AddEventHandler('rst-ping:requestForServerP', function(coords)
+RegisterNetEvent('vhming-ping:requestForServerP')
+AddEventHandler('vhming-ping:requestForServerP', function(coords)
     local src = source
     for k, v in pairs(tableDsBs) do
         if v.id == source then
@@ -16,17 +16,17 @@ AddEventHandler('rst-ping:requestForServerP', function(coords)
     for i=1, #xPlayers, 1 do
         local xPlayer = QBCore.Functions.GetPlayer(xPlayers[i])
         if xPlayer.PlayerData.job.name == 'ambulance' then
-            TriggerClientEvent('rst-ping:getDataFromServerP', xPlayers[i], tableDsBs)
-            TriggerClientEvent("QBCore:Notify",src, "Bạn đã ping MED",'success',3000)
-            TriggerClientEvent("QBCore:Notify",xPlayers[i], GetPlayerName(source).." vừa gọi MEDIC ",'success',3000)
-            TriggerEvent("InteractSound_SV:PlayOnSource", "Shop", 0.5)
-            TriggerClientEvent('rst-ping:dataInitP',xPlayers[i])
+            TriggerClientEvent('vhming-ping:getDataFromServerP', xPlayers[i], tableDsBs)
+            TriggerClientEvent("QBCore:Notify",src, "Bạn đã gọi bệnh viện ETERNITY HOSPITAL",'success',3000)
+            TriggerClientEvent("QBCore:Notify",xPlayers[i], GetPlayerName(source).." vừa gọi Bác sĩ ",'success',3000)
+            TriggerClientEvent('InteractSound_CL:PlayOnOne', xPlayers[i], 'pingbs', 0.5)
+            TriggerClientEvent('vhming-ping:dataInitP',xPlayers[i])
         end
     end
 end)
 
-RegisterServerEvent("rst-ping:updateP")
-AddEventHandler("rst-ping:updateP", function(id)
+RegisterServerEvent("vhming-ping:updateP")
+AddEventHandler("vhming-ping:updateP", function(id)
     local src = source
     local text = GetPlayerName(source)
     for k, v in pairs(tableDsBs) do
@@ -40,9 +40,9 @@ AddEventHandler("rst-ping:updateP", function(id)
                 for i=1, #xPlayers, 1 do
                     local xPlayer = QBCore.Functions.GetPlayer(xPlayers[i])
                     if xPlayer.PlayerData.job.name == 'ambulance' then
-                        TriggerClientEvent('rst-ping:getDataFromServerP',  xPlayers[i], tableDsBs)
+                        TriggerClientEvent('vhming-ping:getDataFromServerP',  xPlayers[i], tableDsBs)
                         TriggerClientEvent("QBCore:Notify",xPlayers[i], GetPlayerName(source).." đã nhận "..GetPlayerName(id),'success',3000,'success',3000)
-                        TriggerClientEvent('rst-ping:dataInitP',xPlayers[i])
+                        TriggerClientEvent('vhming-ping:dataInitP',xPlayers[i])
                     end
                 end
                 TriggerClientEvent("QBCore:Notify", source, "Bạn đã nhận "..GetPlayerName(id),'success',3000)
@@ -51,8 +51,8 @@ AddEventHandler("rst-ping:updateP", function(id)
     end
 end)
 
-RegisterNetEvent('rst-ping:cancelP')
-AddEventHandler('rst-ping:cancelP',function(id)
+RegisterNetEvent('vhming-ping:cancelP')
+AddEventHandler('vhming-ping:cancelP',function(id)
     for k, v  in pairs(tableDsBs) do
         if tonumber(v.id) == tonumber(id) then
             tableDsBs[k].status = 0
@@ -60,17 +60,17 @@ AddEventHandler('rst-ping:cancelP',function(id)
             for i=1, #xPlayers, 1 do
                 local xPlayer = QBCore.Functions.GetPlayer(xPlayers[i])
                 if xPlayer.PlayerData.job.name == 'ambulance' then
-                    TriggerClientEvent('rst-ping:getDataFromServerP',  xPlayers[i], tableDsBs)
+                    TriggerClientEvent('vhming-ping:getDataFromServerP',  xPlayers[i], tableDsBs)
                     TriggerClientEvent("QBCore:Notify",xPlayers[i], GetPlayerName(source).." đã hủy yêu cầu của "..GetPlayerName(id),'success',3000)
-                    TriggerClientEvent('rst-ping:dataInitP',xPlayers[i])
+                    TriggerClientEvent('vhming-ping:dataInitP',xPlayers[i])
                 end
             end
         end
     end
 end)
 
-RegisterNetEvent('rst-ping:removeP')
-AddEventHandler('rst-ping:removeP',function(id)
+RegisterNetEvent('vhming-ping:removeP')
+AddEventHandler('vhming-ping:removeP',function(id)
     local src = source
     for k, v in pairs(tableDsBs) do
         if tonumber(v.id) == tonumber(id) then
@@ -80,8 +80,8 @@ AddEventHandler('rst-ping:removeP',function(id)
                 local xPlayer = QBCore.Functions.GetPlayer(xPlayers[i])
                 if xPlayer.PlayerData.job.name == 'ambulance' then
                     TriggerClientEvent('QBCore:Notify',xPlayers[i], GetPlayerName(src)..' đã xóa yêu cầu của '..GetPlayerName(id),'success',3000)
-                    TriggerClientEvent('rst-ping:getDataFromServerP',  xPlayers[i], tableDsBs)
-                    TriggerClientEvent('rst-ping:dataInitP',xPlayers[i])
+                    TriggerClientEvent('vhming-ping:getDataFromServerP',  xPlayers[i], tableDsBs)
+                    TriggerClientEvent('vhming-ping:dataInitP',xPlayers[i])
                 end
             end
         end
@@ -89,8 +89,8 @@ AddEventHandler('rst-ping:removeP',function(id)
 end)
 
 
-RegisterNetEvent('rst-ping:requestRemoveP')
-AddEventHandler('rst-ping:requestRemoveP',function()
+RegisterNetEvent('vhming-ping:requestRemoveP')
+AddEventHandler('vhming-ping:requestRemoveP',function()
     local src = source
     for k,v in pairs(tableDsBs) do
         if tonumber(v.id) == tonumber(src) then
@@ -100,8 +100,8 @@ AddEventHandler('rst-ping:requestRemoveP',function()
                 local xPlayer = QBCore.Functions.GetPlayer(xPlayers[i])
                 if xPlayer.PlayerData.job.name == 'ambulance' then
                     TriggerClientEvent('QBCore:Notify',xPlayers[i], GetPlayerName(src)..' đã tự hủy yêu cầu Med','success',3000)
-                    TriggerClientEvent('rst-ping:getDataFromServerP',  xPlayers[i], tableDsBs)
-                    TriggerClientEvent('rst-ping:dataInitP',xPlayers[i])
+                    TriggerClientEvent('vhming-ping:getDataFromServerP',  xPlayers[i], tableDsBs)
+                    TriggerClientEvent('vhming-ping:dataInitP',xPlayers[i])
                 end
             end
             TriggerClientEvent('QBCore:Notify',src,'Bạn đã hủy yêu cầu thành công','success',3000)
