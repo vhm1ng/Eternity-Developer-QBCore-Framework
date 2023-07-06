@@ -8,7 +8,7 @@ local spam = true
  
 
 
-RegisterCommand("huhu", function(source, args, raw)
+RegisterCommand("troicuu", function(source, args, raw)
 	if (QBCore.Functions.GetPlayerData().metadata["isdead"]) or (QBCore.Functions.GetPlayerData().metadata["inlaststand"]) and spam then
 		QBCore.Functions.TriggerCallback('hhfw:docOnline', function(EMSOnline, hasEnoughMoney)
 			if EMSOnline <= Config.Doctor and hasEnoughMoney and spam then
