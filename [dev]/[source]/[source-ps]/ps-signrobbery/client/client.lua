@@ -438,7 +438,7 @@ CreateThread(function()
                 type = 'client',
                 event = "et-signrobbery:client:StopSign",
                 icon = 'fas fa-user-secret',
-                label = 'Steal Sign',
+                label = 'Lau sạch biển',
             }
         },
         distance = 4.0, 
