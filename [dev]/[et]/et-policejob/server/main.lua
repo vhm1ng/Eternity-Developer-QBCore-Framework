@@ -29,7 +29,7 @@ local function UpdateBlips()
             }
         end
     end
-    TriggerClientEvent("police:client:UpdateBlips", -1, dutyPlayers)
+    -- TriggerClientEvent("police:client:UpdateBlips", -1, dutyPlayers)
 end
 
 local function CreateBloodId()
@@ -908,9 +908,9 @@ RegisterNetEvent('police:server:RobPlayer', function(playerId)
     TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t("info.stolen_money", {stolen = money}))
 end)
 
-RegisterNetEvent('police:server:UpdateBlips', function()
-    -- KEEP FOR REF BUT NOT NEEDED ANYMORE.
-end)
+-- RegisterNetEvent('police:server:UpdateBlips', function()
+--     -- KEEP FOR REF BUT NOT NEEDED ANYMORE.
+-- end)
 
 RegisterNetEvent('police:server:spawnObject', function(type)
     local src = source

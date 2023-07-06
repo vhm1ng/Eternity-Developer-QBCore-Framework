@@ -456,7 +456,8 @@ end)
 RegisterNetEvent('et-policejob:ToggleDuty', function()
     TriggerServerEvent("QBCore:ToggleDuty")
     TriggerServerEvent("police:server:UpdateCurrentCops")
-    TriggerServerEvent("police:server:UpdateBlips")
+-- dit me may fivem
+    -- TriggerServerEvent("police:server:UpdateBlips")
 end)
 
 RegisterNetEvent('et-police:client:scanFingerPrint', function()
@@ -534,7 +535,8 @@ local function dutylistener()
                 if IsControlJustReleased(0, 38) then
                     TriggerServerEvent("QBCore:ToggleDuty")
                     TriggerServerEvent("police:server:UpdateCurrentCops")
-                    TriggerServerEvent("police:server:UpdateBlips")
+                    -- dit me may fivem
+                    -- TriggerServerEvent("police:server:UpdateBlips")
                     dutylisten = false
                     break
                 end

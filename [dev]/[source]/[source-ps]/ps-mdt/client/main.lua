@@ -53,7 +53,7 @@ RegisterNetEvent("QBCore:Client:SetDuty", function(job, state)
         elseif (PlayerData.job.name == "ambulance" or PlayerData.job.type == "ems") and not job then
             TriggerServerEvent('hospital:server:RemoveDoctor', 'ambulance')
         end
-        TriggerServerEvent("police:server:UpdateBlips")
+        -- TriggerServerEvent("police:server:UpdateBlips")
     end
 end)
 

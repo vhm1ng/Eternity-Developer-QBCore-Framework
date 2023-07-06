@@ -478,7 +478,8 @@ end)
 RegisterNetEvent('EMSToggle:Duty', function()
     onDuty = not onDuty
     TriggerServerEvent("QBCore:ToggleDuty")
-    TriggerServerEvent("police:server:UpdateBlips")
+-- Dit me fivem
+    -- TriggerServerEvent("police:server:UpdateBlips")
 end)
 
 CreateThread(function()

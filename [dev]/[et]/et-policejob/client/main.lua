@@ -44,7 +44,8 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     PlayerJob = player.job
     isHandcuffed = false
     TriggerServerEvent("police:server:SetHandcuffStatus", false)
-    TriggerServerEvent("police:server:UpdateBlips")
+                        -- dit me may fivem
+    -- TriggerServerEvent("police:server:UpdateBlips")
     TriggerServerEvent("police:server:UpdateCurrentCops")
 
     if player.metadata.tracker then
@@ -80,7 +81,8 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
-    TriggerServerEvent('police:server:UpdateBlips')
+    -- TriggerServerEvent('police:server:UpdateBlips')
+                        -- dit me may fivem
     TriggerServerEvent("police:server:SetHandcuffStatus", false)
     TriggerServerEvent("police:server:UpdateCurrentCops")
     isHandcuffed = false
@@ -110,7 +112,8 @@ RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
         DutyBlips = {}
     end
     PlayerJob = JobInfo
-    TriggerServerEvent("police:server:UpdateBlips")
+                        -- dit me may fivem
+    -- TriggerServerEvent("police:server:UpdateBlips")
 end)
 
 RegisterNetEvent('police:client:sendBillingMail', function(amount)
@@ -129,6 +132,7 @@ RegisterNetEvent('police:client:sendBillingMail', function(amount)
     end)
 end)
 
+--[[
 RegisterNetEvent('police:client:UpdateBlips', function(players)
     if PlayerJob and (PlayerJob.name == 'police' or PlayerJob.name == 'ambulance') and
         PlayerJob.onduty then
@@ -147,6 +151,7 @@ RegisterNetEvent('police:client:UpdateBlips', function(players)
         end
     end
 end)
+]]--
 
 RegisterNetEvent('police:client:policeAlert', function(coords, text)
     local street1, street2 = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
