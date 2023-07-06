@@ -84,71 +84,71 @@ Config.NewCheckPoints = { -- Can now determine different locations for each type
       ]]
       {
         pos = vector3(255.139, -1400.731, 29.537),
-        txt = 'Go to the next point! Speed Limit: ~y~'..Config.SpeedLimits['residence']..' '..Config.SpeedMultiplier,
+        txt = 'Đến điểm tiếp theo. Tốc độ tối đa: ~y~'..Config.SpeedLimits['residence']..' '..Config.SpeedMultiplier,
       },
       {
         pos = vector3(271.874, -1370.574, 30.932),
-        txt = 'Go to next point',
+        txt = 'Đến điểm tiếp theo',
       },
       {
         pos = vector3(234.907, -1345.385, 29.542),
-        txt = '~r~Stop~s~ for the pedestrian ~y~crossing',
+        txt = '~r~Dừng lại~s~ đợi người dân ~y~đi qua đã',
         playsound = true,
         freezePlayer = true,
-        txt2 = '~g~Good~s~, continue.'
+        txt2 = '~g~Tốt~s~, Típ nào.'
       },
       {
         pos = vector3(217.821, -1410.520, 28.292),
-        txt = '~r~Stop~s~ and look ~y~Left~s~. Speed Limit:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
+        txt = '~r~Dừng lại~s~ và nhìn sang ~y~trái~s~. Tốc độ tối đa:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
         playsound = true,
         freezePlayer = true,
-        txt2 = '~g~Good~s~, turn right and follow the line.',
+        txt2 = '~g~Tốt~s~, rẽ phải và đi theo chỉ dẫn.',
         currentzone = 'town'
       },
       {
         pos = vector3(178.550, -1401.755, 27.725),
-        txt = 'Go to the next point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(113.160, -1365.276, 27.725),
-        txt = 'Go to the next point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-73.542, -1364.335, 27.789),
-        txt = '~r~Stop~s~ for passing vehicles!',
+        txt = '~r~Dừng lại~s~ đợi xe đi qua đã!',
         playsound = true,
         freezePlayer = true
       },
       {
         pos = vector3(-355.143, -1420.282, 27.868),
-        txt = 'Go to the Next Point.'
+        txt = 'Đến điểm tiếp theo.'
       },
       {
         pos = vector3(-439.148, -1417.100, 27.704),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-453.790, -1444.726, 27.665),
-        txt = 'It\'s time to drive on the highway! Speed Limit:~y~ '..Config.SpeedLimits['freeway']..' '..Config.SpeedMultiplier,
+        txt = 'Đến đường cao tốc gòi! Tốc độ tối đa:~y~ '..Config.SpeedLimits['freeway']..' '..Config.SpeedMultiplier,
         playsound = true,
         currentzone = 'freeway',
       },
       {
         pos = vector3(-463.237, -1592.178, 37.519),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-900.647, -1986.28, 26.109),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(1225.759, -1948.792, 38.718),
-        txt = 'Entered Town. Pay attention to you speed! Speed Limit:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
+        txt = 'Vào khu vực dân cư. Chú ý tốc độ nha! Tốc độ tối đa:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
         currentzone = 'town',
       },
       {
         pos = vector3(1163.603, -1841.771, 35.679),
-        txt = 'I\'m Impressed, but don\'t forget to stay ~r~ALERT~s~ whilst Driving.',
+        txt = 'Ghê đấy, nhớ chú ý ~r~biển báo~s~ khi lái nha.',
       },
       {
         pos = vector3(235.283, -1398.329, 28.921),
@@ -175,71 +175,71 @@ Config.NewCheckPoints = { -- Can now determine different locations for each type
       ]]
       {
         pos = vector3(255.139, -1400.731, 29.537),
-        txt = 'Go to the next point! Speed Limit: ~y~'..Config.SpeedLimits['residence']..' '..Config.SpeedMultiplier,
+        txt = 'Đến điểm tiếp theo! Tốc độ tối đa: ~y~'..Config.SpeedLimits['residence']..' '..Config.SpeedMultiplier,
       },
       {
         pos = vector3(271.874, -1370.574, 30.932),
-        txt = 'Go to next point',
+        txt = 'Đến điểm tiếp theo',
       },
       {
         pos = vector3(234.907, -1345.385, 29.542),
-        txt = '~r~Stop~s~ for the pedestrian ~y~crossing',
+        txt = '~r~Dừng lại~s~ đợi người dân ~y~đi qua',
         playsound = true,
         freezePlayer = true,
-        txt2 = '~g~Good~s~, continue.'
+        txt2 = '~g~Tốt~s~, Típ nèo.'
       },
       {
         pos = vector3(217.821, -1410.520, 28.292),
-        txt = '~r~Stop~s~ and look ~y~Left~s~. Speed Limit:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
+        txt = '~r~Dừng lại~s~ và nhìn sang ~y~trái~s~. Tốc độ tối đa:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
         playsound = true,
         freezePlayer = true,
-        txt2 = '~g~Good~s~, turn right and follow the line.',
+        txt2 = '~g~Tốt~s~, Rẽ phải và đi theo chỉ dẫn.',
         currentzone = 'town'
       },
       {
         pos = vector3(178.550, -1401.755, 27.725),
-        txt = 'Go to the next point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(113.160, -1365.276, 27.725),
-        txt = 'Go to the next point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-73.542, -1364.335, 27.789),
-        txt = '~r~Stop~s~ for passing vehicles!',
+        txt = '~r~Dừng lại~s~ đợi xe đi qua đã!',
         playsound = true,
         freezePlayer = true
       },
       {
         pos = vector3(-355.143, -1420.282, 27.868),
-        txt = 'Go to the Next Point.'
+        txt = 'Đến điểm tiếp theo.'
       },
       {
         pos = vector3(-439.148, -1417.100, 27.704),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-453.790, -1444.726, 27.665),
-        txt = 'It\'s time to drive on the highway! Speed Limit:~y~ '..Config.SpeedLimits['freeway']..' '..Config.SpeedMultiplier,
+        txt = 'Đến cao tốc rồi! Tốc độ tối đa:~y~ '..Config.SpeedLimits['freeway']..' '..Config.SpeedMultiplier,
         playsound = true,
         currentzone = 'freeway',
       },
       {
         pos = vector3(-463.237, -1592.178, 37.519),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-900.647, -1986.28, 26.109),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(1225.759, -1948.792, 38.718),
-        txt = 'Entered Town. Pay attention to you speed! Speed Limit:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
+        txt = 'Vào khu dân cư. Chú ý tốc độ. Tốc độ tối đa:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
         currentzone = 'town',
       },
       {
         pos = vector3(1163.603, -1841.771, 35.679),
-        txt = 'I\'m Impressed, but don\'t forget to stay ~r~ALERT~s~ whilst Driving.',
+        txt = 'Ghê đấy, nhớ chú ý ~r~biển báo~s~ khi lái nha.',
       },
       {
         pos = vector3(235.283, -1398.329, 28.921),
@@ -266,72 +266,72 @@ Config.NewCheckPoints = { -- Can now determine different locations for each type
       ]]
       {
         pos = vector3(255.139, -1400.731, 29.537),
-        txt = 'Go to the next point! Speed Limit: ~y~'..Config.SpeedLimits['residence']..' '..Config.SpeedMultiplier,
+        txt = 'Đến điểm tiếp theo! Tốc độ tối đa: ~y~'..Config.SpeedLimits['residence']..' '..Config.SpeedMultiplier,
       
       },
       {
         pos = vector3(271.874, -1370.574, 30.932),
-        txt = 'Go to next point',
+        txt = 'Đến điểm tiếp theo',
       },
       {
         pos = vector3(234.907, -1345.385, 29.542),
-        txt = '~r~Stop~s~ for the pedestrian ~y~crossing',
+        txt = '~r~Dừng lại~s~ đợi người dân ~y~đi qua',
         playsound = true,
         freezePlayer = true,
-        txt2 = '~g~Good~s~, continue.'
+        txt2 = '~g~Tốt~s~, Típ nèo.'
       },
       {
         pos = vector3(217.821, -1410.520, 28.292),
-        txt = '~r~Stop~s~ and look ~y~Left~s~. Speed Limit:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
+        txt = '~r~Dừng lại~s~ và nhìn sang ~y~trái~s~. Tốc độ tối đa:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
         playsound = true,
         freezePlayer = true,
-        txt2 = '~g~Good~s~, turn right and follow the line.',
+        txt2 = '~g~Tốt~s~, Rẽ phải và đi theo chỉ dẫn.',
         currentzone = 'town'
       },
       {
         pos = vector3(178.550, -1401.755, 27.725),
-        txt = 'Go to the next point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(113.160, -1365.276, 27.725),
-        txt = 'Go to the next point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-73.542, -1364.335, 27.789),
-        txt = '~r~Stop~s~ for passing vehicles!',
+        txt = '~r~Dừng lại~s~ đợi xe đi qua đã!',
         playsound = true,
         freezePlayer = true
       },
       {
         pos = vector3(-355.143, -1420.282, 27.868),
-        txt = 'Go to the Next Point.'
+        txt = 'Đến điểm tiếp theo.'
       },
       {
         pos = vector3(-439.148, -1417.100, 27.704),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-453.790, -1444.726, 27.665),
-        txt = 'It\'s time to drive on the highway! Speed Limit:~y~ '..Config.SpeedLimits['freeway']..' '..Config.SpeedMultiplier,
+        txt = 'Đến cao tốc rồi! Tốc độ tối đa:~y~ '..Config.SpeedLimits['freeway']..' '..Config.SpeedMultiplier,
         playsound = true,
         currentzone = 'freeway',
       },
       {
         pos = vector3(-463.237, -1592.178, 37.519),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(-900.647, -1986.28, 26.109),
-        txt = 'Go to the Next Point.',
+        txt = 'Đến điểm tiếp theo.',
       },
       {
         pos = vector3(1225.759, -1948.792, 38.718),
-        txt = 'Entered Town. Pay attention to you speed! Speed Limit:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
+        txt = 'Vào khu dân cư. Chú ý tốc độ. Tốc độ tối đa:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
         currentzone = 'town',
       },
       {
         pos = vector3(1163.603, -1841.771, 35.679),
-        txt = 'I\'m Impressed, but don\'t forget to stay ~r~ALERT~s~ whilst Driving.',
+        txt = 'Ghê đấy, nhớ chú ý ~r~biển báo~s~ khi lái nha.',
       },
       {
         pos = vector3(235.283, -1398.329, 28.921),

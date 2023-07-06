@@ -11,7 +11,7 @@ RegisterNetEvent('et-dmv:server:TheoryTestResult', function (success)
 
     if not success then
         Player.Functions.RemoveMoney(Config.PaymentType, Config.Amount['theoritical']/2)
-        TriggerClientEvent('QBCore:Notify', src, 'You failed the Test. Please Try again.', 'error', 3000)
+        TriggerClientEvent('QBCore:Notify', src, 'Bạn rớt rồi. Hãy thi lại.', 'error', 3000)
     else
         if Config.DriversTest then
             Player.PlayerData.metadata['licences']['permit'] = true
@@ -19,10 +19,10 @@ RegisterNetEvent('et-dmv:server:TheoryTestResult', function (success)
             if Config.GiveItem then
                 if Player.Functions.AddItem('permit', 1, nil, info) then
                     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['permit'], 'add')
-                    TriggerClientEvent('QBCore:Notify', src, 'Congradulations! You passed the Theoritical Test.', 'success', 3000)
+                    TriggerClientEvent('QBCore:Notify', src, 'Chúc mừng. Bạn đậu rồi đó', 'success', 3000)
                 end
             else
-                TriggerClientEvent('QBCore:Notify', src, 'Congradulations! You passed! You must go to City Hall to pick up your permit.', 'success', 4500)
+                TriggerClientEvent('QBCore:Notify', src, 'Chúc mừng. Bạn đậu rồi đó.', 'success', 4500)
             end
         else
             Player.PlayerData.metadata['licences']['driver'] = true
@@ -36,10 +36,10 @@ RegisterNetEvent('et-dmv:server:TheoryTestResult', function (success)
                 end
                 if Player.Functions.AddItem('driver_license', 1, nil, info) then
                     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['driver_license'], 'add')
-                    TriggerClientEvent('QBCore:Notify', src, 'You passed and got your License. Congradulations!', 'success', 3000)
+                    TriggerClientEvent('QBCore:Notify', src, 'Chúc mừng. Bạn đậu rồi đó', 'success', 3000)
                 end
             else
-                TriggerClientEvent('QBCore:Notify', src, 'You passed! Go to City Hall and get your License.', 'success', 3000)
+                TriggerClientEvent('QBCore:Notify', src, 'Chúc mừng. Bạn đậu rồi đó', 'success', 3000)
             end
         end
         Player.Functions.RemoveMoney(Config.PaymentType, Config.Amount['theoritical'])
@@ -88,10 +88,10 @@ RegisterNetEvent('et-dmv:server:DrivingTestResult', function (success, testType)
                         end
                     end
                 else
-                    TriggerClientEvent('QBCore:Notify', src, 'Go to the City Hall to pick up your driver\'s license.', 'success', 3000)
+                    TriggerClientEvent('QBCore:Notify', src, 'Đến toà thị chính và nhận bằng lái nha.', 'success', 3000)
                 end
             else
-                TriggerClientEvent('QBCore:Notify', src, 'You don\'t have enough money to pay for your test. You must take it again to pass.', 'warning', 3000)
+                TriggerClientEvent('QBCore:Notify', src, 'Bạn không có đủ tiền gòi :((.', 'warning', 3000)
             end
         end
     else
@@ -111,6 +111,6 @@ QBCore.Commands.Add(Config.CommandName, 'Reset A Players License', {{name = "id"
         Player.PlayerData.metadata['licences'][args[2]] = false
         Player.Functions.SetMetaData('licences', Player.PlayerData.metadata['licences'])
     else
-        TriggerClientEvent('QBCore:Notify', src, 'Must Input each Arguement.')
+        TriggerClientEvent('QBCore:Notify', src, 'Bạn phải nhập đủ thông tin.')
     end
 end, "admin")

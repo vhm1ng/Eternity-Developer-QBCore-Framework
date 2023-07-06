@@ -57,7 +57,7 @@ local function createPeds()
       exports['et-target']:AddTargetEntity(ped[k], {
         options = {
           {
-            label = 'Open DMV',
+            label = 'Mở menu thi',
             icon = 'fa-solid fa-car-burst',
             action = function ()
               OpenMenu()
@@ -83,12 +83,12 @@ end
 function OpenMenu()
   local DMV = {
     {
-      header = 'DMV School',
+      header = 'Trường thi',
       isMenuHeader = true,
     },
     {
       icon = 'fas fa-circle-xmark',
-      header = '', txt = 'Close',
+      header = '', txt = 'Đóng',
       params = {
         event = '',
       },
@@ -98,7 +98,7 @@ function OpenMenu()
   if not PlayerData.metadata['licences']['permit'] then
 
     DMV[#DMV+1] = {
-      header = 'Start Theoritical Test',
+      header = 'bắt đầu thi lý thuyết',
       icon = 'fa-solid fa-clipboard-question',
       txt = '$'..Config.Amount['theoritical'],
       params = {
@@ -114,7 +114,7 @@ function OpenMenu()
     if not PlayerData.metadata['licences']['driver'] then
       
       DMV[#DMV+1] = {
-        header = 'Start Driving Test',
+        header = 'Bắt đầu thi',
         icon = 'fa-solid fa-car-side',
         txt = '$'..Config.Amount['driver'],
         params = {
@@ -130,7 +130,7 @@ function OpenMenu()
     if not PlayerData.metadata['licences']['bike'] and PlayerData.metadata['licences']['driver'] and QBCore.Functions.HasItem(Config.Items['driver']) then
       
       DMV[#DMV+1] = {
-        header = 'Start Bike Driving Test',
+        header = 'Bắt đầu thi',
         icon = 'fa-solid fa-motorcycle',
         txt = '$'..Config.Amount['bike'],
         params = {
@@ -146,7 +146,7 @@ function OpenMenu()
     if not PlayerData.metadata['licences']['cdl'] and PlayerData.metadata['licences']['driver'] then
       
       DMV[#DMV+1] = {
-        header = 'Start CDL Driving Test',
+        header = 'Bắt đầu thi',
         icon = 'fa-solid fa-truck-fast',
         txt = '$'..Config.Amount['cdl'],
         params = {
@@ -188,10 +188,10 @@ function StopDriveTest(success, testType)
   local veh = GetVehiclePedIsIn(playerPed)
 
   if success then
-    QBCore.Functions.Notify('You passed the Driving Test!', 'success', 3000)
+    QBCore.Functions.Notify('Bạn đã đậu!', 'success', 3000)
     QBCore.Functions.DeleteVehicle(veh)
   else
-    QBCore.Functions.Notify('You failed the driving test, try again...', 'error', 3000)
+    QBCore.Functions.Notify('Bạn rớt rồi, hãy thi lại...', 'error', 3000)
     RemoveBlip(CurrentBlip)
     QBCore.Functions.DeleteVehicle(veh)
     Wait(1000)
@@ -347,7 +347,7 @@ end)
 RegisterNetEvent('et-dmv:client:StartQuiz', function ()
   
   if PlayerData.money[Config.PaymentType] < Config.Amount['theoritical'] then
-    QBCore.Functions.Notify('Not Enough Money in '..Config.PaymentType)
+    QBCore.Functions.Notify('Không đủ tiền '..Config.PaymentType)
     return
   end
   
@@ -396,8 +396,8 @@ CreateThread( function ()
                 if not IsAboveSpeedLimit then
                     DriveErrors       = DriveErrors + 1
                     IsAboveSpeedLimit = true
-                    QBCore.Functions.Notify('Driving too fast. Slow Down', 'warning', 3000)
-                    QBCore.Functions.Notify('Errors: '..tostring(DriveErrors)..' / '..Config.MaxErrors, 'error', 3000)
+                    QBCore.Functions.Notify('Đi nhanh quá, chậm lại đê', 'warning', 3000)
+                    QBCore.Functions.Notify('Lỗi: '..tostring(DriveErrors)..' / '..Config.MaxErrors, 'error', 3000)
                 end
 
             end
@@ -409,8 +409,8 @@ CreateThread( function ()
 
         if health < LastVehicleHealth then
             DriveErrors = DriveErrors + 1
-            QBCore.Functions.Notify('You damaged the vehicle.', 'warning', 3000)
-            QBCore.Functions.Notify('Errors: '..tostring(DriveErrors)..' / '..Config.MaxErrors, 'warning', 3000)
+            QBCore.Functions.Notify('Bạn đã va chạm.', 'warning', 3000)
+            QBCore.Functions.Notify('Lỗi: '..tostring(DriveErrors)..' / '..Config.MaxErrors, 'warning', 3000)
             LastVehicleHealth = health
         end
 
