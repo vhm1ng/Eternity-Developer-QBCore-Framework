@@ -103,25 +103,6 @@ CreateThread( function()
 			end
 		end)
 	end
-	Wait(1000)
-	print('\n\t^7 ________________________________________________________')
-	print('\t|\t^8      __                       ^9___               ^7|')
-	print('\t|\t^8     / /      ^7 /\\   /\\        ^9/ __\\              ^7|')
-	print('\t|\t^8    / /        ^7\\ \\ / /       ^9/ /                 ^7|')
-	print('\t|\t^8   / /___       ^7\\ V /       ^9/ /___               ^7|')
-	print('\t|\t^8   \\____/uxart   ^7\\_/ ehicle ^9\\____/ontrol         ^7|')
-	print('\t|\t                                                 |')
-	print(('\t|\t            COMMUNITY ID: %-23s|'):format(community_id))
-	print('\t^7|________________________________________________________|')
-	print(('\t|\t           INSTALLED: %-27s|'):format(curr_version))
-	if not beta_checking then
-		print(('\t|\t              LATEST: %-27s|'):format(repo_version))
-	else
-		if curr_version < repo_beta_version then
-			print(('\t|\t         ^3LATEST BETA: %-27s^7|'):format(repo_beta_version))
-		end
-		print(('\t|\t       LATEST STABLE: %-27s|'):format(repo_version))
-	end
 	if GetResourceState('lux_vehcontrol') ~= 'started' and GetResourceState('lux_vehcontrol') ~= 'starting' then
 		if GetCurrentResourceName() == 'lvc' then
 			if community_id ~= nil and community_id ~= '' then
@@ -184,7 +165,4 @@ CreateThread( function()
 			print('\t|^8 DETECTED "lux_vehcontrol" RUNNING, THIS CONFLICTS WITH ^7|')
 			print('\t|^8 LVC. PLEASE STOP "lux_vehcontrol" AND RESTART LVC.     ^7|')
 	end
-	print('\t^7|________________________________________________________|')
-	print('\t^7|      Updates, Support, Feedback: ^5discord.link/LVC      ^7|')
-	print('\t^7|________________________________________________________|\n\n')
 end)
