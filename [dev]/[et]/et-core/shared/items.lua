@@ -1,6 +1,9 @@
 QBShared = QBShared or {}
 QBShared.Items = {
 
+-- Lau biển báo
+	["stopsign"]				    = {["name"] = "stopsign", 						["label"] = "Biển báo cấm", 			["weight"] = 40000, 	["type"] = "item", 		["image"] = "stopsign.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true, 	["combinable"] = nil, 	["description"] = "Bạn lau biển báo kiểu gì mà có biển trong người dợ :3"},
+
 -- Nghề Bò
 	["milk"] 						= {["name"] = "milk",  	     					["label"] = "Xô sữa",	 				["weight"] = 500, 		["type"] = "item", 		["image"] = "milk.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Xô sữa được lấy từ con Bòa"},
 	["xosua"] 						= {["name"] = "xosua",  	     				["label"] = "Xô rỗng",	 				["weight"] = 1000, 		["type"] = "item", 		["image"] = "xosua.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Xô rỗng để bóp zú Bòa"},
