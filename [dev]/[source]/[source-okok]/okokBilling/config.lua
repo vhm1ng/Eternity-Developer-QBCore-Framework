@@ -20,7 +20,7 @@ Config.UseOKOKNotify = true -- If set to true it will use okokNotify, if set to 
 
 Config.InvoiceDistance = 15
 
-Config.AllowPlayersInvoice = falas -- if players can create Player to Player invoices
+Config.AllowPlayersInvoice = false -- if players can create Player to Player invoices
 
 Config.okokRequests = false -- Player to Player invoices only, to avoid abuse
 
@@ -56,6 +56,7 @@ Config.FeeAfterEachDayPercentage = 5
 
 Config.JobsWithCityInvoices = { -- Which jobs have City Invoices (They will be allowed to delete any invoice) | Admins will have access by default
 	'court'
+
 }
 
 Config.CityInvoicesAccessRanks = { -- Which jobs have City Invoices (They will be allowed to delete any invoice)
