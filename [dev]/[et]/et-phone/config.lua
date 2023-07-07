@@ -369,7 +369,7 @@ Config.PhoneApplications = {
         tooltipText = "Cảnh sát",
         job = "police",
         blockedjobs = {},
-        slot = 26,
+        slot = 15,
         Alerts = 0,
     },
 }
