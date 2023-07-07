@@ -26,33 +26,33 @@ end
 
 local function PlayerCloseMenu()
     local player, distance = QBCore.Functions.GetClosestPlayer()
-    if player ~= -1 and distance <= 1.5 then
-        if not IsPedInAnyVehicle(PlayerPedId()) then
-            cuffid = exports['et-radialmenu']:AddOption({
-                id = 'handcuff',
-                title = 'CỔ TAY ÁO',
-                icon = 'user-lock',
-                type = 'client',
-                event = 'police:client:CuffPlayerSoft',
-                shouldClose = true
-            }, cuffid)
-            stealid = exports['et-radialmenu']:AddOption({
-                id = 'stealplayer',
-                title = 'LỤC ĐỒ',
-                icon = 'shopping-bag',
-                type = 'client',
-                event = 'police:client:RobPlayer',
-                shouldClose = true,
-            }, stealid)
-        end
-    else
-        if cuffid ~= nil and stealid ~= nil then
-            exports['et-radialmenu']:RemoveOption(cuffid)
-            exports['et-radialmenu']:RemoveOption(stealid)
-            cuffid = nil
-            stealid = nil
-        end
-    end
+    -- if player ~= -1 and distance <= 1.5 then
+    --     if not IsPedInAnyVehicle(PlayerPedId()) then
+    --         cuffid = exports['et-radialmenu']:AddOption({
+    --             id = 'handcuff',
+    --             title = 'CỔ TAY ÁO',
+    --             icon = 'user-lock',
+    --             type = 'client',
+    --             event = 'police:client:CuffPlayerSoft',
+    --             shouldClose = true
+    --         }, cuffid)
+    --         stealid = exports['et-radialmenu']:AddOption({
+    --             id = 'stealplayer',
+    --             title = 'LỤC ĐỒ',
+    --             icon = 'shopping-bag',
+    --             type = 'client',
+    --             event = 'police:client:RobPlayer',
+    --             shouldClose = true,
+    --         }, stealid)
+    --     end
+    -- else
+    --     if cuffid ~= nil and stealid ~= nil then
+    --         exports['et-radialmenu']:RemoveOption(cuffid)
+    --         exports['et-radialmenu']:RemoveOption(stealid)
+    --         cuffid = nil
+    --         stealid = nil
+    --     end
+    -- end
 end
 
 -- local function mdt()
