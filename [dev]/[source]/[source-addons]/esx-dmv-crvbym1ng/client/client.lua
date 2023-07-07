@@ -328,17 +328,29 @@ RegisterNetEvent('et-dmv:client:StartDrivingTest', function(data)
   CurrentZoneType = Config.NewCheckPoints[data.CurrentTest]['startingzone']
   StartingPoint = Config.NewCheckPoints[data.CurrentTest]['startingpoint']
 
-  QBCore.Functions.SpawnVehicle(Config.VehicleModels[data.CurrentTest], function(veh)
-    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-    exports[Config.FuelResource]:SetFuel(veh, 100)
+  -- QBCore.Functions.SpawnVehicle(Config.VehicleModels[data.CurrentTest], function(veh)
+  --   TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+  --   exports[Config.FuelResource]:SetFuel(veh, 100)
+  --   SetVehicleNumberPlateText(veh, Config.VehPlate)
+  --   SetEntityAsMissionEntity(veh, true, true)
+  --   SetEntityHeading(veh,StartingPoint.w)
+  --   TriggerEvent('vehiclekeys:client:SetOwner2', QBCore.Functions.GetPlate(veh))
+  --   TriggerServerEvent('et-vehicletuning:server:SaveVehicleProps', QBCore.Functions.GetVehicleProperties(veh))
+  --   LastVehicleHealth = GetVehicleBodyHealth(veh)
+  --   CurrentVehicle = veh
+  -- end, vector3(StartingPoint.x, StartingPoint.y, StartingPoint.z), false)
+
+  QBCore.Functions.TriggerCallback('QBCore:Server:SpawnVehicle', function(netId)
+    local veh = NetToVeh(netId)
     SetVehicleNumberPlateText(veh, Config.VehPlate)
-    SetEntityAsMissionEntity(veh, true, true)
-    SetEntityHeading(veh,StartingPoint.w)
-    TriggerEvent('vehiclekeys:client:SetOwner2', QBCore.Functions.GetPlate(veh))
-    TriggerServerEvent('et-vehicletuning:server:SaveVehicleProps', QBCore.Functions.GetVehicleProperties(veh))
+    SetEntityHeading(veh, StartingPoint.w)
+    exports[Config.FuelResource]:SetFuel(veh, 100.0)
+    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+    TriggerEvent("vehiclekeys:client:SetOwner2", QBCore.Functions.GetPlate(veh))
+    SetVehicleEngineOn(veh, true, true)
     LastVehicleHealth = GetVehicleBodyHealth(veh)
     CurrentVehicle = veh
-  end, vector3(StartingPoint.x, StartingPoint.y, StartingPoint.z), false)
+  end, "sultan", vector3(StartingPoint.x, StartingPoint.y, StartingPoint.z), true)
 
   drivingTest = true
   DrivingTest(data.CurrentTest)
