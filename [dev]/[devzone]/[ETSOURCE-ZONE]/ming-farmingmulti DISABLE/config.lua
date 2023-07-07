@@ -106,7 +106,7 @@ Config.Sell = {
         ["price"] = math.random(25, 35)
     },
     ["milkbucket"] = {
-        ["price"] = math.random(25, 35)
+        ["price"] = 120
     },
     ["raw_beef"] = {
         ["price"] = math.random(25, 35)
@@ -114,9 +114,9 @@ Config.Sell = {
     ["beef"] = {
         ["price"] = math.random(25, 35)
     },
-    ["milk"] = {
-        ["price"] = math.random(25, 35)
-    },
+    -- ["milk"] = {
+    --     ["price"] = math.random(25, 35)
+    -- },
     ["rawpumpkin"] = {
         ["price"] = math.random(25, 35)
     },
