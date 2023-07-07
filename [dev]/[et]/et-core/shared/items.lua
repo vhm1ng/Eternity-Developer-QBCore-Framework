@@ -14,6 +14,7 @@ QBShared.Items = {
 	
 -- Thuốc lá
 	['thuocla'] 				 	 = {['name'] = 'thuocla', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 's12.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
+	['thuoc'] 				 	 = {['name'] = 'thuoc', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'weed_nutrition.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
 
 -- [QUASAR SMARTPHONE]
 	['classic_phone'] 			 	 = {['name'] = 'classic_phone', 			  	['label'] = 'Classic Phone', 			['weight'] = 700, 		['type'] = 'item', 		['image'] = 'classic_phone.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'},
