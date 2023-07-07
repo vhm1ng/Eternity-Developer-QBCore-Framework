@@ -101,3 +101,12 @@ CreateThread(function()
         SetPedDropsWeaponsWhenDead(v, false)
     end
 end)
+
+-- CHẶN BUG HỒI MÁU & REFRESH SKIN
+CreateThread(function()
+    while true do
+        Wait(0)
+        SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0) -- TẮT HOÀN TOÀN TÍNH NĂNG HỒI MÁU
+        --SetPlayerHealthRechargeLimit(PlayerId(), 0.0) -- TẮT CÁC TÍNH NĂNG HỒI MÁU
+    end
+end)
