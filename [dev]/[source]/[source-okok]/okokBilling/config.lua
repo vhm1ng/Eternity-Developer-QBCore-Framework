@@ -55,7 +55,9 @@ Config.FeeAfterEachDayPercentage = 5
 -- Autopay
 
 Config.JobsWithCityInvoices = { -- Which jobs have City Invoices (They will be allowed to delete any invoice) | Admins will have access by default
-	'court'
+	'court',
+	'ambulance',
+	'police'
 
 }
 
