@@ -11,7 +11,7 @@ Config.BillingCommissions = { -- This is a percentage (0.10) == 10%
 }
 
 -- Web hook for camera ( NOT GO PRO )
-Config.Webhook = 'https://discordapp.com/api/webhooks/1123118147831083028/Q7iQUyAaIgsXUO2sq21mzGC0N_GHf47UHHwIQs4Ww5nQKPk_XIKPh-QQBjJmNUz9y1_N'
+Config.Webhook = 'https://discord.com/api/webhooks/1127097084898725909/QTCqXm7EK8H-L0h-Ie15S75QrAaumzWgQzBiAVTth5x2H-q9PdmNcPkMEDh1SfQvCuzx'
 
 -- Item name for pings app ( Having a VPN sends an anonymous ping, else sends the players name)
 Config.VPNItem = 'vpn'
@@ -165,17 +165,17 @@ Config.PhoneApplications = {
     --     slot = 10,
     --     Alerts = 0,
     -- },
-    -- ["wenmo"] = {
-    --     app = "wenmo",
-    --     color = "#151515",
-    --     color2 = "#161616",
-    --     icon = "fas fa-ad",
-    --     tooltipText = "Wenmo",
-    --     job = false,
-    --     blockedjobs = {},
-    --     slot = 11,
-    --     Alerts = 0,
-    -- },
+    ["wenmo"] = {
+        app = "wenmo",
+        color = "#151515",
+        color2 = "#161616",
+        icon = "fas fa-ad",
+        tooltipText = "Wenmo",
+        job = false,
+        blockedjobs = {},
+        slot = 14,
+        Alerts = 0,
+    },
     -- ["documents"] = {
     --     app = "documents",
     --     color = "#f15ac1",
@@ -369,7 +369,7 @@ Config.PhoneApplications = {
         tooltipText = "Cảnh sát",
         job = "police",
         blockedjobs = {},
-        slot = 26,
+        slot = 15,
         Alerts = 0,
     },
 }

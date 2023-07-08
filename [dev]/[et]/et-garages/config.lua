@@ -177,23 +177,6 @@ Config.JobVehicles = {
         label = "Xe Bệnh Viện",
         job = 'ambulance',
         -- Grade 0
-        vehicles = {
-            [0] = {
-                ["ghispo3"] = "ghispo3",
-            },
-            [1] = {
-                ["ghispo3"] = "ghispo3",
-            },
-            [2] = {
-                ["ghispo3"] = "ghispo3",
-            },
-            [3] = {
-                ["ghispo3"] = "ghispo3",
-            },
-            [4] = {
-                ["ghispo3"] = "ghispo3",
-            },
-        },
     };
 };
 
@@ -338,9 +321,21 @@ Config.Garages = {
             ['minZ'] = 42.0,  -- min height of the parking zone
             ['maxZ'] = 44.30,  -- max height of the parking zone
         },
+        -- label = 'Garage Bệnh Viện ETERNITY',
+        -- type = 'public',
+        -- vehicleCategories = {'car', 'motorcycle', 'other'},
+        -- drawText = 'Garage để xe',
+        -- debug = false,
         label = 'Garage Bệnh Viện ETERNITY',
-        type = 'public',
-        vehicleCategories = {'car', 'motorcycle', 'other'},
+        showBlip = false,
+        blipcoords = vector3(37.08, -616.99, 34.19),
+        blipName = 'Public Parking',
+        blipNumber = 357,
+        -- type = 'public',
+        -- vehicleCategories = {'car', 'motorcycle', 'other'},
+        type = 'job',                --public, job, gang, depot
+        job = "ambulance",
+        vehicleCategories = {'emergency'},
         drawText = 'Garage để xe',
         debug = false,
         ['ParkingSpots'] = {
@@ -369,11 +364,20 @@ Config.Garages = {
             ['minZ'] = 27.796838760376,  -- min height of the parking zone
             ['maxZ'] = 29.796871185303,  -- max height of the parking zone
         },
+        -- label = 'Garage Bệnh Viện ETERNITY',
+        -- type = 'job',
+        -- job = "ambulance",
+        -- jobGarageIdentifier = 'am1',  
+        -- vehicleCategories = {'xenhanuoc'},
+        -- drawText = 'Garage để xe',
+        -- debug = false,
         label = 'Garage Bệnh Viện ETERNITY',
-        type = 'job',
-        job = "ambulance",
-        jobGarageIdentifier = 'am1',  
-        vehicleCategories = {'xenhanuoc'},
+        showBlip = false,
+        blipcoords = vector3(37.08, -616.99, 34.19),
+        blipName = 'Public Parking',
+        blipNumber = 357,
+        type = 'public',
+        vehicleCategories = {'car', 'motorcycle', 'other'},
         drawText = 'Garage để xe',
         debug = false,
         ['ParkingSpots'] = {

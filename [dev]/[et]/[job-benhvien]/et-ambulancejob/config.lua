@@ -61,6 +61,9 @@ Config.Locations = { -- Edit the various interaction points for players or creat
         [1] = vector3(339.64, -584.68, 28.8),
     },
     ["stash"] = {
+        [1] = vector3(306.83, -601.84, 43.28),
+    },
+    ["stashchung"] = {
         [1] = vector3(312.02, -597.6, 43.28),
     },
     ["beds"] = {

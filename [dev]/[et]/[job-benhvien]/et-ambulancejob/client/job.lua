@@ -284,6 +284,8 @@ local function EMSControls(variable)
                     TriggerEvent('EMSToggle:Duty')
                 elseif variable == "stash" then
                     TriggerEvent('et-ambulancejob:stash')
+                elseif variable == "stashchung" then
+                    TriggerEvent('et-ambulancejob:stashchung')
                 elseif variable == "armory" then
                     TriggerEvent('et-ambulancejob:armory')
                 elseif variable == "storeheli" then
@@ -310,6 +312,16 @@ RegisterNetEvent('et-ambulancejob:stash', function()
         TriggerServerEvent("inventory:server:OpenInventory", "stash",
             "ambulancestash_" .. QBCore.Functions.GetPlayerData().citizenid)
         TriggerEvent("inventory:client:SetCurrentStash", "ambulancestash_" .. QBCore.Functions.GetPlayerData().citizenid)
+    end
+end)
+
+RegisterNetEvent('et-ambulancejob:stashchung', function()
+    if onDuty then
+        TriggerServerEvent("inventory:server:OpenInventory", "stash", "Kho Bệnh Viện", {
+            maxweight = 4000000,
+            slots = 500,
+        })
+        TriggerEvent("inventory:client:SetCurrentStash", "Kho Bệnh Viện")
     end
 end)
 
@@ -565,6 +577,26 @@ if Config.UseTarget then
                 distance = 1.5
             })
         end
+        for k, v in pairs(Config.Locations["stashchung"]) do
+            exports['et-target']:AddBoxZone("stashchung" .. k, vector3(v.x, v.y, v.z), 1, 1, {
+                name = "stashchung" .. k,
+                debugPoly = false,
+                heading = -20,
+                minZ = v.z - 2,
+                maxZ = v.z + 2,
+            }, {
+                options = {
+                    {
+                        type = "client",
+                        event = "et-ambulancejob:stashchung",
+                        icon = "fa fa-hand",
+                        label = "Open Stash",
+                        job = "ambulance"
+                    }
+                },
+                distance = 1.5
+            })
+        end
         for k, v in pairs(Config.Locations["armory"]) do
             exports['et-target']:AddBoxZone("armory" .. k, vector3(v.x, v.y, v.z), 1, 1, {
                 name = "armory" .. k,
@@ -712,6 +744,30 @@ else
                 if onDuty then
                     exports['et-core']:DrawText(Lang:t('text.pstash_button'), 'left')
                     EMSControls("stash")
+                end
+            else
+                check = false
+                exports['et-core']:HideText()
+            end
+        end)
+
+        local stashchungPoly = {}
+        for k, v in pairs(Config.Locations["stashchung"]) do
+            stashchungPoly[#stashchungPoly + 1] = BoxZone:Create(vector3(vector3(v.x, v.y, v.z)), 1, 1, {
+                name = "stashchung" .. k,
+                debugPoly = false,
+                heading = -20,
+                minZ = v.z - 2,
+                maxZ = v.z + 2,
+            })
+        end
+
+        local stashchungCombo = ComboZone:Create(stashchungPoly, { name = "stashchungCombo", debugPoly = false })
+        stashchungCombo:onPlayerInOut(function(isPointInside)
+            if isPointInside and PlayerJob.name == "ambulance" then
+                if onDuty then
+                    exports['et-core']:DrawText(Lang:t('text.pstash_button'), 'left')
+                    EMSControls("stashchung")
                 end
             else
                 check = false
