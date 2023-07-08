@@ -23,7 +23,7 @@ Cow.hopsua = {coords = vector3(2503.19, 4799.74, 35.02)}
 Cow.SellLocation = vector4(453.34, -755.12, 26.36, 274.7)
 
 Cow.Sell = {
-    ["milk"] = {
+    ["milk_pack"] = {
         ["price"] = 120
     },
 }
