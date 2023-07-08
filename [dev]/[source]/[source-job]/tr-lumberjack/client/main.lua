@@ -234,23 +234,23 @@ else
         },
         distance = 1.0
     })
-    exports['et-target']:AddBoxZone("LumberDepo", LumberDepo.targetZone, 1, 1, {
-        name = "LumberDepo",
-        heading = LumberDepo.targetHeading,
-        debugPoly = false,
-        minZ = LumberDepo.minZ,
-        maxZ = LumberDepo.maxZ,
-    }, {
-        options = {
-        {
-          type = "client",
-          event = "tr-lumberjack:bossmenu",
-          icon = "Fas Fa-hands",
-          label = Config.Alerts["depo_label"],
-        },
-        },
-        distance = 1.0
-    })
+    -- exports['et-target']:AddBoxZone("LumberDepo", LumberDepo.targetZone, 1, 1, {
+    --     name = "LumberDepo",
+    --     heading = LumberDepo.targetHeading,
+    --     debugPoly = false,
+    --     minZ = LumberDepo.minZ,
+    --     maxZ = LumberDepo.maxZ,
+    -- }, {
+    --     options = {
+    --     {
+    --       type = "client",
+    --       event = "tr-lumberjack:bossmenu",
+    --       icon = "Fas Fa-hands",
+    --       label = Config.Alerts["depo_label"],
+    --     },
+    --     },
+    --     distance = 1.0
+    -- })
     exports['et-target']:AddBoxZone("LumberProcessor", LumberProcessor.targetZone, 1, 1, {
         name = "LumberProcessor",
         heading = LumberProcessor.targetHeading,
