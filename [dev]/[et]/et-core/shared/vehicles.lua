@@ -5448,6 +5448,16 @@ QBShared.Vehicles = {
         ['hash'] = `police3`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
         ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     },
+    ['valor6bb'] = {
+        ['name'] = 'AMBULANCE',
+        ['brand'] = 'ENTERNITY',
+        ['model'] = 'valor6bb',
+        ['price'] = 0,
+        ['category'] = 'emergency',
+        ['categoryLabel'] = 'Emergency',
+        ['hash'] = `valor6bb`,
+        ['shop'] = 'pdm',
+    },
     -- ['valor6bb'] = { -- Vehicle model/spawn name (string)
     --     ['name'] = 'Xe bệnh viện', -- Desired name/label for the vehicle (string)
     --     ['brand'] = 'EMS ETERNITY', -- The brand of vehicle (string)
@@ -5458,26 +5468,16 @@ QBShared.Vehicles = {
     --     ['hash'] = `valor6bb`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
     --     ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
     -- },
-    ['valor6bb'] = { -- Vehicle model/spawn name (string)
-        ['name'] = 'Xe bệnh viện', -- Desired name/label for the vehicle (string)
-        ['brand'] = 'EMS-ETERNITY', -- The brand of vehicle (string)
-        ['model'] = 'valor6bb', -- Vehicle model/spawn name (string)
-        ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
-        ['category'] = 'xemodinging', -- The category the vehicle will display in at the dealership (string)
-        ['categoryLabel'] = 'xemoding',
-        ['hash'] = `valor6bb`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
-        ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
-    },
-    ['valor6bb'] = { -- Vehicle model/spawn name (string)
-        ['name'] = 'valor6bb', -- Desired name/label for the vehicle (string)
-        ['brand'] = 'AMBULANCE ETERNITY', -- The brand of vehicle (string)
-        ['model'] = 'valor6bb', -- Vehicle model/spawn name (string)
-        ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
-        ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
-        ['categoryLabel'] = 'xenhanuoc',
-        ['hash'] = `valor6bb`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
-        ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
-    },
+    -- ['valor6bb'] = { -- Vehicle model/spawn name (string)
+    --     ['name'] = 'valor6bb', -- Desired name/label for the vehicle (string)
+    --     ['brand'] = 'AMBULANCE ETERNITY', -- The brand of vehicle (string)
+    --     ['model'] = 'valor6bb', -- Vehicle model/spawn name (string)
+    --     ['price'] = 280000, -- How much the vehicle costs at the dealership (number)
+    --     ['category'] = 'xenhanuoc', -- The category the vehicle will display in at the dealership (string)
+    --     ['categoryLabel'] = 'xenhanuoc',
+    --     ['hash'] = `valor6bb`, -- Vehicle hash key (jenkins hash || GetHashKey(model))
+    --     ['shop'] = 'pdm', -- The desired shop the vehicle is available for sale at (string)
+    -- },
 }
 
 for _, v in pairs(QBShared.Vehicles) do

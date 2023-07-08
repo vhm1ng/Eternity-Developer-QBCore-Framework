@@ -2,14 +2,14 @@ Config = {}
 
 Config.UseTarget = true                                       -- (true | false)
 Config.FuelResource = 'LegacyFuel'                            -- (LegacyFuel | lj-fuel | cdn-fuel)<--Which fuel reource are you using?
-Config.VehPlate = 'DMV '..math.random(100, 999)               -- Plate Text that comes on a DMV vehicle when spawned
+Config.VehPlate = 'SATHACH '..math.random(100, 999)               -- Plate Text that comes on a DMV vehicle when spawned
 Config.CommandName = 'resetlicense'                           -- Command to reset a players license meta back to false. (permit | driver | cdl | bike)
 
 
 Config.PaymentType = 'cash'                                   -- (cash | bank) What account to use for payment
 Config.DriversTest = true                                     -- (true | false) Take the physical Driving Test or Not
 Config.SpeedMultiplier = 'kmh'                                -- ('mph' | 'kmh')
-Config.MaxErrors       = 100                                   -- Max Amount of Errors for Driving Test before Failing.
+Config.MaxErrors       = 15                               -- Max Amount of Errors for Driving Test before Failing.
 Config.PlayerCoordsAfterTest = vector4(222.85, -1392.84, 30.59, 310.38) -- Teleport Players to Coords after passing/failing drivers test.
 
 Config.BikeEndorsement = true                                 -- (true | false) Adds "Motorcycle Endorsement" to Drivers License else uses a seperate Bike License
@@ -38,7 +38,7 @@ Config.Items = {                                            -- if config.giveite
 
 Config.Amount = {
     ['theoritical'] = 50,                                     --theoretical test payment amount(If Config.DriversTest = false then the theoritical test will go to the drivers test amount.)
-    ['driver']      = 150,                                     --Drivers Test Payment Amount
+    ['driver']      = 250,                                     --Drivers Test Payment Amount
     ['cdl']         = 250,                                    --CDL Test Payment Amount
     ['bike']        = 125                                     -- Bike Test Payment
 }
@@ -59,9 +59,9 @@ Config.VehicleModels = {                                    -- Vehicle to Spawn 
 }
 
 Config.SpeedLimits = {                                      -- Speed Limits in each zone
-  residence = 35,
-  town      = 55,
-  freeway   = 80
+  residence = 60,
+  town      = 100,
+  freeway   = 120
 }
 
 Config.NewCheckPoints = { -- Can now determine different locations for each type of test
@@ -85,10 +85,12 @@ Config.NewCheckPoints = { -- Can now determine different locations for each type
       {
         pos = vector3(255.139, -1400.731, 29.537),
         txt = 'Đến điểm tiếp theo. Tốc độ tối đa: ~y~'..Config.SpeedLimits['residence']..' '..Config.SpeedMultiplier,
+        playsound = true,
       },
       {
         pos = vector3(271.874, -1370.574, 30.932),
         txt = 'Đến điểm tiếp theo',
+        playsound = true,
       },
       {
         pos = vector3(234.907, -1345.385, 29.542),
@@ -108,10 +110,12 @@ Config.NewCheckPoints = { -- Can now determine different locations for each type
       {
         pos = vector3(178.550, -1401.755, 27.725),
         txt = 'Đến điểm tiếp theo.',
+        playsound = true,
       },
       {
         pos = vector3(113.160, -1365.276, 27.725),
         txt = 'Đến điểm tiếp theo.',
+        playsound = true,
       },
       {
         pos = vector3(-73.542, -1364.335, 27.789),
@@ -122,10 +126,12 @@ Config.NewCheckPoints = { -- Can now determine different locations for each type
       {
         pos = vector3(-355.143, -1420.282, 27.868),
         txt = 'Đến điểm tiếp theo.'
+        playsound = true,
       },
       {
         pos = vector3(-439.148, -1417.100, 27.704),
         txt = 'Đến điểm tiếp theo.',
+        playsound = true,
       },
       {
         pos = vector3(-453.790, -1444.726, 27.665),
@@ -136,23 +142,28 @@ Config.NewCheckPoints = { -- Can now determine different locations for each type
       {
         pos = vector3(-463.237, -1592.178, 37.519),
         txt = 'Đến điểm tiếp theo.',
+        playsound = true,
       },
       {
         pos = vector3(-900.647, -1986.28, 26.109),
         txt = 'Đến điểm tiếp theo.',
+        playsound = true,
       },
       {
         pos = vector3(1225.759, -1948.792, 38.718),
-        txt = 'Vào khu vực dân cư. Chú ý tốc độ nha! Tốc độ tối đa:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,
+        txt = 'Vào khu vực dân cư. Chú ý tốc độ nha! Tốc độ tối đa:~y~ '..Config.SpeedLimits['town']..' '..Config.SpeedMultiplier,|
+        playsound = true,
         currentzone = 'town',
       },
       {
         pos = vector3(1163.603, -1841.771, 35.679),
         txt = 'Ghê đấy, nhớ chú ý ~r~biển báo~s~ khi lái nha.',
+        playsound = true,
       },
       {
         pos = vector3(235.283, -1398.329, 28.921),
         endpoint = true,
+        playsound = true,
       }
     }
   },
