@@ -1,8 +1,8 @@
 Config = {}
 
-Config.NPC = vector4(-341.56, -1541.3, 26.72, 267.46)
+Config.NPC = vector4(-321.99, -1545.86, 30.02, 272.03)
 
-Config.Blip = vector3(-341.56, -1541.3, 26.72)
+Config.Blip = vector3(-321.99, -1545.86, 31.02)
 
 Config.TruckSpawns = {
     vector4(-326.37, -1524.49, 27.54, 267.03),
