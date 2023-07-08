@@ -5,7 +5,7 @@ const Targeting = Vue.createApp({
             ChangeTextIconColor: false, // This is if you want to change the color of the icon next to the option text with the text color
             StandardEyeIcon: 'https://cdn.discordapp.com/attachments/903021216464531507/903024370665000981/normaleye.png', // Instead of icon it's using a image source found in HTML 
             CurrentIcon: 'https://cdn.discordapp.com/attachments/903021216464531507/903024370665000981/normaleye.png', // Instead of icon it's using a image source found in HTML
-            SuccessIcon: 'https://cdn.discordapp.com/attachments/903021216464531507/903024373626208336/activeeye.png', // Instead of icon it's using a image source found in HTML
+            SuccessIcon: 'https://media.discordapp.net/attachments/1002061639723515965/1127360703519522946/normaleye.png', // Instead of icon it's using a image source found in HTML
             SuccessColor: "rgb(188, 17, 61)",
             StandardColor: "white",
             TargetHTML: "",
