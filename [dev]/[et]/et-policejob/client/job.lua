@@ -1012,12 +1012,12 @@ CreateThread(function()
     local impoundZones = {}
     for _, v in pairs(Config.Locations["impound"]) do
         impoundZones[#impoundZones+1] = BoxZone:Create(
-            vector3(v.x, v.y, v.z), 1, 1, {
+            vector3(v.x, v.y, v.z), 2, 2, {
             name="box_zone",
-            debugPoly = false,
+            debugPoly = true,
             minZ = v.z - 1,
             maxZ = v.z + 1,
-            heading = 180,
+            heading = 300,
         })
     end
 
