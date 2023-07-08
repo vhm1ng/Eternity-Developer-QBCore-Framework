@@ -8,7 +8,7 @@ Config.CommandName = 'resetlicense'                           -- Command to rese
 
 Config.PaymentType = 'cash'                                   -- (cash | bank) What account to use for payment
 Config.DriversTest = true                                     -- (true | false) Take the physical Driving Test or Not
-Config.SpeedMultiplier = 'mph'                                -- ('mph' | 'kmh')
+Config.SpeedMultiplier = 'kmh'                                -- ('mph' | 'kmh')
 Config.MaxErrors       = 100                                   -- Max Amount of Errors for Driving Test before Failing.
 Config.PlayerCoordsAfterTest = vector4(222.85, -1392.84, 30.59, 310.38) -- Teleport Players to Coords after passing/failing drivers test.
 
@@ -31,7 +31,7 @@ Config.Locations = {  -- Coords and Ped to Spawn
 Config.GiveItem = true                                      -- (true | false) If false then player will have to go to city hall to get the licenses
 Config.Items = {                                            -- if config.giveitem = true then use this to give the item for each test
   ['driver'] = 'driver_license',
-  ['cdl'] = 'cdl_license',
+  ['cdl'] = 'driver_license',
   ['bike'] = 'bike_license'
 }
 
@@ -54,7 +54,7 @@ Config.Blip = {                                             -- Blip Config
 
 Config.VehicleModels = {                                    -- Vehicle to Spawn with Driver Test
   ['driver'] = 'sultan',
-  ['cdl'] = 'stockade',
+  ['cdl'] = 'sultan',
   ['bike'] = 'sanchez'
 }
 
