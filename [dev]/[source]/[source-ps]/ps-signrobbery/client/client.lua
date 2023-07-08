@@ -50,10 +50,11 @@ RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
                 QBCore.Functions.Notify("Bạn vừa thực hiện hành vi này rồi, hãy thử lại sau ".. remainingTime .." giây", "test")
             else
                 local ped = PlayerPedId()
-                    TriggerServerEvent('police:server:policeAlert', 'Có người đang lau biển báo') -- Default QBCore Dispatch
                 -- exports['ps-dispatch']:SignRobbery()
                 exports['ps-ui']:Circle(function(success)
                     if success then
+                        TriggerServerEvent('police:server:policeAlert', 'Có người đang lau biển báo') -- Default QBCore Dispatch
+                        TriggerServerEvent('police:server:policeAlert', 'Có người đang lau biển báo') -- Default QBCore Dispatch
                         loadAnimDict("amb@prop_human_bum_bin@base")
                         hasTimeout = true
                         TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
