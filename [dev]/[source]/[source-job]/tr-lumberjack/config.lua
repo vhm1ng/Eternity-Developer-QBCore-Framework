@@ -6,18 +6,18 @@ Config.Timeout = 1 * (30 * 1000)                                   -- 30 sencond
 -- Blips
 
 LumberDepo = {
-    targetZone = vector3(1167.73, -1347.27, 33.92),                 -- et-target vector
-    targetHeading = 273.47,                                         -- et-target box zone
-    coords = vector4(1167.73, -1347.27, 33.92, 273.47),             -- Move Location (Ped and blip)
-    SetBlipSprite = 85,                                             -- Blip Icon (https://docs.fivem.net/docs/game-references/blips/)
-    SetBlipDisplay = 6,                                             -- Blip Behavior (https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
-    SetBlipScale = 0.85,                                            -- Blip Size
-    SetBlipColour = 5,                                              -- Blip Color
-    BlipLabel = "Lumber Depo",                                      -- Blip Label
-    minZ = 31.92,                                                   -- Max Z
-    maxZ = 35.92,                                                   -- Max Z
-    Vehicle = 'tiptruck',                                           -- Job Vehicle
-    VehicleCoords = vector4(1162.27, -1318.55, 34.74, 173.91),      -- Job Vehcile Coords
+    -- targetZone = vector3(1167.73, -1347.27, 33.92),                 -- et-target vector
+    -- targetHeading = 273.47,                                         -- et-target box zone
+    -- coords = vector4(1167.73, -1347.27, 33.92, 273.47),             -- Move Location (Ped and blip)
+    -- SetBlipSprite = 85,                                             -- Blip Icon (https://docs.fivem.net/docs/game-references/blips/)
+    -- SetBlipDisplay = 6,                                             -- Blip Behavior (https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
+    -- SetBlipScale = 0.85,                                            -- Blip Size
+    -- SetBlipColour = 5,                                              -- Blip Color
+    -- BlipLabel = "Lumber Depo",                                      -- Blip Label
+    -- minZ = 31.92,                                                   -- Max Z
+    -- maxZ = 35.92,                                                   -- Max Z
+    -- Vehicle = 'tiptruck',                                           -- Job Vehicle
+    -- VehicleCoords = vector4(1162.27, -1318.55, 34.74, 173.91),      -- Job Vehcile Coords
 }
 
 LumberProcessor = {
