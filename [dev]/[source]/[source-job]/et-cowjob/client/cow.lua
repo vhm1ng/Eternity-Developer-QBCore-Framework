@@ -490,3 +490,30 @@ function Draw3DText(x,y,z,textInput,fontId,scaleX,scaleY,color)
     DrawText(0.0, 0.0)
     ClearDrawOrigin()
 end
+
+CreateThread(function()
+    -- Load ped model
+    local pedModel = `a_m_m_farmer_01`
+    RequestModel(pedModel)
+    while not HasModelLoaded(pedModel) do Wait(0) end
+    local ped
+    -- Create Ped
+    ped = CreatePed(0, pedModel, Cow.SellLocation.x, Cow.SellLocation.y, Cow.SellLocation.z, Cow.SellLocation.w, false, false)
+    FreezeEntityPosition(ped, true)
+    SetEntityInvincible(ped, true)
+    SetBlockingOfNonTemporaryEvents(ped, true)
+    TaskStartScenarioInPlace(ped, "WORLD_HUMAN_CLIPBOARD", 0, true)
+
+    -- Add et-target interaction
+    exports['et-target']:AddTargetEntity(ped, {
+        options = {
+            {
+                type = "server",
+                event = "tC-cowjob:server:SellMilk",
+                icon = 'fas fa-circle',
+                label = 'Bán Sữa Bò',
+            }
+        },
+        distance = 1.5,
+    })
+end)

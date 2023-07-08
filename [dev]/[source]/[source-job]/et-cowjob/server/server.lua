@@ -82,3 +82,23 @@ RegisterServerEvent('lotus-nuongthit:ProcessThitbo',function()
         TriggerClientEvent('QBCore:Notify',a, 'Bạn cần 2 thịt bòa và 2 vỏ gỗ',"error", 4000)
     end 
 end)
+
+RegisterNetEvent('tC-cowjob:server:SellMilk', function()
+    local price = 0
+    local Player = QBCore.Functions.GetPlayer(source)
+    if Player.PlayerData.items ~= nil and next(Player.PlayerData.items) ~= nil then
+        for k in pairs(Player.PlayerData.items) do
+            if Player.PlayerData.items[k] ~= nil then
+                if Cow.Sell[Player.PlayerData.items[k].name] ~= nil then
+                    price = price + (Cow.Sell[Player.PlayerData.items[k].name].price * Player.PlayerData.items[k].amount)
+                    Player.Functions.RemoveItem(Player.PlayerData.items[k].name, Player.PlayerData.items[k].amount, k)
+                    TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items[Player.PlayerData.items[k].name], "remove")
+                end
+            end
+        end
+        Player.Functions.AddMoney("cash", price)
+        TriggerClientEvent('QBCore:Notify', source, "Bạn vừa bán hết sữa!", "success")
+    else
+		TriggerClientEvent('QBCore:Notify', source, "Bạn không có sữa để bán!", "error")
+	end
+end)

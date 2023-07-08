@@ -1,12 +1,6 @@
 Cow = {}
 Cow.PlantsField = vector3(2432.98, 4765.31, 34.34)
 
-Cow.PedLocation = vector3(2270.87, 5153.08, 55.85)
-Cow.PedCoordsHeading = 237.86
-Cow.PedHash = `ig_old_man1a`
-Cow.Boi1 = vector3(1348.99, 4179.62, 30.19)
-
-
 Cow.PackingMilk = {
     --Public Garage:
 	['packingmilk'] = {
@@ -25,3 +19,11 @@ Cow.SecondaryColor = {r = 33, g = 244, b = 218, a = 255} -- Use RGB color picker
 Cow.nuongthit = {coords = vector3(454.27, -841.57, 27.62), name = 'blip_weedprocessing', color = 0, sprite = 6, radius = 10.0}
 Cow.hopsua = {coords = vector3(2503.19, 4799.74, 35.02)}
 -- Cow.hopsua = vector3(2502.33, 4798.65, 35.0),
+
+Cow.SellLocation = vector4(453.34, -755.12, 26.36, 274.7)
+
+Cow.Sell = {
+    ["milk"] = {
+        ["price"] = 120
+    },
+}
