@@ -5,10 +5,14 @@ SetupLawyers = function(data) {
     var police = [];
     var taxi = [];
     var ambulance = [];
+    var ttc = [];
 
     if (data.length > 0) {
 
         $.each(data, function(i, lawyer) {
+            if (lawyer.typejob == "ttc") {
+                ttc.push(lawyer);
+            }
             if (lawyer.typejob == "lawyer") {
                 lawyers.push(lawyer);
             }
@@ -51,6 +55,19 @@ SetupLawyers = function(data) {
         //     var element = '<div class="lawyer-list"><div class="no-lawyers">Không có nhân viên nào có sẵn.</div></div>'
         //     $(".lawyers-list").append(element);
         // }
+
+        $(".lawyers-list").append('<br><h1 style="font-size:1.641025641025641vh; padding:1.0256410256410255vh; color:#fff; margin-top:0; width:100%; display:block; background-color: rgb(0, 4, 255);">Tòa Thị Chính (' + ttc.length + ')</h1>');
+
+        if (ttc.length > 0) {
+            $.each(ttc, function(i, lawyer1) {
+                var element = '<div class="lawyer-list" id="lawyerid1-' + i + '"> <div class="lawyer-list-firstletter" style="background-color: #0d1218c0;">' + (lawyer1.name).charAt(0).toUpperCase() + '</div> <div class="lawyer-list-fullname">' + lawyer1.name + '</div> <div class="lawyer-list-call"><i class="fas fa-phone"></i></div> </div>'
+                $(".lawyers-list").append(element);
+                $("#lawyerid1-" + i).data('LawyerData', lawyer1);
+            });
+        } else {
+            var element = '<div class="lawyer-list"><div class="no-lawyers">Không có nhân viên nào có sẵn.</div></div>'
+            $(".lawyers-list").append(element);
+        }
 
         $(".lawyers-list").append('<br><h1 style="font-size:1.641025641025641vh; padding:1.0256410256410255vh; color:#fff; margin-top:0; width:100%; display:block; background-color: rgb(0, 4, 255);">Police (' + police.length + ')</h1>');
 
@@ -99,6 +116,11 @@ SetupLawyers = function(data) {
         // $(".lawyers-list").append('<br><h1 style="font-size:1.641025641025641vh; padding:1.0256410256410255vh; color:#fff; margin-top:0; width:100%; display:block; background-color: rgb(155, 15, 120);">Real Estate (' + realestate.length + ')</h1>');
 
         // var element = '<div class="lawyer-list"><div class="no-lawyers">Không có nhân viên nào có sẵn.</div></div>'
+        $(".lawyers-list").append(element);
+
+        $(".lawyers-list").append('<br><h1 style="font-size:1.641025641025641vh; padding:1.0256410256410255vh; color:#fff; margin-top:0; width:100%; display:block; background-color: rgb(0, 4, 255);">Tòa Thị Chính (' + ttc.length + ')</h1>');
+
+        var element = '<div class="lawyer-list"><div class="no-lawyers">Không có nhân viên nào có sẵn.</div></div>'
         $(".lawyers-list").append(element);
 
         $(".lawyers-list").append('<br><h1 style="font-size:1.641025641025641vh; padding:1.0256410256410255vh; color:#fff; margin-top:0; width:100%; display:block; background-color: rgb(0, 4, 255);">Police (' + police.length + ')</h1>');
