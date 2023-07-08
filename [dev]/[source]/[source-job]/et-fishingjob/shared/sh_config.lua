@@ -51,3 +51,36 @@ Shared.FishingZones = {
         box = false
     }
 }
+
+Shared.Sell = {
+    ["fish"] = {
+        ["price"] = 50
+    },
+    ["fish2"] = {
+        ["price"] = 54
+    },
+    ["goldfish"] = {
+        ["price"] = 60
+    },
+    ["largemouthbass"] = {
+        ["price"] = 64
+    },
+    ["redfish"] = {
+        ["price"] = 70
+    },
+    ["salmon"] = {
+        ["price"] = 74
+    },
+    ["stingray"] = {
+        ["price"] = 150
+    },
+    ["stripedbass"] = {
+        ["price"] = 150
+    },
+    ["whale"] = {
+        ["price"] = 420
+    },
+    ["whale2"] = {
+        ["price"] = 440
+    }
+}
