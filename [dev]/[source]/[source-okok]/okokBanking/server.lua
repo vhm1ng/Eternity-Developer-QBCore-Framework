@@ -1411,6 +1411,49 @@ function GroupDigits(value)
 	return left..(num:reverse():gsub('(%d%d%d)','%1,'):reverse())..right
 end
 
+QBCore.Commands.Add('duatien', 'Đưa tiền mặt cho người chơi khác', {{name = 'id', help = 'ID người chơi'}, {name = 'amount', help = 'Số tiền'}}, true, function(source, args)
+	local src = source
+	  local id = tonumber(args[1])
+	  local amount = math.ceil(tonumber(args[2]))
+  
+	  if id and amount then
+		  local xPlayer = QBCore.Functions.GetPlayer(src)
+		  local xReciv = QBCore.Functions.GetPlayer(id)
+  
+		  if xReciv and xPlayer then
+			  if not xPlayer.PlayerData.metadata["isdead"] then
+				  local distance = xPlayer.PlayerData.metadata["inlaststand"] and 3.0 or 10.0
+				  if #(GetEntityCoords(GetPlayerPed(src)) - GetEntityCoords(GetPlayerPed(id))) < distance then
+					  if amount > 0 then
+						  if xPlayer.Functions.RemoveMoney('cash', amount) then
+							  if xReciv.Functions.AddMoney('cash', amount) then
+								  TriggerClientEvent('QBCore:Notify', src, "Chuyển thành công $" .. "tostring(amount) cho ID: " .. tostring(id), "success")
+								  TriggerClientEvent('QBCore:Notify', id, "Nhận thành công $" .. tostring(amount) .. " từ ID: " .. tostring(src), "success")
+							  else
+								  -- Return player cash
+								  xPlayer.Functions.AddMoney('cash', amount)
+								  TriggerClientEvent('QBCore:Notify', src, 'Không thể chuyển đồ cho ID!', "error")
+							  end
+						  else
+							  TriggerClientEvent('QBCore:Notify', src, "Bạn không có đủ tiền!", "error")
+						  end
+					  else
+						  TriggerClientEvent('QBCore:Notify', src, "Số lượng không hợp lệ!", "error")
+					  end
+				  else
+					  TriggerClientEvent('QBCore:Notify', src, "Bạn đang quá xa rồi!", "error")
+				  end
+			  else
+				  TriggerClientEvent('QBCore:Notify', src, "Không thể đưa tiền khi chết!", "error")
+			  end
+		  else
+			  TriggerClientEvent('QBCore:Notify', src, "ID không hợp lệ!", "error")
+		  end
+	  else
+		  TriggerClientEvent('QBCore:Notify', src, "Sử dụng /duatien [ID] [SỐ TIỀN]!", "error")
+	  end
+  end)
+
 -------------------------- WEBHOOK
 
 function TransferMoneyWebhook(data)
