@@ -66,7 +66,7 @@ class Bot extends Client {
                 this.log.warn(`${file} is using a name that's already been registered by another command [skipping]`);
                 continue;
             }
-            if (file.startsWith("qb-") && !this.QBCore) continue;
+            if (file.startsWith("et-") && !this.QBCore) continue;
             this.commands.set(command.name, command);
             if (["MESSAGE", "USER"].includes(command.type)) delete command.description;
             this.arrayOfCommands.push(command);

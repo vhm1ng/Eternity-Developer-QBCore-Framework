@@ -18,7 +18,7 @@ z.locale = require(`${z.root}/locales/${z.config.LanguageLocaleCode}`);
 z.utils = require(`${z.root}/server/utils`);
 
 try {
-    z.QBCore = global.exports["qb-core"].GetCoreObject();
+    z.QBCore = global.exports["et-core"].GetCoreObject();
     if (z.QBCore) z.utils.log.info("QBCore found! Supported QB commands will be loaded.");
 } catch { z.QBCore = false; }
 

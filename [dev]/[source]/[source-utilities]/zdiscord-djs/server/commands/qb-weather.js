@@ -53,15 +53,15 @@ module.exports = {
     ],
 
     run: async (client, interaction, args) => {
-        if (GetResourceState("qb-weathersync") !== "started") return interaction.reply({ content: "This command requires QBCore's `qb-weathersync` to work", ephemeral: false });
+        if (GetResourceState("et-weathersync") !== "started") return interaction.reply({ content: "This command requires QBCore's `et-weathersync` to work", ephemeral: false });
         if (args.blackout) {
             // doesn't give any option for true or false or feedback to which was done -.-
-            emit("qb-weathersync:server:toggleBlackout");
+            emit("et-weathersync:server:toggleBlackout");
             client.utils.log.info(`[${interaction.member.displayName}] toggled blackout`);
             return interaction.reply({ content: "Blackout has been toggled", ephemeral: false });
         } else if (args.set) {
             // also doesn't give any feedback on it's success or failure -.-
-            emit("qb-weathersync:server:setWeather", args.weather);
+            emit("et-weathersync:server:setWeather", args.weather);
             client.utils.log.info(`[${interaction.member.displayName}] toggled weather to ${args.weather}`);
             return interaction.reply({ content: "Weather was updated", ephemeral: false });
         }

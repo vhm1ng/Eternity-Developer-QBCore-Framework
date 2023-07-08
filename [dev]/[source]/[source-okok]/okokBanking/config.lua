@@ -8,15 +8,15 @@ Config.okokTextUI = true -- true = okokTextUI | false = QBCore DrawText
 
 Config.UseOkOkBankingSounds = true -- true = Uses Sounds | false = No sounds
 
-Config.UseTargetOnAtm = false -- Using qb-target and not TextUI to access to the atms
+Config.UseTargetOnAtm = false -- Using et-target and not TextUI to access to the atms
 
-Config.UseTargetOnBank = false -- Using qb-target or q-target and not TextUI to access to the bank
+Config.UseTargetOnBank = false -- Using et-target or q-target and not TextUI to access to the bank
 
-Config.TargetBankDistance = 1.5 -- Distance to target a bank from qb-target ( To change the distance to ATM check line 61)
+Config.TargetBankDistance = 1.5 -- Distance to target a bank from et-target ( To change the distance to ATM check line 61)
 
 Config.DebugTargetZones = false -- Set to true only if you need to check the position of a zone
 
-Config.UseCashAsItem = false -- Set to true if you have cash as item on qb-core
+Config.UseCashAsItem = false -- Set to true if you have cash as item on et-core
 
 Config.IBANPrefix = "ETBANK" -- IBAN prefix
 

@@ -119,7 +119,7 @@ RegisterNUICallback('cDataPed', function(data)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(data, gender)
+        QBCore.Functions.TriggerCallback('et-multicharacter:server:getSkin', function(data, gender)
             model = gender
             if model ~= nil then
                 Citizen.CreateThread(function()

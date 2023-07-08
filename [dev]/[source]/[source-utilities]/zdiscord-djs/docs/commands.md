@@ -87,7 +87,7 @@ There's currently only 3 permission tiers (mod, admin, god). Permissions are gra
 Adding commands can be really simple if you're familiar with javascript but very confusing otherwise. continue at your own risk and if you do make something cool, consider submitting a pull request and maybe it'll become a part of the default zdiscord commands :)
 
 1. create a new javascript file under `/commands` with the name of your command (all lowercase, no spaces).<br>
-*Note: If the command filename starts with `qb-` it will only load if QBCore is detected*
+*Note: If the command filename starts with `et-` it will only load if QBCore is detected*
 
 2. Paste in the following base. this is everything REQUIRED for a command to work properly:
 

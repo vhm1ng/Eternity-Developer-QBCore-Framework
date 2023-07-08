@@ -1,6 +1,6 @@
-if Config.Framework ~= 'qb-core' then return end
+if Config.Framework ~= 'et-core' then return end
 
-local framework = 'qb-core'
+local framework = 'et-core'
 local state = GetResourceState(framework)
 
 if state == 'missing' or state == "unknown" then

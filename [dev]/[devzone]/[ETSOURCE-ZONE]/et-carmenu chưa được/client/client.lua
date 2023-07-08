@@ -20,8 +20,8 @@ Citizen.CreateThread(function()
 end)
 
 
-RegisterNetEvent('qb-carmenu:veh:options')
-AddEventHandler('qb-carmenu:veh:options', function()
+RegisterNetEvent('et-carmenu:veh:options')
+AddEventHandler('et-carmenu:veh:options', function()
     EnableGUI(true)
 end)
 

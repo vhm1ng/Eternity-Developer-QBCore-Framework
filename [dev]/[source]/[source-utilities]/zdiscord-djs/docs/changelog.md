@@ -48,7 +48,7 @@
 **7.0.0 - Staff chat, new config AND WEBHOOK LOGGING [2021-12-8]**
 
 - added bi-directional staff chat (messages from discord staff channel <-> fiveM staff chat messages)
-- add discord webhook logging export (think qb-logs)
+- add discord webhook logging export (think et-logs)
 - Refactored and added to config to be more clear
 - dutch added. Thanks Chatty <3
 - Slovenian added. Thanks Synthetics <3
@@ -103,7 +103,7 @@
 
 **3.1.0 - QBCore (potential ESX) support added [2021-7-10]**
 
-- Commands starting with `qb-` will load automatically if QBCore is detected.
+- Commands starting with `et-` will load automatically if QBCore is detected.
 - Placeholders for `esx-` commands have been added.
 
 

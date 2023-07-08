@@ -28,19 +28,19 @@ local function keyPressed()
     end)
 end
 
-RegisterNetEvent('qb-core:client:DrawText', function(text, position)
+RegisterNetEvent('et-core:client:DrawText', function(text, position)
     drawText(text, position)
 end)
 
--- RegisterNetEvent('qb-core:client:ChangeText', function(text, position) -- Can't use
+-- RegisterNetEvent('et-core:client:ChangeText', function(text, position) -- Can't use
 --     changeText(text, position)
 -- end)
 
-RegisterNetEvent('qb-core:client:HideText', function()
+RegisterNetEvent('et-core:client:HideText', function()
     hideText()
 end)
 
--- RegisterNetEvent('qb-core:client:KeyPressed', function() -- Can't use
+-- RegisterNetEvent('et-core:client:KeyPressed', function() -- Can't use
 --     keyPressed()
 -- end)
 

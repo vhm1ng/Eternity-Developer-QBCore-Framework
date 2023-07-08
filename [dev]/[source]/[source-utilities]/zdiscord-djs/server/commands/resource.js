@@ -83,7 +83,7 @@ module.exports = {
 
     run: async (client, interaction, args) => {
         if (!(args.refresh || args.inspect) && args.script == GetCurrentResourceName()) return interaction.reply({ content: "You can't restart this script", ephemeral: true });
-        if (!(args.refresh || args.inspect) && args.script == "qb-core") return interaction.reply({ content: "You should never restart this script as it will break your server", ephemeral: true });
+        if (!(args.refresh || args.inspect) && args.script == "et-core") return interaction.reply({ content: "You should never restart this script as it will break your server", ephemeral: true });
         await interaction.deferReply();
         if (args.refresh) {
             ExecuteCommand("refresh");

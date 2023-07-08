@@ -40,7 +40,7 @@ module.exports = {
         if (args.time < 0) return interaction.reply({ content: "time must be a positive number", ephemeral: true });
         // const player = client.QBCore.Functions.GetPlayer(args.id);
         /* If this event is fixed the code following can be removed.
-        emit("qb-admin:server:ban", player, time, reason);
+        emit("et-admin:server:ban", player, time, reason);
         */
         const bantime = args.time < 2147483647 ? (args.time + Math.floor(Date.now() / 1000)) : 2147483647;
         global.exports.oxmysql.insert_async("INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (?, ?, ?, ?, ?, ?, ?)", [
@@ -53,7 +53,7 @@ module.exports = {
             interaction.member.id,
         ]);
         client.utils.chatMessage(-1, client.z.locale.announcement, `${GetPlayerName(args.id)} has been banned for breaking the rules.`, { color: [ 155, 0, 0 ] });
-        emit("qb-log:server:CreateLog", "bans", "Player Banned", "red", `${GetPlayerName(args.id)} was banned by ${interaction.member.displayName} for ${args.reason}`, true);
+        emit("et-log:server:CreateLog", "bans", "Player Banned", "red", `${GetPlayerName(args.id)} was banned by ${interaction.member.displayName} for ${args.reason}`, true);
         if (bantime >= 2147483647) {
             DropPlayer(args.id, `You have been banned:\n${args.reason}\n\nYour ban is permanent.\n🔸 Check our Discord for more information: ${client.QBCore.Config.Server.discord}`);
         } else {

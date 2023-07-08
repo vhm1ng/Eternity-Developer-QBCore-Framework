@@ -1,6 +1,6 @@
-if Config.Framework ~= 'qb-core' then return end
+if Config.Framework ~= 'et-core' then return end
 
-local framework = 'qb-core'
+local framework = 'et-core'
 local state = GetResourceState(framework)
 
 if state == 'missing' or state == "unknown" then
@@ -8,7 +8,7 @@ if state == 'missing' or state == "unknown" then
     return
 end
 
-local QBCore = exports['qb-core']:GetCoreObject()
+local QBCore = exports['et-core']:GetCoreObject()
 
 -- https://github.com/qbcore-framework/dpemotes/blob/master/Server/Server.lua#L101-L141
 QBCore.Commands.Add('e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}}, true, function(source, args)

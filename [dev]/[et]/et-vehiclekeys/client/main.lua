@@ -166,7 +166,7 @@ function lockpickFinish(success)
 		HasKey = true
 		TriggerEvent("vehiclekeys:client:SetOwner2", GetVehicleNumberPlateText(vehicle))
 		IsHotwiring = false
-		TriggerServerEvent('qb-hud:Server:GainStress', math.random(2, 4))
+		TriggerServerEvent('et-hud:Server:GainStress', math.random(2, 4))
 	else
 		if usingAdvanced then
 			if math.random(1,100) < 19 then
