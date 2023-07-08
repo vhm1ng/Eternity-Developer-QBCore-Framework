@@ -200,46 +200,6 @@ Config.Products = {
         },
     },
     ["weedshop"] = {
-        [1] = {
-            name = "joint",
-            price = 10,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 1,
-        },
-        [2] = {
-            name = "weapon_poolcue",
-            price = 100,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 2,
-        },
-        [3] = {
-            name = "weed_nutrition",
-            price = 20,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 3,
-        },
-        [4] = {
-            name = "empty_weed_bag",
-            price = 2,
-            amount = 1000,
-            info = {},
-            type = "item",
-            slot = 4,
-        },
-        [5] = {
-            name = "rolling_paper",
-            price = 2,
-            amount = 1000,
-            info = {},
-            type = "item",
-            slot = 5,
-        },
     },
     ["gearshop"] = {
         [1] = {
@@ -312,67 +272,7 @@ Config.Products = {
         }
     },
     ["weapons"] = {
-        [1] = {
-            name = "weapon_knife",
-            price = 250,
-            amount = 250,
-            info = {},
-            type = "item",
-            slot = 1,
-        },
-        [2] = {
-            name = "weapon_bat",
-            price = 250,
-            amount = 250,
-            info = {},
-            type = "item",
-            slot = 2,
-        },
-        [3] = {
-            name = "weapon_hatchet",
-            price = 250,
-            amount = 250,
-            info = {},
-            type = "item",
-            slot = 3,
-            requiredJob = { "mechanic", "police" }
-        },
-        [4] = {
-            name = "weapon_pistol",
-            price = 2500,
-            amount = 5,
-            info = {},
-            type = "item",
-            slot = 4,
-            requiresLicense = true
-        },
-        [5] = {
-            name = "weapon_snspistol",
-            price = 1500,
-            amount = 5,
-            info = {},
-            type = "item",
-            slot = 5,
-            requiresLicense = true
-        },
-        [6] = {
-            name = "weapon_vintagepistol",
-            price = 4000,
-            amount = 5,
-            info = {},
-            type = "item",
-            slot = 6,
-            requiresLicense = true
-        },
-        [7] = {
-            name = "pistol_ammo",
-            price = 250,
-            amount = 250,
-            info = {},
-            type = "item",
-            slot = 7,
-            requiresLicense = true
-        },
+
     },
     ["casino"] = {
         [1] = {
