@@ -1014,7 +1014,7 @@ CreateThread(function()
         impoundZones[#impoundZones+1] = BoxZone:Create(
             vector3(v.x, v.y, v.z), 2, 2, {
             name="box_zone",
-            debugPoly = true,
+            debugPoly = false,
             minZ = v.z - 1,
             maxZ = v.z + 1,
             heading = 300,
