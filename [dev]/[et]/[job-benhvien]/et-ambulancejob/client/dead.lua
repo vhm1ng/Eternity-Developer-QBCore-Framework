@@ -19,9 +19,9 @@ function OnDeath()
         TriggerServerEvent("InteractSound_SV:PlayOnSource", "demo", 0.1)
         local player = PlayerPedId()
 
-        while GetEntitySpeed(player) > 0.5 or IsPedRagdoll(player) do
-            Wait(10)
-        end
+        -- while GetEntitySpeed(player) > 0.5 or IsPedRagdoll(player) do
+        --     Wait(10)
+        -- end
 
         if isDead then
             local pos = GetEntityCoords(player)
