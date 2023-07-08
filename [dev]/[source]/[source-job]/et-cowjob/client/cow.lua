@@ -65,7 +65,7 @@ RegisterNetEvent('lotus-milky:client:Apanhar', function()
                 exports['ps-ui']:Circle(function(success)
                     if success then
                         TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, false)
-                        QBCore.Functions.Progressbar('Apanhar', 'Đang bóp zú...',(1000*10), false, true, {
+                        QBCore.Functions.Progressbar('Apanhar', 'Đang bóp zú...',(500*10), false, true, {
                             disableMovement = true, --
                             disableCarMovement = true,
                             disableMouse = false,
@@ -273,7 +273,7 @@ function PackingMilk()
     TaskPlayAnim(GetPlayerPed(-1), 'amb@medic@standing@tendtodead@idle_a', 'idle_a', 8.0, -8.0, -1, 1, 0.0, 0, 0, 0)
     LoadDict('amb@medic@standing@tendtodead@exit')
     TaskPlayAnim(PlayerPedId(), 'amb@medic@standing@tendtodead@exit', 'exit', 8.0, -8.0, -1, 1, 0.0, 0, 0, 0)
-    QBCore.Functions.Progressbar("search_register", "Đang đóng hộp..", 1000*10, false, true, {
+    QBCore.Functions.Progressbar("search_register", "Đang đóng hộp..", 500*10, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
