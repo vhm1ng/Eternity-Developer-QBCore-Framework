@@ -13,7 +13,7 @@ end)
 local function AlertCops()
     -- README: UNCOMMENT WHICHEVER ALERT YOU WANNA USE UNLESS YOU USE A DIFFERENT ALERT SYSTEM
     --TriggerServerEvent('police:server:policeAlert', 'Sign being stolen') -- Default QBCore Dispatch
-    --exports['ps-dispatch']:SignRobbery() -- ps-dispatch
+    exports['ps-dispatch']:SignRobbery() -- ps-dispatch
 end
 
 local function loadAnimDict(dict)
@@ -53,8 +53,7 @@ RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
                 -- exports['ps-dispatch']:SignRobbery()
                 exports['ps-ui']:Circle(function(success)
                     if success then
-                        TriggerServerEvent('police:server:policeAlert', 'Có người đang lau biển báo') -- Default QBCore Dispatch
-                        TriggerServerEvent('police:server:policeAlert', 'Có người đang lau biển báo') -- Default QBCore Dispatch
+                        AlertCops()
                         loadAnimDict("amb@prop_human_bum_bin@base")
                         hasTimeout = true
                         TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
@@ -71,8 +70,6 @@ RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
                             DeleteEntity(data.entity)
                             local object = {coords = coords, model = -949234773}
                             TriggerServerEvent("et-signrobbery:server:delete", object)
-                            AlertCops()
-                            
                             Citizen.SetTimeout(timeoutDuration, function()
                                 hasTimeout = false -- Reset the flag to false after the timeout
                             end)

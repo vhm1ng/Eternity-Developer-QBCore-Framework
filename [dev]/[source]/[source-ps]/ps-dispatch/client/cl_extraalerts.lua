@@ -218,7 +218,7 @@ local function SignRobbery()
             y = currentPos.y,
             z = currentPos.z
         },
-        dispatchMessage = 'Sign Robbery Committed', -- message
+        dispatchMessage = 'CẠY BIỂN BÁO', -- message
         job = {"LEO", "police"} -- type or jobs that will get the alerts
     })
 end exports('SignRobbery', SignRobbery)
