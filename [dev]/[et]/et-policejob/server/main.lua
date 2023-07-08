@@ -13,7 +13,7 @@ local function UpdateBlips()
     local dutyPlayers = {}
     local players = QBCore.Functions.GetQBPlayers()
     for _, v in pairs(players) do
-        if v and (v.PlayerData.job.name == "police" or v.PlayerData.job.name == "ambulance") and v.PlayerData.job.onduty then
+        if v and (v.PlayerData.job.name == "police") and v.PlayerData.job.onduty then
             local coords = GetEntityCoords(GetPlayerPed(v.PlayerData.source))
             local heading = GetEntityHeading(GetPlayerPed(v.PlayerData.source))
             dutyPlayers[#dutyPlayers+1] = {
@@ -29,7 +29,7 @@ local function UpdateBlips()
             }
         end
     end
-    -- TriggerClientEvent("police:client:UpdateBlips", -1, dutyPlayers)
+    TriggerClientEvent("police:client:UpdateBlips", -1, dutyPlayers)
 end
 
 local function CreateBloodId()
