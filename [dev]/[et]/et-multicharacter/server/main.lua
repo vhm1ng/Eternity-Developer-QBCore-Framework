@@ -7,21 +7,6 @@ local function GiveStarterItems(source)
     local Player = QBCore.Functions.GetPlayer(src)
 
     for _, v in pairs(QBCore.Shared.StarterItems) do
-        local info = {}
-        if v.item == "id_card" then
-            info.citizenid = Player.PlayerData.citizenid
-            info.firstname = Player.PlayerData.charinfo.firstname
-            info.lastname = Player.PlayerData.charinfo.lastname
-            info.birthdate = Player.PlayerData.charinfo.birthdate
-            info.gender = Player.PlayerData.charinfo.gender
-            info.nationality = Player.PlayerData.charinfo.nationality
-            info.fingerprint = Player.PlayerData.metadata["fingerprint"]
-        elseif v.item == "driver_license" then
-            info.firstname = Player.PlayerData.charinfo.firstname
-            info.lastname = Player.PlayerData.charinfo.lastname
-            info.birthdate = Player.PlayerData.charinfo.birthdate
-            info.type = "Class C Driver License"
-        end
         Player.Functions.AddItem(v.item, v.amount, false, info)
     end
 end
@@ -103,12 +88,14 @@ RegisterNetEvent('et-multicharacter:server:createCharacter', function(data)
             TriggerClientEvent("et-multicharacter:client:closeNUI", src)
             TriggerClientEvent('apartments:client:setupSpawnUI', src, newData)
             exports['tC-idcard']:CreateMetaLicense(src, {'id_card','driver_license'})
+            GiveStarterItems(src)
         else
             print('^2[et-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
             loadHouseData(src)
             TriggerClientEvent("et-multicharacter:client:closeNUIdefault", src)
             exports['tC-idcard']:CreateMetaLicense(src, {'id_card','driver_license'})
+            GiveStarterItems(src)
         end
 	end
 end)
