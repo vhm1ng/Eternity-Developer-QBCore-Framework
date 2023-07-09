@@ -198,7 +198,7 @@ Config.Products = {
             type = "item",
             slot = 9,
         },
-        [1] = {
+        [10] = {
             name = "xosua",
             price = 1000,
             amount = 100,
