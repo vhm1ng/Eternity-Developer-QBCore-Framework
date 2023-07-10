@@ -177,15 +177,15 @@ if Config.ElectricVehicleCharging then
             end
         else
             Electricity = exports['et-input']:ShowInput({
-                header = "Select the Amount of Fuel<br>Current Price: $" ..
-                FuelPrice .. " / KWh <br> Current Charge: " .. finalfuel .. " KWh <br> Full Charge Cost: $" ..
+                header = "Chọn số lượng<br>Giá: $" ..
+                FuelPrice .. " / KWh <br> Điện hiện tại trong xe: " .. finalfuel .. " KWh <br> Sạc đầy tốn: $" ..
                 wholetankcostwithtax .. "",
-                submitText = "Insert Charger",
+                submitText = "Sạc",
                 inputs = {{
                     type = 'number',
                     isRequired = true,
                     name = 'amount',
-                    text = 'The Battery Can Hold ' .. maxfuel .. ' More KWh.'
+                    text = 'Pin còn chứa dc ' .. maxfuel .. ' KWh.'
                 }}
             })
             if Electricity then

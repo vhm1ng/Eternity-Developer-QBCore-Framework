@@ -744,29 +744,29 @@ RegisterNetEvent('cdn-fuel:client:FinalMenu', function(purchasetype)
 				})
 			else
 				fuel = exports['et-input']:ShowInput({
-					header = "Select the Amount of Fuel<br>Current Price: $" ..
-					FuelPrice .. " / Liter <br> Current Fuel: " .. finalfuel .. " Liters <br> Full Tank Cost: $" ..
+					header = "Chọn số lượng<br>Giá: $" ..
+					FuelPrice .. " / Lít <br> Lượng xăng hiện tại : " .. finalfuel .. " lít <br> Đầy bình tốn: $" ..
 					wholetankcostwithtax .. "",
 					submitText = Lang:t("input_insert_nozzle"),
 					inputs = { {
 						type = 'number',
 						isRequired = true,
 						name = 'amount',
-						text = 'The Tank Can Hold ' .. maxfuel .. ' More Liters.'
+						text = 'Bình xăng có thể chứa ' .. maxfuel .. ' lít.'
 					}}
 				})
 			end
 		else
 			fuel = exports['et-input']:ShowInput({
-				header = "Select the Amount of Fuel<br>Current Price: $" ..
-				FuelPrice .. " / Liter <br> Current Fuel: " .. finalfuel .. " Liters <br> Full Tank Cost: $" ..
+				header = "Chọn số lượng<br>Giá: $" ..
+				FuelPrice .. " / Lít <br> Lượng xăng hiện tại: " .. finalfuel .. " Lít <br> Đầy bình tốn: $" ..
 				wholetankcostwithtax .. "",
 				submitText = Lang:t("input_insert_nozzle"),
 				inputs = { {
 					type = 'number',
 					isRequired = true,
 					name = 'amount',
-					text = 'The Tank Can Hold ' .. maxfuel .. ' More Liters.'
+					text = 'Bình xăng có thể chứa ' .. maxfuel .. ' lít.'
 				}}
 			})
 		end
