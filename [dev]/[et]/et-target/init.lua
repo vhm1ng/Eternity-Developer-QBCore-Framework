@@ -46,10 +46,10 @@ Config.EnableDefaultOptions = true
 Config.DisableInVehicle = false
 
 -- Key to open the target eye, here you can find all the names: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
-Config.OpenKey = 'LMENU' -- Left Alt
+Config.OpenKey = 'G' -- Left Alt
 
 -- Control for key press detection on the context menu, it's the Right Mouse Button by default, controls are found here https://docs.fivem.net/docs/game-references/controls/
-Config.MenuControlKey = 19
+Config.MenuControlKey = 238
 
 -------------------------------------------------------------------------------
 -- Target Configs
