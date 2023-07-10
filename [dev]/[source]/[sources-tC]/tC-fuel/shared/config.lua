@@ -80,7 +80,7 @@ Config.VehicleShutoffOnLowFuel = { -- If enabled, vehicles will turn off when th
 Config.RenewedPhonePayment = false -- Enables use of Renewed-Phone Payment System and Notifications
 
 -- Syphoning --
-Config.UseSyphoning = false -- Follow the Syphoning Install Guide to enable this option!
+Config.UseSyphoning = true -- Follow the Syphoning Install Guide to enable this option!
 Config.SyphonDebug = false -- Used for Debugging the syphon portion!
 Config.SyphonKitCap = 50 -- Maximum amount (in L) the syphon kit can fit!
 Config.SyphonPoliceCallChance = 25 -- Math.Random(1, 100) Default: 25%
