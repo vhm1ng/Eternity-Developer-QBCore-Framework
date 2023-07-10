@@ -455,7 +455,7 @@ RegisterNetEvent('et-garbagejob:client:RequestRoute', function()
                             garbageVehicle = veh
                             SetVehicleNumberPlateText(veh, "et-" .. tostring(math.random(1000, 9999)))
                             SetEntityHeading(veh, v.w)
-                            exports['LegacyFuel']:SetFuel(veh, 100.0)
+                            exports['tC-fuel']:SetFuel(veh, 100.0)
                             SetVehicleFixed(veh)
                             SetEntityAsMissionEntity(veh, true, true)
                             SetVehicleDoorsLocked(veh, 2)

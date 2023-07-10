@@ -400,10 +400,25 @@ function ToggleEngine(veh)
         local EngineOn = GetIsVehicleEngineRunning(veh)
         if not isBlacklistedVehicle(veh) then
             if HasKeys(QBCore.Functions.GetPlate(veh)) or AreKeysJobShared(veh) then
-                if EngineOn then
-                    SetVehicleEngineOn(veh, false, false, true)
+                -- if EngineOn then
+                --     SetVehicleEngineOn(veh, false, false, true)
+                -- else
+                --     SetVehicleEngineOn(veh, true, true, true)
+                -- end
+
+                if exports['tC-fuel']:GetFuel(veh) ~= 0 then
+                    SetVehicleEngineOn(veh, true, false, true)
                 else
-                    SetVehicleEngineOn(veh, true, true, true)
+                    if not NotifyCooldown then
+                        RequestAmbientAudioBank("DLC_PILOT_ENGINE_FAILURE_SOUNDS", 0)
+                        PlaySoundFromEntity(l_2613, "Landing_Tone", PlayerPedId(), "DLC_PILOT_ENGINE_FAILURE_SOUNDS", 0, 0)
+                        NotifyCooldown = true
+                        QBCore.Functions.Notify('Phương tiện không có xăng!', 'error')
+                        Wait(1500)
+                        StopSound(l_2613)
+                        Wait(3500)
+                        NotifyCooldown = false
+                    end
                 end
             end
         end

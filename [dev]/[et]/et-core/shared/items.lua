@@ -1,5 +1,8 @@
 QBShared = QBShared or {}
 QBShared.Items = {
+-- tC-fuel
+	["syphoningkit"]				 = {["name"] = "syphoningkit", 					["label"] = "Bộ Rút Xăng", 				["weight"] = 2000, 		["type"] = "item", 		["image"] = "syphoningkit.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = ""},
+	["jerrycan"]				 	 = {["name"] = "jerrycan", 						["label"] = "Can Xăng", 				["weight"] = 2000, 		["type"] = "item", 		["image"] = "jerrycan.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = ""},
 
 -- Lau biển báo
 	["stopsign"]				    = {["name"] = "stopsign", 						["label"] = "Biển báo cấm", 			["weight"] = 40000, 	["type"] = "item", 		["image"] = "stopsign.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true, 	["combinable"] = nil, 	["description"] = "Bạn lau biển báo kiểu gì mà có biển trong người dợ :3"},
