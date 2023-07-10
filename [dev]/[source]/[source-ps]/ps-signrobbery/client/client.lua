@@ -76,7 +76,7 @@ RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
                         end)
                         robbery = GetGameTimer() / 1000
                     end
-                end, 5, 6)
+                end, 3, 6)
             end
         else
         QBCore.Functions.Notify('Không đủ nhân lực cảnh sát', 'error', 3500) -- Thông báo không đủ cs
