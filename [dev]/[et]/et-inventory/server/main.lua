@@ -2044,7 +2044,7 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 				-- check iteminfo
 				local info = {}
                 if string.find(table.concat(cardlist, ","), itemData["name"]) then
-                    exports['tC-idcard']:CreateMetaLicense(source, itemData["name"])
+                    exports['tC-idcard']:CreateMetaLicense(id, itemData["name"])
                     QBCore.Functions.Notify(source, "You Have Given " ..GetPlayerName(id).." "..amount.." "..itemData["name"].. "", "success")
                     return
 				elseif itemData["type"] == "weapon" then
