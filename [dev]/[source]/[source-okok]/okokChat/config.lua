@@ -150,7 +150,7 @@ Config.TryMessageTitle = 'TRY'
 --------------------------------
 -- [Staff]
 
-Config.EnableStaffCommand = false
+Config.EnableStaffCommand = true
 
 Config.StaffCommand = 'staff'
 
@@ -162,11 +162,11 @@ Config.AllowStaffsToClearEveryonesChat = true
 
 Config.ClearEveryonesChatCommand = 'clearall'
 
-Config.StaffSteamName = false
+Config.StaffSteamName = true
 
 -- [Staff Only]
 
-Config.EnableStaffOnlyCommand = false
+Config.EnableStaffOnlyCommand = true
 
 Config.StaffOnlyCommand = 'staffo'
 
