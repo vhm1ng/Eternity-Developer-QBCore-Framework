@@ -237,9 +237,9 @@ AddEventHandler('playerDropped', function(reason)
     TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) ..' left (' .. reason .. ')')
 end)
 
-RegisterCommand('say', function(source, args, rawCommand)
-    routeMessage(source, (source == 0) and 'console' or GetPlayerName(source), rawCommand:sub(5), nil, true)
-end)
+-- RegisterCommand('say', function(source, args, rawCommand)
+--     routeMessage(source, (source == 0) and 'console' or GetPlayerName(source), rawCommand:sub(5), nil, true)
+-- end)
 
 -- command suggestions for clients
 local function refreshCommands(player)

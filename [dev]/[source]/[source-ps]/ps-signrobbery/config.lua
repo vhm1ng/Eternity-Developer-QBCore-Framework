@@ -11,4 +11,4 @@ Config.Items = {
 Config.min = "5"
 Config.max = "8"
 
-Config.Police = 2
+Config.Police = 3
