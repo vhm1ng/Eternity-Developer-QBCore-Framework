@@ -1,5 +1,5 @@
 # et-lapraces
-Race Track Creation For et-core
+Race Track Creation For et-Core
 
 # License
 
