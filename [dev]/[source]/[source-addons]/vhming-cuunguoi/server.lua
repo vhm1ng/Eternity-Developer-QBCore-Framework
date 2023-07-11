@@ -16,7 +16,7 @@ QBCore.Functions.CreateCallback('hhfw:docOnline', function(source, cb)
 
 	for i=1, #xPlayers, 1 do
 		local xPlayer = QBCore.Functions.GetPlayer(xPlayers[i])
-		if xPlayer.PlayerData.job.name == 'ambulance' then
+		if xPlayer.PlayerData.job.name == 'ambulance' and xPlayer.PlayerData.job.onduty then
 			doctor = doctor + 1
 		end
 	end
