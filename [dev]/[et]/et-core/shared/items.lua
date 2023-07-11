@@ -16,8 +16,8 @@ QBShared.Items = {
 	["thitbonuong"] 				= {["name"] = "thitbonuong",  	     			["label"] = "Thịt bòa nướng",	 		["weight"] = 500, 		["type"] = "item", 		["image"] = "thitbonuong.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Thịt Bòa nướng được nướng chế biến từ Con Bò. Ăn được rấc thơm ngon :3"},
 	
 -- Thuốc lá
-	['thuocla'] 				 	 = {['name'] = 'thuocla', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 's12.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
-	['thuoc'] 				 	 = {['name'] = 'thuoc', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'weed_nutrition.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
+	['thuocla'] 				 	 = {['name'] = 'thuocla', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'thuocla.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
+	-- ['thuoc'] 				 	 = {['name'] = 'thuoc', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'weed_nutrition.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
 
 -- [QUASAR SMARTPHONE]
 	['classic_phone'] 			 	 = {['name'] = 'classic_phone', 			  	['label'] = 'Classic Phone', 			['weight'] = 700, 		['type'] = 'item', 		['image'] = 'classic_phone.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'},
