@@ -419,3 +419,20 @@ exports['et-target']:AddBoxZone2("barber8", vector3(1212.81, -472.9, 66.2), 6, 6
     },
     distance = 2.5,
 })
+
+exports['et-target']:AddBoxZone2("barber8", vector3(298.64, -598.18, 43.28), 3, 3, {
+        name = "ClothingRoomAmbulance",
+        heading = 0,
+    },{
+        options = {
+            {
+                event = "et-clothing:client:openOutfitMenu",
+                icon = "fas fa-circle",
+                label = "Phòng Thay Đồ",
+                job = "ambulance"
+            },
+    
+        },
+        distance = 2.0,
+    }
+)
