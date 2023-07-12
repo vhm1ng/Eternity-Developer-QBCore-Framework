@@ -2055,6 +2055,10 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 					info.uses = 20
 				elseif itemData["name"] == "syphoningkit" then
 					info.gasamount = 0
+				elseif itemData["name"] == "pickaxe" then
+					info.uses = 100
+				elseif itemData["name"] == "goldpan" then
+					info.uses = 100
 				elseif itemData["name"] == "jerrycan" then
 					info.gasamount = 0
 				elseif itemData["name"] == "markedbills" then
