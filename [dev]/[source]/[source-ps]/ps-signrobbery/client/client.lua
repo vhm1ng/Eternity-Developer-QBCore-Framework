@@ -44,7 +44,8 @@ local timeRobberySign = 1000*60*3 --thời gian lau biển
 RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
     local test = GetGameTimer() / 1000 --giây
     if test >= timeLogin then --10 phút
-        if CurrentCops >= Config.Police -= 1 then
+        if CurrentCops >= Config.Police then
+            -- -= 1 
             if hasTimeout == true then 
                 local remainingTime = math.ceil((timeoutDuration/1000 - (test - robbery) )) --tính theo giây
                 QBCore.Functions.Notify("Bạn vừa thực hiện hành vi này rồi, hãy thử lại sau ".. remainingTime .." giây", "test")

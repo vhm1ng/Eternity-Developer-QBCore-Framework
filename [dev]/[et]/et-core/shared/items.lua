@@ -1,5 +1,9 @@
 QBShared = QBShared or {}
 QBShared.Items = {
+-- Dua Xe
+	['fob_racing_basic'] = {['name'] = 'fob_racing_basic', ['label'] = 'Basic Racing Fob', ['weight'] = 500, ['type'] = 'item', ['image'] = 'fob_racing_basic.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['description'] = 'This basic fob allows someone to join custom races.'},
+	['fob_racing_master'] = {['name'] = 'fob_racing_master', ['label'] = 'Master Racing Fob', ['weight'] = 500, ['type'] = 'item', ['image'] = 'fob_racing_master.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['description'] = 'This master fob allows someone to create custom races.'},
+
 -- tC-fuel
 	["syphoningkit"]				 = {["name"] = "syphoningkit", 					["label"] = "Bộ Rút Xăng", 				["weight"] = 2000, 		["type"] = "item", 		["image"] = "syphoningkit.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = ""},
 	["jerrycan"]				 	 = {["name"] = "jerrycan", 						["label"] = "Can Xăng", 				["weight"] = 2000, 		["type"] = "item", 		["image"] = "jerrycan.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = ""},
@@ -16,8 +20,8 @@ QBShared.Items = {
 	["thitbonuong"] 				= {["name"] = "thitbonuong",  	     			["label"] = "Thịt bòa nướng",	 		["weight"] = 500, 		["type"] = "item", 		["image"] = "thitbonuong.png", 			["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,   	["combinable"] = nil,   ["description"] = "Thịt Bòa nướng được nướng chế biến từ Con Bò. Ăn được rấc thơm ngon :3"},
 	
 -- Thuốc lá
-	['thuocla'] 				 	 = {['name'] = 'thuocla', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 's12.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
-	['thuoc'] 				 	 = {['name'] = 'thuoc', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'weed_nutrition.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
+	['thuocla'] 				 	 = {['name'] = 'thuocla', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'thuocla.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
+	-- ['thuoc'] 				 	 = {['name'] = 'thuoc', 			  	  		['label'] = 'Thuốc lá', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'weed_nutrition.png', 					['unique'] = false, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Ôi điều thuốc của tôi, tại sao điếu thơm thế mlem mlem....'},
 
 -- [QUASAR SMARTPHONE]
 	['classic_phone'] 			 	 = {['name'] = 'classic_phone', 			  	['label'] = 'Classic Phone', 			['weight'] = 700, 		['type'] = 'item', 		['image'] = 'classic_phone.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'They say that Quasar Smartphone is the same as an iPhone, what do you think?'},
