@@ -198,6 +198,14 @@ Config.Products = {
             type = "item",
             slot = 12,
         },
+        [13] = {
+            name = "drillbit",
+            price = 10,
+            amount = 100,
+            info = {},
+            type = "item",
+            slot = 13,
+        },
     },
     ["weedshop"] = {
     },
