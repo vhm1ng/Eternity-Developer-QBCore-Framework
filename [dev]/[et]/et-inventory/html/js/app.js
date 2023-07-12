@@ -532,6 +532,24 @@ function FormatItemInfo(itemData, dom) {
                 "<p>" + "A Jerry Can, designed to hold fuel! <br><br>" + itemData.info.gasamount + " Liters Inside.</p>" +
                 "</span></p><p style=\"padding-top: .8vh;font-size:11px\"><b>Cân Nặng: </b>" + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + " | <b>Số Lượng: </b> " + itemData.amount
             );
+        } else if (itemData.name == "pickaxe") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p>Độ bền: " + itemData.info.uses + "</p>" +
+                "</span></p><p style=\"padding-top: .8vh;font-size:11px\"><b>Cân Nặng: </b>" + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + " | <b>Số Lượng: </b> " + itemData.amount
+            );
+        } else if (itemData.name == "goldpan") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p>Độ bền: " + itemData.info.uses + "</p>" +
+                "</span></p><p style=\"padding-top: .8vh;font-size:11px\"><b>Cân Nặng: </b>" + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + " | <b>Số Lượng: </b> " + itemData.amount
+            );
+        } else if (itemData.name == "xosua") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p>Độ bền: " + itemData.info.uses + "</p>" +
+                "</span></p><p style=\"padding-top: .8vh;font-size:11px\"><b>Cân Nặng: </b>" + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + " | <b>Số Lượng: </b> " + itemData.amount
+            );
         } else if (itemData.type == "weapon") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             if (itemData.info.ammo == undefined) {
