@@ -157,7 +157,7 @@ RegisterNetEvent('QBCore:Client:EnteredVehicle', function()
                         end
                     end
                     damagedone = true
-                    SetVehicleEngineOn(currentVehicle, false, true, true)
+                    -- SetVehicleEngineOn(currentVehicle, false, true, true)
                 end
                 if currentvehicleBodyHealth < 350.0 and not damagedone then
                     damagedone = true
