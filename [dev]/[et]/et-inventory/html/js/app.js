@@ -544,6 +544,12 @@ function FormatItemInfo(itemData, dom) {
                 "<p>Độ bền: " + itemData.info.uses + "</p>" +
                 "</span></p><p style=\"padding-top: .8vh;font-size:11px\"><b>Cân Nặng: </b>" + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + " | <b>Số Lượng: </b> " + itemData.amount
             );
+        } else if (itemData.name == "xosua") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p>Độ bền: " + itemData.info.uses + "</p>" +
+                "</span></p><p style=\"padding-top: .8vh;font-size:11px\"><b>Cân Nặng: </b>" + ((itemData.weight * itemData.amount) / 1000).toFixed(1) + " | <b>Số Lượng: </b> " + itemData.amount
+            );
         } else if (itemData.type == "weapon") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             if (itemData.info.ammo == undefined) {
