@@ -18,7 +18,7 @@ Config.OpenMenuCommand = 'hoadon' -- Command to open the menu
 
 Config.UseOKOKNotify = true -- If set to true it will use okokNotify, if set to false it will use the QB notify
 
-Config.InvoiceDistance = 15
+Config.InvoiceDistance = 30
 
 Config.AllowPlayersInvoice = false -- if players can create Player to Player invoices
 
@@ -44,7 +44,7 @@ Config.DeletePaidInvoicesEvery = 30 -- How often it should delete the paid invoi
 
 Config.UseAutoPay = true
 
-Config.DefaultLimitDate = 2 -- Days for limit pay date
+Config.DefaultLimitDate = 1 -- Days for limit pay date
 
 Config.CheckForUnpaidInvoicesEvery = 30 -- minutes
 
@@ -55,14 +55,12 @@ Config.FeeAfterEachDayPercentage = 5
 -- Autopay
 
 Config.JobsWithCityInvoices = { -- Which jobs have City Invoices (They will be allowed to delete any invoice) | Admins will have access by default
-	'court',
-	'ambulance',
-	'police'
-
+	'ttc'
 }
 
 Config.CityInvoicesAccessRanks = { -- Which jobs have City Invoices (They will be allowed to delete any invoice)
-	'' -- All of them have access
+	'Boss',
+	'Chief', -- All of them have access
 }
 
 Config.AllowedSocieties = { -- Which societies can access the Society Invoices
@@ -71,12 +69,14 @@ Config.AllowedSocieties = { -- Which societies can access the Society Invoices
 }
 
 Config.InspectCitizenSocieties = { -- Which societies can access the Society Invoices
-	'police'
+	'ambulance',
+	'police',
 }
 
 Config.SocietyAccessRanks = { -- Which ranks of the society have access to Society Invoices and City Invoices
 	'Boss',
 	'Chief',
+	'ttc',
 }
 
 Config.BillsList = {
