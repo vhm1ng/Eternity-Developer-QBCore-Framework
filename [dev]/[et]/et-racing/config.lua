@@ -5,7 +5,7 @@ Config.Permissions = {
         ['join'] = true,
         ['records'] = true,
         ['setup'] = true,
-        ['create'] = true,
+        ['create'] = false,
     },
     ['fob_racing_master'] = {
         ['join'] = true,
