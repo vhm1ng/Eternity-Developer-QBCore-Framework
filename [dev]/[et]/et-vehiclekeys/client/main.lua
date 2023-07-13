@@ -675,6 +675,7 @@ function LockpickDoor(isAdvanced)
     usingAdvanced = isAdvanced
     Config.LockPickDoorEvent()
 end
+
 function LockpickFinishCallback(success)
 	local ped = PlayerPedId()
     local vehicle = GetVehiclePedIsIn(ped, true)
@@ -690,15 +691,14 @@ function LockpickFinishCallback(success)
     else
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         AttemptPoliceAlert("steal")
-    end
-
-    if usingAdvanced then
-        if chance <= Config.RemoveLockpickAdvanced then
-            TriggerServerEvent("et-vehiclekeys:server:breakLockpick", "advancedlockpick")
-        end
-    else
-        if chance <= Config.RemoveLockpickNormal then
-            TriggerServerEvent("et-vehiclekeys:server:breakLockpick", "lockpick")
+        if usingAdvanced then
+            if chance <= Config.RemoveLockpickAdvanced then
+                TriggerServerEvent("et-vehiclekeys:server:breakLockpick", "advancedlockpick")
+            end
+        else
+            if chance <= Config.RemoveLockpickNormal then
+                TriggerServerEvent("et-vehiclekeys:server:breakLockpick", "lockpick")
+            end
         end
     end
 end
