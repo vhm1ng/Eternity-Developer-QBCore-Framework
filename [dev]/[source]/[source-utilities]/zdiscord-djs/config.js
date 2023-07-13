@@ -51,6 +51,7 @@ const EnableBotStatusMessages = true;
 const BotStatusMessages = [
     "{servername}",
     "{playercount} online",
+    "Mãi yêu cả nhà mình ạaaaa"
 ];
 
 // ACE PERMISSIONS
@@ -71,10 +72,10 @@ const SaveScreenshotsToServer = false;
 const EnableLoggingWebhooks = true;
 const LoggingWebhookName = "zLogs";
 // put "&" in front of the id if you're to ping a role
-const LoggingAlertPingId = "&000000000000000000";
+const LoggingAlertPingId = "1126284658531893329";
 // example: "bank": "https://discord.com/webhook/...",
 const LoggingWebhooks = {
-    "example": "https://discord.com/api/webhooks/1126147661213466804/pgvgCg9T9oilMImugDh0otAnxGRwWneruPO27uJ_PQjf-9a08zea5HPBiAi9c13vw-r-",
+    "example": "https://discord.com/api/webhooks/1128609020874330132/n6f5IAgwKjD0nBRI71pdgIg8bUe7k0WSBB2n4_nogmG-wbuNjFIkN85ZM-mnWKom35Z2",
 };
 
 

@@ -19,7 +19,7 @@ module.exports = {
                 .setThumbnail(interaction.guild.iconURL({ format: "png", size: 512 }))
                 .addField("FiveM Server:", `**Version:** ${GetConvar("version", "Unknown")}
                     **Server Name:** ${client.config.FiveMServerName}
-                    **Server IP:** ${client.config.FiveMServerIP}
+                    **Server IP:** 23.183.246.240:10116
                     **Resource Count:** ${GetNumResources()}
                     **Game Build:** ${GetConvar("sv_enforceGameBuild", "Unknown")}
                     **Max Clients:** ${GetConvar("sv_maxClients", "Unknown")}

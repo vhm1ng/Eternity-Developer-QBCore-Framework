@@ -69,11 +69,9 @@ module.exports = {
                     required: true,
                     type: "STRING",
                     choices: [
-                        { name: "Airport", value: "airport" },
-                        { name: "Maze Bank Roof", value: "mazeroof" },
-                        { name: "Del Perro Pier", value: "pier" },
-                        { name: "Fort Zancudo Base", value: "militarybase" },
-                        { name: "Mount Chiliad", value: "chiliad" },
+                        { name: "Bệnh Viện", value: "benhvien" },
+                        { name: "Đồn cảnh sát", value: "canhsat" },
+                        { name: "Garage Trung tâm", value: "garatt" },
                     ],
                 },
                 {
@@ -88,11 +86,14 @@ module.exports = {
 
     run: async (client, interaction, args) => {
         const locations = {
-            "airport": [ -1096.19, -3501.1, 17.18 ],
-            "mazeroof": [ -75.57, -818.88, 327.96 ],
-            "pier": [ -1712.06, -1136.48, 13.08 ],
-            "militarybase": [ -2105.88, 2871.16, 32.81 ],
-            "chiliad": [ 453.73, 5572.2, 781.18 ],
+            // "airport": [ -1096.19, -3501.1, 17.18 ],
+            // "mazeroof": [ -75.57, -818.88, 327.96 ],
+            // "pier": [ -1712.06, -1136.48, 13.08 ],
+            // "militarybase": [ -2105.88, 2871.16, 32.81 ],
+            // "chiliad": [ 453.73, 5572.2, 781.18 ],
+            "benhvien": [ 295.72, -581.86, 43.16 ],
+            "canhsat": [ 227.11, -796.72, 30.63 ],
+            "garatt": [ 655.67, -16.89, 82.84 ],
         };
         if (!GetPlayerName(args.id)) return interaction.reply({ content: "This ID seems invalid.", ephemeral: true });
         if (args.coords) {
