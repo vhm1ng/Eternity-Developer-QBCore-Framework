@@ -2,6 +2,67 @@ QBShared = QBShared or {}
 QBShared.VehicleHashes = {}
 
 QBShared.Vehicles = {
+    ['jackal'] = {
+        ['name'] = 'Jackal',
+        ['brand'] = 'Ocelot',
+        ['model'] = 'jackal',
+        ['price'] = 100000,
+        ['category'] = 'coupes',
+        ['categoryLabel'] = 'Xe Bình Dân',
+        ['hash'] = `jackal`,
+        ['shop'] = 'cdl',
+    },
+    ['bmx'] = {
+        ['name'] = 'BMX',
+        ['brand'] = 'Bike',
+        ['model'] = 'bmx',
+        ['price'] = 15000,
+        ['category'] = 'cycles',
+        ['categoryLabel'] = 'Xe Đạp',
+        ['hash'] = `bmx`,
+        ['shop'] = 'cdl',
+    },
+    ['sanchez'] = {
+        ['name'] = 'Sanchez Livery',
+        ['brand'] = 'Maibatsu',
+        ['model'] = 'sanchez',
+        ['price'] = 50000,
+        ['category'] = 'motorcycles',
+        ['categoryLabel'] = 'Xe Máy',
+        ['hash'] = `sanchez`,
+        ['shop'] = 'cdl',
+    },
+    ['issi2'] = {
+        ['name'] = 'Issi',
+        ['brand'] = 'Weeny',
+        ['model'] = 'issi2',
+        ['price'] = 80000,
+        ['category'] = 'compacts',
+        ['categoryLabel'] = 'Xe Mini',
+        ['hash'] = `issi2`,
+        ['shop'] = 'pdm',
+    },
+    ['slamvan'] = {
+        ['name'] = 'Slam Van',
+        ['brand'] = 'Vapid',
+        ['model'] = 'slamvan',
+        ['price'] = 120000,
+        ['category'] = 'muscle',
+        ['categoryLabel'] = 'Xe Cốp',
+        ['hash'] = `slamvan`,
+        ['shop'] = 'cdl',
+    },
+    ['bison'] = {
+        ['name'] = 'Bison',
+        ['brand'] = 'Bravado',
+        ['model'] = 'bison',
+        ['price'] = 70000,
+        ['category'] = 'vans',
+        ['categoryLabel'] = 'Xe Cốp',
+        ['hash'] = `bison`,
+        ['shop'] = 'cdl',
+    },
+
     --- Compacts
     ['asbo'] = { -- This has to match the spawn code of the vehicle
         ['name'] = 'Asbo', -- This is the display of the vehicle
@@ -71,16 +132,6 @@ QBShared.Vehicles = {
         ['category'] = 'compacts',
         ['categoryLabel'] = 'Compacts',
         ['hash'] = `kanjo`,
-        ['shop'] = 'pdm',
-    },
-    ['issi2'] = {
-        ['name'] = 'Issi',
-        ['brand'] = 'Weeny',
-        ['model'] = 'issi2',
-        ['price'] = 7000,
-        ['category'] = 'compacts',
-        ['categoryLabel'] = 'Compacts',
-        ['hash'] = `issi2`,
         ['shop'] = 'pdm',
     },
     ['issi3'] = {
@@ -224,16 +275,6 @@ QBShared.Vehicles = {
         ['hash'] = `felon2`,
         ['shop'] = 'pdm',
     },
-    ['jackal'] = {
-        ['name'] = 'Jackal',
-        ['brand'] = 'Ocelot',
-        ['model'] = 'jackal',
-        ['price'] = 19000,
-        ['category'] = 'coupes',
-        ['categoryLabel'] = 'Coupes',
-        ['hash'] = `jackal`,
-        ['shop'] = 'pdm',
-    },
     ['oracle'] = {
         ['name'] = 'Oracle',
         ['brand'] = 'Übermacht',
@@ -355,16 +396,6 @@ QBShared.Vehicles = {
         ['shop'] = 'pdm',
     },
     --- Cycles
-    ['bmx'] = {
-        ['name'] = 'BMX',
-        ['brand'] = 'Bike',
-        ['model'] = 'bmx',
-        ['price'] = 160,
-        ['category'] = 'cycles',
-        ['categoryLabel'] = 'Cycles',
-        ['hash'] = `bmx`,
-        ['shop'] = 'pdm',
-    },
     ['cruiser'] = {
         ['name'] = 'Cruiser',
         ['brand'] = 'Bike',
@@ -804,16 +835,6 @@ QBShared.Vehicles = {
         ['category'] = 'motorcycles',
         ['categoryLabel'] = 'Motorcycles',
         ['hash'] = `ruffian`,
-        ['shop'] = 'pdm',
-    },
-    ['sanchez'] = {
-        ['name'] = 'Sanchez Livery',
-        ['brand'] = 'Maibatsu',
-        ['model'] = 'sanchez',
-        ['price'] = 5300,
-        ['category'] = 'motorcycles',
-        ['categoryLabel'] = 'Motorcycles',
-        ['hash'] = `sanchez`,
         ['shop'] = 'pdm',
     },
     ['sanchez2'] = {
@@ -1445,16 +1466,6 @@ QBShared.Vehicles = {
         ['category'] = 'muscle',
         ['categoryLabel'] = 'Muscle',
         ['hash'] = `sabregt2`,
-        ['shop'] = 'pdm',
-    },
-    ['slamvan'] = {
-        ['name'] = 'Slam Van',
-        ['brand'] = 'Vapid',
-        ['model'] = 'slamvan',
-        ['price'] = 30000,
-        ['category'] = 'muscle',
-        ['categoryLabel'] = 'Muscle',
-        ['hash'] = `slamvan`,
         ['shop'] = 'pdm',
     },
     ['slamvan2'] = {
@@ -4254,16 +4265,6 @@ QBShared.Vehicles = {
         ['shop'] = 'luxury',
     },
     -- Vans
-    ['bison'] = {
-        ['name'] = 'Bison',
-        ['brand'] = 'Bravado',
-        ['model'] = 'bison',
-        ['price'] = 18000,
-        ['category'] = 'vans',
-        ['categoryLabel'] = 'Vans',
-        ['hash'] = `bison`,
-        ['shop'] = 'pdm',
-    },
     ['bobcatxl'] = {
         ['name'] = 'Bobcat XL Open',
         ['brand'] = 'Vapid',

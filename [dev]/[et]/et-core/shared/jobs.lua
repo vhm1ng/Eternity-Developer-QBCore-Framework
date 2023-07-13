@@ -140,30 +140,22 @@ QBShared.Jobs = {
 		},
 	},
 	['cardealer'] = {
-		label = 'Vehicle Dealer',
+		label = 'Cardealer',
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
             ['0'] = {
-                name = 'Recruit',
-                payment = 50
+                name = 'Nhân Viên',
+                payment = 0
             },
 			['1'] = {
-                name = 'Showroom Sales',
-                payment = 75
+                name = 'Quản Lý',
+                payment = 0
             },
 			['2'] = {
-                name = 'Business Sales',
-                payment = 100
-            },
-			['3'] = {
-                name = 'Finance',
-                payment = 125
-            },
-			['4'] = {
-                name = 'Manager',
+                name = 'Giám Đốc',
 				isboss = true,
-                payment = 150
+                payment = 0
             },
         },
 	},
