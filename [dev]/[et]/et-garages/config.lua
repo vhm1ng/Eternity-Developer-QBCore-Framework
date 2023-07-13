@@ -213,7 +213,7 @@ Config.VehicleHeading = 'driverside' -- only used when NO parking spots are defi
 ]]
 
 Config.SharedJobGarages = { -- define the job garages which are shared
-    --'pdgarage',
+    'cardealergarage',
 }
 
 Config.Garages = {
@@ -230,6 +230,31 @@ Config.Garages = {
         - plane
         - other
     ]]
+    ['cardealergarage'] = {
+        ['Zone'] = {
+            ['Shape'] = {
+                vector2(-343.4, -1353.48),
+                vector2(-349.86, -1363.64),
+                vector2(-349.91, -1354.13),
+                vector2(-343.4, -1353.48)
+            },
+            ['minZ'] = 30.56,  -- min height of the parking zone
+            ['maxZ'] = 34.56,  -- max height of the parking zone
+        },
+        label = 'Garage Cardealer',
+        showBlip = false,
+        blipcoords = vector3(-346.71, -1358.7, 31.28),
+        blipName = 'Public Parking',
+        blipNumber = 357,
+        type = 'job',                --public, job, gang, depot
+        job = "cardealer",
+        vehicleCategories = {'car', 'motorcycle', 'other'},
+        drawText = 'Garage để xe',
+        debug = false,
+        ['ParkingSpots'] = {
+            vector4(-346.71, -1358.7, 31.28, 0.26),
+        }
+    },
     ['pillboxgarage'] = {
         ['Zone'] = {
             ['Shape'] = {
