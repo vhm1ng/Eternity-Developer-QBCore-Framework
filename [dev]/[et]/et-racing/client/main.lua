@@ -790,7 +790,8 @@ RegisterNetEvent('et-racing:client:RaceCountdown', function()
                     QBCore.Functions.Notify(Lang:t("primary.race_will_start"), 'primary', 2500)
                     PlaySound(-1, "slow", "SHORT_PLAYER_SWITCH_SOUND_SET", 0, 0, 1)
                 elseif Countdown <= 5 then
-                    QBCore.Functions.Notify(Countdown, 'error', 500)
+                    -- QBCore.Functions.Notify(Countdown, 'error', 500)
+                    QBCore.Functions.Notify(Lang:t("primary.race_will_start"), 'primary', 2500)
                     PlaySound(-1, "slow", "SHORT_PLAYER_SWITCH_SOUND_SET", 0, 0, 1)
                 end
                 Countdown = Countdown - 1
