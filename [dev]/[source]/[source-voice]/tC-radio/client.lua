@@ -167,8 +167,6 @@ RegisterNUICallback('joinRadio', function(data, cb)
                 if Config.RestrictedChannels[rchannel] ~= nil then
                     if Config.RestrictedChannels[rchannel][PlayerData.job.name] and PlayerData.job.onduty then
                         connecttoradio(rchannel)
-                    elseif Config.AdminChannels[rchannel] and QBCore.Functions.HasPermission(src, 'god')
-                        connecttoradio(rchannel)
                     else
                         QBCore.Functions.Notify(Config.messages['restricted_channel_error'], 'error')
                     end

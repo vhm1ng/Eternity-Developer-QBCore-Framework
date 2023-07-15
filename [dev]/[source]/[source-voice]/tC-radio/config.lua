@@ -16,18 +16,12 @@ Config.RestrictedChannels = {
     [115] = {
         ambulance = true
     },
-    [113] = {
-        police = true
-    },
-}
-
-Config.AdminChannels = {
     [49.53] = {
-        god = true
+        ttc = true
     },
 }
 
-Config.MaxFrequency = 500
+Config.MaxFrequency = 5000
 
 Config.messages = {
     ["not_on_radio"] = "You're not connected to a signal",
