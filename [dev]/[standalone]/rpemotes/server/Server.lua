@@ -18,7 +18,7 @@ RegisterNetEvent("ServerEmoteRequest", function(target, emotename, etype)
         return
     end
 
-    TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype)
+    TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype, source)
 end)
 
 RegisterNetEvent("ServerValidEmote", function(target, requestedemote, otheremote)
@@ -191,8 +191,8 @@ if Config.SqlKeybinding and MySQL then
             print("[rp] ^3Error connecting to DB^7")
         end
     end)
--- else
-    -- print("[rp] ^3Sql Keybinding^7 is turned ^1off^7, if you want to enable /emotebind, set ^3SqlKeybinding = ^2true^7 in config.lua and uncomment oxmysql lines in fxmanifest.lua.")
+else
+    print("[rp] ^3Sql Keybinding^7 is turned ^1off^7, if you want to enable /emotebind, set ^3SqlKeybinding = ^2true^7 in config.lua and uncomment oxmysql lines in fxmanifest.lua.")
 end
 
 -- Emote props extractor

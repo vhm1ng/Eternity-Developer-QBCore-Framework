@@ -7,7 +7,7 @@ Config = {
     -- Thank you to those who provided translations.
     -- If you would like to provide translations or help fix them, join our Discord!
     -- Check languages code below to change the MenuLanguage
-    MenuLanguage = 'en',
+    MenuLanguage = 'vi',
     -- Set this to true to enable some extra prints
     DebugDisplay = false,
     -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
@@ -16,10 +16,10 @@ Config = {
     -- Set this to true if you want to disarm the player when they play an emote.
     DisarmPlayer = false,
     -- Set this if you really wanna disable emotes in cars, as of 1.7.2 they only play the upper body part if in vehicle
-    AllowedInCars = false,
+    AllowedInCars = true,
     -- You can disable the menu here / change the keybind. It is currently set to F5
     MenuKeybindEnabled = true,
-    MenuKeybind = 'f3', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    MenuKeybind = 'f4', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     -- You can disable the Favorite emote keybinding here.
     FavKeybindEnabled = true,
     FavKeybind = 'capital', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
@@ -55,23 +55,26 @@ Config = {
     -- If you don't like gta notifications, you can disable them here to have messages in the chat.
     NotificationsAsChatMessage = false,
     -- Used for few framework dependent things. Accepted values: "et-core", false
-    Framework = false,
+    Framework = 'et-core',
     -- You can disable the Adult Emotes here.
-    AdultEmotesDisabled = false,
+    AdultEmotesDisabled = true,
     -- You can disable the Animal Emotes here.
     AnimalEmotesEnabled = false,
     -- Used to enable or disable the search feature in the menu.
     Search = true,
     -- You can disable the handsup here / change the keybind. It is currently set to Y
-    HandsupKeybind = 'Y', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    HandsupEnabled = true,
+    HandsupKeybind = 'X', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     HandsupKeybindEnabled = false,
     HandsupKeybindInCarEnabled = false,
+    PersistentEmoteAfterHandsup = true, -- If true, you will play the emote you were playing previously after you stop handsup.
     -- You can disable the fingrer pointing here / change the keybind. It is currently set to B
     PointingEnabled = false,
     PointingKeybindEnabled = true,
     PointingKeybind = 'B', -- Get the button string here https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    PersistentEmoteAfterPointing = true, -- If true, you will play the emote you were playing previously after you stop pointing.
     -- If crouching should be enabled.
-    CrouchEnabled = true,
+    CrouchEnabled = false,
     CrouchKeybindEnabled = true, -- If true, crouching will use keybinds.
     CrouchKeybind = 'lcontrol', -- The default crouch keybind, get the button string here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     CrouchOverride = false, -- If true, you won't enter stealth mode even if the crouch key and the "duck" key are the same.
@@ -83,8 +86,14 @@ Config = {
     CancelPreviousEmote = false,
     -- If turned off, opening the menu and playing an emote will not be possible while swimming
     AllowInWater = true,
+    -- If set to true, the /binoculars command will be enabled.
+    BinocularsEnabled = true,
+    -- If set to true, you'll be able to toggle between different vision modes in the binoculars
+    AllowVisionsToggling = true,
+    -- If set to true, the /newscam command will be enabled.
+    NewscamEnabled = true,
     -- Check for updates
-	CheckForUpdates = false,
+    CheckForUpdates = true,
 }
 
 Config.KeybindKeys = {
