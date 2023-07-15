@@ -508,7 +508,7 @@ end)
 
 -- Command(s)
 
-RegisterCommand('yenile', function()
+RegisterCommand('reloadskin', function()
 	local playerPed = PlayerPedId()
 	local maxhealth = GetEntityMaxHealth(playerPed)
 	local health = GetEntityHealth(playerPed)
