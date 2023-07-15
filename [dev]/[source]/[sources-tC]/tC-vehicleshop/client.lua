@@ -9,6 +9,57 @@ local ClosestVehicle = 1
 local zones = {}
 local insideShop, tempShop = nil, nil
 
+local onDuty = false
+local isInsideDutyZone = false
+local dutyTargetBoxID = 'dutyTarget'
+
+local function DeleteTarget(id)
+    if Config.UseTarget then
+        exports['et-target']:RemoveZone(id)
+    else
+        if Config.Targets[id] and Config.Targets[id].zone then
+            Config.Targets[id].zone:destroy();
+        end
+    end
+
+    Config.Targets[id] = nil
+end
+
+local function RegisterDutyTarget()
+    local coords = Config.Locations['duty']
+    local boxData = Config.Targets[dutyTargetBoxID] or {}
+
+    if boxData and boxData.created then
+        return
+    end
+
+    if PlayerData.job.name ~= 'cardealer' then
+        return
+    end
+
+    local label = "Vào Ca"
+    if onDuty then
+        label = "Tan Ca"
+    end
+
+    local zone = BoxZone:Create(coords, 1.5, 1.5, {
+        name = dutyTargetBoxID,
+        heading = 0,
+        debugPoly = false,
+        minZ = coords.z - 1.0,
+        maxZ = coords.z + 1.0,
+    })
+    zone:onPlayerInOut(function (isPointInside)
+        if isPointInside then
+            exports['et-core']:DrawText("[E] - " .. label, 'left')
+        else
+            exports['et-core']:HideText()
+        end
+        isInsideDutyZone = isPointInside
+    end)
+    Config.Targets[dutyTargetBoxID] = {created = true, zone = zone}
+end
+
 -- Handlers
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     PlayerData = QBCore.Functions.GetPlayerData()
@@ -29,6 +80,15 @@ end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerData.job = JobInfo
+    onDuty = PlayerData.job.onduty
+    DeleteTarget(dutyTargetBoxID)
+    RegisterDutyTarget()
+end)
+
+RegisterNetEvent('QBCore:Client:SetDuty', function(duty)
+    onDuty = duty
+    DeleteTarget(dutyTargetBoxID)
+    RegisterDutyTarget()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
@@ -591,5 +651,24 @@ CreateThread(function()
             AddTextComponentSubstringPlayerName(Config.Shops[k]["ShopLabel"])
             EndTextCommandSetBlipName(Dealer)
         end
+    end
+    while true do
+        wait = 500
+        while not LocalPlayer.state.isLoggedIn do
+            -- do nothing
+            Wait(wait)
+        end
+        
+        
+        RegisterDutyTarget()
+        if PlayerData.job.name == 'cardealer' then
+            if isInsideDutyZone then
+                wait = 0
+                if IsControlJustPressed(0, 38) then
+                    TriggerServerEvent("QBCore:ToggleDuty")
+                end
+            end
+        end
+        Wait(wait)
     end
 end)

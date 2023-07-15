@@ -1,5 +1,11 @@
 Config = {}
 Config.UsingTarget = GetConvar('UseTarget', 'false') == 'true'
+Config.Targets = {}
+
+Config.Locations = {
+    ["duty"] = vector3(-337.52, -1370.05, 31.87),
+}
+
 Config.Shops = {
     ['cdl'] = {
         ['Type'] = 'managed',
