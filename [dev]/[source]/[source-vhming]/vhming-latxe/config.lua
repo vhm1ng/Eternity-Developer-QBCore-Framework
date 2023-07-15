@@ -15,8 +15,6 @@ end)
 Config.TimetoFlip = 3 						-- How long, in seconds, to flip the car.
 
 Config.Jobs = {								-- List of permitted jobs; leave empty table for to allow all.
-	["police"] = 0,
-	["mechanic"] = 0,
 }
 Config.AndOr = false				            --  Logic to determine item requirement
                                             -- If false car can be flipped with either meeting the job or item requirement (if needed/wanted you can ignore Config.RequiredItem with this setting)
