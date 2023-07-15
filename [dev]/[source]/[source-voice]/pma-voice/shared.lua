@@ -47,15 +47,15 @@ Entity = Entity
 if GetConvar('voice_useNativeAudio', 'false') == 'true' then
     -- native audio distance seems to be larger then regular gta units
     Cfg.voiceModes = {
-        { 1.5, "Whisper" }, -- Whisper speech distance in gta distance units
-        { 3.0, "Normal" },  -- Normal speech distance in gta distance units
-        { 6.0, "Shouting" } -- Shout speech distance in gta distance units
+        { 1.5, "Thì Thầm" }, -- Whisper speech distance in gta distance units
+        { 3.0, "Bình Thường" },  -- Normal speech distance in gta distance units
+        { 6.0, "Hét To" } -- Shout speech distance in gta distance units
     }
 else
     Cfg.voiceModes = {
-        { 3.0,  "Whisper" }, -- Whisper speech distance in gta distance units
-        { 7.0,  "Normal" },  -- Normal speech distance in gta distance units
-        { 15.0, "Shouting" } -- Shout speech distance in gta distance units
+        { 3.0,  "Thì Thầm" }, -- Whisper speech distance in gta distance units
+        { 7.0,  "Bình Thường" },  -- Normal speech distance in gta distance units
+        { 15.0, "Hét To" } -- Shout speech distance in gta distance units
     }
 end
 
