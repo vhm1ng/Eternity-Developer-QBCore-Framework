@@ -272,15 +272,6 @@ Config.MenuItems = {
         }
     },
     [2] = {
-        id = 'openmenu',
-        title = 'Open Control Menu',
-        icon = 'car',
-        type = 'client',
-        event = 'vehcontrol:openExternal',
-        shouldClose = true
-    },
-
-    [3] = {
         id = 'blips',
         title = 'Định vị',
         icon = 'map-marked-alt',
@@ -857,6 +848,24 @@ Config.MenuItems = {
     --         }
     --     }
     -- },
+}
+
+Config.GiveKey = {
+    id = 'givekey',
+    title = 'Đưa Chìa Khóa',
+    icon = 'key',
+    type = 'client',
+    event = 'et-vehiclekeys:client:GiveKeys',
+    shouldClose = true
+}
+
+Config.CarMenu = {
+    id = 'openmenu',
+    title = 'Mở Bảng Phương Tiện',
+    icon = 'car',
+    type = 'client',
+    event = 'vehcontrol:openExternal',
+    shouldClose = true
 }
 
 Config.VehicleDoors = {

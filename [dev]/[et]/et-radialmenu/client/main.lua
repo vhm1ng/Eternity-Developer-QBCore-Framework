@@ -88,7 +88,8 @@ local function SetupVehicleMenu()
     if Vehicle ~= 0 then
         -- VehicleMenu.items[#VehicleMenu.items+1] = Config.VehicleDoors
         if Config.EnableExtraMenu then VehicleMenu.items[#VehicleMenu.items+1] = Config.VehicleExtras end
-
+        VehicleMenu.items[#VehicleMenu.items+1] = Config.GiveKey
+        VehicleMenu.items[#VehicleMenu.items+1] = Config.CarMenu
         -- if IsPedInAnyVehicle(ped) then
         --     local seatIndex = #VehicleMenu.items+1
         --     VehicleMenu.items[seatIndex] = deepcopy(Config.VehicleSeats)
