@@ -58,7 +58,7 @@ RegisterNetEvent("et-signrobbery:client:StopSign", function(data)
                         loadAnimDict("amb@prop_human_bum_bin@base")
                         hasTimeout = true
                         TaskPlayAnim(ped, "amb@prop_human_bum_bin@base", "base", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
-                        QBCore.Functions.Progressbar("robbing_sign", "Lau biển cho sạch nàoo", math.random(timeRobberySign), false, true, {
+                        QBCore.Functions.Progressbar("robbing_sign", "Lau biển cho sạch nàoo", timeRobberySign, false, true, {
                             disableMovement = true,
                             disableCarMovement = true,
                             disableMouse = false,
