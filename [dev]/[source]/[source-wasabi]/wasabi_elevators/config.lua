@@ -43,8 +43,8 @@ Config.Elevators = {
             title = 'Tầng thượng',
             description = '',
             target = {
-            width = 5,
-            length = 4
+                width = 5,
+                length = 4
             } -- Example without group
         },
         [2] = {
@@ -55,9 +55,6 @@ Config.Elevators = {
             target = { -- Target length/width
                 width = 5,
                 length = 4
-            },
-            groups = {-- Job locks
-                'police',
             },
         },
     },
