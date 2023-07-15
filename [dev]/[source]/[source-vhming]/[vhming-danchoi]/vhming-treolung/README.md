@@ -13,11 +13,11 @@ Carrying items that can affect how the player reacts such as stopping them from 
 [Preview](https://streamable.com/deh7tk)
 
 # How to install
-Step 3 and 4 are skippable if you do not use qb-apartments or dont use qb-apartments with routing buckets
+Step 3 and 4 are skippable if you do not use tC-apartments or dont use tC-apartments with routing buckets
 
 1. Download the latest version of the script
 2. Extract the files to your server root directory
-3. Head over to your qb-apartments and add this `exports['Renewed-Weaponscarry']:toggleProps()` to line 256 right under Wait(250) in the function EnterApartment
+3. Head over to your tC-apartments and add this `exports['Renewed-Weaponscarry']:toggleProps()` to line 256 right under Wait(250) in the function EnterApartment
 4. Now scroll down till you find `local function LeaveApartment` and past this right under it around line 317 `exports['Renewed-Weaponscarry']:toggleProps()`
 5. Add the following line to your server.cfg file `ensure Renewed-Weaponscarry`
 6. ENJOY!
