@@ -21,7 +21,7 @@ Config.RestrictedChannels = {
     },
 }
 
-Config.Config.AdminChannels = {
+Config.AdminChannels = {
     [49.53] = {
         god = true
     },
