@@ -5,8 +5,8 @@ Config.NPCPosition = vector4(1531.81, 1728.08, 109.92, 98.97)
 
 Config.ProspectorPrice = 500
 
-Config.BombSawingSuccess = 5 -- SỐ LẦN E TRÚNG SẼ THẮNG
-Config.BombSawingFail = 10 -- SỐ LẦN E SAI SẼ THUA
+Config.BombSawingSuccess = 30 -- SỐ LẦN E TRÚNG SẼ THẮNG
+Config.BombSawingFail = 5 -- SỐ LẦN E SAI SẼ THUA
 
 
 Config.BombProduct = {
