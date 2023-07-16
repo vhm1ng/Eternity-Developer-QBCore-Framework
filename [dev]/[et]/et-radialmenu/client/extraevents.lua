@@ -5,6 +5,25 @@ local stealid = nil
 local cuffid = nil
 -- local mdtid = nil
 
+local function givekeys()
+    local Player = PlayerPedId()
+    if IsPedInAnyVehicle(Player) then
+        vehoption1 = exports['et-radialmenu']:AddOption({
+            id = 'give_keys',
+            title = 'Đưa chìa khoá',
+            icon = 'key',
+            type = 'client',
+            event = 'vehiclekeys:client:GiveKeys',
+            shouldClose = true
+        }, vehoption1)
+    else
+        if vehoption1 ~= nil then
+            exports['et-radialmenu']:RemoveOption(vehoption1)
+            vehoption1 = nil
+        end
+    end
+end
+
 local function PlayerCloseMenu()
     local player, distance = QBCore.Functions.GetClosestPlayer()
     -- if player ~= -1 and distance <= 1.5 then
@@ -85,6 +104,8 @@ local function vehoptions()
     end
 end
 RegisterNetEvent('et-radialmenu:client:onRadialmenuOpen', function()
+    givekeys()
+    -- mdt()
     PlayerCloseMenu()
     vehoptions()
 end)

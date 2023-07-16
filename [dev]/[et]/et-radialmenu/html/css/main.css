@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 h1 {
     font-weight: normal;
@@ -71,7 +71,7 @@ svg.menu > g.sector > path {
 
 svg.menu > g.sector > text,
 svg.menu > g.sector > use {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-top: 5px;
     font-size: 2.8px;
     font-weight: bold;
