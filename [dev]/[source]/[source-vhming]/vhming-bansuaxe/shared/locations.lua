@@ -385,6 +385,10 @@ Config.Locations = {
             { coords = vector3(340.38, -570.8, 28.8), length = 8.8, width = 4.2, heading = 340.0, minZ = 27.5, maxZ = 31.5 },
             { coords = vector3(550.24, -20.71, 70.36), length = 8.8, width = 4.2, heading = 289.35, minZ = 69.2, maxZ = 72.25 },
             { coords = vector3(549.75, -16.68, 70.36), length = 8.8, width = 4.2, heading = 289.79, minZ = 69.2, maxZ = 72.25 },
+            { coords = vector3(452.71, -1007.0, 27.21), length = 8.8, width = 4.2, heading = 178.58, minZ = 26.21, maxZ = 28.21 },
+            { coords = vector3(447.17, -1006.48, 27.21), length = 8.8, width = 4.2, heading = 178.58, minZ = 26.21, maxZ = 28.21 },
+            -- vector3(447.17, -1006.48, 27.11)
+            -- vector4(452.71, -1007.0, 27.21, 179.15)
             
         }
     },
