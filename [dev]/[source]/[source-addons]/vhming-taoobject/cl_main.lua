@@ -1,0 +1,1 @@
+CreateObject(`prop_toolchest_05`, 369.34, -789.66, 28.28, true, true, true)
