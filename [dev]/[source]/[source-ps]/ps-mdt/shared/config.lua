@@ -27,8 +27,8 @@ Config.QBManagementUse = false
 -- However, if you're using a different inventory system, please refer to the "Inventory Edit | Automatic Add Weapons with images" section in ps-mdt's README.
 Config.InventoryForWeaponsImages = "et-inventory"
 
--- "tC-fuel", "lj-fuel", "ps-fuel"
-Config.Fuel = "tC-fuel"
+-- "vhming-fuel", "lj-fuel", "ps-fuel"
+Config.Fuel = "vhming-fuel"
 
 -- Google Docs Link
 Config.sopLink = {

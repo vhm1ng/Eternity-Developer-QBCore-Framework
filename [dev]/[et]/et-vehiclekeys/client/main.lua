@@ -406,7 +406,7 @@ function ToggleEngine(veh)
                 --     SetVehicleEngineOn(veh, true, true, true)
                 -- end
 
-                if exports['tC-fuel']:GetFuel(veh) ~= 0 then
+                if exports['vhming-fuel']:GetFuel(veh) ~= 0 then
                     SetVehicleEngineOn(veh, true, false, true)
                 else
                     if not NotifyCooldown then

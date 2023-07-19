@@ -20,7 +20,7 @@ exports('AddCityJob', AddCityJob)
 local function giveStarterItems()
     local Player = QBCore.Functions.GetPlayer(source)
     if not Player then return end
-    exports['tC-idcard']:CreateMetaLicense(source, {'id_card','driver_license'})
+    exports['vhming-idcard']:CreateMetaLicense(source, {'id_card','driver_license'})
 end
 
 -- Callbacks
@@ -38,11 +38,11 @@ RegisterNetEvent('et-cityhall:server:requestId', function(item, hall)
     local itemInfo = Config.Cityhalls[hall].licenses[item]
     if not Player.Functions.RemoveMoney("cash", itemInfo.cost) then return TriggerClientEvent('QBCore:Notify', src, ('Bạn không có đủ tiền, bạn cần %s tiền mặt'):format(itemInfo.cost), 'error') end
     if item == "id_card" then
-        exports['tC-idcard']:CreateMetaLicense(src, 'id_card')
+        exports['vhming-idcard']:CreateMetaLicense(src, 'id_card')
     elseif item == "driver_license" then
-        exports['tC-idcard']:CreateMetaLicense(src, 'driver_license')
+        exports['vhming-idcard']:CreateMetaLicense(src, 'driver_license')
     elseif item == "weaponlicense" then
-        exports['tC-idcard']:CreateMetaLicense(src, 'weaponlicense')
+        exports['vhming-idcard']:CreateMetaLicense(src, 'weaponlicense')
     else
         return false -- DropPlayer(src, 'Attempted exploit abuse')
     end

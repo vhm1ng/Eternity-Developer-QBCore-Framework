@@ -93,7 +93,7 @@ Config = {
     -- If set to true, the /newscam command will be enabled.
     NewscamEnabled = true,
     -- Check for updates
-    CheckForUpdates = true,
+    CheckForUpdates = false,
 }
 
 Config.KeybindKeys = {

@@ -9,22 +9,89 @@ local ClosestVehicle = 1
 local zones = {}
 local insideShop, tempShop = nil, nil
 
+local onDuty = false
+local isInsideDutyZone = false
+local dutyTargetBoxID = 'dutyTarget'
+
+local function DeleteTarget(id)
+    if Config.UseTarget then
+        exports['et-target']:RemoveZone(id)
+    else
+        if Config.Targets[id] and Config.Targets[id].zone then
+            Config.Targets[id].zone:destroy();
+        end
+    end
+
+    Config.Targets[id] = nil
+end
+
+local function RegisterDutyTarget()
+    local coords = Config.Locations['duty']
+    local boxData = Config.Targets[dutyTargetBoxID] or {}
+
+    if boxData and boxData.created then
+        return
+    end
+
+    if PlayerData.job.name ~= 'cardealer' then
+        return
+    end
+
+    local label = "Vào Ca"
+    if onDuty then
+        label = "Tan Ca"
+    end
+
+    local zone = BoxZone:Create(coords, 1.5, 1.5, {
+        name = dutyTargetBoxID,
+        heading = 0,
+        debugPoly = false,
+        minZ = coords.z - 1.0,
+        maxZ = coords.z + 1.0,
+    })
+    zone:onPlayerInOut(function (isPointInside)
+        if isPointInside then
+            exports['et-core']:DrawText("[E] - " .. label, 'left')
+        else
+            exports['et-core']:HideText()
+        end
+        isInsideDutyZone = isPointInside
+    end)
+    Config.Targets[dutyTargetBoxID] = {created = true, zone = zone}
+end
+
 -- Handlers
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     PlayerData = QBCore.Functions.GetPlayerData()
     local citizenid = PlayerData.citizenid
-    TriggerServerEvent('et-vehicleshop:server:addPlayer', citizenid)
-    TriggerServerEvent('et-vehicleshop:server:checkFinance')
     if not Initialized then Init() end
+end)
+
+AddEventHandler('onResourceStart', function(resource)
+    if resource ~= GetCurrentResourceName() then
+        return
+    end
+    if next(PlayerData) ~= nil and not Initialized then
+        PlayerData = QBCore.Functions.GetPlayerData()
+        local citizenid = PlayerData.citizenid
+        Init()
+    end
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerData.job = JobInfo
+    onDuty = PlayerData.job.onduty
+    DeleteTarget(dutyTargetBoxID)
+    RegisterDutyTarget()
+end)
+
+RegisterNetEvent('QBCore:Client:SetDuty', function(duty)
+    onDuty = duty
+    DeleteTarget(dutyTargetBoxID)
+    RegisterDutyTarget()
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
-    local citizenid = PlayerData.citizenid
-    TriggerServerEvent('et-vehicleshop:server:removePlayer', citizenid)
     PlayerData = {}
 end)
 
@@ -35,18 +102,7 @@ local vehHeaderMenu = {
         txt = Lang:t('menus.vehHeader_txt'),
         icon = "fa-solid fa-car",
         params = {
-            event = 'et-vehicleshop:client:showVehOptions'
-        }
-    }
-}
-
-local financeMenu = {
-    {
-        header = Lang:t('menus.financed_header'),
-        txt = Lang:t('menus.finance_txt'),
-        icon = "fa-solid fa-user-ninja",
-        params = {
-            event = 'et-vehicleshop:client:getVehicles'
+            event = 'vhming-vehicleshop:client:showVehOptions'
         }
     }
 }
@@ -56,7 +112,7 @@ local returnTestDrive = {
         header = Lang:t('menus.returnTestDrive_header'),
         icon = "fa-solid fa-flag-checkered",
         params = {
-            event = 'et-vehicleshop:client:TestDriveReturn'
+            event = 'vhming-vehicleshop:client:TestDriveReturn'
         }
     }
 }
@@ -146,7 +202,7 @@ local function startTestDriveTimer(testDriveTime, prevCoords)
             if GetGameTimer() < gameTimer + tonumber(1000 * testDriveTime) then
                 local secondsLeft = GetGameTimer() - gameTimer
                 if secondsLeft >= tonumber(1000 * testDriveTime) - 20 or GetPedInVehicleSeat(NetToVeh(testDriveVeh), -1) ~= PlayerPedId() then
-                    TriggerServerEvent('et-vehicleshop:server:deleteVehicle', testDriveVeh)
+                    TriggerServerEvent('vhming-vehicleshop:server:deleteVehicle', testDriveVeh)
                     testDriveVeh = 0
                     inTestDrive = false
                     SetEntityCoords(PlayerPedId(), prevCoords)
@@ -190,8 +246,8 @@ local function createVehZones(shopName, entity)
             options = {
                 {
                     type = "client",
-                    event = "et-vehicleshop:client:showVehOptions",
-                    icon = "fas fa-car",
+                    event = "vhming-vehicleshop:client:showVehOptions",
+                    icon = "fas fa-circle",
                     label = Lang:t('general.vehinteraction'),
                     canInteract = function()
                         local closestShop = insideShop
@@ -229,7 +285,7 @@ function createFreeUseShop(shopShape, name)
                             txt = Lang:t('menus.freeuse_test_txt'),
                             icon = "fa-solid fa-car-on",
                             params = {
-                                event = 'et-vehicleshop:client:TestDrive',
+                                event = 'vhming-vehicleshop:client:TestDrive',
                             }
                         },
                         {
@@ -238,20 +294,8 @@ function createFreeUseShop(shopShape, name)
                             icon = "fa-solid fa-hand-holding-dollar",
                             params = {
                                 isServer = true,
-                                event = 'et-vehicleshop:server:buyShowroomVehicle',
+                                event = 'vhming-vehicleshop:server:buyShowroomVehicle',
                                 args = {
-                                    buyVehicle = Config.Shops[insideShop]["ShowroomVehicles"][ClosestVehicle].chosenVehicle
-                                }
-                            }
-                        },
-                        {
-                            header = Lang:t('menus.finance_header'),
-                            txt = Lang:t('menus.freeuse_finance_txt'),
-                            icon = "fa-solid fa-coins",
-                            params = {
-                                event = 'et-vehicleshop:client:openFinance',
-                                args = {
-                                    price = getVehPrice(),
                                     buyVehicle = Config.Shops[insideShop]["ShowroomVehicles"][ClosestVehicle].chosenVehicle
                                 }
                             }
@@ -261,7 +305,7 @@ function createFreeUseShop(shopShape, name)
                             txt = Lang:t('menus.swap_txt'),
                             icon = "fa-solid fa-arrow-rotate-left",
                             params = {
-                                event = 'et-vehicleshop:client:vehCategories',
+                                event = 'vhming-vehicleshop:client:vehCategories',
                             }
                         },
                     }
@@ -299,7 +343,7 @@ function createManagedShop(shopShape, name)
                             txt = Lang:t('menus.managed_test_txt'),
                             icon = "fa-solid fa-user-plus",
                             params = {
-                                event = 'et-vehicleshop:client:openIdMenu',
+                                event = 'vhming-vehicleshop:client:openIdMenu',
                                 args = {
                                     vehicle = Config.Shops[insideShop]["ShowroomVehicles"][ClosestVehicle].chosenVehicle,
                                     type = 'testDrive'
@@ -311,22 +355,10 @@ function createManagedShop(shopShape, name)
                             txt = Lang:t('menus.managed_sell_txt'),
                             icon = "fa-solid fa-cash-register",
                             params = {
-                                event = 'et-vehicleshop:client:openIdMenu',
+                                event = 'vhming-vehicleshop:client:openIdMenu',
                                 args = {
                                     vehicle = Config.Shops[insideShop]["ShowroomVehicles"][ClosestVehicle].chosenVehicle,
                                     type = 'sellVehicle'
-                                }
-                            }
-                        },
-                        {
-                            header = Lang:t('menus.finance_header'),
-                            txt = Lang:t('menus.managed_finance_txt'),
-                            icon = "fa-solid fa-coins",
-                            params = {
-                                event = 'et-vehicleshop:client:openCustomFinance',
-                                args = {
-                                    price = getVehPrice(),
-                                    vehicle = Config.Shops[insideShop]["ShowroomVehicles"][ClosestVehicle].chosenVehicle
                                 }
                             }
                         },
@@ -335,7 +367,7 @@ function createManagedShop(shopShape, name)
                             txt = Lang:t('menus.swap_txt'),
                             icon = "fa-solid fa-arrow-rotate-left",
                             params = {
-                                event = 'et-vehicleshop:client:vehCategories',
+                                event = 'vhming-vehicleshop:client:vehCategories',
                             }
                         },
                     }
@@ -359,24 +391,6 @@ function Init()
                 createManagedShop(shop['Zone']['Shape'], name)
             end
         end
-    end)
-    CreateThread(function()
-        local financeZone = BoxZone:Create(Config.FinanceZone, 2.0, 2.0, {
-            name = "vehicleshop_financeZone",
-            offset = {0.0, 0.0, 0.0},
-            scale = {1.0, 1.0, 1.0},
-            minZ = Config.FinanceZone.z - 1,
-            maxZ = Config.FinanceZone.z + 1,
-            debugPoly = false,
-        })
-
-        financeZone:onPlayerInOut(function(isPointInside)
-            if isPointInside then
-                exports['et-menu']:showHeader(financeMenu)
-            else
-                exports['et-menu']:closeMenu()
-            end
-        end)
     end)
     CreateThread(function()
         for k in pairs(Config.Shops) do
@@ -403,15 +417,15 @@ function Init()
 end
 
 -- Events
-RegisterNetEvent('et-vehicleshop:client:homeMenu', function()
+RegisterNetEvent('vhming-vehicleshop:client:homeMenu', function()
     exports['et-menu']:openMenu(vehicleMenu)
 end)
 
-RegisterNetEvent('et-vehicleshop:client:showVehOptions', function()
-    exports['et-menu']:openMenu(vehicleMenu)
+RegisterNetEvent('vhming-vehicleshop:client:showVehOptions', function()
+    exports['et-menu']:openMenu(vehicleMenu, true, true)
 end)
 
-RegisterNetEvent('et-vehicleshop:client:TestDrive', function()
+RegisterNetEvent('vhming-vehicleshop:client:TestDrive', function()
     if not inTestDrive and ClosestVehicle ~= 0 then
         inTestDrive = true
         local prevCoords = GetEntityCoords(PlayerPedId())
@@ -432,7 +446,7 @@ RegisterNetEvent('et-vehicleshop:client:TestDrive', function()
     end
 end)
 
-RegisterNetEvent('et-vehicleshop:client:customTestDrive', function(data)
+RegisterNetEvent('vhming-vehicleshop:client:customTestDrive', function(data)
     if not inTestDrive then
         inTestDrive = true
         local vehicle = data
@@ -454,7 +468,7 @@ RegisterNetEvent('et-vehicleshop:client:customTestDrive', function(data)
     end
 end)
 
-RegisterNetEvent('et-vehicleshop:client:TestDriveReturn', function()
+RegisterNetEvent('vhming-vehicleshop:client:TestDriveReturn', function()
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped)
     local entity = NetworkGetEntityFromNetworkId(testDriveVeh)
@@ -469,14 +483,14 @@ RegisterNetEvent('et-vehicleshop:client:TestDriveReturn', function()
     end
 end)
 
-RegisterNetEvent('et-vehicleshop:client:vehCategories', function()
+RegisterNetEvent('vhming-vehicleshop:client:vehCategories', function()
 	local catmenu = {}
     local categoryMenu = {
         {
             header = Lang:t('menus.goback_header'),
             icon = "fa-solid fa-angle-left",
             params = {
-                event = 'et-vehicleshop:client:homeMenu'
+                event = 'vhming-vehicleshop:client:homeMenu'
             }
         }
     }
@@ -496,7 +510,7 @@ RegisterNetEvent('et-vehicleshop:client:vehCategories', function()
             header = v,
             icon = "fa-solid fa-circle",
             params = {
-                event = 'et-vehicleshop:client:openVehCats',
+                event = 'vhming-vehicleshop:client:openVehCats',
                 args = {
                     catName = k
                 }
@@ -506,13 +520,13 @@ RegisterNetEvent('et-vehicleshop:client:vehCategories', function()
     exports['et-menu']:openMenu(categoryMenu)
 end)
 
-RegisterNetEvent('et-vehicleshop:client:openVehCats', function(data)
+RegisterNetEvent('vhming-vehicleshop:client:openVehCats', function(data)
     local vehMenu = {
         {
             header = Lang:t('menus.goback_header'),
             icon = "fa-solid fa-angle-left",
             params = {
-                event = 'et-vehicleshop:client:vehCategories'
+                event = 'vhming-vehicleshop:client:vehCategories'
             }
         }
     }
@@ -527,7 +541,7 @@ RegisterNetEvent('et-vehicleshop:client:openVehCats', function(data)
                             icon = "fa-solid fa-car-side",
                             params = {
                                 isServer = true,
-                                event = 'et-vehicleshop:server:swapVehicle',
+                                event = 'vhming-vehicleshop:server:swapVehicle',
                                 args = {
                                     toVehicle = v.model,
                                     ClosestVehicle = ClosestVehicle,
@@ -544,7 +558,7 @@ RegisterNetEvent('et-vehicleshop:client:openVehCats', function(data)
                     icon = "fa-solid fa-car-side",
                     params = {
                         isServer = true,
-                        event = 'et-vehicleshop:server:swapVehicle',
+                        event = 'vhming-vehicleshop:server:swapVehicle',
                         args = {
                             toVehicle = v.model,
                             ClosestVehicle = ClosestVehicle,
@@ -558,65 +572,7 @@ RegisterNetEvent('et-vehicleshop:client:openVehCats', function(data)
     exports['et-menu']:openMenu(vehMenu)
 end)
 
-RegisterNetEvent('et-vehicleshop:client:openFinance', function(data)
-    local dialog = exports['et-input']:ShowInput({
-        header = getVehBrand():upper() .. ' ' .. data.buyVehicle:upper() .. ' - $' .. data.price,
-        submitText = Lang:t('menus.submit_text'),
-        inputs = {
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'downPayment',
-                text = Lang:t('menus.financesubmit_downpayment') .. Config.MinimumDown .. '%'
-            },
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'paymentAmount',
-                text = Lang:t('menus.financesubmit_totalpayment') .. Config.MaximumPayments
-            }
-        }
-    })
-    if dialog then
-        if not dialog.downPayment or not dialog.paymentAmount then return end
-        TriggerServerEvent('et-vehicleshop:server:financeVehicle', dialog.downPayment, dialog.paymentAmount, data.buyVehicle)
-    end
-end)
-
-RegisterNetEvent('et-vehicleshop:client:openCustomFinance', function(data)
-    TriggerEvent('animations:client:EmoteCommandStart', {"tablet2"})
-    local dialog = exports['et-input']:ShowInput({
-        header = getVehBrand():upper() .. ' ' .. data.vehicle:upper() .. ' - $' .. data.price,
-        submitText = Lang:t('menus.submit_text'),
-        inputs = {
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'downPayment',
-                text = Lang:t('menus.financesubmit_downpayment') .. Config.MinimumDown .. '%'
-            },
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'paymentAmount',
-                text = Lang:t('menus.financesubmit_totalpayment') .. Config.MaximumPayments
-            },
-            {
-                text = Lang:t('menus.submit_ID'),
-                name = "playerid",
-                type = "number",
-                isRequired = true
-            }
-        }
-    })
-    if dialog then
-        if not dialog.downPayment or not dialog.paymentAmount or not dialog.playerid then return end
-        TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-        TriggerServerEvent('et-vehicleshop:server:sellfinanceVehicle', dialog.downPayment, dialog.paymentAmount, data.vehicle, dialog.playerid)
-    end
-end)
-
-RegisterNetEvent('et-vehicleshop:client:swapVehicle', function(data)
+RegisterNetEvent('vhming-vehicleshop:client:swapVehicle', function(data)
     local shopName = data.ClosestShop
     if Config.Shops[shopName]["ShowroomVehicles"][data.ClosestVehicle].chosenVehicle ~= data.toVehicle then
         local closestVehicle, closestDistance = QBCore.Functions.GetClosestVehicle(vector3(Config.Shops[shopName]["ShowroomVehicles"][data.ClosestVehicle].coords.x, Config.Shops[shopName]["ShowroomVehicles"][data.ClosestVehicle].coords.y, Config.Shops[shopName]["ShowroomVehicles"][data.ClosestVehicle].coords.z))
@@ -646,7 +602,7 @@ RegisterNetEvent('et-vehicleshop:client:swapVehicle', function(data)
     end
 end)
 
-RegisterNetEvent('et-vehicleshop:client:buyShowroomVehicle', function(vehicle, plate)
+RegisterNetEvent('vhming-vehicleshop:client:buyShowroomVehicle', function(vehicle, plate)
     tempShop = insideShop -- temp hacky way of setting the shop because it changes after the callback has returned since you are outside the zone
     QBCore.Functions.TriggerCallback('QBCore:Server:SpawnVehicle', function(netId)
         local veh = NetToVeh(netId)
@@ -658,111 +614,7 @@ RegisterNetEvent('et-vehicleshop:client:buyShowroomVehicle', function(vehicle, p
     end, vehicle, Config.Shops[tempShop]["VehicleSpawn"], true)
 end)
 
-RegisterNetEvent('et-vehicleshop:client:getVehicles', function()
-    QBCore.Functions.TriggerCallback('et-vehicleshop:server:getVehicles', function(vehicles)
-        local ownedVehicles = {}
-        for _, v in pairs(vehicles) do
-            if v.balance ~= 0 then
-                local name = QBCore.Shared.Vehicles[v.vehicle]["name"]
-                local plate = v.plate:upper()
-                ownedVehicles[#ownedVehicles + 1] = {
-                    header = name,
-                    txt = Lang:t('menus.veh_platetxt') .. plate,
-                    icon = "fa-solid fa-car-side",
-                    params = {
-                        event = 'et-vehicleshop:client:getVehicleFinance',
-                        args = {
-                            vehiclePlate = plate,
-                            balance = v.balance,
-                            paymentsLeft = v.paymentsleft,
-                            paymentAmount = v.paymentamount
-                        }
-                    }
-                }
-            end
-        end
-        if #ownedVehicles > 0 then
-            exports['et-menu']:openMenu(ownedVehicles)
-        else
-            QBCore.Functions.Notify(Lang:t('error.nofinanced'), 'error', 7500)
-        end
-    end)
-end)
-
-RegisterNetEvent('et-vehicleshop:client:getVehicleFinance', function(data)
-    local vehFinance = {
-        {
-            header = Lang:t('menus.goback_header'),
-            params = {
-                event = 'et-vehicleshop:client:getVehicles'
-            }
-        },
-        {
-            isMenuHeader = true,
-            icon = "fa-solid fa-sack-dollar",
-            header = Lang:t('menus.veh_finance_balance'),
-            txt = Lang:t('menus.veh_finance_currency') .. comma_value(data.balance)
-        },
-        {
-            isMenuHeader = true,
-            icon = "fa-solid fa-hashtag",
-            header = Lang:t('menus.veh_finance_total'),
-            txt = data.paymentsLeft
-        },
-        {
-            isMenuHeader = true,
-            icon = "fa-solid fa-sack-dollar",
-            header = Lang:t('menus.veh_finance_reccuring'),
-            txt = Lang:t('menus.veh_finance_currency') .. comma_value(data.paymentAmount)
-        },
-        {
-            header = Lang:t('menus.veh_finance_pay'),
-            icon = "fa-solid fa-hand-holding-dollar",
-            params = {
-                event = 'et-vehicleshop:client:financePayment',
-                args = {
-                    vehData = data,
-                    paymentsLeft = data.paymentsleft,
-                    paymentAmount = data.paymentamount
-                }
-            }
-        },
-        {
-            header = Lang:t('menus.veh_finance_payoff'),
-            icon = "fa-solid fa-hand-holding-dollar",
-            params = {
-                isServer = true,
-                event = 'et-vehicleshop:server:financePaymentFull',
-                args = {
-                    vehBalance = data.balance,
-                    vehPlate = data.vehiclePlate
-                }
-            }
-        },
-    }
-    exports['et-menu']:openMenu(vehFinance)
-end)
-
-RegisterNetEvent('et-vehicleshop:client:financePayment', function(data)
-    local dialog = exports['et-input']:ShowInput({
-        header = Lang:t('menus.veh_finance'),
-        submitText = Lang:t('menus.veh_finance_pay'),
-        inputs = {
-            {
-                type = 'number',
-                isRequired = true,
-                name = 'paymentAmount',
-                text = Lang:t('menus.veh_finance_payment')
-            }
-        }
-    })
-    if dialog then
-        if not dialog.paymentAmount then return end
-        TriggerServerEvent('et-vehicleshop:server:financePayment', dialog.paymentAmount, data.vehData)
-    end
-end)
-
-RegisterNetEvent('et-vehicleshop:client:openIdMenu', function(data)
+RegisterNetEvent('vhming-vehicleshop:client:openIdMenu', function(data)
     local dialog = exports['et-input']:ShowInput({
         header = QBCore.Shared.Vehicles[data.vehicle]["name"],
         submitText = Lang:t('menus.submit_text'),
@@ -778,9 +630,9 @@ RegisterNetEvent('et-vehicleshop:client:openIdMenu', function(data)
     if dialog then
         if not dialog.playerid then return end
         if data.type == 'testDrive' then
-            TriggerServerEvent('et-vehicleshop:server:customTestDrive', data.vehicle, dialog.playerid)
+            TriggerServerEvent('vhming-vehicleshop:server:customTestDrive', data.vehicle, dialog.playerid)
         elseif data.type == 'sellVehicle' then
-            TriggerServerEvent('et-vehicleshop:server:sellShowroomVehicle', data.vehicle, dialog.playerid)
+            TriggerServerEvent('vhming-vehicleshop:server:sellShowroomVehicle', data.vehicle, dialog.playerid)
         end
     end
 end)
@@ -799,5 +651,24 @@ CreateThread(function()
             AddTextComponentSubstringPlayerName(Config.Shops[k]["ShopLabel"])
             EndTextCommandSetBlipName(Dealer)
         end
+    end
+    while true do
+        wait = 500
+        while not LocalPlayer.state.isLoggedIn do
+            -- do nothing
+            Wait(wait)
+        end
+        
+        
+        RegisterDutyTarget()
+        if PlayerData.job.name == 'cardealer' then
+            if isInsideDutyZone then
+                wait = 0
+                if IsControlJustPressed(0, 38) then
+                    TriggerServerEvent("QBCore:ToggleDuty")
+                end
+            end
+        end
+        Wait(wait)
     end
 end)

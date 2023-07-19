@@ -273,10 +273,10 @@ Config.MenuItems = {
     },
     [2] = {
         id = 'openmenu',
-        title = 'Open Control Menu',
+        title = 'Menu phương tiện',
         icon = 'car',
         type = 'client',
-        event = 'vehcontrol:openExternal',
+        event = 'vhming-carmenu:veh:options',
         shouldClose = true
     },
 

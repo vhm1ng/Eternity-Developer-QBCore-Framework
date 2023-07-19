@@ -1,7 +1,7 @@
 Config = {}
 
 Config.UseTarget = true                                       -- (true | false)
-Config.FuelResource = 'tC-fuel'                            -- (tC-fuel | lj-fuel | cdn-fuel)<--Which fuel reource are you using?
+Config.FuelResource = 'vhming-fuel'                            -- (vhming-fuel | lj-fuel | cdn-fuel)<--Which fuel reource are you using?
 Config.VehPlate = 'DMV '..math.random(100, 999)               -- Plate Text that comes on a DMV vehicle when spawned
 Config.CommandName = 'resetlicense'                           -- Command to reset a players license meta back to false. (permit | driver | cdl | bike)
 

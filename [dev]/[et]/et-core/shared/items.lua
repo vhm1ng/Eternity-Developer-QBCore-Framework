@@ -59,7 +59,7 @@ QBShared.Items = {
 	["bottle"] 						 = {["name"] = "bottle", 			  	  		["label"] = "Chai rỗng", 				["weight"] = 10, 		["type"] = "item", 		["image"] = "bottle.png", 				["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = ""},
 	["can"] 						 = {["name"] = "can", 			  	  			["label"] = "Lon rỗng", 				["weight"] = 10, 		["type"] = "item", 		["image"] = "can.png", 					["unique"] = false, 	["useable"] = false, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = ""},
 
--- tC-fuel
+-- vhming-fuel
 	["syphoningkit"]				 = {["name"] = "syphoningkit", 					["label"] = "Bộ Rút Xăng", 				["weight"] = 2000, 		["type"] = "item", 		["image"] = "syphoningkit.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = ""},
 	["jerrycan"]				 	 = {["name"] = "jerrycan", 						["label"] = "Can Xăng", 				["weight"] = 2000, 		["type"] = "item", 		["image"] = "jerrycan.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = ""},
 

@@ -87,14 +87,14 @@ RegisterNetEvent('et-multicharacter:server:createCharacter', function(data)
             loadHouseData(src)
             TriggerClientEvent("et-multicharacter:client:closeNUI", src)
             TriggerClientEvent('apartments:client:setupSpawnUI', src, newData)
-            exports['tC-idcard']:CreateMetaLicense(src, {'id_card','driver_license'})
+            exports['vhming-idcard']:CreateMetaLicense(src, {'id_card','driver_license'})
             GiveStarterItems(src)
         else
             print('^2[et-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
             loadHouseData(src)
             TriggerClientEvent("et-multicharacter:client:closeNUIdefault", src)
-            exports['tC-idcard']:CreateMetaLicense(src, {'id_card','driver_license'})
+            exports['vhming-idcard']:CreateMetaLicense(src, {'id_card','driver_license'})
             GiveStarterItems(src)
         end
 	end
