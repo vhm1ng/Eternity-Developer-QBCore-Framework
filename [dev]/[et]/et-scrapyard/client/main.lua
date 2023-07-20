@@ -134,7 +134,7 @@ function CreateListEmail()
         end
         SetTimeout(math.random(15000, 20000), function()
             emailSend = false
-            TriggerServerEvent('et-phone:server:sendNewMail', {
+            TriggerServerEvent('tC-phone:server:sendNewMail', {
                 sender = Lang:t('email.sender'),
                 subject = Lang:t('email.subject'),
                 message = Lang:t('email.message').. vehicleList,
