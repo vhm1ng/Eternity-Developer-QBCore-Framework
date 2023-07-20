@@ -237,7 +237,7 @@ Config.BlacklistedVehs = {
     [`rrocket`] = true,
     [`ruiner2`] = true,
     [`deluxo`] = true,
-    -- [`policeb`] = true,
+    [`policeb`] = true,
     [`polmav`] = true,
 }
 
