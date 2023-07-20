@@ -6,10 +6,10 @@ end)
 function Holograms()
 		while true do
 			Citizen.Wait(0)			
-		if GetDistanceBetweenCoords( 164.08, -991.62, 30.09, GetEntityCoords(GetPlayerPed(-1))) < 10.0 then
-			Draw3DText( 164.08, -991.62, 30.09  -1.400, "NGHIÊM CẤM", 4, 0.1, 0.1)
-			Draw3DText( 164.08, -991.62, 30.09  -1.600, "Tiểu Nhị + LilBoi + Con bò chơi poker tại đây !!", 4, 0.1, 0.1)
-			Draw3DText( 164.08, -991.62, 30.09  -1.800, "Dùng /jointable để vào bàn poker", 4, 0.1, 0.1)		
+		if GetDistanceBetweenCoords( 445.12, 5572.29, 781.5, GetEntityCoords(GetPlayerPed(-1))) < 10.0 then
+			Draw3DText( 445.12, 5572.29, 781.5  -1.400, "NGHIÊM CẤM", 4, 0.1, 0.1)
+			Draw3DText( 445.12, 5572.29, 781.5  -1.600, "Tiểu Nhị + LilBoi + Con bò chơi poker tại đây !!", 4, 0.1, 0.1)
+			Draw3DText( 445.12, 5572.29, 781.5  -1.800, "Dùng /jointable để vào bàn poker", 4, 0.1, 0.1)		
 		end			
 	end
 end
@@ -45,10 +45,10 @@ function Holograms1()
 		while true do
 			Citizen.Wait(0)			
 				-- Hologram No. 1 vector3()
-		if GetDistanceBetweenCoords( 164.08, -991.62, 30.09, GetEntityCoords(GetPlayerPed(-1))) < 10.0 then
-			Draw3DText1( 164.08, -991.62, 30.09  -1.400, "NGHIÊM CẤM", 4, 0.1, 0.1)
-			Draw3DText1( 164.08, -991.62, 30.09  -1.600, "Tiểu Nhị + LilBoi + Con bò chơi poker tại đây !!", 4, 0.1, 0.1)
-			-- Draw3DText1( 164.08, -991.62, 30.09  -1.800, "Dùng /jointable để vào bàn poker", 4, 0.1, 0.1)		
+		if GetDistanceBetweenCoords( 445.12, 5572.29, 781.5, GetEntityCoords(GetPlayerPed(-1))) < 10.0 then
+			Draw3DText1( 445.12, 5572.29, 781.5  -1.400, "NGHIÊM CẤM", 4, 0.1, 0.1)
+			Draw3DText1( 445.12, 5572.29, 781.5  -1.600, "Tiểu Nhị + LilBoi + Con bò chơi poker tại đây !!", 4, 0.1, 0.1)
+			-- Draw3DText1( 445.12, 5572.29, 781.5  -1.800, "Dùng /jointable để vào bàn poker", 4, 0.1, 0.1)		
 		end		
 				--Hologram No. 2
 		-- if GetDistanceBetweenCoords( -419.50, 1166.00, 326.00, GetEntityCoords(GetPlayerPed(-1))) < 10.0 then
