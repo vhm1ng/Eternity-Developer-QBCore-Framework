@@ -1,7 +1,7 @@
 
 
-RegisterNetEvent('ntk_tbao:showInput')
-AddEventHandler('ntk_tbao:showInput', function()
+RegisterNetEvent('vhming_tbao:showInput')
+AddEventHandler('vhming_tbao:showInput', function()
     SendNUIMessage({
         action = 'open'
     })
@@ -13,17 +13,17 @@ RegisterNUICallback('toggle', function(data)
 end)
 
 RegisterNUICallback('sendData',function(data)
-    TriggerServerEvent('ntk_tbao:showTBAO',data.text)
+    TriggerServerEvent('vhming_tbao:showTBAO',data.text)
 end)
 
-RegisterNetEvent('ntk_tbao:client:showTbao',function(text)
+RegisterNetEvent('vhming_tbao:client:showTbao',function(text)
     SendNUIMessage({
         action = 'tbao',
         text = text
     })
 end)
 
-RegisterNetEvent('ntk_tbao:hideTbao',function()
+RegisterNetEvent('vhming_tbao:hideTbao',function()
     SendNUIMessage({
         action = 'display'
     })
