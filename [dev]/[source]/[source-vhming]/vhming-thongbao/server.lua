@@ -6,13 +6,13 @@ QBCore.Commands.Add("thongbao", "Thông báo toàn thành phố ", {} , false, f
     
     if not haveTB then
         if QBCore.Functions.HasPermission(source, 'admin') then
-            TriggerClientEvent('ntk_tbao:showInput',source)
+            TriggerClientEvent('vhming_tbao:showInput',source)
             haveTB = true
             return
         end
         for k,v in pairs(Config.job) do
             if xPlayer.PlayerData.job.name == v.name and xPlayer.PlayerData.job.grade.level == v.level then
-                TriggerClientEvent('ntk_tbao:showInput',source)
+                TriggerClientEvent('vhming_tbao:showInput',source)
                 return 
             end
         end
@@ -22,7 +22,7 @@ QBCore.Commands.Add("thongbao", "Thông báo toàn thành phố ", {} , false, f
     
 end)
 
-RegisterNetEvent('ntk_tbao:showTBAO',function(text)
+RegisterNetEvent('vhming_tbao:showTBAO',function(text)
     if text == nil then
         haveTB = false
 
@@ -30,8 +30,8 @@ RegisterNetEvent('ntk_tbao:showTBAO',function(text)
     end
     haveTB = true
 
-    TriggerClientEvent('ntk_tbao:client:showTbao',-1,text)
-    Wait(35000) -- time tat81 tb
+    TriggerClientEvent('vhming_tbao:client:showTbao',-1,text)
+    Wait(60000) -- time tat81 tb
     haveTB = false
-    TriggerClientEvent('ntk_tbao:hideTbao',-1)
+    TriggerClientEvent('vhming_tbao:hideTbao',-1)
 end)
