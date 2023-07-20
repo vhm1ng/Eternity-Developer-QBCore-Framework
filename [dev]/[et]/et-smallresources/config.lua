@@ -9,7 +9,7 @@ Config.AFK = {
         ['admin'] = true,
         ['god'] = true
     },
-    secondsUntilKick = 1800 -- AFK Kick Time Limit (in seconds)
+    secondsUntilKick = 3600 -- AFK Kick Time Limit (in seconds)
 }
 
 Config.Binoculars = {
