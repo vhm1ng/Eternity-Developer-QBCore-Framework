@@ -2068,7 +2068,7 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 				elseif itemData["name"] == "labkey" then
 					info.lab = exports["et-methlab"]:GenerateRandomLab()
 				elseif itemData["name"] == "printerdocument" then
-					info.url = "https://cdn.discordapp.com/attachments/870094209783308299/870104331142189126/Logo_-_Display_Picture_-_Stylized_-_Red.png"
+					info.url = "https://cdn.discordapp.com/attachments/645995539208470549/707609551733522482/image0.png"
 				end
 
 				if AddItem(id, itemData["name"], amount, false, info) then

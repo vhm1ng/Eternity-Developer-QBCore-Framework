@@ -1,5 +1,7 @@
 /* GLOBAL */
 
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 .hidden {
   display: none !important;
 }
@@ -545,8 +547,11 @@ body::-webkit-scrollbar {
 }
 .scrambler-splash .scrambler-text{
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
 .scrambler .scrambler-find{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   text-align: center;
   color: white;
   font-size: 30px;
@@ -564,6 +569,7 @@ body::-webkit-scrollbar {
   margin-bottom: 15px;
 }
 .scrambler .scrambler-codes {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-wrap: wrap;
   width: 400px;
