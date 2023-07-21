@@ -11,7 +11,7 @@ Config.Cityhalls = {
             display = 4,
             scale = 0.65,
             colour = 0,
-            title = "Tòa Thị Chính"
+            title = "~r~[Ban Ngành] ~w~Tòa Thị Chính ETERNITY"
         },
         licenses = {
             ["id_card"] = {
