@@ -28,7 +28,7 @@ LumberProcessor = {
     SetBlipDisplay = 6,
     SetBlipScale = 1.15,
     SetBlipColour = 64,
-    BlipLabel = "Lumber Processor",
+    BlipLabel = "~b~[Nghề Nghiệp] Làm ván gỗ",
     minZ = 77.26,
     maxZ = 81.26,
 }
