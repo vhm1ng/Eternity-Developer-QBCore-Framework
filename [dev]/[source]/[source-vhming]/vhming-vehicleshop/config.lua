@@ -21,7 +21,7 @@ Config.Shops = {
             ['size'] = 2.75
         },
         ['Job'] = 'cardealer',
-        ['ShopLabel'] = 'Luxury Vehicle Shop',
+        ['ShopLabel'] = '~r~[Ban Ngành] ~w~Car Dealer',
         ['showBlip'] = true,
         ['blipSprite'] = 326,
         ['blipColor'] = 3,
