@@ -75,9 +75,9 @@ Config.Locations = {
         [1] = vector3(459.4, -988.23, 24.91),
     },
     ["stations"] = {
-        [1] = {label = "Cục Cảnh Sát Giao Thông", coords = vector4(423.96, -980.44, 30.71, 271.86)},
-        [2] = {label = "Cục Điều Tra Liên Bang", coords = vector4(1845.903, 2585.873, 45.672, 272.249)},
-        [3] = {label = "Trạm Cảnh Sát Paleto", coords = vector4(-451.55, 6014.25, 31.716, 223.81)},
+        [1] = {label = "~r~[Ban Ngành] ~w~Cục Cảnh Sát Giao Thông", coords = vector4(423.96, -980.44, 30.71, 271.86)},
+        [2] = {label = "~r~[Ban Ngành] ~w~Cục Điều Tra Liên Bang", coords = vector4(1845.903, 2585.873, 45.672, 272.249)},
+        [3] = {label = "~r~[Ban Ngành] ~w~Trạm Cảnh Sát Paleto", coords = vector4(-451.55, 6014.25, 31.716, 223.81)},
     },
 }
 
