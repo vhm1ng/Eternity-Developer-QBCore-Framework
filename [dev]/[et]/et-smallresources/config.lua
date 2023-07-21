@@ -107,29 +107,12 @@ Config.ConsumablesEat = {
     ["tosti"] = (35),
     ["twerks_candy"] = (35),
     ["snikkel_candy"] = (35),
-    -- ["apple"] = math.random(10, 20),
-    -- ["beef"] = math.random(35, 50),
-    -- ["slicedpie"] = math.random(10, 20),
-    -- ["corncob"] = math.random(25, 40),
-    -- ["canofcorn"] = math.random(35, 50),
-    -- ["grapes"] = math.random(10, 20),
-    -- ["greenpepper"] = math.random(10, 20),
-    -- ["chillypepper"] = math.random(10, 20),
-    -- ["tomato"] = math.random(10, 20),
-    -- ["tomatopaste"] = math.random(25, 40),
-    -- ["cooked_bacon"] = math.random(35, 50),
-    -- ["cooked_sausage"] = math.random(35, 50),
-    -- ["cooked_pork"] = math.random(35, 50),
-    -- ["cooked_ham"] = math.random(35, 50),
 }
 
 Config.ConsumablesDrink = {
     ["water_bottle"] = (35),
     ["kurkakola"] = (35),
     ["coffee"] = (35),
---     ["apple_juice"] = math.random(25, 45),
---     ["grapejuice"] = math.random(25, 45),
---     ["hotsauce"] = math.random(10, 15),
 }
 
 Config.ConsumablesAlcohol = {
@@ -269,113 +252,16 @@ Config.Objects = { -- for object removal
     {coords = vector3(285.28,-355.78,45.13), heading = 0, length = 200, width = 200, model = "prop_sec_barier_02a"},
 }
 
--- You may add more than 2 selections and it will bring up a menu for the player to select which floor be sure to label each section though
-Config.Teleports = {
-    --Elevator @ labs
-    [1] = {
-        [1] = { -- up label
-            ['poly'] = {
-                coords = vector3(3540.74, 3675.59, 20.99),
-                heading = 167.5,
-                length = 2,
-                width = 2
-            },
-            ["AllowVehicle"] = false,
-            label = false -- set this to a string for a custom label or leave it false to keep the default
-
-        },
-        [2] = { -- down label
-            ['poly'] = {
-                coords = vector3(3540.74, 3675.59, 28.11),
-                heading = 172.5,
-                length = 2,
-                width = 2
-            },
-            ["AllowVehicle"] = false,
-            label = false
-        },
-        -- [3] = { 
-        --     ['poly'] = {
-        --         coords = vector3(0.0, 0.0, 0.0),
-        --         heading = 0.0,
-        --         length = 0,
-        --         width = 0
-        --     },
-        --     ["AllowVehicle"] = false,
-        --     label = 'be sure to label all sections if more than 2'
-        -- },
-    },
-    --Coke Processing Enter/Exit
-    [2] = {
-        [1] = {
-            ['poly'] = {
-                coords = vector3(909.49, -1589.22, 30.51),
-                heading = 92.24,
-                length = 2,
-                width = 2
-            },
-            ["AllowVehicle"] = false,
-            label = '[E] Enter Coke Processing'
-        },
-        [2] = {
-            ['poly'] = {
-                coords = vector3(1088.81, -3187.57, -38.99),
-                heading = 181.7,
-                length = 2,
-                width = 2
-            },
-            ["AllowVehicle"] = false,
-            label = '[E] Leave'
-        }
-    }
-}
-
-Config.DefaultPrice = 20 -- Default price for the carwash
+Config.DefaultPrice = 500 -- Default price for the carwash
 Config.DirtLevel = 0.1 -- Threshold for the dirt level to be counted as dirty
 Config.CarWash = { -- carwash
     [1] = {
         ["label"] = "Hands Free Carwash",
         ["poly"] = {
-            coords = vector3(174.81, -1736.77, 28.87),
-            length = 7.0,
-            width = 8.8,
-            heading = 359
-        }
-    },
-    [2] = {
-        ["label"] = "Hands Free Carwash",
-        ["poly"] = {
-            coords = vector3(25.2, -1391.98, 28.91),
-            length = 6.6,
-            width = 8.2,
-            heading = 0
-        }
-    },
-    [3] = {
-        ["label"] = "Hands Free Carwash",
-        ["poly"] = {
-            coords = vector3(-74.27, 6427.72, 31.02),
-            length = 9.4,
-            width = 8,
-            heading = 315
-        }
-    },
-    [4] = {
-        ["label"] = "Hands Free Carwash",
-        ["poly"] = {
-            coords = vector3(1362.69, 3591.81, 34.5),
-            length = 6.4,
-            width = 8,
-            heading = 21
-        }
-    },
-    [5] = {
-        ["label"] = "Hands Free Carwash",
-        ["poly"] = {
-            coords = vector3(-699.84, -932.68, 18.59),
-            length = 11.8,
-            width = 5.2,
-            heading = 0
+            coords = vector3(256.33, -771.72, 30.77),
+            length = 14.0,
+            width = 6.2,
+            heading = 69
         }
     }
 }
