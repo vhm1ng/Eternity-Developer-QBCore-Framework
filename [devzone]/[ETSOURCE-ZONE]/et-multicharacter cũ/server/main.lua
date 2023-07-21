@@ -62,12 +62,12 @@ end
 QBCore.Commands.Add("logout", Lang:t("commands.logout_description"), {}, false, function(source)
     local src = source
     QBCore.Player.Logout(src)
-    TriggerClientEvent('et-multicharacter:client:chooseChar', src)
+    TriggerClientEvent('vhming-multicharacter:client:chooseChar', src)
 end, "admin")
 
 QBCore.Commands.Add("closeNUI", Lang:t("commands.closeNUI_description"), {}, false, function(source)
     local src = source
-    TriggerClientEvent('et-multicharacter:client:closeNUI', src)
+    TriggerClientEvent('vhming-multicharacter:client:closeNUI', src)
 end)
 
 -- Events
@@ -81,12 +81,12 @@ AddEventHandler('QBCore:Server:OnPlayerUnload', function(src)
     hasDonePreloading[src] = false
 end)
 
-RegisterNetEvent('et-multicharacter:server:disconnect', function()
+RegisterNetEvent('vhming-multicharacter:server:disconnect', function()
     local src = source
     DropPlayer(src, Lang:t("commands.droppedplayer"))
 end)
 
-RegisterNetEvent('et-multicharacter:server:loadUserData', function(cData)
+RegisterNetEvent('vhming-multicharacter:server:loadUserData', function(cData)
     local src = source
     if QBCore.Player.Login(src, cData.citizenid) then
         repeat
@@ -100,7 +100,7 @@ RegisterNetEvent('et-multicharacter:server:loadUserData', function(cData)
     end
 end)
 
-RegisterNetEvent('et-multicharacter:server:createCharacter', function(data)
+RegisterNetEvent('vhming-multicharacter:server:createCharacter', function(data)
     local src = source
     local newData = {}
     newData.cid = data.cid
@@ -115,20 +115,20 @@ RegisterNetEvent('et-multicharacter:server:createCharacter', function(data)
             print('^2[et-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
             loadHouseData(src)
-            TriggerClientEvent("et-multicharacter:client:closeNUI", src)
+            TriggerClientEvent("vhming-multicharacter:client:closeNUI", src)
             TriggerClientEvent('apartments:client:setupSpawnUI', src, newData)
             GiveStarterItems(src)
         else
             print('^2[et-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
             loadHouseData(src)
-            TriggerClientEvent("et-multicharacter:client:closeNUIdefault", src)
+            TriggerClientEvent("vhming-multicharacter:client:closeNUIdefault", src)
             GiveStarterItems(src)
         end
     end
 end)
 
-RegisterNetEvent('et-multicharacter:server:deleteCharacter', function(citizenid)
+RegisterNetEvent('vhming-multicharacter:server:deleteCharacter', function(citizenid)
     local src = source
     QBCore.Player.DeleteCharacter(src, citizenid)
     TriggerClientEvent('QBCore:Notify', src, Lang:t("notifications.char_deleted") , "success")
@@ -136,7 +136,7 @@ end)
 
 -- Callbacks
 
-QBCore.Functions.CreateCallback("et-multicharacter:server:GetUserCharacters", function(source, cb)
+QBCore.Functions.CreateCallback("vhming-multicharacter:server:GetUserCharacters", function(source, cb)
     local src = source
     local license = QBCore.Functions.GetIdentifier(src, 'license')
 
@@ -145,13 +145,13 @@ QBCore.Functions.CreateCallback("et-multicharacter:server:GetUserCharacters", fu
     end)
 end)
 
-QBCore.Functions.CreateCallback("et-multicharacter:server:GetServerLogs", function(_, cb)
+QBCore.Functions.CreateCallback("vhming-multicharacter:server:GetServerLogs", function(_, cb)
     MySQL.query('SELECT * FROM server_logs', {}, function(result)
         cb(result)
     end)
 end)
 
-QBCore.Functions.CreateCallback("et-multicharacter:server:GetNumberOfCharacters", function(source, cb)
+QBCore.Functions.CreateCallback("vhming-multicharacter:server:GetNumberOfCharacters", function(source, cb)
     local src = source
     local license = QBCore.Functions.GetIdentifier(src, 'license')
     local numOfChars = 0
@@ -171,7 +171,7 @@ QBCore.Functions.CreateCallback("et-multicharacter:server:GetNumberOfCharacters"
     cb(numOfChars)
 end)
 
-QBCore.Functions.CreateCallback("et-multicharacter:server:setupCharacters", function(source, cb)
+QBCore.Functions.CreateCallback("vhming-multicharacter:server:setupCharacters", function(source, cb)
     local license = QBCore.Functions.GetIdentifier(source, 'license')
     local plyChars = {}
     MySQL.query('SELECT * FROM players WHERE license = ?', {license}, function(result)
@@ -185,7 +185,7 @@ QBCore.Functions.CreateCallback("et-multicharacter:server:setupCharacters", func
     end)
 end)
 
-QBCore.Functions.CreateCallback("et-multicharacter:server:getSkin", function(_, cb, cid)
+QBCore.Functions.CreateCallback("vhming-multicharacter:server:getSkin", function(_, cb, cid)
     local result = MySQL.query.await('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {cid, 1})
     if result[1] ~= nil then
         cb(result[1].model, result[1].skin)

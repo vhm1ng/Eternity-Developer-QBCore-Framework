@@ -8,7 +8,7 @@ CreateThread(function()
 	while true do
 		Wait(0)
 		if NetworkIsSessionStarted() then
-			TriggerEvent('et-multicharacter:client:chooseChar')
+			TriggerEvent('vhming-multicharacter:client:chooseChar')
 			return
 		end
 	end
@@ -35,7 +35,7 @@ local function skyCam(bool)
     end
 end
 local function openCharMenu(bool)
-    QBCore.Functions.TriggerCallback("et-multicharacter:server:GetNumberOfCharacters", function(result)
+    QBCore.Functions.TriggerCallback("vhming-multicharacter:server:GetNumberOfCharacters", function(result)
         SetNuiFocus(bool, bool)
         SendNUIMessage({
             action = "ui",
@@ -49,7 +49,7 @@ end
 
 -- Events
 
-RegisterNetEvent('et-multicharacter:client:closeNUIdefault', function() -- This event is only for no starting apartments
+RegisterNetEvent('vhming-multicharacter:client:closeNUIdefault', function() -- This event is only for no starting apartments
     DeleteEntity(charPed)
     SetNuiFocus(false, false)
     DoScreenFadeOut(500)
@@ -68,12 +68,12 @@ RegisterNetEvent('et-multicharacter:client:closeNUIdefault', function() -- This 
     TriggerEvent('et-clothes:client:CreateFirstCharacter')
 end)
 
-RegisterNetEvent('et-multicharacter:client:closeNUI', function()
+RegisterNetEvent('vhming-multicharacter:client:closeNUI', function()
     DeleteEntity(charPed)
     SetNuiFocus(false, false)
 end)
 
-RegisterNetEvent('et-multicharacter:client:chooseChar', function()
+RegisterNetEvent('vhming-multicharacter:client:chooseChar', function()
     SetNuiFocus(false, false)
     DoScreenFadeOut(10)
     Wait(1000)
@@ -100,14 +100,14 @@ end)
 RegisterNUICallback('disconnectButton', function(_, cb)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
-    TriggerServerEvent('et-multicharacter:server:disconnect')
+    TriggerServerEvent('vhming-multicharacter:server:disconnect')
     cb("ok")
 end)
 
 RegisterNUICallback('selectCharacter', function(data, cb)
     local cData = data.cData
     DoScreenFadeOut(10)
-    TriggerServerEvent('et-multicharacter:server:loadUserData', cData)
+    TriggerServerEvent('vhming-multicharacter:server:loadUserData', cData)
     openCharMenu(false)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
@@ -119,7 +119,7 @@ RegisterNUICallback('cDataPed', function(data)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        QBCore.Functions.TriggerCallback('et-multicharacter:server:getSkin', function(data, gender)
+        QBCore.Functions.TriggerCallback('vhming-multicharacter:server:getSkin', function(data, gender)
             model = gender
             if model ~= nil then
                 Citizen.CreateThread(function()
@@ -178,7 +178,7 @@ RegisterNUICallback('cDataPed', function(data)
 end)
 
 RegisterNUICallback('setupCharacters', function(_, cb)
-    QBCore.Functions.TriggerCallback("et-multicharacter:server:setupCharacters", function(result)
+    QBCore.Functions.TriggerCallback("vhming-multicharacter:server:setupCharacters", function(result)
         SendNUIMessage({
             action = "setupCharacters",
             characters = result
@@ -200,13 +200,13 @@ RegisterNUICallback('createNewCharacter', function(data, cb)
     elseif cData.gender == "Female" then
         cData.gender = 1
     end
-    TriggerServerEvent('et-multicharacter:server:createCharacter', cData)
+    TriggerServerEvent('vhming-multicharacter:server:createCharacter', cData)
     Wait(500)
     cb("ok")
 end)
 
 RegisterNUICallback('removeCharacter', function(data, cb)
-    TriggerServerEvent('et-multicharacter:server:deleteCharacter', data.citizenid)
-    TriggerEvent('et-multicharacter:client:chooseChar')
+    TriggerServerEvent('vhming-multicharacter:server:deleteCharacter', data.citizenid)
+    TriggerEvent('vhming-multicharacter:client:chooseChar')
     cb("ok")
 end)

@@ -300,7 +300,7 @@ RegisterNetEvent('et-houses:server:LogoutLocation', function()
     MySQL.update('UPDATE players SET inventory = ? WHERE citizenid = ?',
         {json.encode(MyItems), Player.PlayerData.citizenid})
     QBCore.Player.Logout(src)
-    TriggerClientEvent('et-multicharacter:client:chooseChar', src)
+    TriggerClientEvent('vhming-multicharacter:client:chooseChar', src)
 end)
 
 RegisterNetEvent('et-houses:server:giveHouseKey', function(target, house)

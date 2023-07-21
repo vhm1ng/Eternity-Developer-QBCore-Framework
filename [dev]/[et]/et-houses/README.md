@@ -24,7 +24,7 @@ Real Estate for et-core Framework :house_with_garden:
 - [et-radialmenu](https://github.com/qbcore-framework/et-radialmenu) - For the menu in screenshots
 - [et-anticheat](https://github.com/qbcore-framework/et-anticheat) - Anti Cheat 
 - [et-phone](https://github.com/qbcore-framework/et-phone) - Houses app
-- [et-multicharacter](https://github.com/qbcore-framework/et-multicharacter) - Checking if player is inside after character chosen (You need to edit the lines if you don't use this)
+- [vhming-multicharacter](https://github.com/qbcore-framework/vhming-multicharacter) - Checking if player is inside after character chosen (You need to edit the lines if you don't use this)
 - [et-garages](https://github.com/qbcore-framework/et-garages) - House Garage
 - [et-interior](https://github.com/qbcore-framework/et-interior) - Necessary for house interiors
 - [et-clothing](https://github.com/qbcore-framework/et-clothing) - Outfits
@@ -93,7 +93,7 @@ ensure et-core
 ensure et-radialmenu
 ensure et-anticheat
 ensure et-phone
-ensure et-multicharacter
+ensure vhming-multicharacter
 ensure et-garages
 ensure et-interior
 ensure et-clothing

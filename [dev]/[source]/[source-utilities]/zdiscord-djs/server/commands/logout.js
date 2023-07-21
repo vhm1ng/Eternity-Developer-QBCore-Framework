@@ -27,7 +27,7 @@ module.exports = {
         if (!GetPlayerName(args.id)) return interaction.reply({ content: "This ID seems invalid.", ephemeral: true });
 
         client.QBCore.Player.Logout(args.id);
-        emitNet("et-multicharacter:client:chooseChar", args.id);
+        emitNet("vhming-multicharacter:client:chooseChar", args.id);
 
         client.utils.log.info(`[${interaction.member.displayName}] logged ${GetPlayerName(args.id)} (${args.id}) out`);
         return interaction.reply({ content: `${GetPlayerName(args.id)} (${args.id}) was sent to the character screen.`, ephemeral: false });

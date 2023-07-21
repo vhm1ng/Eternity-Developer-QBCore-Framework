@@ -45,7 +45,7 @@ $(document).ready(function (){
 
                 setTimeout(function(){
 					setCharactersList()
-                    $.post('https://et-multicharacter/setupCharacters');
+                    $.post('https://vhming-multicharacter/setupCharacters');
                     setTimeout(function(){
                         clearInterval(DotsInterval);
                         loadingProgress = 0;
@@ -53,7 +53,7 @@ $(document).ready(function (){
                         $(".welcomescreen").fadeOut(150);
                         qbMultiCharacters.fadeInDown('.characters-list', '76%', 1);
                         $(".btns").css({"display":"block"});
-                        $.post('https://et-multicharacter/removeBlur');
+                        $.post('https://vhming-multicharacter/removeBlur');
                     }, 2000);
                 }, 2000);
             } else {
@@ -81,8 +81,8 @@ $('.continue-btn').click(function(e){
 $('.disconnect-btn').click(function(e){
     e.preventDefault();
 
-    $.post('https://et-multicharacter/closeUI');
-    $.post('https://et-multicharacter/disconnectButton');
+    $.post('https://vhming-multicharacter/closeUI');
+    $.post('https://vhming-multicharacter/disconnectButton');
 });
 
 function setupCharInfo(cData) {
@@ -144,7 +144,7 @@ $(document).on('click', '.character', function(e) {
             $("#info-text").html('<i class="fa-solid fa-info"></i>');
             $("#play").css({"display":"block"});
             $("#delete").css({"display":"none"});
-            $.post('https://et-multicharacter/cDataPed', JSON.stringify({
+            $.post('https://vhming-multicharacter/cDataPed', JSON.stringify({
                 cData: cDataPed
             }));
         } else {
@@ -157,7 +157,7 @@ $(document).on('click', '.character', function(e) {
             if (EnableDeleteButton) {
                 $("#delete").css({"display":"block"});
             }
-            $.post('https://et-multicharacter/cDataPed', JSON.stringify({
+            $.post('https://vhming-multicharacter/cDataPed', JSON.stringify({
                 cData: cDataPed
             }));
         }
@@ -171,7 +171,7 @@ $(document).on('click', '.character', function(e) {
             $("#info-text").html('<i class="fa-solid fa-info"></i>');
             $("#play").css({"display":"block"});
             $("#delete").css({"display":"none"});
-            $.post('https://et-multicharacter/cDataPed', JSON.stringify({
+            $.post('https://vhming-multicharacter/cDataPed', JSON.stringify({
                 cData: cDataPed
             }));
         } else {
@@ -184,7 +184,7 @@ $(document).on('click', '.character', function(e) {
             if (EnableDeleteButton) {
                 $("#delete").css({"display":"block"});
             }
-            $.post('https://et-multicharacter/cDataPed', JSON.stringify({
+            $.post('https://vhming-multicharacter/cDataPed', JSON.stringify({
                 cData: cDataPed
             }));
         }
@@ -237,7 +237,7 @@ $(document).on('click', '#create', function (e) {
         return false;
     }
 
-    $.post('https://et-multicharacter/createNewCharacter', JSON.stringify({
+    $.post('https://vhming-multicharacter/createNewCharacter', JSON.stringify({
         firstname: firstname,
         lastname: lastname,
         nationality: nationality,
@@ -254,7 +254,7 @@ $(document).on('click', '#create', function (e) {
 });
 
 $(document).on('click', '#accept-delete', function(e){
-    $.post('https://et-multicharacter/removeCharacter', JSON.stringify({
+    $.post('https://vhming-multicharacter/removeCharacter', JSON.stringify({
         citizenid: $(selectedChar).data("citizenid"),
     }));
     $('.character-delete').fadeOut(150);
@@ -295,7 +295,7 @@ function refreshCharacters() {
     setTimeout(function(){
         $(selectedChar).removeClass("char-selected");
         selectedChar = null;
-        $.post('https://et-multicharacter/setupCharacters');
+        $.post('https://vhming-multicharacter/setupCharacters');
         $("#delete").css({"display":"none"});
         $("#play").css({"display":"none"});
         qbMultiCharacters.resetAll();
@@ -322,7 +322,7 @@ $(document).on('click', '#play', function(e) {
 
     if (selectedChar !== null) {
         if (charData !== "") {
-            $.post('https://et-multicharacter/selectCharacter', JSON.stringify({
+            $.post('https://vhming-multicharacter/selectCharacter', JSON.stringify({
                 cData: $(selectedChar).data('cData')
             }));
             setTimeout(function(){

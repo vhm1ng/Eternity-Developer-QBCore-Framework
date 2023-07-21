@@ -1,4 +1,4 @@
-# et-multicharacter
+# vhming-multicharacter
 Multi Character Feature for et-Core Framework :people_holding_hands:
 
 Added support for setting default number of characters per player per Rockstar license
@@ -47,11 +47,11 @@ Can also be used with my other reskins
 - Add the following code to your server.cfg/resouces.cfg
 ```
 ensure et-core
-ensure et-multicharacter
+ensure vhming-multicharacter
 ensure et-spawn
 ensure et-apartments
 ensure et-clothing
 ensure et-weathersync
 ```
-"# et-multicharacter" 
-"# et-multicharacter" 
+"# vhming-multicharacter" 
+"# vhming-multicharacter" 

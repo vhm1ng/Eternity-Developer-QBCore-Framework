@@ -21,10 +21,10 @@ ESX Version: https://github.com/ZiggyJoJo/brp-fivem-appearance
 - Put `ensure fivem-appearance` in your server.cfg
 - Follow the code below to replace the events
 
-## Replace the `et-multicharacter:server:getSkin` callback with:
-#### Line: 151 et-multicharacter/server/main.lua
+## Replace the `vhming-multicharacter:server:getSkin` callback with:
+#### Line: 151 vhming-multicharacter/server/main.lua
 ```lua
-QBCore.Functions.CreateCallback("et-multicharacter:server:getSkin", function(source, cb, cid)
+QBCore.Functions.CreateCallback("vhming-multicharacter:server:getSkin", function(source, cb, cid)
     local result = MySQL.query.await('SELECT * FROM players WHERE citizenid = ?', {cid})
     local PlayerData = result[1]
     PlayerData.model = json.decode(PlayerData.skin)
@@ -36,14 +36,14 @@ QBCore.Functions.CreateCallback("et-multicharacter:server:getSkin", function(sou
 end)
 ```
 ## Replace the `RegisterNUICallback('cDataPed', function(data)'` callback  with:
-#### Line: 109 et-multicharacter/client/main.lua
+#### Line: 109 vhming-multicharacter/client/main.lua
 ```lua
 RegisterNUICallback('cDataPed', function(data)
     local cData = data.cData  
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        QBCore.Functions.TriggerCallback('et-multicharacter:server:getSkin', function(data, gender)
+        QBCore.Functions.TriggerCallback('vhming-multicharacter:server:getSkin', function(data, gender)
             model = gender
             if model ~= nil then
                 Citizen.CreateThread(function()
