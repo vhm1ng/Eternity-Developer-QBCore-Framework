@@ -34,7 +34,7 @@ BlipVHMingBlip = {
     SetBlipDisplay = 6,                                             -- Cái này k biết nói như nào tự check (https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
     SetBlipScale = 0.8,                                            -- Cỡ của blips
     SetBlipColour = 38,                                              -- Màu blips
-    BlipLabel = "Câu cá",                           -- Tên blips 
+    BlipLabel = "~b~[Nghề nghiệp] Câu cá",                           -- Tên blips 
 }
 
 BlipThiBangBlip = {
@@ -52,5 +52,5 @@ BlipChoTrieuKhucBlip = {
     SetBlipDisplay = 6,                                             -- Cách icon hiển thị (https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
     SetBlipScale = 0.8,                                            -- Cỡ của blips
     SetBlipColour = 44,                                              -- Màu blips
-    BlipLabel = "Chợ Triều Khúc",                           -- Tên blips 
+    BlipLabel = "[Shop] Chợ Triều Khúc",                           -- Tên blips 
 }
