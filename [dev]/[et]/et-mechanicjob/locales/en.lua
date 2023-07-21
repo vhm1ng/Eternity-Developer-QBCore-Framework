@@ -16,7 +16,7 @@ local Translations = {
         work_v = '[E] Làm việc trên xe',
         progress_bar = 'Đang sửa chữa...',
         veh_status = 'Tình trạng xe:',
-        job_blip = 'Thợ sửa xe',
+        job_blip = '~r~[Ban Ngành] ~w~Cứu hộ ĐÓNG CỬA',
     },
 
     lift_menu = {
