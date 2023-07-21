@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
 	SetBlipAsShortRange(blip, true)
 	SetBlipColour(blip, 16)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("~b~[NGHỀ NGHIỆP] ~b~Bóp zú bòa") -- Mudar nome do Blip aqui!
+	AddTextComponentSubstringPlayerName("~b~[Nghề Nghiệp] Bóp zú bòa") -- Mudar nome do Blip aqui!
     EndTextCommandSetBlipName(blip)
 end)
 
@@ -29,7 +29,7 @@ Citizen.CreateThread(function()
 	SetBlipAsShortRange(blip, true)
 	SetBlipColour(blip, 16)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("~b~[NGHỀ NGHIỆP] ~b~Đóng hộp sữa") -- Mudar nome do Blip aqui!
+	AddTextComponentSubstringPlayerName("~b~[Nghề Nghiệp] Đóng hộp sữa") -- Mudar nome do Blip aqui!
     EndTextCommandSetBlipName(blip)
 end)
 
@@ -42,7 +42,7 @@ Citizen.CreateThread(function()
 	SetBlipAsShortRange(blip, true)
 	SetBlipColour(blip, 17)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("~b~[NGHỀ NGHIỆP] ~b~Nướng Thịt Bòa") -- Mudar nome do Blip aqui!
+	AddTextComponentSubstringPlayerName("~b~[Nghề Nghiệp] Nướng Thịt Bòa") -- Mudar nome do Blip aqui!
     EndTextCommandSetBlipName(blip)
 end)
 
