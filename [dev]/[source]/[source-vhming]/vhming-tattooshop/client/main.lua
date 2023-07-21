@@ -8,14 +8,18 @@ local scaleType = nil
 local scaleString = ""
 
 CreateThread(function()
-    AddTextEntry("ParaTattoos", "Tattoo Shop")
+    -- AddTextEntry("ParaTattoos", "[Làm Đẹp] Tiệm xăm")
     for k, v in pairs(Config.Shops) do
         local blip = AddBlipForCoord(v)
         SetBlipSprite(blip, 75)
         SetBlipColour(blip, 4)
         SetBlipScale(blip, 0.7)
         SetBlipAsShortRange(blip, true)
-        BeginTextCommandSetBlipName("ParaTattoos")
+        -- BeginTextCommandSetBlipName("ParaTattoos")
+        -- EndTextCommandSetBlipName(blip)
+
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentSubstringPlayerName("[Làm Đẹp] Tiệm xăm") -- Mudar nome do Blip aqui!
         EndTextCommandSetBlipName(blip)
     end
 end)

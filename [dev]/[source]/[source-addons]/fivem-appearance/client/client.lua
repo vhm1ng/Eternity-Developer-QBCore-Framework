@@ -433,11 +433,11 @@ CreateThread(function()
 
 		SetBlipSprite (blip, 71)
 		-- SetBlipColour (blip, 47)
-		SetBlipScale (blip, 0.7)
+		SetBlipScale (blip, 0.6)
 		SetBlipAsShortRange(blip, true)
 
 		BeginTextCommandSetBlipName('STRING')
-		AddTextComponentSubstringPlayerName('Quán cắt tóc')
+		AddTextComponentSubstringPlayerName('[Làm Đẹp] Cắt tóc 31 Shines')
 		EndTextCommandSetBlipName(blip)
 	end
 	for k,v in ipairs(Config.ClothingShops) do
@@ -447,11 +447,11 @@ CreateThread(function()
 
 			SetBlipSprite (blip, 73)
 			SetBlipColour (blip, 47)
-			SetBlipScale (blip, 0.7)
+			SetBlipScale (blip, 0.6)
 			SetBlipAsShortRange(blip, true)
 
 			BeginTextCommandSetBlipName('STRING')
-			AddTextComponentSubstringPlayerName('Cửa hàng quần áo')
+			AddTextComponentSubstringPlayerName('[Làm Đẹp] Quần áo Louis Vuitton')
 			EndTextCommandSetBlipName(blip)
 		end
 	end

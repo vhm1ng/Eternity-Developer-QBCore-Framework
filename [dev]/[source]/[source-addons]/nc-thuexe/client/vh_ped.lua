@@ -9,7 +9,7 @@ CreateThread(function()
     SetBlipAsShortRange(blip, true)
     SetBlipColour(blip, 6)
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentSubstringPlayerName("Thuê Xe")
+    AddTextComponentSubstringPlayerName("~b~[Nghề Nghiệp] Thuê Xe")
     EndTextCommandSetBlipName(blip)
 
     -- Load ped model
