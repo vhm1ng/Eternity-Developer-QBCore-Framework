@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'et-Scrapyard'
+description 'vhming-scrapyard'
 version '1.2.0'
 
 shared_script {

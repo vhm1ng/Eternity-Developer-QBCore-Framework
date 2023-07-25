@@ -21,7 +21,7 @@ Config.Items = {
 }
 
 Config.VehicleCount = 40
-Config.CurrentVehicles = {}
+-- Config.CurrentVehicles = {}
 
 Config.Vehicles = {
     [1] = "ninef",

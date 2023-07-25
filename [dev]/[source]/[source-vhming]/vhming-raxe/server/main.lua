@@ -8,13 +8,13 @@ CreateThread(function()
     end
 end)
 
-RegisterNetEvent('et-scrapyard:server:LoadVehicleList', function()
+RegisterNetEvent('vhming-scrapyard:server:LoadVehicleList', function()
     local src = source
     TriggerClientEvent("et-scapyard:client:setNewVehicles", src, Config.CurrentVehicles)
 end)
 
 
-QBCore.Functions.CreateCallback('et-scrapyard:checkOwnerVehicle', function(_, cb, plate)
+QBCore.Functions.CreateCallback('vhming-scrapyard:checkOwnerVehicle', function(_, cb, plate)
     local result = MySQL.scalar.await("SELECT `plate` FROM `player_vehicles` WHERE `plate` = ?",{plate})
     if result then
         cb(false)
@@ -24,12 +24,18 @@ QBCore.Functions.CreateCallback('et-scrapyard:checkOwnerVehicle', function(_, cb
 end)
 
 
-RegisterNetEvent('et-scrapyard:server:ScrapVehicle', function(listKey)
+RegisterNetEvent('vhming-scrapyard:server:ScrapVehicle', function(listKey)
+    print("alo1")
     local src = source
+    print("alo1")
     local Player = QBCore.Functions.GetPlayer(src)
-    if Config.CurrentVehicles[listKey] ~= nil then
+    print("alo1")
+    -- if Config.CurrentVehicles[listKey] ~= nil then
+        print("alo1")
         for _ = 1, math.random(2, 4), 1 do
+            print("alo1")
             local item = Config.Items[math.random(1, #Config.Items)]
+            print("alo1")
             Player.Functions.AddItem(item, math.random(25, 45))
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], 'add')
             Wait(500)
@@ -42,9 +48,9 @@ RegisterNetEvent('et-scrapyard:server:ScrapVehicle', function(listKey)
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["rubber"], 'add')
 
         end
-        Config.CurrentVehicles[listKey] = nil
-        TriggerClientEvent("et-scapyard:client:setNewVehicles", -1, Config.CurrentVehicles)
-    end
+        -- Config.CurrentVehicles[listKey] = nil
+        -- TriggerClientEvent("et-scapyard:client:setNewVehicles", -1, Config.CurrentVehicles)
+    -- end
 end)
 
 function GenerateVehicleList()

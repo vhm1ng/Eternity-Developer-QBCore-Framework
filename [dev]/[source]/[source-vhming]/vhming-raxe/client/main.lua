@@ -3,7 +3,7 @@ local emailSend = false
 local isBusy = false
 
 RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
-    TriggerServerEvent("et-scrapyard:server:LoadVehicleList")
+    TriggerServerEvent("vhming-scrapyard:server:LoadVehicleList")
 end)
 
 CreateThread(function()
@@ -64,6 +64,7 @@ CreateThread(function()
                                     }
                                 },
                             distance = 3
+
                         })
                     else
                         exports["et-target"]:AddBoxZone("list"..i, v.coords, v.length, v.width, {
@@ -116,7 +117,7 @@ CreateThread(function()
     end
 end)
 
-RegisterNetEvent('et-scapyard:client:setNewVehicles', function(vehicleList)
+RegisterNetEvent('vhming-scrapyard:client:setNewVehicles', function(vehicleList)
     Config.CurrentVehicles = vehicleList
 end)
 
@@ -151,34 +152,33 @@ function ScrapVehicle()
     if vehicle ~= 0 and vehicle ~= nil then
         if not isBusy then
             if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() then
-                if IsVehicleValid(GetEntityModel(vehicle)) then
-                    local vehiclePlate = QBCore.Functions.GetPlate(vehicle)
-                    QBCore.Functions.TriggerCallback('et-scrapyard:checkOwnerVehicle',function(retval)
-                        if retval then
-                            isBusy = true
-                            local scrapTime = math.random(28000, 37000)
-                            ScrapVehicleAnim(scrapTime)
-                            QBCore.Functions.Progressbar("scrap_vehicle", Lang:t('text.demolish_vehicle'), scrapTime, false, true, {
-                                disableMovement = true,
-                                disableCarMovement = true,
-                                disableMouse = false,
-                                disableCombat = true,
-                            }, {}, {}, {}, function() -- Done
-                                TriggerServerEvent("et-scrapyard:server:ScrapVehicle", GetVehicleKey(GetEntityModel(vehicle)))
-                                SetEntityAsMissionEntity(vehicle, true, true)
-                                DeleteVehicle(vehicle)
-                                isBusy = false
-                            end, function() -- Cancel
-                                isBusy = false
-                                QBCore.Functions.Notify(Lang:t('error.canceled'), "error")
-                            end)
-                        else
-                            QBCore.Functions.Notify(Lang:t('error.smash_own'), "error")
-                        end
-                    end,vehiclePlate)
-                else
-                    QBCore.Functions.Notify(Lang:t('error.cannot_scrap'), "error")
-                end
+                local vehiclePlate = QBCore.Functions.GetPlate(vehicle)
+                QBCore.Functions.TriggerCallback('vhming-scrapyard:checkOwnerVehicle',function(retval)
+                    if retval then
+                        isBusy = true
+                        local scrapTime = math.random(28000, 37000)
+                        ScrapVehicleAnim(scrapTime)
+                        QBCore.Functions.Progressbar("scrap_vehicle", Lang:t('text.demolish_vehicle'), scrapTime, false, true, {
+                            disableMovement = true,
+                            disableCarMovement = true,
+                            disableMouse = true,
+                            disableCombat = true,
+                            print("alo2")
+                        }, {}, {}, {}, function() -- Done
+                            print("alo2")
+                            TriggerServerEvent("vhming-scrapyard:server:ScrapVehicle", GetVehicleKey(GetEntityModel(vehicle)))
+                            print("alo3")
+                            SetEntityAsMissionEntity(vehicle, true, true)
+                            DeleteVehicle(vehicle)
+                            isBusy = false
+                        end, function() -- Cancel
+                            isBusy = false
+                            QBCore.Functions.Notify(Lang:t('error.canceled'), "error")
+                        end)
+                    else
+                        QBCore.Functions.Notify(Lang:t('error.smash_own'), "error")
+                    end
+                end,vehiclePlate)
             else
                 QBCore.Functions.Notify(Lang:t('error.not_driver'), "error")
             end

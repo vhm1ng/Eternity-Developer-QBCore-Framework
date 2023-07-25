@@ -16,7 +16,7 @@ Config = {
 	MaxItemsReceived 	= 5,
 	MinItemReceivedQty 	= 2,
 	MaxItemReceivedQty 	= 6,
-	ChanceItem 			= "cryptostick",
+	ChanceItem 			= "",
 	LuckyItem 			= "rubber",
 	
 	PickupLocations = {
@@ -56,8 +56,6 @@ Config = {
 	PickupBoxModel = "prop_cs_cardbox_01",
 	ItemTable = {
 		[1] = "metalscrap",
-		[2] = "plastic",
-		[3] = "copper",
 		[4] = "iron",
 		[5] = "aluminum",
 		[6] = "steel",

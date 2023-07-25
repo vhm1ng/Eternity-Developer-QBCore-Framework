@@ -1,5 +1,5 @@
-# et-scrapyard
-Scrapyard For et-core
+# vhming-scrapyard
+Scrapyard For et-Core
 
 # License
 

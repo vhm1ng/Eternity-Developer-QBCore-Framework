@@ -1,23 +1,23 @@
 local Translations = {
     success = {
-        you_have_been_clocked_in = "Bạn đã được bấm giờ",
+        you_have_been_clocked_in = "Đã bấm giờ làm việc",
     },
     text = {
-        point_enter_warehouse = "[E] Nhập kho",
-        enter_warehouse= "Nhập kho",
+        point_enter_warehouse = "[E] Vào kho",
+        enter_warehouse= "Vào kho",
         exit_warehouse= "Thoát kho",
         point_exit_warehouse = "[E] Thoát kho",
-        clock_out = "[E] Hết giờ",
-        clock_in = "[E] đồng hồ trong",
-        hand_in_package = "Gói trong tay",
-        point_hand_in_package = "[E] Gói trong tay",
-        get_package = "Nhận gói",
-        point_get_package = "[E] Nhận gói",
-        picking_up_the_package = "Đón gói hàng",
-        unpacking_the_package = "Mở gói hàng",
+        clock_out = "[E] Đừng bấm giờ",
+        clock_in = "[E] Bấm đồng hố",
+        hand_in_package = "Khui hàng",
+        point_hand_in_package = "[E] Khui hàng",
+        get_package = "Lấy hàng",
+        point_get_package = "[E] Lấy hàng",
+        picking_up_the_package = "Đang lấy hàng",
+        unpacking_the_package = "Mở hàng",
     },
     error = {
-        you_have_clocked_out = "Bạn đã hết giờ"
+        you_have_clocked_out = "Bạn đã hết giờ làm việc"
     },
 }
 
