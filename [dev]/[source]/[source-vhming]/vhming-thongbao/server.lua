@@ -17,7 +17,7 @@ QBCore.Commands.Add("thongbao", "Thông báo toàn thành phố ", {} , false, f
             end
         end
     else
-        TriggerClientEvent('QBCore:Noify',source,'Đang có thông báo đang chạy','error')
+        TriggerClientEvent('QBCore:Notify',source,'Đang có thông báo đang chạy','error')
     end
     
 end)
