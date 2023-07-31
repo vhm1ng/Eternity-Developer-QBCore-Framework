@@ -48,7 +48,7 @@ const team = [{
 const social = [{
         discord: "Discord.gg/eternity-rp",
         web: "Eternity.vnpxe.net",
-        instagram: "ET.Version - 2.0"
+        instagram: "ET.Version - 1.5 0.5 còn lại chưa biết"
     },
 
 ]
