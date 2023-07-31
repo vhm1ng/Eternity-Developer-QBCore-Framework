@@ -273,7 +273,7 @@ Config.Garages = {
     type = 'public',                --public, job, gang, depot
     vehicleCategories = {'car', 'motorcycle', 'other'},
     drawText = '[Garages] Trung tâm 2',                 --car, air, sea
-    debug = true,
+    debug = false,
     ['ParkingSpots'] = {
         vector4(192.42, -887.19, 18.05, 234.6),
         vector4(194.37, -884.82, 18.05, 235.24),
