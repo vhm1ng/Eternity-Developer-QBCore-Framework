@@ -10,7 +10,7 @@
 Eternity Developer là một framework được viết trên nền tảng QBCore và ngôn ngữ Lua. Còn nền tảng QBCore là tổ chức cung cấp mã nguồn mở cho cộng đồng FiveM.
 Chúng tôi tự hào về việc luôn tiến bộ theo cách chúng tôi phát triển và hy vọng sẽ truyền lại kiến ​​thức đó cho cộng đồng của chúng tôi!
 
-### 💬 English
+### 💬 English 
 Eternity Developer is a framework written on the QBCore platform and the Lua language. The QBCore platform is an organization that provides open source code for the FiveM community. We pride ourselves on always advancing the way we develop and hope to pass that knowledge on to our community!
 
 ## 📚 Documentation
